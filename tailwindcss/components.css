@@ -1,0 +1,101 @@
+@layer components {  
+  .button {
+    @apply z-1 relative flex items-center justify-center gap-2 rounded-full transition-all cursor-pointer;
+
+    &::before {
+      @apply content-[""] absolute inset-0 -z-1 transition-all rounded-[inherit];
+    }
+
+    &:where([data-size="small"]) {
+      @apply h-8 px-3.75 text-[12px]/[15px] tracking-[0.024em];
+    }
+
+    &:where([data-size="base"]) {
+      @apply h-8.5 px-3.75 text-[12px]/[15px] font-medium tracking-[0.028em];
+    }
+
+    &:where([data-size="medium"]) {
+      @apply h-[34px] px-[15px] font-medium text-[12px]/[15px] tracking-[.024em];
+    }
+
+    &:where([data-size="large"]) {
+      @apply h-10 px-4 font-medium text-[13px]/[15px];
+    }
+
+    /* variant */
+    &:where([data-variant="base"]) {
+      @apply text-white;
+      
+      &::before {
+        @apply bg-secondary;
+      }
+    }
+
+    &:where([data-variant="second"]) {
+      @apply text-[#0B0B0B];
+      
+      &::before {
+        @apply bg-[#F8F7F0];
+      }
+    }
+
+    &:where([data-variant="blur"]) {
+      @apply text-white;
+      
+      &::before {
+        @apply bg-white/5 backdrop-blur-[30px];
+      }
+    }
+
+    &:where([data-variant="white"]) {
+      &::before {
+        @apply bg-white;
+      }
+    }
+
+    /* animation */
+    &:where([data-animation="base"]) {
+      @apply hover:opacity-75;
+    }
+
+     &:where([data-animation="darken"]) {
+      @apply hover:brightness-95;
+    }
+
+    &:where([data-animation="scale"]) {
+      @apply hover:brightness-95;
+
+      &::before {
+        transform: scaleX(1) scaleY(1) perspective(1px);
+        /* transition: transform 0.2s cubic-bezier(0.345, 0.115, 0.135, 1.42),
+          background 0.2s ease-out; */
+      }
+
+      &:hover::before {
+        transform: scaleX(1.02) scaleY(1.02) perspective(1px);
+      }
+    }
+  }
+
+  .button-icon {
+    @apply flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full transition-colors;
+  }
+
+  .button-icon-footer {
+    @apply border-[#2F2F2F] border;
+
+    path,
+    g {
+      @apply transition-all;
+    }
+
+    &:hover {
+      @apply border-white bg-white;
+
+      path,
+      g {
+        @apply fill-[#0B0B0B];
+      }
+    }
+  }
+}

@@ -1,26 +1,45 @@
 @import "tailwindcss";
+@import "../tailwindcss/base.css";
+@import "../tailwindcss/utilities.css";
+@import "../tailwindcss/components.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --dashed-url: url(/images/underline.svg)
+  
+  --background: #F5F7FA;
+  --foreground: #2D3A52;
+
+  /* --default-transition-duration: 0.6s;
+  --default-transition-timing-function: cubic-bezier(0.01, 0.38, 0.24, 0.98); */
+
+  --transition-img: transform 0.34s cubic-bezier(0.01, 0.38, 0.24, 0.98);
+  --transition-overlay: all 0.8s cubic-bezier(0.01, 0.38, 0.24, 0.98);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-secondary: #507FEB;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--background);
+  --color-background-secondary: #ffffff;
+  --color-foreground: var(--foreground);
+
+  --color-section-title: var(--color-secondary);
+  --color-section-description: #818796;
+
+  --color-footer: #8D8D8D;
+  --color-footer-invert: var(--color-white);
+  --color-footer-second: #F5F7FA;
+  --color-footer-b: #292929;
+  --color-footer-action-b: #F9F5E8;
+
+  --color-current-color: currentColor;
+  
+  --font-season-mix: var(--font-season-mix);
+  --font-vanilla-sans: var(--font-vanilla-sans);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-vanilla-sans);
 }
