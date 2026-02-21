@@ -23,6 +23,8 @@ export const HomeDomainRole: React.FC<HomeDomainRoleProps> = (
           }
         />
       }
-    ></Section>
+    >
+      {" "}
+    </Section>
   );
 };

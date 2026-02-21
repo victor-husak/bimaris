@@ -19,7 +19,11 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
         props.className,
         "font-sp-pro-text pb-md container-full bg-[#0B0B0B]",
       )}
-      style={{ "--dashed-url": "url(/images/underline-footer.svg)" }}
+      style={
+        {
+          "--dashed-url": "url(/images/underline-footer.svg)",
+        } as React.CSSProperties
+      }
     >
       <Components.Topline />
 
