@@ -29,7 +29,7 @@ export const HomeDomainRole: React.FC<HomeDomainRoleProps> = (
       {/* Content */}
       <div
         className={clsx(
-          "grid grid-cols-1 grid-rows-1 gap-5",
+          "grid grid-cols-2 grid-rows-1 gap-5",
           // "md:grid-cols-2",
           // "xl:grid-cols-2 xl:grid-rows-[minmax(413px,auto)_auto]",
         )}
