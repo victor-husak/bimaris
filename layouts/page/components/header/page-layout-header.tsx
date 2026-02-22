@@ -11,6 +11,7 @@ import { clsx } from "clsx";
 export type PageLayoutHeaderProps = {
   className?: string;
   size?: "sm" | "md" | "lg";
+  RightComponent?: React.ReactNode;
 };
 
 export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
@@ -27,23 +28,31 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
     >
       <div
         className={clsx(
-          "relative flex h-full overflow-hidden rounded-2xl",
-          "after::-z-1 after:absolute after:inset-0 after:bg-black/20",
-          "before:absolute before:right-0 before:bottom-0 before:left-0 before:-z-1 before:h-95 before:bg-linear-to-b before:from-black/0 before:to-black/30",
+          "relative flex h-full items-center justify-between overflow-hidden rounded-2xl pr-[53px] pl-[140px]",
         )}
       >
         {/* Background */}
         <NextImage
           id="layer-back"
-          className="absolute inset-0 -z-2 object-cover object-center"
+          className="absolute inset-0 -z-3 h-full w-full object-cover object-center will-change-transform"
           src="/images/home/home-header.webp"
           width={3978}
           height={1860}
+          objectFit="cover"
+          objectPosition="center"
           alt="header"
         />
 
+        <div
+          className={clsx(
+            "absolute inset-0 -z-1",
+            "after:absolute after:inset-0 after:bg-black/20",
+            "before:absolute before:right-0 before:bottom-0 before:left-0 before:h-95 before:bg-linear-to-b before:from-black/0 before:to-black/30",
+          )}
+        />
+
         {/* Content */}
-        <div className="relative z-2 my-auto flex flex-col items-start pr-[53px] pl-[140px]">
+        <div className="relative z-2 my-auto flex flex-col items-start">
           {/* Meta */}
           <div className="mb-[15px] flex items-center gap-1.5">
             {/* Text */}
@@ -82,6 +91,9 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
             </Button>
           </div>
         </div>
+
+        {/* Right component */}
+        {props.RightComponent}
       </div>
     </header>
   );

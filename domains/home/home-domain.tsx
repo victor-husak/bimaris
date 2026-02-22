@@ -1,4 +1,4 @@
-import { PageLayout, PageLayoutHeader } from "@/layouts/page";
+import { PageLayout } from "@/layouts/page";
 
 import { CasesSection } from "@/sections/cases";
 
@@ -18,13 +18,12 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
   return (
     <PageLayout
       className={clsx(props.className, "")}
-      HeaderComponent={<PageLayoutHeader />}
+      HeaderComponent={<Components.Header />}
     >
       {/* Header */}
-      <Components.Header />
 
       {/* Role */}
-      {/* <Components.Role /> */}
+      <Components.Role />
 
       {/* Updates */}
       <Components.Updates className="pb-27.5" />

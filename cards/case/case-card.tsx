@@ -14,7 +14,7 @@ export const CaseCard: React.FC<CaseCardProps> = (props): React.JSX.Element => {
     <div
       className={clsx(
         props.className,
-        "bg-background-secondary rounded-[11px]",
+        "group bg-background-secondary rounded-[11px]",
       )}
     >
       {/* Tags */}
@@ -23,7 +23,10 @@ export const CaseCard: React.FC<CaseCardProps> = (props): React.JSX.Element => {
       {/* Preview */}
       <div className="mx-[15px] h-[180px] overflow-hidden rounded-lg bg-gray-300">
         <NextImage
-          className="h-full w-full object-cover"
+          className={clsx(
+            "transition-img h-full w-full object-cover",
+            "group-hover:transform-[scale(1.03)]",
+          )}
           src="/images/genereted/case.webp"
           alt="Case preview"
           width={960}
