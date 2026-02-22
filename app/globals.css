@@ -19,7 +19,7 @@
 @theme inline {
   --color-secondary: #507FEB;
 
-  --color-background: var(--background);
+  --color-background: #F5F7FA;
   --color-background-secondary: #ffffff;
   --color-foreground: var(--foreground);
 
@@ -39,7 +39,7 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-background);
+  color: var(--color-foreground);
   font-family: var(--font-vanilla-sans);
 }
