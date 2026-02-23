@@ -4,3 +4,9 @@ type Media = {
   width: number;
   alt?: string;
 };
+
+type Option = {
+  label: string;
+  value: string;
+  data?: any;
+};

@@ -1159,6 +1159,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-transition-group@npm:^4.4.12":
+  version: 4.4.12
+  resolution: "@types/react-transition-group@npm:4.4.12"
+  peerDependencies:
+    "@types/react": "*"
+  checksum: 13d36396cae4d3c316b03d4a0ba299f0d039c59368ba65e04b0c3dc06fd0a16f59d2c669c3e32d6d525a95423f156b84e550d26bff0bdd8df285f305f8f3a0ed
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:^19":
   version: 19.2.14
   resolution: "@types/react@npm:19.2.14"
@@ -1690,6 +1699,7 @@ __metadata:
     "@types/node": ^20
     "@types/react": ^19
     "@types/react-dom": ^19
+    "@types/react-transition-group": ^4.4.12
     clsx: ^2.1.1
     eslint: ^9
     eslint-config-next: 16.1.6
