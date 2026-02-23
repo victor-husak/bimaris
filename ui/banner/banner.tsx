@@ -4,11 +4,10 @@ export type BannerProps = {
   className?: string;
   classNameDescription?: string;
   size?: "base" | "small";
-  title: React.ReactNode;
-  description: React.ReactNode;
+  title: string;
+  description: string;
   ActionComponent?: React.ReactNode;
   ImageComponent?: React.ReactNode;
-  PreviewComponent?: React.ReactNode;
   ListComponent?: React.ReactNode;
 };
 

@@ -1,6 +1,6 @@
 import { Section, SectionHeader, Button } from "@/components";
 
-import { Banner, BannerList } from "@/ui";
+import { Banner, BannerList, BannerImage } from "@/ui";
 
 import { clsx } from "clsx";
 
@@ -49,6 +49,18 @@ export const HomeDomainRole: React.FC<HomeDomainRoleProps> = (
               ]}
             />
           }
+          ImageComponent={
+            <BannerImage
+              withOverlay
+              className="[--overlay-bg:#F4F6F9]"
+              media={{
+                url: "/images/genereted/home/role-individuals.webp",
+                alt: "Individuals",
+                width: 582,
+                height: 960,
+              }}
+            />
+          }
           ActionComponent={
             <Button
               className="font-medium before:bg-[#233041]"
@@ -73,6 +85,18 @@ export const HomeDomainRole: React.FC<HomeDomainRoleProps> = (
                 "Attorney-led solutions",
                 "Best for IT professionals",
               ]}
+            />
+          }
+          ImageComponent={
+            <BannerImage
+              className="[--overlay-bg:#6F92E2]"
+              withOverlay
+              media={{
+                url: "/images/genereted/home/role-businesses.webp",
+                alt: "Businesses",
+                width: 582,
+                height: 960,
+              }}
             />
           }
           ActionComponent={
@@ -101,6 +125,39 @@ export const HomeDomainRole: React.FC<HomeDomainRoleProps> = (
                 "Long-term presence and operational continuity",
               ]}
             />
+          }
+          ImageComponent={
+            <div className="relative z-1 flex">
+              <BannerImage
+                className="absolute -left-[71px] -z-2 border-[5px] border-[#D9EAE7]"
+                media={{
+                  url: "/images/genereted/home/role-investors.webp",
+                  alt: "Investors and market entry",
+                  width: 582,
+                  height: 960,
+                }}
+              />
+
+              <BannerImage
+                className="absolute -left-[32px] -z-1 border-[5px] border-[#D9EAE7]"
+                media={{
+                  url: "/images/genereted/home/role-investors.webp",
+                  alt: "Investors and market entry",
+                  width: 582,
+                  height: 960,
+                }}
+              />
+
+              <BannerImage
+                className="border-[5px] border-[#D9EAE7]"
+                media={{
+                  url: "/images/genereted/home/role-investors.webp",
+                  alt: "Investors and market entry",
+                  width: 582,
+                  height: 960,
+                }}
+              />
+            </div>
           }
           ActionComponent={
             <Button
