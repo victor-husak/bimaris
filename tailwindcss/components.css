@@ -19,7 +19,7 @@
     }
 
     &:where([data-size="large"]) {
-      @apply h-10 px-4 font-medium text-[13px]/[15px];
+      @apply h-10.5 px-4 font-medium text-[13px]/[15px] tracking-[.024em];
     }
 
     /* variant */

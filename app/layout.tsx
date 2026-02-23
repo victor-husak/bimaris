@@ -2,7 +2,7 @@ import { RootLayout } from "@/layouts/root";
 
 import type { Metadata } from "next";
 
-import { HellixVFTRIA, VanillaSans } from "./fonts";
+import { HellixVFTRIA, SFProText, VanillaSans } from "./fonts";
 
 import { clsx } from "clsx";
 
@@ -24,6 +24,7 @@ export default function RootLayoutPage({
         className={clsx(
           HellixVFTRIA.variable,
           VanillaSans.variable,
+          SFProText.variable,
           "container-variable antialiased",
         )}
       >

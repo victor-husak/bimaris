@@ -2,6 +2,7 @@
 @import "../tailwindcss/base.css";
 @import "../tailwindcss/utilities.css";
 @import "../tailwindcss/components.css";
+@import "../tailwindcss/form.css";
 
 :root {
   --dashed-url: url(/images/underline.svg)
@@ -31,6 +32,9 @@
   --color-footer-second: #F5F7FA;
   --color-footer-b: #292929;
   --color-footer-action-b: #F9F5E8;
+
+  --color-form-invalid-border: #ffa2b4;
+  --color-form-placeholder: #828891;
 
   --color-current-color: currentColor;
   

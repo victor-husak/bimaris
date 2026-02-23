@@ -44,6 +44,8 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
           />
         }
       />
+
+      <Components.Contact className="mb-[50px]" />
     </PageLayout>
   );
 };

@@ -27,3 +27,14 @@ export const VanillaSans = localFont({
   variable: "--font-vanilla-sans",
   display: "swap",
 });
+
+export const SFProText = localFont({
+  src: [
+    {
+      path: "./fonts/SF-Pro-Text-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-sf-pro",
+});

@@ -21,10 +21,10 @@ export const SolutionsSectionItem: React.FC<SolutionsSectionItemProps> = (
   return (
     <div
       className={clsx(
-        "group flex cursor-pointer items-center rounded-xl transition-all",
+        "group relative flex cursor-pointer items-center rounded-xl transition-all",
         "hover:bg-[#F7F8FA]",
         // "md:first:border-r",
-        "after:left-full after:h-[63px] after:w-px after:bg-[#F4F5F7] not-last:after:absolute not-last:after:content-['dddd']",
+        "after:absolute after:-right-2.5 after:h-[63px] after:w-px after:bg-[#F4F5F7]",
         // { "flex flex-col gap-2.5 md:p-[25px]": !props.data.href },
         props.className,
       )}
