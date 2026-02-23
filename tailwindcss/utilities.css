@@ -112,6 +112,6 @@
 
   .link-with-arrow {
     @apply inline-flex items-center;
-    @apply [&>svg]:mb-px [&>svg]:ml-[3px];
+    @apply [&>svg]:mb-px [&>svg]:ml-[4px];
   }
 }

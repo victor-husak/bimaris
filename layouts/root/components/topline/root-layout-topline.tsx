@@ -18,7 +18,7 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
     <div
       className={clsx(
         props.className,
-        "container-full flex items-center justify-between bg-background-secondary pt-2.75 pb-3 text-[12px]/[15px] tracking-[.024em] text-[#8D98A8] border border-[#F4F5FA]",
+        "container-full bg-background-secondary flex items-center justify-between border border-[#F4F5FA] pt-2.75 pb-3 text-[12px]/[15px] tracking-[.024em] text-[#8D98A8]",
       )}
     >
       <ul className="flex">
@@ -34,18 +34,20 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
       </ul>
 
       {/* description */}
-      <p className="absolute left-1/2 transform -translate-x-1/2 text-[12px]/[14px] tracking-[.024em]">
+      <p className="absolute left-1/2 -translate-x-1/2 transform text-[12px]/[14px] tracking-[.024em]">
         Innovative immigration legal consultancy.{" "}
         <NextLink
           className={clsx(
-            "group link-with-arrow inline-flex items-center gap-1.5 text-secondary transition-opacity",
+            "group link-with-arrow text-secondary inline-flex items-center transition-opacity",
             "hover:opacity-80",
           )}
           href="/"
         >
-          <span className="link-dashed">Explore company</span>
+          <span className="link-dashed [--dashed-url:url(/images/underline.svg)]">
+            Explore company
+          </span>
 
-          <Icons.Arrow />
+          <Icons.Arrow className="mt-[3px]" />
 
           {/* <PlusIcon
             className="transition-all group-hover:rotate-360"
@@ -74,7 +76,7 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
         <Components.Item className="cursor-pointer">
           <span>En</span>
 
-          <ArrowRightIcon className="ml-1.25 [&>path]:stroke-current-color [&>path]:transition-all" />
+          <ArrowRightIcon className="[&>path]:stroke-current-color ml-1.25 [&>path]:transition-all" />
         </Components.Item>
       </ul>
     </div>

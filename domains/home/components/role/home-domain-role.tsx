@@ -2,6 +2,8 @@ import { Section, SectionHeader, Button } from "@/components";
 
 import { Banner, BannerList, BannerImage } from "@/ui";
 
+import * as Components from "./components";
+
 import { clsx } from "clsx";
 
 export type HomeDomainRoleProps = {
@@ -170,6 +172,9 @@ export const HomeDomainRole: React.FC<HomeDomainRoleProps> = (
           }
         />
       </div>
+
+      {/* Footer */}
+      <Components.Footer />
     </Section>
   );
 };
