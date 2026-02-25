@@ -2,6 +2,8 @@ import { PageLayout } from "@/layouts/page";
 
 import { CasesSection } from "@/sections/cases";
 
+import { Rating } from "@/ui";
+
 import { SectionHeader, Button } from "@/components";
 
 import * as Components from "./components";
@@ -44,6 +46,10 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
           />
         }
       />
+
+      <section className="container-full">
+        <Rating />
+      </section>
 
       <Components.Contact className="mb-[50px]" />
     </PageLayout>

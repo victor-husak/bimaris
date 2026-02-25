@@ -4,7 +4,13 @@ import NextLink from "next/link";
 
 import { Button } from "@/components";
 
-// import { FormItem, FormInput, FormSelect } from "@/components/form";
+import {
+  FormRow,
+  FormItem,
+  FormInput,
+  FormTextarea,
+  FormCheckbox,
+} from "@/components/form";
 
 import { ArrowRightIcon } from "@/icons";
 
@@ -35,13 +41,63 @@ export const HomeDomainContactForm: React.FC<HomeDomainContactFormProps> = (
           </span>
         </div>
 
-        {/* <FormItem label="Name*">
-          <FormInput placeholder="-" />
-        </FormItem>
+        <div className="flex flex-col gap-[15px]">
+          <FormRow>
+            <FormItem required label="Name">
+              <FormInput placeholder="-" />
+            </FormItem>
 
-        <FormItem label="Surname">
-          <FormInput placeholder="-" />
-        </FormItem> */}
+            <FormItem required label="Surname">
+              <FormInput placeholder="-" />
+            </FormItem>
+          </FormRow>
+
+          <FormRow>
+            <FormItem required label="Company">
+              <FormInput placeholder="-" />
+            </FormItem>
+
+            <FormItem required label="Country of origin">
+              <FormInput placeholder="-" />
+            </FormItem>
+          </FormRow>
+
+          <FormRow>
+            <FormItem required label="Business email">
+              <FormInput placeholder="-" />
+            </FormItem>
+
+            <FormItem required label="Phone number">
+              <FormInput placeholder="-" />
+            </FormItem>
+          </FormRow>
+
+          <FormItem label="Message">
+            <FormTextarea placeholder="-" />
+          </FormItem>
+        </div>
+
+        <div
+          className="group my-5 flex cursor-pointer items-center gap-4"
+          // onClick={props.onClick}
+        >
+          {/* Inner */}
+          <FormCheckbox
+            className={clsx("group-hover:shadow-[0_0_0_1px_#d6d8dc]")}
+            value={false}
+          />
+
+          {/* Label */}
+          <span
+            className={clsx(
+              "text-[13px]/[17px] tracking-[.024em] text-[#838891] transition-all",
+              "group-hover:text-foreground",
+            )}
+          >
+            I agree to receive occasional updates, insights, and relevant
+            information from Bimaris.
+          </span>
+        </div>
 
         <Button className="font-sf-pro mt-auto tracking-[.008em]" size="large">
           Send

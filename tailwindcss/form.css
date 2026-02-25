@@ -1,7 +1,7 @@
 @layer components {  
   .form-inner {
-    @apply text-[#33383C] text-[14px]/[1] outline-0 py-3 border-b border-[#D8D8D8] transition-all;
-    @apply placeholder:text-[#828891];
+    @apply text-[#333333] text-[13px]/[17px] outline-0 h-9.5 px-[14px] bg-[#F8F9FA] rounded-md transition-all;
+    @apply placeholder:text-[#8F9195];
     @apply hover:border-[#33383C] focus:border-[#33383C];
 
     &:where([data-invalid="true"]) {
