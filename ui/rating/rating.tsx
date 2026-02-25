@@ -28,12 +28,23 @@ export const Rating: React.FC<RatingProps> = (props): React.JSX.Element => {
         objectPosition="center"
       />
 
-      <div className="absolute h-[58px] w-[290px] rounded-full border border-white/10 bg-white/10 backdrop-blur-[40px] backdrop-brightness-110" />
+      {/* Hr */}
+      <div className="h-px flex-1 bg-linear-to-r from-transparent to-white/10" />
+
+      {/* Blur */}
+      <div
+        className={clsx(
+          "relative h-[58px] w-[290px] rounded-full border border-white/10 bg-white/10 backdrop-blur-[40px] backdrop-brightness-110",
+        )}
+      />
+
+      {/* Hr */}
+      <div className="h-px flex-1 bg-linear-to-l from-transparent to-white/10" />
 
       {/* Content */}
       <div
         className={clsx(
-          "relative z-1 flex h-[48px] w-full max-w-[280px] items-center gap-3 rounded-full border border-white/10 p-[5px] pr-[17px] pl-[10px] backdrop-blur-[40px] backdrop-brightness-110",
+          "absolute z-1 flex h-[48px] w-full max-w-[280px] items-center gap-3 rounded-full border border-white/10 p-[5px] pr-[17px] pl-[10px] backdrop-blur-[40px] backdrop-brightness-110",
         )}
       >
         {/* Icon */}
