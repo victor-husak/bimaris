@@ -1,6 +1,7 @@
 import { PageLayout } from "@/layouts/page";
 
 import { CasesSection } from "@/sections/cases";
+import { AdvantagesSection } from "@/sections/advantages";
 
 import { Rating } from "@/ui";
 
@@ -23,6 +24,7 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
       HeaderComponent={<Components.Header />}
     >
       {/* Header */}
+      <AdvantagesSection className="mt-5" />
 
       {/* Role */}
       <Components.Role />

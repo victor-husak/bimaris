@@ -4,13 +4,11 @@ import { ArrowRightIcon } from "@/icons";
 
 import { clsx } from "clsx";
 
-export type HomeDomainRoleFooterProps = {
+export type SupportProps = {
   className?: string;
 };
 
-export const HomeDomainRoleFooter: React.FC<HomeDomainRoleFooterProps> = (
-  props,
-): React.JSX.Element => {
+export const Support: React.FC<SupportProps> = (props): React.JSX.Element => {
   return (
     <footer
       className={clsx(
