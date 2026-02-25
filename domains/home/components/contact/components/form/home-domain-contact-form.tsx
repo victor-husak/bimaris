@@ -99,7 +99,11 @@ export const HomeDomainContactForm: React.FC<HomeDomainContactFormProps> = (
           </span>
         </div>
 
-        <Button className="font-sf-pro mt-auto tracking-[.008em]" size="large">
+        <Button
+          className="font-sf-pro mt-auto tracking-[.008em]"
+          size="large"
+          animation="darken"
+        >
           Send
         </Button>
       </div>

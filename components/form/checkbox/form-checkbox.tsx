@@ -14,7 +14,7 @@ export const FormCheckbox: React.FC<FormCheckboxProps> = (
     <div
       className={clsx(
         props.className,
-        "flex h-4 w-4 items-center justify-center rounded-sm border transition-all duration-200 ease-linear",
+        "flex h-4 w-4 items-center justify-center rounded-sm border transition-all",
         { "border-[#d6d8dc]": !props.value },
         { "border-secondary bg-secondary": props.value },
       )}
