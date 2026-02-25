@@ -15,7 +15,7 @@ export const HomeDomainUpdatesItem: React.FC<HomeDomainUpdatesItemProps> = (
     <div
       className={clsx(
         props.className,
-        "group bg-background-secondary/50 flex cursor-pointer rounded-[11px] border border-[#E7EAF2] p-6.25 transition-all",
+        "group flex cursor-pointer rounded-[11px] border border-[#E7EAF2] p-6.25 transition-all",
         "hover:bg-[#F0F3F7]",
       )}
     >
