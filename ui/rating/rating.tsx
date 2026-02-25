@@ -1,5 +1,7 @@
 import NextImage from "next/image";
 
+import * as Icons from "./icons";
+
 import { clsx } from "clsx";
 
 export type RatingProps = {
@@ -26,18 +28,37 @@ export const Rating: React.FC<RatingProps> = (props): React.JSX.Element => {
         objectPosition="center"
       />
 
+      <div className="absolute h-[58px] w-[290px] rounded-full border border-white/10 bg-white/10 backdrop-blur-[40px] backdrop-brightness-110" />
+
       {/* Content */}
       <div
         className={clsx(
-          "relative  z-1 flex h-[48px] w-full max-w-[280px] items-center gap-3 rounded-full border border-white/10 bg-white/10 p-[5px] pr-[22px] pl-[15px] backdrop-blur-[40px]",
-          "after:absolute after:-inset-2.5 after:-z-1 after:rounded-full after:border after:border-white/10 after:bg-white/10 after:backdrop-blur-[40px]",
+          "relative z-1 flex h-[48px] w-full max-w-[280px] items-center gap-3 rounded-full border border-white/10 p-[5px] pr-[17px] pl-[10px] backdrop-blur-[40px] backdrop-brightness-110",
         )}
       >
+        {/* Icon */}
+        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/10 backdrop-blur-[40px] backdrop-brightness-115">
+          <Icons.Star />
+        </div>
+
         {/* Info */}
-        <div className="flex flex-col text-[12px]/[16px]">
+        <div className="flex flex-1 flex-col items-start text-[12px]/[16px]">
           <span className="text-white/60">5.0 on Truspilot</span>
 
-          <span className="text-white">Explore all reviews</span>
+          <span className="link-dashed text-white [--dashed-url:url(/images/underline.svg)]">
+            Explore all reviews
+          </span>
+        </div>
+
+        {/* Rating */}
+        <div className="flex items-center gap-[5px]">
+          {/* Icon */}
+          <Icons.Rating />
+
+          {/* Value */}
+          <span className="font-sf-pro text-[12px]/[14px] tracking-[.004em] text-white/60">
+            5.0
+          </span>
         </div>
       </div>
     </div>
