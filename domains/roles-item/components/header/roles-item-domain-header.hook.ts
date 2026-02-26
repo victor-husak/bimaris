@@ -32,7 +32,7 @@ export const useRolesItemDomainHeader = (props: RolesItemDomainHeaderProps) => {
   const slidesControl = useMemo(() => {
     return slides.map((item, index) => ({
       // url: `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.image.url}`,
-      url: item.url,
+      url: item.avatar.url,
       id: index,
     }));
   }, [slides]);
