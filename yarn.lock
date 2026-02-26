@@ -1709,6 +1709,7 @@ __metadata:
     prettier: ^3.8.1
     prettier-plugin-tailwindcss: ^0.7.2
     react: 19.2.3
+    react-collapsed: ^4.2.0
     react-dom: 19.2.3
     react-transition-group: ^4.4.5
     sass: ^1.97.3
@@ -4262,6 +4263,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-collapsed@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "react-collapsed@npm:4.2.0"
+  dependencies:
+    tiny-warning: ^1.0.3
+  peerDependencies:
+    react: ^16.9.0 || ^17 || ^18 || ^19
+    react-dom: ^16.9.0 || ^17 || ^18 || ^19
+  checksum: 7e16368822883124cf8d4e6a5f2fd517fbb120fd8e58cab80c61bb01459fcdd44f2a2dc536920edb2ef8729ce0bd15685fa3220479d1923219ca9e257d3843ac
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:19.2.3":
   version: 19.2.3
   resolution: "react-dom@npm:19.2.3"
@@ -4920,6 +4933,13 @@ __metadata:
     minizlib: "npm:^3.1.0"
     yallist: "npm:^5.0.0"
   checksum: 26fbbdf536895814167d03e4883f80febb6520729169c54d0f29ee8a163557283862752493f0e5b60800a6f3608aac3250c41fac8e20a4f056ba4fa63f3dbad7
+  languageName: node
+  linkType: hard
+
+"tiny-warning@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "tiny-warning@npm:1.0.3"
+  checksum: da62c4acac565902f0624b123eed6dd3509bc9a8d30c06e017104bedcf5d35810da8ff72864400ad19c5c7806fc0a8323c68baf3e326af7cb7d969f846100d71
   languageName: node
   linkType: hard
 

@@ -11,6 +11,7 @@ import { clsx } from "clsx";
 export type PageLayoutHeaderProps = {
   className?: string;
   size?: "sm" | "md" | "lg";
+  media: Media;
   RightComponent?: React.ReactNode;
 };
 
@@ -35,12 +36,13 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
         <NextImage
           id="layer-back"
           className="absolute inset-0 -z-3 h-full w-full object-cover object-center will-change-transform"
-          src="/images/home/home-header.webp"
-          width={3978}
-          height={1860}
+          {...props.media}
+          src={props.media.url}
+          width={props.media.width}
+          height={props.media.height}
           objectFit="cover"
           objectPosition="center"
-          alt="header"
+          alt={props.media.alt || "Header background"}
         />
 
         <div
@@ -86,7 +88,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
               Connect with our team
             </Button>
 
-            <Button href="/" size="medium" variant="blur">
+            <Button href="/" size="medium" variant="blur" animation="opacity">
               Open services
             </Button>
           </div>

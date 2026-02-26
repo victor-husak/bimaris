@@ -65,7 +65,7 @@ export const HomeDomainRole: React.FC<HomeDomainRoleProps> = (
             <Button
               className="font-medium before:bg-[#233041]"
               animation="scale"
-              href="/"
+              href="/roles/individuals"
             >
               Open services
             </Button>
@@ -104,7 +104,7 @@ export const HomeDomainRole: React.FC<HomeDomainRoleProps> = (
               className="font-medium text-[#507FEB]"
               animation="scale"
               variant="white"
-              href="/"
+              href="/roles/businesses"
             >
               Open services
             </Button>
@@ -163,7 +163,7 @@ export const HomeDomainRole: React.FC<HomeDomainRoleProps> = (
             <Button
               className="font-medium before:bg-[#233041]"
               animation="scale"
-              href="/"
+              href="/roles/investors"
             >
               Open services
             </Button>

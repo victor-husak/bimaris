@@ -16,7 +16,7 @@ export const PageLayoutHeaderSlidesItem: React.FC<
     <div
       className={clsx(
         props.className,
-        "group flex h-15 cursor-pointer items-center gap-[15px] rounded-lg bg-white/10 p-2.5 pr-[15px] backdrop-blur-[30px]",
+        "group flex h-15 cursor-pointer items-center gap-[15px] rounded-lg bg-white/10 p-2.5 pr-[15px] backdrop-blur-[30px] backdrop-brightness-110",
       )}
     >
       {/* Avatar */}
@@ -42,7 +42,7 @@ export const PageLayoutHeaderSlidesItem: React.FC<
       {/* Arrow */}
       <button
         className={clsx(
-          "flex h-6 w-6 items-center justify-center rounded-full border border-white/15 transition-all",
+          "flex h-6 w-6 items-center justify-center rounded-full border border-white/15 transition-all duration-200",
           "group-hover:bg-white",
         )}
       >

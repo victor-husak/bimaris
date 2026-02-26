@@ -1,5 +1,1 @@
-import { HomeDomain } from "@/domains/home";
-
-export default function Home() {
-  return <HomeDomain />;
-}
+export { HomeDomain as default } from "@/domains/home";

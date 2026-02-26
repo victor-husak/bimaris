@@ -1,4 +1,8 @@
+"use client";
+
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
+
+import { useHomeDomainHeader } from "./home-domain-header.hook";
 
 import { clsx } from "clsx";
 
@@ -9,45 +13,20 @@ export type HomeDomainHeaderProps = {
 export const HomeDomainHeader: React.FC<HomeDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
+  const { slides } = useHomeDomainHeader(props);
+
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
+      media={{
+        url: "/images/home/home-header.webp",
+        width: 3978,
+        height: 1860,
+        alt: "Home header background",
+      }}
       RightComponent={
         <PageLayoutHeaderSlides title="Choose your role:" data={slides} />
       }
-    ></PageLayoutHeader>
+    />
   );
 };
-
-const slides = [
-  {
-    id: 1,
-    label: "For individuals",
-    avatar: {
-      url: "/images/genereted/home/slide1.webp",
-      width: 120,
-      height: 120,
-      alt: "For individuals",
-    },
-  },
-  {
-    id: 2,
-    label: "For businesses",
-    avatar: {
-      url: "/images/genereted/home/slide2.webp",
-      width: 120,
-      height: 120,
-      alt: "For businesses",
-    },
-  },
-  {
-    id: 3,
-    label: "For investors",
-    avatar: {
-      url: "/images/genereted/home/slide3.webp",
-      width: 120,
-      height: 120,
-      alt: "For investors",
-    },
-  },
-];

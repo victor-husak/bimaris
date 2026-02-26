@@ -1,8 +1,12 @@
+"use client";
+
 import NextLink from "next/link";
 
 import { Lang } from "@/components";
 
 import * as Icons from "./icons";
+
+import { usePathname } from "next/navigation";
 
 import { clsx } from "clsx";
 
@@ -13,6 +17,8 @@ export type RootLayoutFooterToplineProps = {
 export const RootLayoutFooterTopline: React.FC<RootLayoutFooterToplineProps> = (
   props,
 ): React.JSX.Element => {
+  const pathname = usePathname();
+
   return (
     <div
       className={clsx(
@@ -21,15 +27,18 @@ export const RootLayoutFooterTopline: React.FC<RootLayoutFooterToplineProps> = (
       )}
     >
       {/* logo */}
-      <NextLink
-        href="/"
-        className={clsx(
-          "absolute left-1/2 -translate-x-1/2 transform transition-opacity",
-          "hover:opacity-80",
+      <div className="absolute left-1/2 -translate-x-1/2">
+        {pathname === "/" ? (
+          <Icons.Logo />
+        ) : (
+          <NextLink
+            className={clsx("transition-opacity", "hover:opacity-60")}
+            href="/"
+          >
+            <Icons.Logo />
+          </NextLink>
         )}
-      >
-        <Icons.Logo />
-      </NextLink>
+      </div>
 
       {/* action */}
       <div className="ml-auto flex items-center gap-[10px]">

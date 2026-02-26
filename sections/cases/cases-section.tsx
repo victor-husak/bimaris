@@ -1,6 +1,6 @@
 import { CaseCard } from "@/cards/case";
 
-import { Section } from "@/components";
+import { Section, SectionHeader, Button } from "@/components";
 
 import { ArrowRightIcon } from "@/icons";
 
@@ -10,7 +10,6 @@ import { clsx } from "clsx";
 
 export type CasesSectionProps = {
   className?: string;
-  SectionHeader: React.ReactNode;
 };
 
 export const CasesSection: React.FC<CasesSectionProps> = (
@@ -19,7 +18,18 @@ export const CasesSection: React.FC<CasesSectionProps> = (
   return (
     <Section
       className={clsx(props.className, "")}
-      HeaderComponent={props.SectionHeader}
+      HeaderComponent={
+        <SectionHeader
+          classNameDescription="max-w-[500px]"
+          title="Customer case studies"
+          description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+          ActionComponent={
+            <Button href="/cases" animation="scale">
+              View all
+            </Button>
+          }
+        />
+      }
     >
       <div className="flex gap-[20px]">
         <CaseCard className="w-[350px]" />

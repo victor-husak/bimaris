@@ -2,10 +2,9 @@ import { PageLayout } from "@/layouts/page";
 
 import { CasesSection } from "@/sections/cases";
 import { AdvantagesSection } from "@/sections/advantages";
+import { ContactSection } from "@/sections/contact";
 
 import { Rating } from "@/ui";
-
-import { SectionHeader, Button } from "@/components";
 
 import * as Components from "./components";
 
@@ -23,7 +22,7 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
       className={clsx(props.className, "")}
       HeaderComponent={<Components.Header />}
     >
-      {/* Header */}
+      {/* Advantages */}
       <AdvantagesSection className="mt-5" />
 
       {/* Role */}
@@ -33,27 +32,13 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
       <Components.Updates className="pb-27.5" />
 
       {/* Cases */}
-      <CasesSection
-        className="mb-[63px]"
-        SectionHeader={
-          <SectionHeader
-            classNameDescription="max-w-[500px]"
-            title="Customer case studies"
-            description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
-            ActionComponent={
-              <Button href="/cases" animation="scale">
-                View all
-              </Button>
-            }
-          />
-        }
-      />
+      <CasesSection className="mb-[63px]" />
 
       <section className="container-full">
         <Rating />
       </section>
 
-      <Components.Contact className="mb-[50px]" />
+      <ContactSection className="mb-[50px]" />
     </PageLayout>
   );
 };

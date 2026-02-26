@@ -115,3 +115,9 @@
     @apply [&>svg]:mb-px [&>svg]:ml-[4px];
   }
 }
+
+.section-gradient {
+  @apply relative z-1;
+
+  @apply after:absolute after:top-0 after:left-0 after:-z-1 after:h-[480px] after:w-full after:border-t after:border-[#E7EBF2] after:bg-gradient-to-b after:from-[#f0f3f7] after:to-[#f5f7fa];
+}

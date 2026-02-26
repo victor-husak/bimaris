@@ -59,7 +59,7 @@ export const HomeDomainUpdatesItem: React.FC<HomeDomainUpdatesItemProps> = (
       {/* Arrow */}
       <div
         className={clsx(
-          "-mt-1.25 -mr-1.25 ml-2.75 flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full border border-[#E1E5EF] transition-all duration-300",
+          "-mt-1.25 -mr-1.25 ml-2.75 flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full border border-[#E1E5EF] transition-all duration-200",
           "group-hover:bg-secondary group-hover:border-secondary",
         )}
       >

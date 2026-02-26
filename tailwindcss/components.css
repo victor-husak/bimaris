@@ -43,7 +43,7 @@
       @apply text-white;
       
       &::before {
-        @apply bg-white/5 backdrop-blur-[30px];
+        @apply bg-white/15 backdrop-brightness-115 backdrop-blur-[30px];
       }
     }
 

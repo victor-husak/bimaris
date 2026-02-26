@@ -18,7 +18,7 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
     <div
       className={clsx(
         props.className,
-        "container-full bg-background-secondary flex items-center justify-between border border-[#F4F5FA] pt-2.75 pb-3 text-[12px]/[15px] tracking-[.024em] text-[#8D98A8]",
+        "container-full bg-background-secondary relative z-10 flex items-center justify-between border border-[#F4F5FA] pt-2.75 pb-3 text-[12px]/[15px] tracking-[.024em] text-[#8D98A8]",
       )}
     >
       <ul className="flex">

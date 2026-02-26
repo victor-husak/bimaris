@@ -12,11 +12,9 @@ export const RootLayout: React.FC<RootLayoutProps> = (
 ): React.JSX.Element => {
   return (
     <Components.Scroll className={clsx(props.className, "relative")}>
-      <header className="shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
-        <Components.Topline />
+      <Components.Topline />
 
-        <Components.Header />
-      </header>
+      <Components.Header />
 
       {props.children}
 

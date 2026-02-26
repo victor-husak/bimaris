@@ -26,6 +26,8 @@ export const PageLayoutHeaderSlides: React.FC<PageLayoutHeaderSlidesProps> = (
           <Components.Item data={item} key={item.id} />
         ))}
       </div>
+
+      {/* Rating */}
     </div>
   );
 };
