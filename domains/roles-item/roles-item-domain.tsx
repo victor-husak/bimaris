@@ -26,6 +26,9 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
       {/* Advantages */}
       <AdvantagesSection className="mt-5" />
 
+      {/* Points */}
+      <Components.Points />
+
       {/* Services */}
       <Components.Services className="section-gradient" />
 
