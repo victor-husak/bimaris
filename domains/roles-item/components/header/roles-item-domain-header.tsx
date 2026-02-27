@@ -18,6 +18,7 @@ export const RolesItemDomainHeader: React.FC<RolesItemDomainHeaderProps> = (
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
+      size="md"
       media={{
         url: "/images/genereted/role.webp",
         width: 3978,

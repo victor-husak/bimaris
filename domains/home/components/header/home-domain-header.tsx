@@ -18,6 +18,7 @@ export const HomeDomainHeader: React.FC<HomeDomainHeaderProps> = (
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
+      size="lg"
       media={{
         url: "/images/home/home-header.webp",
         width: 3978,

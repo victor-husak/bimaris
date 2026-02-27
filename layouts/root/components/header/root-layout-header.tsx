@@ -50,11 +50,13 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
       </div>
 
       <ul className="ml-auto flex">
-        <Components.Item title="Businesses" />
+        <Components.Item title="About us" />
 
-        <Components.Item title="Private clients" />
+        <Components.Item title="Case studies" />
 
-        <Components.Item title="Investors" />
+        <Components.Item title="Insights" href="/insights" />
+
+        <Components.Item title="Contact" />
       </ul>
 
       <Button className="ml-[27.5px]" size="small" animation="scale" href={"/"}>

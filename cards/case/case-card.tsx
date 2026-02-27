@@ -1,7 +1,8 @@
 import NextLink from "next/link";
 import NextImage from "next/image";
 
-import * as Icons from "./icons";
+import { CardAction } from "@/components/card";
+
 import * as Components from "./components";
 
 import { clsx } from "clsx";
@@ -54,7 +55,7 @@ export const CaseCard: React.FC<CaseCardProps> = (props): React.JSX.Element => {
         </p>
 
         {/* Action */}
-        <Components.Action className="mr-auto" />
+        <CardAction className="mr-auto" />
       </div>
     </div>
   );

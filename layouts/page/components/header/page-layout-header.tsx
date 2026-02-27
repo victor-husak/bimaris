@@ -22,10 +22,11 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
 
   return (
     <header
-      className={clsx(
-        props.className,
-        "container-large-full relative mt-5 h-155",
-      )}
+      className={clsx(props.className, "container-large-full relative mt-5", {
+        "h-155": props.size === "lg",
+        "h-147.5": props.size === "md",
+        "h-130": props.size === "sm",
+      })}
     >
       <div
         className={clsx(

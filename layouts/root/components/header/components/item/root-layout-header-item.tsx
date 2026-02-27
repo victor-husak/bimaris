@@ -31,7 +31,10 @@ export const RootLayoutHeaderItem: React.FC<RootLayoutHeaderItemProps> = (
     >
       <Box
         as={props.href ? NextLink : "span"}
-        className="flex items-center gap-1.5"
+        className={clsx("flex items-center gap-1.5", {
+          "px-[12.5px] py-1.5": !!props.href,
+        })}
+        {...(props.href ? { href: props.href } : {})}
       >
         <span className="text-[14px]/[18px] tracking-[.024em]">
           {props.title}
