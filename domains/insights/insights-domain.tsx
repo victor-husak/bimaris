@@ -15,7 +15,7 @@ export const InsightsDomain: React.FC<InsightsDomainProps> = (
   props,
 ): React.JSX.Element => {
   return (
-    <PageLayout className={clsx(props.className, "")}>
+    <PageLayout className={clsx(props.className, "")} HeaderComponent={<></>}>
       <Components.Header className="mb-5" />
 
       <MenuSection />
