@@ -1,17 +1,16 @@
 import { PageLayout } from "@/layouts/page";
 
 import { MenuSection } from "@/sections/menu";
-import { UpdatesSection } from "@/sections/updates";
 
 import * as Components from "./componets";
 
 import { clsx } from "clsx";
 
-export type InsightsDomainProps = {
+export type CaseStudiesDomainProps = {
   className?: string;
 };
 
-export const InsightsDomain: React.FC<InsightsDomainProps> = (
+export const CaseStudiesDomain: React.FC<CaseStudiesDomainProps> = (
   props,
 ): React.JSX.Element => {
   return (
@@ -20,9 +19,7 @@ export const InsightsDomain: React.FC<InsightsDomainProps> = (
 
       <MenuSection />
 
-      <UpdatesSection className="mb-25" />
-
-      <Components.List className="section-gradient" />
+      <Components.List />
     </PageLayout>
   );
 };

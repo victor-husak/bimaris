@@ -64,16 +64,16 @@ export const ContactSectionForm: React.FC<ContactSectionFormProps> = (
 
           <FormRow>
             <FormItem required label="Business email">
-              <FormInput placeholder="-" />
+              <FormInput placeholder="example@gmail.com" />
             </FormItem>
 
             <FormItem required label="Phone number">
-              <FormInput placeholder="-" />
+              <FormInput placeholder="+38" />
             </FormItem>
           </FormRow>
 
           <FormItem label="Message">
-            <FormTextarea placeholder="-" />
+            <FormTextarea placeholder="Please, add more details..." />
           </FormItem>
         </div>
 

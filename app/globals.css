@@ -3,6 +3,7 @@
 @import "../tailwindcss/utilities.css";
 @import "../tailwindcss/components.css";
 @import "../tailwindcss/form.css";
+@import "../tailwindcss/markdown.css";
 
 :root {
   --dashed-url: url(/images/underline.svg)

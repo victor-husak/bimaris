@@ -52,7 +52,7 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
       <ul className="ml-auto flex">
         <Components.Item title="About us" />
 
-        <Components.Item title="Case studies" />
+        <Components.Item title="Case studies" href="/case-studies" />
 
         <Components.Item title="Insights" href="/insights" />
 

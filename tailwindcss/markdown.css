@@ -1,0 +1,161 @@
+
+@layer components {
+  .markdown {
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 400;
+    letter-spacing: .018em;
+    color: #3B4552;
+
+    p {
+      padding: 0;
+    }
+
+    a {
+      @apply underline transition-all hover:opacity-60 text-secondary;
+    }
+
+    h2 {
+      font-family: var(--font-sagona);
+      font-size: 28px;
+      line-height: 35px;
+      letter-spacing: 0.024em;
+      font-weight: 300;
+      color: var(--color-secondary);
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+/* 
+      &:not(:first-child) {
+        margin-top: 50px;
+      } */
+    }
+
+    blockquote {
+      font-family: var(--font-sagona);
+      font-size: 28px;
+      line-height: 40px;
+      letter-spacing: 0.012em;
+      text-align: center;
+      font-weight: 300;
+    }
+
+    h4 {
+      font-size: 16px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    b {
+      font-weight: 500;
+      font-family: var(--font-ibm-plex-sans);
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    strong {
+      font-weight: 500;
+
+      text-decoration: underline;
+    }
+
+    img {
+      margin: 50px 0px;
+      border-radius: 6px;
+    }
+
+    table {
+      width: 100%;
+
+      font-size: 15px;
+      line-height: 180%;
+      border-collapse: collapse;
+      border: 1px solid rgb(var(--border-rgb));
+
+      th,
+      td {
+        border: 1px solid rgb(var(--border-rgb));
+        padding: 6px 4px;
+
+        text-align: center;
+      }
+
+      th {
+        font-weight: 500;
+      }
+    }
+
+    ul,
+    ol {
+      position: relative;
+      margin-top: 40px;
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+
+      li {
+        padding-left: 25px;
+        position: relative;
+
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+
+        &::after {
+          content: "-";
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    ol {
+      padding-left: 19px;
+
+      li {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    [data-type="chronology"] {
+      ul {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0px;
+          bottom: calc((25px) / 2);
+          left: 2px;
+          top: calc((25px) / 2 - 3.5px);
+          width: 1px;
+
+          background-image: url("/images/border.svg");
+          background-size: contain;
+        }
+      }
+    }
+
+    & > hr {
+      margin: 40px auto;
+      border: none;
+      border-top: 1px solid rgb(240, 243, 245);
+    }
+
+    & > div {
+      margin-top: 35.5px;
+    }
+  }
+}

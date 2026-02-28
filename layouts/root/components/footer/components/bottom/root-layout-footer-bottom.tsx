@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 
-import { LinkIcon } from "@/icons";
+import * as Icons from "./icons";
 
 // import "./root-layout-footer-bottom.css";
 
@@ -55,7 +55,7 @@ export const RootLayoutFooterBottom: React.FC<RootLayoutFooterBottomProps> = (
           )}
         >
           <span className="link-dashed">Smotrów Design</span>{" "}
-          <LinkIcon color="#fff" />
+          <Icons.Link color="#fff" />
         </NextLink>
       </div>
     </div>

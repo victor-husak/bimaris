@@ -4,17 +4,17 @@ import { clsx } from "clsx";
 
 import { ListLayout } from "@/layouts/list";
 
-export type InsightsDomainListProps = {
+export type CaseStudiesDomainListProps = {
   className?: string;
 };
 
-export const InsightsDomainList: React.FC<InsightsDomainListProps> = (
+export const CaseStudiesDomainList: React.FC<CaseStudiesDomainListProps> = (
   props,
 ): React.JSX.Element => {
   return (
     <ListLayout
       className={clsx(props.className, "")}
-      title="All publications"
+      title="All case studies"
       description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
     >
       {items.map((item) => (
