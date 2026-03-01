@@ -1,5 +1,7 @@
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
+import { AlertIcon, FileIcon } from "@/icons/header-links";
+
 import { clsx } from "clsx";
 
 export type InsightsDomainHeaderProps = {
@@ -30,21 +32,11 @@ const items = [
   {
     id: 1,
     label: "Legal alerts",
-    avatar: {
-      url: "/images/genereted/home/slide1.webp",
-      width: 120,
-      height: 120,
-      alt: "Legal alerts",
-    },
+    icon: <AlertIcon />,
   },
   {
     id: 2,
     label: "Case studies",
-    avatar: {
-      url: "/images/genereted/home/slide2.webp",
-      width: 120,
-      height: 120,
-      alt: "For businesses",
-    },
+    icon: <FileIcon />,
   },
 ];

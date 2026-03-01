@@ -6,7 +6,7 @@ import { clsx } from "clsx";
 
 export type PageLayoutHeaderSlidesItemProps = {
   className?: string;
-  data: { id: number; label: string; avatar?: Media };
+  data: { id: number; label: string; avatar?: Media; icon?: React.ReactNode };
 };
 
 export const PageLayoutHeaderSlidesItem: React.FC<
@@ -19,6 +19,12 @@ export const PageLayoutHeaderSlidesItem: React.FC<
         "group flex h-15 cursor-pointer items-center gap-[15px] rounded-lg bg-white/10 p-2.5 pr-[15px] backdrop-blur-[30px] backdrop-brightness-110",
       )}
     >
+      {props.data.icon && (
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-[30px] backdrop-brightness-110">
+          {props.data.icon}
+        </div>
+      )}
+
       {/* Avatar */}
       {props.data.avatar && (
         <div className="h-10 w-10 overflow-hidden rounded-full">

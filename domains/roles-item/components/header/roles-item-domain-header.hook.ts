@@ -97,7 +97,7 @@ export const useRolesItemDomainHeader = (props: RolesItemDomainHeaderProps) => {
 const items = [
   {
     id: 1,
-    label: "For individuals",
+    label: "Browse services",
     avatar: {
       url: "/images/genereted/home/slide1.webp",
       width: 120,
@@ -107,22 +107,12 @@ const items = [
   },
   {
     id: 2,
-    label: "For businesses",
+    label: "Schedule a meeting",
     avatar: {
       url: "/images/genereted/home/slide2.webp",
       width: 120,
       height: 120,
       alt: "For businesses",
-    },
-  },
-  {
-    id: 3,
-    label: "For investors",
-    avatar: {
-      url: "/images/genereted/home/slide3.webp",
-      width: 120,
-      height: 120,
-      alt: "For investors",
     },
   },
 ];
