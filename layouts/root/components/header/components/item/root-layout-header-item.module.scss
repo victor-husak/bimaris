@@ -1,0 +1,33 @@
+.container {
+  transition: opacity 0.4s ease-in-out;
+
+  &[data-active="true"],
+  &:hover {
+    .text {
+      &:nth-child(1) {
+        transform: translateY(-110%) scale(0.95);
+        opacity: 0;
+      }
+
+      &:nth-child(2) {
+        transform: translateY(0%) scale(1);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.text {
+  transform: translateY(0px) scale(1);
+  transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1), 
+              opacity 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change: transform, opacity;
+
+  &:nth-child(2) {
+    display: flex;
+    position: absolute;
+    transform: translateY(110%) scale(0.95);
+    opacity: 0;
+  }
+}

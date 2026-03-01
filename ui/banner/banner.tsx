@@ -47,7 +47,7 @@ export const Banner: React.FC<BannerProps> = (props): React.JSX.Element => {
         <p
           className={clsx(
             props.classNameDescription,
-            "mb-[24px] text-[14px]/[19px] tracking-[-.008em]",
+            "mb-[24px] text-[14px]/[20px] tracking-[.028em]",
           )}
         >
           {props.description}

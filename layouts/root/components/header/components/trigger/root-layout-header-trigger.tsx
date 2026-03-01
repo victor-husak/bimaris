@@ -13,7 +13,8 @@ export const RootLayoutHeaderTrigger: React.FC<RootLayoutHeaderTriggerProps> = (
     <div
       className={clsx(
         props.className,
-        "bg-[#507FEB] rounded-b-sm px-3.75 pt-1.25 pb-1.75 flex gap-1.25 items-center cursor-pointer",
+        "flex cursor-pointer items-center gap-1.25 rounded-b-sm bg-[#507FEB] px-3.75 pt-1.25 pb-1.75 transition-all duration-300",
+        "hover:translate-y-0.5 hover:bg-[#4775DD]",
       )}
     >
       <span className="text-[12px]/[15px] tracking-[.024em] text-white">

@@ -4,6 +4,8 @@ import { Box } from "@/components";
 
 import * as Icons from "./icons";
 
+import clasess from "./root-layout-header-item.module.scss";
+
 import { clsx } from "clsx";
 
 export type RootLayoutHeaderItemProps = {
@@ -22,8 +24,10 @@ export const RootLayoutHeaderItem: React.FC<RootLayoutHeaderItemProps> = (
     <li
       className={clsx(
         props.className,
-        "flex cursor-pointer items-baseline justify-between gap-1.5 transition-opacity",
-        "hover:opacity-60",
+        clasess.container,
+        "relative flex cursor-pointer items-baseline justify-between gap-1.5",
+        "hover:after:bg-[#F0F1F4]",
+        "after:absolute after:top-0 after:right-[2.5px] after:bottom-0 after:left-[2.5px] after:-z-1 after:rounded-sm after:transition-all",
         { "text-white": props.variant === "invert" },
         { "px-[12.5px] py-1.5": !props.href },
       )}
@@ -31,55 +35,25 @@ export const RootLayoutHeaderItem: React.FC<RootLayoutHeaderItemProps> = (
     >
       <Box
         as={props.href ? NextLink : "span"}
-        className={clsx("flex items-center gap-1.5", {
+        className={clsx("relative flex items-center gap-1.5 overflow-hidden", {
           "px-[12.5px] py-1.5": !!props.href,
         })}
         {...(props.href ? { href: props.href } : {})}
       >
-        <span className="text-[14px]/[18px] tracking-[.024em]">
+        <span
+          className={clsx(clasess.text, "text-[14px]/[18px] tracking-[.024em]")}
+        >
+          {props.title}
+        </span>
+
+        <span
+          className={clsx(clasess.text, "text-[14px]/[18px] tracking-[.024em]")}
+        >
           {props.title}
         </span>
 
         {props.withArrow && <Icons.Arrow className="mt-0.5" />}
       </Box>
-      {/* {!props.href ? (
-        <>
-          <Content title={props.title} />
-
-          {props.withArrow && (
-            <Icons.Arrow
-              className={clsx({
-                "[&>path]:fill-white": props.variant === "invert",
-              })}
-            />
-          )}
-        </>
-      ) : (
-        <NextLink className="px-[12.5px] py-1.5" href={props.href}>
-          <Content title={props.title} />
-        </NextLink>
-      )} */}
-
-      {/* {props.href ? (
-        <NextLink
-          className="text-[12px]/[14px] tracking-[.038em] uppercase"
-          href={props.href}
-        >
-          {props.title}
-        </NextLink>
-      ) : (
-        <span className="text-[12px]/[14px] tracking-[.038em] uppercase">
-          {props.title}
-        </span>
-      )}
-
-      {!props.href && (
-        <Icons.Arrow
-          className={clsx({
-            "[&>path]:fill-white": props.variant === "invert",
-          })}
-        />
-      )} */}
     </li>
   );
 };

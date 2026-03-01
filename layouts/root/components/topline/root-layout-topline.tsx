@@ -27,8 +27,8 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
         </Components.Item>
 
         <Components.Item>
-          <NextLink href="mailto:office@smotrow.com">
-            office@smotrow.com
+          <NextLink href="mailto:office@bimaris.legal">
+            office@bimaris.legal
           </NextLink>
         </Components.Item>
       </ul>
@@ -64,13 +64,13 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
         </Components.Item>
 
         <Components.Item>
-          <NextLink href="mailto:office@smotrow.com">
+          <NextLink href="mailto:office@bimaris.legal">
             Schedule a meeting
           </NextLink>
         </Components.Item>
 
         <Components.Item>
-          <NextLink href="mailto:office@smotrow.com">Sign in</NextLink>
+          <NextLink href="/Offices">Offices</NextLink>
         </Components.Item>
 
         <Components.Item className="cursor-pointer">

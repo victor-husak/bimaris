@@ -59,7 +59,12 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
         <Components.Item title="Contact" />
       </ul>
 
-      <Button className="ml-[27.5px]" size="small" animation="scale" href={"/"}>
+      <Button
+        className="ml-[27.5px]"
+        size="small"
+        animation="background"
+        href={"/"}
+      >
         Log in
       </Button>
 

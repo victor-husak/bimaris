@@ -75,6 +75,17 @@
         transform: scaleX(1.02) scaleY(1.02) perspective(1px);
       }
     }
+
+    &:where([data-animation="background"]) {
+      &:where([data-variant="base"]) {
+        &:hover::before {
+          @apply bg-[#4775DD];
+        }
+      }
+    }
+    
+
+    /* #4775DD */
   }
 
   .button-icon {
