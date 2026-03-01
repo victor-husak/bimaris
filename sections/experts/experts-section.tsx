@@ -1,3 +1,5 @@
+import { Support } from "@/ui";
+
 import * as Components from "./components";
 
 import { clsx } from "clsx";
@@ -11,9 +13,11 @@ export const ExpertsSection: React.FC<ExpertsSectionProps> = (
 ): React.JSX.Element => {
   return (
     <section className={clsx(props.className, "")}>
-      <Components.Header />
+      <Components.Header className="mb-15" />
 
-      {/* className="mb-15" */}
+      <footer className="container-full">
+        <Support />
+      </footer>
     </section>
   );
 };
