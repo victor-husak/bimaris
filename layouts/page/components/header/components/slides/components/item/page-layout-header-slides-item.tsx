@@ -6,7 +6,13 @@ import { clsx } from "clsx";
 
 export type PageLayoutHeaderSlidesItemProps = {
   className?: string;
-  data: { id: number; label: string; avatar?: Media; icon?: React.ReactNode };
+  data: {
+    id: number;
+    title: string;
+    label?: string;
+    avatar?: Media;
+    icon?: React.ReactNode;
+  };
 };
 
 export const PageLayoutHeaderSlidesItem: React.FC<
@@ -33,22 +39,32 @@ export const PageLayoutHeaderSlidesItem: React.FC<
             src={props.data.avatar.url}
             width={props.data.avatar.width}
             height={props.data.avatar.height}
-            alt={props.data.avatar.alt || props.data.label}
+            alt={props.data.avatar.alt || props.data.title}
             objectFit="cover"
             objectPosition="center"
           />
         </div>
       )}
 
-      {/* Label */}
-      <span className="flex-1 text-[13px]/[17px] tracking-[.024em] text-[#FFFFFF]">
-        {props.data.label}
-      </span>
+      {/* Title */}
+      {props.data.label ? (
+        <div className="flex flex-col text-[13px]/[17px] tracking-[.012em] text-white">
+          <span className="text-white/60">{props.data.label}</span>
+
+          <span className="link-dashed [--dashed-url:url(/images/underline-white.svg)]">
+            {props.data.title}
+          </span>
+        </div>
+      ) : (
+        <span className="text-[13px]/[17px] tracking-[.012em] text-white">
+          {props.data.title}
+        </span>
+      )}
 
       {/* Arrow */}
       <button
         className={clsx(
-          "flex h-6 w-6 items-center justify-center rounded-full border border-white/15 transition-all duration-200",
+          "ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-white/15 transition-all duration-200",
           "group-hover:bg-white",
         )}
       >

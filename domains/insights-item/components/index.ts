@@ -1,3 +1,2 @@
 export { ServicesItemDomainHeader as Header } from "./header";
 export { ServicesItemDomainContent as Content } from "./content";
-export { ServiceItemDomain as Banner } from "./banner";

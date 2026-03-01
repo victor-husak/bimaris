@@ -40,12 +40,13 @@ export const PageLayoutRoute: React.FC<PageLayoutRouteProps> = (
           ) : (
             <span
               className={clsx("line-clamp-1", {
-                "underline-hover cursor-pointer": !!props.onClick && !!item.key,
+                "underline-hover cursor-pointer":
+                  !!props.onClick && !!item.value,
               })}
-              data-action={!!props.onClick && !!item.key}
+              data-action={!!props.onClick && !!item.value}
               onClick={
-                props.onClick && item.key
-                  ? () => props.onClick!(item.key)
+                props.onClick && item.value
+                  ? () => props.onClick!(item.value)
                   : undefined
               }
             >

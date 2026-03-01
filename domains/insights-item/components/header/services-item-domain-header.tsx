@@ -2,7 +2,7 @@
 
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
-import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
+import { LangIcon, MeetingIcon } from "@/icons/header-links";
 
 import { clsx } from "clsx";
 
@@ -18,7 +18,7 @@ export const ServicesItemDomainHeader: React.FC<
       className={clsx(props.className, "")}
       size="md"
       media={{
-        url: "/images/genereted/service.webp",
+        url: "/images/genereted/insights-item.webp",
         width: 3978,
         height: 1860,
         alt: "Service header background",
@@ -33,8 +33,9 @@ export const ServicesItemDomainHeader: React.FC<
 const slides = [
   {
     id: 1,
-    title: "Overview",
-    icon: <ServiceIcon />,
+    label: "Translate to",
+    title: "Select language",
+    icon: <LangIcon />,
   },
   {
     id: 2,

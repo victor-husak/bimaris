@@ -31,13 +31,13 @@ export const useRolesItemDomainHeader = (props: RolesItemDomainHeaderProps) => {
     return slides[activeIndex];
   }, [activeIndex, slides]);
 
-  const slidesControl = useMemo(() => {
-    return slides.map((item, index) => ({
-      // url: `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.image.url}`,
-      url: item.avatar.url,
-      id: index,
-    }));
-  }, [slides]);
+  // const slidesControl = useMemo(() => {
+  //   return slides.map((item, index) => ({
+  //     // url: `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.image.url}`,
+  //     url: item.avatar.url,
+  //     id: index,
+  //   }));
+  // }, [slides]);
 
   useLayoutEffect(() => {
     const layer = document.getElementById("layer-back");
@@ -88,7 +88,7 @@ export const useRolesItemDomainHeader = (props: RolesItemDomainHeaderProps) => {
   return {
     loaded,
     slides,
-    slidesControl,
+    // slidesControl,
     activeSlide,
     activeIndex,
     onChangeActiveIndex,

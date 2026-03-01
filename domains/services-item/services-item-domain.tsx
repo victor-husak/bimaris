@@ -4,6 +4,7 @@ import { AdvantagesSection } from "@/sections/advantages";
 import { ContactSection } from "@/sections/contact";
 import { CasesSection } from "@/sections/cases";
 import { FaqsSection } from "@/sections/faqs";
+import { ExpertsSection } from "@/sections/experts";
 
 import { Rating } from "@/ui/rating";
 
@@ -32,7 +33,14 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       <AdvantagesSection className="mt-5" />
 
       {/* Content */}
-      <Components.Content className="mb-[67px]" />
+      <Components.Content />
+
+      <div className="container-full section-gradient mb-[100px]">
+        <Components.Banner />
+      </div>
+
+      {/* Experts */}
+      <ExpertsSection className="z-1 mb-[110px]" />
 
       {/* Faqs */}
       <FaqsSection className="z-1 mb-[110px]" />

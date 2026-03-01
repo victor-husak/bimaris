@@ -37,12 +37,12 @@ export const RolesItemDomainHeader: React.FC<RolesItemDomainHeaderProps> = (
 const items = [
   {
     id: 1,
-    label: "Browse services",
+    title: "Browse services",
     icon: <ServiceIcon />,
   },
   {
     id: 2,
-    label: "Schedule a meeting",
+    title: "Schedule a meeting",
     icon: <MeetingIcon />,
   },
 ];

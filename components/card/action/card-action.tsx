@@ -1,13 +1,24 @@
+"use client";
+
 import { ArrowRightIcon } from "@/icons";
+
+import { useCardAction } from "./card-action.hook";
+
 import clsx from "clsx";
 
 export type CardActionProps = {
   className?: string;
+  disabled?: boolean;
+  href?: string;
+  target?: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
 export const CardAction: React.FC<CardActionProps> = (
   props,
 ): React.JSX.Element => {
+  const { onClick } = useCardAction(props);
+
   return (
     <button
       className={clsx(
@@ -15,6 +26,8 @@ export const CardAction: React.FC<CardActionProps> = (
         "relative mt-[25px] flex h-[36px] w-[36px] cursor-pointer items-center overflow-hidden rounded-full border border-[#ECEFF4] transition-all duration-200",
         "group-hover:w-[93px] group-hover:border-[#507FEB] group-hover:bg-[#507FEB]",
       )}
+      onClick={onClick}
+      disabled={props.disabled}
     >
       <ArrowRightIcon
         color="#333333"

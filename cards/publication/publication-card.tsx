@@ -57,7 +57,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         {/* Title */}
         <NextLink
           className="underline-hover mr-auto mb-[15px] text-[16px]/[22px] tracking-[.024em] text-[#2D3A52]"
-          href="/cases/1"
+          href="/insights/1"
         >
           Ukraine updates documentation rules for temporary residence permits
         </NextLink>
@@ -69,7 +69,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         </p>
 
         {/* Action */}
-        <CardAction className="mr-auto" />
+        <CardAction className="mr-auto" href="/insights/1" />
       </div>
     </div>
   );

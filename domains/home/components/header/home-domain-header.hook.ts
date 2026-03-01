@@ -29,13 +29,13 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
     return slides[activeIndex];
   }, [activeIndex, slides]);
 
-  const slidesControl = useMemo(() => {
-    return slides.map((item, index) => ({
-      // url: `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.image.url}`,
-      url: item.avatar.url,
-      id: index,
-    }));
-  }, [slides]);
+  // const slidesControl = useMemo(() => {
+  //   return slides.map((item, index) => ({
+  //     // url: `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.image.url}`,
+  //     url: item.avatar.url,
+  //     id: index,
+  //   }));
+  // }, [slides]);
 
   useLayoutEffect(() => {
     const layer = document.getElementById("layer-back");
@@ -86,7 +86,7 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
   return {
     loaded,
     slides,
-    slidesControl,
+    // slidesControl,
     activeSlide,
     activeIndex,
     onChangeActiveIndex,
@@ -97,7 +97,7 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
 const items = [
   {
     id: 1,
-    label: "For individuals",
+    title: "For individuals",
     avatar: {
       url: "/images/genereted/home/slide1.webp",
       width: 120,
@@ -107,7 +107,7 @@ const items = [
   },
   {
     id: 2,
-    label: "For businesses",
+    title: "For businesses",
     avatar: {
       url: "/images/genereted/home/slide2.webp",
       width: 120,
@@ -117,7 +117,7 @@ const items = [
   },
   {
     id: 3,
-    label: "For investors",
+    title: "For investors",
     avatar: {
       url: "/images/genereted/home/slide3.webp",
       width: 120,
