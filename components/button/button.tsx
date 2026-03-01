@@ -16,8 +16,8 @@ export type ButtonProps = {
   href?: LinkProps["href"];
   target?: string;
   size?: "small" | "base" | "medium" | "large";
-  variant?: "base" | "second" | "white" | "blur" | "background";
-  animation?: "base" | "none" | "scale" | "darken" | "opacity";
+  variant?: "base" | "second" | "white" | "blur";
+  animation?: "base" | "none" | "scale" | "darken" | "opacity" | "background";
   children?: React.ReactNode;
   IconComponent?: React.ReactNode;
   RightIconComponent?: React.ReactNode;
