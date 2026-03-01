@@ -1,5 +1,7 @@
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
+import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
+
 import { clsx } from "clsx";
 
 export type CaseStudiesDomainHeaderProps = {
@@ -29,22 +31,12 @@ export const CaseStudiesDomainHeader: React.FC<CaseStudiesDomainHeaderProps> = (
 const items = [
   {
     id: 1,
-    label: "Legal alerts",
-    avatar: {
-      url: "/images/genereted/home/slide1.webp",
-      width: 120,
-      height: 120,
-      alt: "Legal alerts",
-    },
+    label: "Browse services",
+    icon: <ServiceIcon />,
   },
   {
     id: 2,
-    label: "Case studies",
-    avatar: {
-      url: "/images/genereted/home/slide2.webp",
-      width: 120,
-      height: 120,
-      alt: "For businesses",
-    },
+    label: "Schedule a meeting",
+    icon: <MeetingIcon />,
   },
 ];

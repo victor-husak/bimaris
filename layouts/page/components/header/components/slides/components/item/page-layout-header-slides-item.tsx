@@ -20,7 +20,7 @@ export const PageLayoutHeaderSlidesItem: React.FC<
       )}
     >
       {props.data.icon && (
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-[30px] backdrop-brightness-110">
+        <div className="flex h-7.5 w-7.5 items-center justify-center rounded-full bg-white/10 backdrop-blur-[30px] backdrop-brightness-110">
           {props.data.icon}
         </div>
       )}

@@ -2,6 +2,8 @@ import { useLayoutEffect, useMemo, useState } from "react";
 
 import { useCarousel } from "@/hooks";
 
+import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
+
 // import type { Image } from "@/types/common";
 
 import type { RolesItemDomainHeaderProps } from "./roles-item-domain-header";
@@ -98,21 +100,11 @@ const items = [
   {
     id: 1,
     label: "Browse services",
-    avatar: {
-      url: "/images/genereted/home/slide1.webp",
-      width: 120,
-      height: 120,
-      alt: "For individuals",
-    },
+    icon: <ServiceIcon />,
   },
   {
     id: 2,
     label: "Schedule a meeting",
-    avatar: {
-      url: "/images/genereted/home/slide2.webp",
-      width: 120,
-      height: 120,
-      alt: "For businesses",
-    },
+    icon: <MeetingIcon />,
   },
 ];
