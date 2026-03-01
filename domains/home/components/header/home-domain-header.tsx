@@ -26,7 +26,11 @@ export const HomeDomainHeader: React.FC<HomeDomainHeaderProps> = (
         alt: "Home header background",
       }}
       RightComponent={
-        <PageLayoutHeaderSlides title="Choose your role:" data={slides} />
+        <PageLayoutHeaderSlides
+          withRating={false}
+          title="Choose your role:"
+          data={slides}
+        />
       }
     />
   );

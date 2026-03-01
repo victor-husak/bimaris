@@ -22,7 +22,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
 
   return (
     <header
-      className={clsx(props.className, "container-large-full relative mt-5", {
+      className={clsx(props.className, "container-large-full relative", {
         "h-155": props.size === "lg",
         "h-147.5": props.size === "md",
         "h-130": props.size === "sm",
@@ -89,7 +89,12 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
               Connect with our team
             </Button>
 
-            <Button href="/" size="medium" variant="blur" animation="opacity">
+            <Button
+              href="/services/1"
+              size="medium"
+              variant="blur"
+              animation="opacity"
+            >
               Open services
             </Button>
           </div>

@@ -6,6 +6,7 @@ import type { PageLayoutHeaderSlidesItemProps } from "./components/item";
 
 export type PageLayoutHeaderSlidesProps = {
   className?: string;
+  withRating?: boolean;
   title: string;
   data: Array<PageLayoutHeaderSlidesItemProps["data"]>;
 };
@@ -28,6 +29,7 @@ export const PageLayoutHeaderSlides: React.FC<PageLayoutHeaderSlidesProps> = (
       </div>
 
       {/* Rating */}
+      {props.withRating !== false && <Components.Raiting className="ml-auto" />}
     </div>
   );
 };

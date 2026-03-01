@@ -21,6 +21,11 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
   return (
     <PageLayout
       className={clsx(props.className, "")}
+      routes={[
+        { label: "Home", value: "/" },
+        { label: "Private clients", value: "/private-clients" },
+        { label: "Citizenship of Ukraine", value: "/services/1" },
+      ]}
       HeaderComponent={<Components.Header />}
     >
       {/* Advantages */}

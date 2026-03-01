@@ -15,9 +15,14 @@ export const InsightsDomain: React.FC<InsightsDomainProps> = (
   props,
 ): React.JSX.Element => {
   return (
-    <PageLayout className={clsx(props.className, "")} HeaderComponent={<></>}>
-      <Components.Header className="mb-5" />
-
+    <PageLayout
+      className={clsx(props.className, "")}
+      routes={[
+        { label: "Home", value: "/" },
+        { label: "Insights", value: "/insights" },
+      ]}
+      HeaderComponent={<Components.Header className="mb-5" />}
+    >
       <MenuSection />
 
       <UpdatesSection className="mb-25" />

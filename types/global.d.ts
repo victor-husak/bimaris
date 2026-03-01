@@ -10,3 +10,9 @@ type Option = {
   value: string;
   data?: any;
 };
+
+type Route = {
+  label: string;
+  value: string;
+  // key: string;
+};

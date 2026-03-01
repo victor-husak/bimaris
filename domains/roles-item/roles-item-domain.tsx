@@ -21,6 +21,10 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
   return (
     <PageLayout
       className={clsx(props.className, "")}
+      routes={[
+        { label: "Home", value: "/" },
+        { label: "Private clients", value: "/private-clients" },
+      ]}
       HeaderComponent={<Components.Header />}
     >
       {/* Advantages */}
