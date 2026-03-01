@@ -47,8 +47,8 @@
     }
 
     @media (width >= calc(96rem + 43px * 2) /* 1536px */) {
-      --local-container-offset: calc((100vw - 84.375rem) / 2);
-      --local-container-large-offset: calc((100vw - 84.375rem - 40px) / 2);
+      --local-container-offset: calc((100vw - 1460px) / 2);
+      --local-container-large-offset: calc((100vw - 1460px - 40px) / 2);
     }
 
     --local-container: calc(100vw - var(--local-container-offset) * 2);
