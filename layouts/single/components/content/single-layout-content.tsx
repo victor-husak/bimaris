@@ -1,8 +1,6 @@
 "use client";
 
-import Markdown from "markdown-to-jsx";
-
-import * as Components from "./components";
+import { Markdown, Alert } from "@/components";
 
 import { clsx } from "clsx";
 
@@ -17,17 +15,12 @@ export const SingleLayoutContent: React.FC<SingleLayoutContentProps> = (
   return (
     <Markdown
       className={clsx(props.className, "markdown flex-1")}
-      options={{
-        forceBlock: true,
-        forceWrapper: true,
-        overrides: {
-          a: {
-            component: Components.Link,
-          },
+      content={props.content}
+      overrides={{
+        Alert: {
+          component: Alert,
         },
       }}
-    >
-      {props.content}
-    </Markdown>
+    />
   );
 };

@@ -7,6 +7,10 @@
     letter-spacing: .018em;
     color: #3B4552;
 
+    & > *:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
     p {
       padding: 0;
     }
@@ -23,13 +27,9 @@
       font-weight: 300;
       color: var(--color-secondary);
 
-      &:not(:last-child) {
-        margin-bottom: 40px;
-      }
-/* 
       &:not(:first-child) {
         margin-top: 50px;
-      } */
+      }
     }
 
     blockquote {
@@ -75,16 +75,32 @@
       width: 100%;
 
       font-size: 15px;
-      line-height: 180%;
+      line-height: 19px;
       border-collapse: collapse;
-      border: 1px solid rgb(var(--border-rgb));
+      outline: 1px solid #E7EAF2;
+
+      border-radius: 8px;
+      overflow: hidden;
+
+      thead {
+        background-color: #ECEFF4;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+
+        border-bottom: 1px solid #E7EAF2
+      }
+
+      tr {
+        &:not(:last-child) {
+          border-bottom: 1px solid #E7EAF2;
+        }
+      }
 
       th,
       td {
         border: 1px solid rgb(var(--border-rgb));
-        padding: 6px 4px;
-
-        text-align: center;
+        padding: 25px 20px;
+        text-align: left;
       }
 
       th {
@@ -98,24 +114,28 @@
       margin-top: 40px;
 
       &:not(:last-child) {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
       }
 
       li {
-        padding-left: 25px;
+        margin: -2.5px 0px;
+
+        padding-left: 40px;
         position: relative;
 
+        line-height: 26px;
+
         &:not(:last-child) {
-          margin-bottom: 40px;
+          margin-bottom: 30px;
         }
 
-        &::after {
+        /* &::after {
           content: "-";
           position: absolute;
           left: 0px;
           top: 0px;
           vertical-align: middle;
-        }
+        } */
       }
     }
 
