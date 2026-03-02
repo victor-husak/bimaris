@@ -17,7 +17,14 @@ export type ButtonProps = {
   target?: string;
   size?: "small" | "base" | "medium" | "large";
   variant?: "base" | "second" | "white" | "blur";
-  animation?: "base" | "none" | "scale" | "darken" | "opacity" | "background";
+  animation?:
+    | "base"
+    | "none"
+    | "scale"
+    | "scale-small"
+    | "darken"
+    | "opacity"
+    | "background";
   children?: React.ReactNode;
   IconComponent?: React.ReactNode;
   RightIconComponent?: React.ReactNode;

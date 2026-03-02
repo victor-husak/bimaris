@@ -72,7 +72,7 @@ export const ContactSectionForm: React.FC<ContactSectionFormProps> = (
             </FormItem>
           </FormRow>
 
-          <FormItem label="Message">
+          <FormItem required label="Message">
             <FormTextarea placeholder="Please, add more details..." />
           </FormItem>
         </div>
@@ -100,9 +100,9 @@ export const ContactSectionForm: React.FC<ContactSectionFormProps> = (
         </div>
 
         <Button
-          className="font-sf-pro mt-auto tracking-[.008em]"
+          className={clsx("font-sf-pro mt-auto tracking-[.008em]")}
           size="large"
-          animation="darken"
+          animation="scale-small"
         >
           Send
         </Button>
@@ -110,7 +110,7 @@ export const ContactSectionForm: React.FC<ContactSectionFormProps> = (
 
       {/* Footer */}
       <footer className="bg-[#FCFCFC] px-[35px] py-5 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)]">
-        <p className="text-[12px]/[18px] tracking-[.028em] text-[#838891]">
+        <p className="text-[13px]/[18px] tracking-[.028em] text-[#838891]">
           By clicking send, you confirm that you’ve read the{" "}
           <NextLink
             className={clsx(

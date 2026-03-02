@@ -23,7 +23,9 @@ export const CaseCardTag: React.FC<CaseCardTagProps> = (
     >
       {props.type === "to" && <ArrowRightIcon color="#2D3A52" />}
 
-      <span className="font-sf-pro text-[12px]/[14px]">{props.title}</span>
+      <span className="font-sf-pro text-[12px]/[14px] tracking-[0.34px]">
+        {props.title}
+      </span>
     </div>
   );
 };

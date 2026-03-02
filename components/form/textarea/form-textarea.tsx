@@ -15,7 +15,7 @@ export const FormTextarea: React.FC<FormTextareaProps> = ({
       {...props}
       className={clsx(
         className,
-        "form-inner h-[100px] resize-none py-[5px] leading-5",
+        "form-inner h-[100px] resize-none py-[12px] leading-5",
       )}
       cols={5}
       data-invalid={!!invalid}

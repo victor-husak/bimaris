@@ -26,10 +26,10 @@ export const ContactSection: React.FC<ContactSectionProps> = (
     >
       <div className="flex gap-5">
         {/* Info */}
-        <div className="max-w-[560px] rounded-2xl bg-[#D9E4F4]">
+        <div className="max-w-[560px] overflow-hidden rounded-2xl bg-[#D9E4F4]">
           {/* Banner */}
           <Banner
-            className="rounded-b-lg bg-[#E0EBFA] text-[#507FEB] shadow-[0_0_1px_2px_black/3]"
+            className="rounded-b-lg bg-[#E0EBFA] pt-[50px] pb-[50px] text-[#507FEB] shadow-[0_0_1px_2px_black/3]"
             classNameDescription="max-w-[400px] text-[#818796]"
             title="Start the conversation"
             description="Share a few details about your situation, and our team will review your request and get back to you with clear next steps."

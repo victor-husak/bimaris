@@ -16,7 +16,7 @@ export const UpdatesSectionItem: React.FC<UpdatesSectionItemProps> = (
       className={clsx(
         props.className,
         "group flex cursor-pointer rounded-[11px] border border-[#E7EAF2] p-6.25 transition-all",
-        "hover:bg-[#F0F3F7]",
+        "hover:bg-[#eef1f4]",
       )}
     >
       {/* Icon */}
@@ -60,7 +60,7 @@ export const UpdatesSectionItem: React.FC<UpdatesSectionItemProps> = (
       <div
         className={clsx(
           "-mt-1.25 -mr-1.25 ml-2.75 flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full border border-[#E1E5EF] transition-all duration-200",
-          "group-hover:bg-secondary group-hover:border-secondary",
+          "group-hover:bg-secondary group-hover:border-secondary group-hover:scale-110",
         )}
       >
         <Icons.Arrow

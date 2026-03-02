@@ -66,13 +66,23 @@
       @apply hover:brightness-95;
 
       &::before {
-        transform: scaleX(1) scaleY(1) perspective(1px);
-        /* transition: transform 0.2s cubic-bezier(0.345, 0.115, 0.135, 1.42),
-          background 0.2s ease-out; */
+        transform: scale(1) perspective(1px);
       }
 
       &:hover::before {
-        transform: scaleX(1.02) scaleY(1.02) perspective(1px);
+        transform: scale(1.03) perspective(1px);
+      }
+    }
+
+    &:where([data-animation="scale-small"]) {
+      @apply hover:bg-[#6591F7];
+
+      &::before {
+        transform: scale(1) perspective(1px);
+      }
+
+      &:hover::before {
+        transform: scale(1.01) perspective(1px);
       }
     }
 
@@ -83,9 +93,6 @@
         }
       }
     }
-    
-
-    /* #4775DD */
   }
 
   .button-icon {

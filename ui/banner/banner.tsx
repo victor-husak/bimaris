@@ -15,7 +15,7 @@ export const Banner: React.FC<BannerProps> = (props): React.JSX.Element => {
   return (
     <div
       className={clsx(
-        "group relative flex h-[380px] items-center justify-between gap-5 rounded-2xl pt-[30px] pr-[30px] pb-[30px] pl-[40px]",
+        "group relative flex min-h-[380px] items-center justify-between gap-5 rounded-2xl pt-[30px] pr-[30px] pb-[30px] pl-[40px]",
         props.className,
       )}
     >

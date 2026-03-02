@@ -1,11 +1,11 @@
 @layer components {  
   .form-inner {
-    @apply text-[#333333] text-[13px]/[17px] outline-0 h-9.5 px-[14px] bg-[#F8F9FA] rounded-md transition-all;
+    @apply text-[#333333] text-[14px]/[17px] tracking-[.024em] outline-0 h-9.5 px-[14px] bg-[#F8F9FA] rounded-md transition-all;
     @apply placeholder:text-[#8F9195];
-    @apply hover:border-[#33383C] focus:border-[#33383C];
+    @apply hover:border-[#33383C] focus:border-[#33383C] hover:bg-[#EDEFF2];
 
     &:where([data-invalid="true"]) {
-        @apply border-form-invalid-border
+      @apply border-form-invalid-border
     }
   }
 }

@@ -39,7 +39,7 @@ export const SolutionsSectionItem: React.FC<SolutionsSectionItemProps> = (
           {/* Title */}
           <span
             className={clsx(
-              "underline-hover text-[15px]/[20px] font-medium tracking-[0.012em] transition-opacity",
+              "underline-hover text-[14px]/[18px] tracking-[0.024em] text-[#2D3A52] transition-opacity",
               "group-hover:decoration-current-color group-hover:underline",
             )}
           >
@@ -51,7 +51,7 @@ export const SolutionsSectionItem: React.FC<SolutionsSectionItemProps> = (
         </div>
 
         {/* Description */}
-        <p className="max-w-[340px] text-[14px]/[20px] tracking-[0.012em] text-[#828891]">
+        <p className="max-w-[340px] text-[13px]/[18px] tracking-[0.028em] text-[#939AAA]">
           {props.data.description}
         </p>
       </NextLink>

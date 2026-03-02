@@ -3,6 +3,7 @@ import { PageLayout } from "@/layouts/page";
 import { CasesSection } from "@/sections/cases";
 import { AdvantagesSection } from "@/sections/advantages";
 import { ContactSection } from "@/sections/contact";
+import { UpdatesSection } from "@/sections/updates";
 
 import { Rating } from "@/ui";
 
@@ -29,10 +30,10 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
       <Components.Role />
 
       {/* Updates */}
-      <Components.Updates className="pb-27.5" />
+      <UpdatesSection className="pb-27.5" />
 
       {/* Cases */}
-      <CasesSection className="mb-[63px]" />
+      <CasesSection className="section-gradient mb-[63px]" />
 
       <section className="container-full">
         <Rating />
