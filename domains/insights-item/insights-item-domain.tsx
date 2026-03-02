@@ -1,11 +1,8 @@
 import { PageLayout } from "@/layouts/page";
 
-import { AdvantagesSection } from "@/sections/advantages";
-import { ContactSection } from "@/sections/contact";
-import { CasesSection } from "@/sections/cases";
-import { FaqsSection } from "@/sections/faqs";
+import { Support } from "@/ui/support";
 
-import { Rating } from "@/ui/rating";
+import { PublicationsSection } from "@/sections/publications";
 
 import * as Components from "./components";
 
@@ -31,8 +28,16 @@ export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
       ]}
       HeaderComponent={<Components.Header />}
     >
+      {/* Support */}
+      <section className="container-full">
+        <Support />
+      </section>
+
       {/* Content */}
       <Components.Content className="mb-[67px]" />
+
+      {/* Publications */}
+      <PublicationsSection className="mb-20" />
     </PageLayout>
   );
 };

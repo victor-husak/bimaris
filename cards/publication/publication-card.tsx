@@ -23,7 +23,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         "group flex flex-col rounded-[11px] bg-white p-[25px]",
       )}
     >
-      <Tag className="mr-auto mb-[25px] bg-[#E5E2F7]" title="Case study" />
+      <Tag className="mr-auto mb-[25px] bg-[#E7EFFC]" title="Insight" />
 
       {/* Preview */}
       <div className="h-[180px] overflow-hidden rounded-lg bg-gray-300">

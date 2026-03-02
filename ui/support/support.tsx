@@ -27,14 +27,19 @@ export const Support: React.FC<SupportProps> = (props): React.JSX.Element => {
         >
           <span>Read more</span>
 
-          <ArrowRightIcon className="mt-[3px] ml-[5px]! [&>path]:stroke-[#5373DB]" />
+          <ArrowRightIcon className="mt-[3px] [&>path]:stroke-[#5373DB]" />
         </NextLink>
       </p>
 
       <p className="text-[13px]/[17px] -tracking-[.008em] text-[#818796]">
         Have questions.{" "}
-        <NextLink className="text-secondary underline-hover" href="/contact-us">
-          Contact us
+        <NextLink
+          className="link-with-arrow text-secondary underline-hover"
+          href="/contact-us"
+        >
+          <span>Contact us</span>
+
+          <ArrowRightIcon className="mt-[3px] [&>path]:stroke-[#5373DB]" />
         </NextLink>
       </p>
     </footer>
