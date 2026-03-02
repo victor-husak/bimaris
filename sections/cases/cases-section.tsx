@@ -2,9 +2,7 @@ import { CaseCard } from "@/cards/case";
 
 import { Section, SectionHeader, Button } from "@/components";
 
-import { ArrowRightIcon } from "@/icons";
-
-import * as Components from "./components";
+import { SectionArrows } from "@/components/section";
 
 import { clsx } from "clsx";
 
@@ -40,15 +38,8 @@ export const CasesSection: React.FC<CasesSectionProps> = (
       </div>
 
       {/* Actions */}
-      <div className="mt-[35px] flex items-center gap-2">
-        <Components.Arrow>
-          <ArrowRightIcon className="rotate-180" color="#3C3C3C" />
-        </Components.Arrow>
 
-        <Components.Arrow>
-          <ArrowRightIcon color="#3C3C3C" />
-        </Components.Arrow>
-      </div>
+      <SectionArrows className="mt-[35px]" />
     </Section>
   );
 };

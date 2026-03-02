@@ -33,7 +33,7 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       <AdvantagesSection className="mt-5" />
 
       {/* Content */}
-      <Components.Content />
+      <Components.Content className="pb-25" />
 
       <div className="container-full section-gradient mb-[100px]">
         <Components.Banner />

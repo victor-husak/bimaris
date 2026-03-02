@@ -1,6 +1,7 @@
 import { PageLayout } from "@/layouts/page";
 
 import { Support } from "@/ui/support";
+import { Rating } from "@/ui/rating";
 
 import { PublicationsSection } from "@/sections/publications";
 
@@ -34,10 +35,15 @@ export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
       </section>
 
       {/* Content */}
-      <Components.Content className="mb-[67px]" />
+      <Components.Content className="pb-20" />
+
+      {/* Rating */}
+      <section className="container-full section-gradient pt-20">
+        <Rating className="z-1" />
+      </section>
 
       {/* Publications */}
-      <PublicationsSection className="mb-20" />
+      <PublicationsSection className="z-1 mb-20" />
     </PageLayout>
   );
 };

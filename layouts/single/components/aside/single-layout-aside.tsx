@@ -2,6 +2,7 @@ import { clsx } from "clsx";
 
 export type SingleLayoutAsideProps = {
   className?: string;
+  children?: React.ReactNode;
 };
 
 export const SingleLayoutAside: React.FC<SingleLayoutAsideProps> = (
@@ -10,6 +11,8 @@ export const SingleLayoutAside: React.FC<SingleLayoutAsideProps> = (
   return (
     <aside
       className={clsx(props.className, "flex w-95 shrink-0 flex-col gap-2.5")}
-    ></aside>
+    >
+      {props.children}
+    </aside>
   );
 };

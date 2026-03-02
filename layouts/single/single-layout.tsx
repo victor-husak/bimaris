@@ -12,7 +12,7 @@ export const SingleLayout: React.FC<SingleLayoutProps> = (
   props,
 ): React.JSX.Element => {
   return (
-    <section className="pb-25">
+    <section>
       {/* Content */}
       <div
         className={clsx(props.className, "container-full flex gap-x-20 pt-20")}
