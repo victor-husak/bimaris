@@ -6,6 +6,12 @@ import { clsx } from "clsx";
 
 export type MenuSectionProps = {
   className?: string;
+  data: Array<{
+    key: string;
+    title: string;
+    description: string;
+    href: string;
+  }>;
 };
 
 export const MenuSection: React.FC<MenuSectionProps> = (
@@ -20,7 +26,7 @@ export const MenuSection: React.FC<MenuSectionProps> = (
           "xl:grid-cols-3",
         )}
       >
-        {data.map((item, index) => (
+        {props.data.map((item, index) => (
           <Components.Item data={item} key={index} />
         ))}
       </div>
@@ -31,27 +37,3 @@ export const MenuSection: React.FC<MenuSectionProps> = (
     </section>
   );
 };
-
-const data = [
-  {
-    key: "1",
-    title: "Legal alerts (+3)",
-    description:
-      "Timely legal updates on immigration rules, regulatory changes, and official announcements.",
-    href: "/",
-  },
-  {
-    key: "2",
-    title: "All publications",
-    description:
-      "Expert insights and legal updates, covering immigration, relocation, and cross-border mobility.",
-    href: "/insights",
-  },
-  {
-    key: "3",
-    title: "Case studies",
-    description:
-      "Real client stories showcasing how we handle complex immigration and relocation cases.",
-    href: "/case-studies",
-  },
-];

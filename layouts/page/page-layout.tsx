@@ -31,7 +31,31 @@ export const PageLayout: React.FC<PageLayoutProps> = (
 
       {props.children}
 
-      <SolutionsSection className="mb-5" />
+      <SolutionsSection withBanner className="mb-5" data={data} />
     </main>
   );
 };
+
+const data = [
+  {
+    key: "individuals",
+    title: "Solutions for individuals",
+    description:
+      "Personalized immigration support for individual needs, long-term goals, and personal circumstances.",
+    href: "/",
+  },
+  {
+    key: "businesses",
+    title: "Solutions for businesses",
+    description:
+      "Strategic immigration advisory supporting companies with cross-border talent, compliance, and workforce.",
+    href: "/",
+  },
+  {
+    key: "investors",
+    title: "Solutions for investors",
+    description:
+      "We support investors entering the Ukrainian market with structured legal guidance.",
+    href: "/",
+  },
+];

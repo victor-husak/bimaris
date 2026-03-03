@@ -1,5 +1,3 @@
-"use client";
-
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
 import { Button } from "@/components/button";
@@ -8,31 +6,27 @@ import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
 
 import { clsx } from "clsx";
 
-export type ServicesItemDomainHeaderProps = {
+export type BalticsDeskDomainHeaderProps = {
   className?: string;
 };
 
-export const ServicesItemDomainHeader: React.FC<
-  ServicesItemDomainHeaderProps
-> = (props): React.JSX.Element => {
+export const BalticsDeskDomainHeader: React.FC<BalticsDeskDomainHeaderProps> = (
+  props,
+): React.JSX.Element => {
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
-      size="md"
+      size="lg"
       media={{
-        url: "/images/genereted/service.webp",
+        url: "/images/baltics-desk/header.webp",
         width: 3978,
-        height: 1860,
-        alt: "Service header background",
+        height: 1767,
+        alt: "Baltics Desk header background",
       }}
-      title={
-        <>
-          Citizenship of <span>Ukraine</span>
-        </>
-      }
-      description="Professional legal guidance for obtaining Ukrainian citizenship, from eligibility assessment to final approval, handled with care and clarity."
-      subtitle="Immigration services"
-      tag="For individuals"
+      title="Baltics desk"
+      description="We support individuals, founders, and international companies navigating immigration and relocation processes in Estonia, Latvia, and Lithuania."
+      subtitle="Legal Advisory in the"
+      tag="Baltic states"
       ActionsComponent={
         <>
           <Button href="/" variant="white" size="medium" animation="scale">
@@ -50,16 +44,16 @@ export const ServicesItemDomainHeader: React.FC<
         </>
       }
       RightComponent={
-        <PageLayoutHeaderSlides title="Quick links:" data={slides} />
+        <PageLayoutHeaderSlides title="Quick links:" data={items} />
       }
     />
   );
 };
 
-const slides = [
+const items = [
   {
     id: 1,
-    title: "Overview",
+    title: "Browse services",
     icon: <ServiceIcon />,
   },
   {

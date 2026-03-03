@@ -1,0 +1,72 @@
+import { PageLayout } from "@/layouts/page";
+
+import { InformationSection } from "@/sections/information";
+import { MenuSection } from "@/sections/menu";
+import { FaqsSection } from "@/sections/faqs";
+
+import * as Components from "./components";
+
+import { clsx } from "clsx";
+
+export type BalticsDeskDomainProps = {
+  className?: string;
+};
+
+export const BalticsDeskDomain: React.FC<BalticsDeskDomainProps> = (
+  props,
+): React.JSX.Element => {
+  return (
+    <PageLayout
+      className={clsx(props.className, "")}
+      routes={[
+        { label: "Home", value: "/" },
+        { label: "Baltics desk", value: "/baltics-desk" },
+      ]}
+      HeaderComponent={<Components.Header className="mb-5" />}
+    >
+      {/* Advantages */}
+      <MenuSection className="mb-[75px]" data={advantages} />
+
+      {/* Information */}
+      <InformationSection
+        className="mb-[100px]"
+        title="Professional immigration legal services for individuals, businesses, and investors in the Baltics"
+        description={information}
+      />
+
+      {/* Regions */}
+      <Components.Regions className="mb-25" />
+
+      {/* Faqs */}
+      <FaqsSection className="mb-25" />
+    </PageLayout>
+  );
+};
+
+const advantages = [
+  {
+    key: "Estonia",
+    title: "Solutions in Estonia",
+    description:
+      "Client satisfaction rate based on long-term partnerships and repeat engagements.",
+    href: "/",
+  },
+  {
+    key: "Latvia",
+    title: "Solutions in Latvia",
+    description:
+      "Strategic advisory on Latvian residence programs, investor immigration, and company setup.",
+    href: "/",
+  },
+  {
+    key: "Lithuania",
+    title: "Solutions in Lithuania",
+    description:
+      "Legal assistance for relocation to Lithuania, covering temporary and permanent residence permits.",
+    href: "/",
+  },
+];
+
+const information = `That’s why we provide expert legal support to help you achieve your dreams of living and working in a new country. At our firm, we pride ourselves on being more than just lawyers – we are [dedicated partners in your journey.](/)
+
+With extensive experience, we have successfully assisted over 1,000 businesses in navigating the complexities of immigration to the Baltics. Our team is here to provide you with personalized guidance and support every step of the way. Let us help you achieve your goals and make your transition to the Baltics as smooth as possible!`;

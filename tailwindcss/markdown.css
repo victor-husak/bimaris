@@ -178,4 +178,23 @@
       margin-top: 35.5px;
     }
   }
+
+  .markdown-info {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 400;
+    letter-spacing: .028em;
+
+    & > *:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    p {
+      padding: 0;
+    }
+
+    a {
+      @apply transition-all hover:opacity-60 text-secondary;
+    }
+  }
 }

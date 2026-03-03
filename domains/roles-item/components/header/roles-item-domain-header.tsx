@@ -2,6 +2,8 @@
 
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
+import { Button } from "@/components/button";
+
 import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
 
 // import { useRolesItemDomainHeader } from "./roles-item-domain-header.hook";
@@ -27,6 +29,30 @@ export const RolesItemDomainHeader: React.FC<RolesItemDomainHeaderProps> = (
         height: 1860,
         alt: "Role header background",
       }}
+      title={
+        <>
+          Immigration, <span>built for you</span>
+        </>
+      }
+      description="Bimaris  helps individuals and families navigate the Ukrainian immigration process with clarity, confidence, and expert legal support."
+      subtitle="Immigration services"
+      tag="For individuals"
+      ActionsComponent={
+        <>
+          <Button href="/" variant="white" size="medium" animation="scale">
+            Connect with our team
+          </Button>
+
+          <Button
+            href="/services/1"
+            size="medium"
+            variant="blur"
+            animation="opacity"
+          >
+            Open services
+          </Button>
+        </>
+      }
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={items} />
       }

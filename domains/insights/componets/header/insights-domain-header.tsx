@@ -14,6 +14,7 @@ export const InsightsDomainHeader: React.FC<InsightsDomainHeaderProps> = (
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
+      classNameTitle="max-w-[500px]"
       size="md"
       media={{
         url: "/images/insights.webp",
@@ -21,6 +22,9 @@ export const InsightsDomainHeader: React.FC<InsightsDomainHeaderProps> = (
         height: 1560,
         alt: "Insights header background",
       }}
+      title="Changes to entry and stay rules for foreign nationals"
+      subtitle="Featured"
+      tag="Legal alert"
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={items} />
       }

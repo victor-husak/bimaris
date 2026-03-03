@@ -16,6 +16,7 @@ export const ServicesItemDomainHeader: React.FC<
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
+      classNameTitle="max-w-[540px]"
       size="md"
       media={{
         url: "/images/genereted/insights-item.webp",
@@ -23,6 +24,9 @@ export const ServicesItemDomainHeader: React.FC<
         height: 1860,
         alt: "Service header background",
       }}
+      title="Relocating a European technology company to Ukraine"
+      subtitle="Posted in"
+      tag="Insights"
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={slides} />
       }

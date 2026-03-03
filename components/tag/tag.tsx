@@ -12,6 +12,9 @@ export const Tag: React.FC<TagProps> = (props): React.JSX.Element => {
       className={clsx(
         props.className,
         "flex items-center gap-2 rounded-full px-2 py-[5px]",
+        {
+          "pl-2.5": props.IconComponent,
+        },
       )}
     >
       {props.IconComponent}

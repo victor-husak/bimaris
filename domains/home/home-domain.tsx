@@ -1,9 +1,12 @@
+import { SectionHeader, Button } from "@/components";
+
 import { PageLayout } from "@/layouts/page";
 
 import { CasesSection } from "@/sections/cases";
 import { AdvantagesSection } from "@/sections/advantages";
 import { ContactSection } from "@/sections/contact";
 import { UpdatesSection } from "@/sections/updates";
+import { RolesService } from "@/sections/roles";
 
 import { Rating } from "@/ui";
 
@@ -24,10 +27,22 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
       HeaderComponent={<Components.Header />}
     >
       {/* Advantages */}
-      <AdvantagesSection className="mt-5" withBanner />
+      <AdvantagesSection className="mt-5" withBanner data={advantages} />
 
       {/* Role */}
-      <Components.Role />
+      <RolesService
+        HeaderComponent={
+          <SectionHeader
+            title="Choose your role"
+            description="Founded by professional lawyers and immigration experts, Bimaris provides structured, reliable immigration legal support for individuals and businesses."
+            ActionComponent={
+              <Button animation="scale" href="/">
+                All services
+              </Button>
+            }
+          />
+        }
+      />
 
       {/* Updates */}
       <UpdatesSection className="pb-27.5" />
@@ -43,3 +58,27 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
     </PageLayout>
   );
 };
+
+const advantages = [
+  {
+    key: "1",
+    title: "98%",
+    description:
+      "Client satisfaction rate based on long-term partnerships and repeat engagements.",
+    href: "/",
+  },
+  {
+    key: "2",
+    title: "1,000+",
+    description:
+      "Successful immigration cases handled for individuals and businesses across multiple jurisdictions.",
+    href: "/",
+  },
+  {
+    key: "3",
+    title: "10 years",
+    description:
+      "Of combined professional experience in immigration law and international advisory.",
+    href: "/",
+  },
+];

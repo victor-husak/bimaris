@@ -60,7 +60,7 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
 
       <ul className="flex">
         <Components.Item>
-          <NextLink href="tel:+380449953535">Baltics desk</NextLink>
+          <NextLink href="/baltics-desk">Baltics desk</NextLink>
         </Components.Item>
 
         <Components.Item>

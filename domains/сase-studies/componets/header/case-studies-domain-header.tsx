@@ -14,6 +14,7 @@ export const CaseStudiesDomainHeader: React.FC<CaseStudiesDomainHeaderProps> = (
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
+      classNameTitle="max-w-[530px]"
       size="md"
       media={{
         url: "/images/case-studies/header.webp",
@@ -21,6 +22,9 @@ export const CaseStudiesDomainHeader: React.FC<CaseStudiesDomainHeaderProps> = (
         height: 1560,
         alt: "Case studies header background",
       }}
+      title="Relocating a European technology company to Ukraine"
+      subtitle="Featured"
+      tag="Case study"
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={items} />
       }

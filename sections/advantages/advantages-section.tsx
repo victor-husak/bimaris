@@ -9,6 +9,12 @@ import { clsx } from "clsx";
 export type AdvantagesSectionProps = {
   className?: string;
   withBanner?: boolean;
+  data: Array<{
+    key: string;
+    title: string;
+    description: string;
+    href: string;
+  }>;
 };
 
 export const AdvantagesSection: React.FC<AdvantagesSectionProps> = (
@@ -24,7 +30,7 @@ export const AdvantagesSection: React.FC<AdvantagesSectionProps> = (
             "xl:grid-cols-3",
           )}
         >
-          {data.map((item, index) => (
+          {props.data.map((item, index) => (
             <Components.Item data={item} key={index} />
           ))}
         </div>
@@ -56,33 +62,9 @@ export const AdvantagesSection: React.FC<AdvantagesSectionProps> = (
         )}
       </div>
 
-      <div className="container-full">
+      <footer className="container-full">
         <Support />
-      </div>
+      </footer>
     </section>
   );
 };
-
-const data = [
-  {
-    key: "1",
-    title: "98%",
-    description:
-      "Client satisfaction rate based on long-term partnerships and repeat engagements.",
-    href: "/",
-  },
-  {
-    key: "2",
-    title: "1,000+",
-    description:
-      "Successful immigration cases handled for individuals and businesses across multiple jurisdictions.",
-    href: "/",
-  },
-  {
-    key: "3",
-    title: "10 years",
-    description:
-      "Of combined professional experience in immigration law and international advisory.",
-    href: "/",
-  },
-];

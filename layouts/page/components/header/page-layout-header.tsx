@@ -12,9 +12,15 @@ import { clsx } from "clsx";
 
 export type PageLayoutHeaderProps = {
   className?: string;
+  classNameTitle?: string;
   size?: "sm" | "md" | "lg";
   media: Media;
+  title: React.ReactNode;
+  subtitle: string;
+  tag: string;
+  description?: string;
   RightComponent?: React.ReactNode;
+  ActionsComponent?: React.ReactNode;
 };
 
 export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
@@ -62,44 +68,41 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
           <div className="mb-[15px] flex items-center gap-1.5">
             {/* Text */}
             <span className="text-[13px]/[17px] tracking-[.024em] text-white/60">
-              Immigration services
+              {props.subtitle}
             </span>
 
             {/* Tag */}
             <div className="flex rounded-full bg-[#C1DBFF] px-2 pt-1 pb-[5px]">
               <span className="test-[#00335A] text-[12px]/[15px] tracking-[.024em]">
-                For individuals
+                {props.tag}
               </span>
             </div>
           </div>
 
           {/* Title */}
-          <h1 className="font-season-mix mb-5 text-[42px]/[52px] font-light tracking-[.038em] text-[#D8E8FF]">
-            <span className="text-white">Immigration,</span> with clarity
+          <h1
+            className={clsx(
+              props.classNameTitle,
+              "font-season-mix mb-5 text-[42px]/[52px] font-light tracking-[.038em] text-white",
+              "[&>span]:text-[#D8E8FF]",
+            )}
+          >
+            {props.title}
           </h1>
 
           {/* Description */}
-          <p className="max-w-[530px] text-[14px]/[19px] tracking-[.024em] text-white/60">
-            Personalized immigration legal support for individuals - from first
-            consultation to long-term residency, handled with clarity, care, and
-            precision.
-          </p>
+          {!!props.description && (
+            <p className="max-w-[530px] text-[14px]/[19px] tracking-[.024em] text-white/60">
+              {props.description}
+            </p>
+          )}
 
           {/* Actions */}
-          <div className="mt-[25px] flex flex-col items-start gap-2.5">
-            <Button href="/" variant="white" size="medium" animation="scale">
-              Connect with our team
-            </Button>
-
-            <Button
-              href="/services/1"
-              size="medium"
-              variant="blur"
-              animation="opacity"
-            >
-              Open services
-            </Button>
-          </div>
+          {!!props.ActionsComponent && (
+            <div className="mt-[25px] flex flex-col items-start gap-2.5">
+              {props.ActionsComponent}
+            </div>
+          )}
         </div>
 
         {/* Right component */}

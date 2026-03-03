@@ -22,9 +22,33 @@ export const CaseStudiesDomain: React.FC<CaseStudiesDomainProps> = (
       ]}
       HeaderComponent={<Components.Header className="mb-5" />}
     >
-      <MenuSection />
+      <MenuSection data={menu} />
 
       <Components.List />
     </PageLayout>
   );
 };
+
+const menu = [
+  {
+    key: "1",
+    title: "Legal alerts (+3)",
+    description:
+      "Timely legal updates on immigration rules, regulatory changes, and official announcements.",
+    href: "/",
+  },
+  {
+    key: "2",
+    title: "All publications",
+    description:
+      "Expert insights and legal updates, covering immigration, relocation, and cross-border mobility.",
+    href: "/insights",
+  },
+  {
+    key: "3",
+    title: "Case studies",
+    description:
+      "Real client stories showcasing how we handle complex immigration and relocation cases.",
+    href: "/case-studies",
+  },
+];
