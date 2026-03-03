@@ -25,8 +25,6 @@ export const ExpertsSection: React.FC<ExpertsSectionProps> = (
         <PeopleCard className="w-[350px]" />
 
         <PeopleCard className="w-[350px]" />
-
-        <PeopleCard className="w-[350px]" />
       </div>
 
       {/* Footer */}
