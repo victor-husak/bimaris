@@ -18,6 +18,7 @@ export const ServicesItemDomainHeader: React.FC<
       className={clsx(props.className, "")}
       classNameTitle="max-w-[540px]"
       size="md"
+      type="second"
       media={{
         url: "/images/genereted/insights-item.webp",
         width: 3978,

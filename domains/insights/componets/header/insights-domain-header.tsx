@@ -16,6 +16,7 @@ export const InsightsDomainHeader: React.FC<InsightsDomainHeaderProps> = (
       className={clsx(props.className, "")}
       classNameTitle="max-w-[500px]"
       size="md"
+      type="second"
       media={{
         url: "/images/insights.webp",
         width: 3978,

@@ -14,6 +14,7 @@ export type PageLayoutHeaderProps = {
   className?: string;
   classNameTitle?: string;
   size?: "sm" | "md" | "lg";
+  type?: "base" | "second";
   media: Media;
   title: React.ReactNode;
   subtitle: string;
@@ -83,8 +84,13 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
           <h1
             className={clsx(
               props.classNameTitle,
-              "font-season-mix mb-5 text-[42px]/[52px] font-light tracking-[.038em] text-white",
+              "font-season-mix mb-5 font-light tracking-[.038em] text-white",
               "[&>span]:text-[#D8E8FF]",
+              {
+                "text-[40px]/[50px]": props.size === "lg",
+                "text-[42px]/[52px]": props.type !== "second",
+                "text-[34px]/[45px]": props.type === "second",
+              },
             )}
           >
             {props.title}
