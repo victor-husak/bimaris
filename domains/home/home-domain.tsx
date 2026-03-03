@@ -24,7 +24,7 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
       HeaderComponent={<Components.Header />}
     >
       {/* Advantages */}
-      <AdvantagesSection className="mt-5" />
+      <AdvantagesSection className="mt-5" withBanner />
 
       {/* Role */}
       <Components.Role />

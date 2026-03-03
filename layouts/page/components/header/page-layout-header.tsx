@@ -4,6 +4,8 @@ import NextImage from "next/image";
 
 import { Button } from "@/components";
 
+import * as Icons from "./icons";
+
 import { usePageLayoutHeader } from "./page-layout-header.hook";
 
 import { clsx } from "clsx";
@@ -102,6 +104,11 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
 
         {/* Right component */}
         {props.RightComponent}
+
+        {/* Arrow */}
+        <div className="absolute bottom-5 left-1/2 flex h-5 w-5 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5">
+          <Icons.Arrow />
+        </div>
       </div>
     </header>
   );

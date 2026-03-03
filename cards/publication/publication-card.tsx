@@ -69,7 +69,11 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         </p>
 
         {/* Action */}
-        <CardAction className="mr-auto" href="/insights/1" />
+        <CardAction
+          className="mt-[25px] mr-auto"
+          href="/insights/1"
+          title="Explore"
+        />
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import { clsx } from "clsx";
 
 export type AdvantagesSectionProps = {
   className?: string;
+  withBanner?: boolean;
 };
 
 export const AdvantagesSection: React.FC<AdvantagesSectionProps> = (
@@ -29,28 +30,30 @@ export const AdvantagesSection: React.FC<AdvantagesSectionProps> = (
         </div>
 
         {/* Banner */}
-        <div
-          className={clsx(
-            "group border-footer-border relative mx-[35px] mt-2.5 overflow-hidden border-t border-[#F4F5F7] py-[35px]",
-          )}
-        >
+        {props.withBanner && (
           <div
             className={clsx(
-              "relative h-[120px] w-full overflow-hidden rounded-md",
-              "after:absolute after:inset-0 after:z-1 after:bg-black/10",
+              "group border-footer-border relative mx-[35px] mt-2.5 overflow-hidden border-t border-[#F4F5F7] py-[35px]",
             )}
           >
-            {/* Image */}
-            <NextImage
-              className={clsx("h-full w-full object-cover object-center")}
-              src="/images/advantages.webp"
-              width={3768}
-              height={360}
-              objectFit="cover"
-              alt="Smotrow design banner"
-            />
+            <div
+              className={clsx(
+                "relative h-[120px] w-full overflow-hidden rounded-md",
+                "after:absolute after:inset-0 after:z-1 after:bg-black/10",
+              )}
+            >
+              {/* Image */}
+              <NextImage
+                className={clsx("h-full w-full object-cover object-center")}
+                src="/images/advantages.webp"
+                width={3768}
+                height={360}
+                objectFit="cover"
+                alt="Smotrow design banner"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       <div className="container-full">

@@ -46,7 +46,7 @@ export const RolesItemDomainServicesItem: React.FC<
       <List className="my-[25px]" items={props.data.list} />
 
       {/* Action */}
-      <CardAction />
+      <CardAction title="Explore" />
     </div>
   );
 };

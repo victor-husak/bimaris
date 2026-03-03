@@ -30,7 +30,7 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       HeaderComponent={<Components.Header />}
     >
       {/* Advantages */}
-      <AdvantagesSection className="mt-5" />
+      <AdvantagesSection className="mt-5" withBanner />
 
       {/* Content */}
       <Components.Content className="pb-25" />

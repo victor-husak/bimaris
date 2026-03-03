@@ -9,6 +9,7 @@ import clsx from "clsx";
 export type CardActionProps = {
   className?: string;
   disabled?: boolean;
+  title: string;
   href?: string;
   target?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -23,7 +24,7 @@ export const CardAction: React.FC<CardActionProps> = (
     <button
       className={clsx(
         props.className,
-        "relative mt-[25px] flex h-[36px] w-[36px] cursor-pointer items-center overflow-hidden rounded-full border border-[#ECEFF4] transition-all duration-200",
+        "relative flex h-[36px] w-[36px] cursor-pointer items-center overflow-hidden rounded-full border border-[#ECEFF4] transition-all duration-200",
         "group-hover:w-[93px] group-hover:border-[#507FEB] group-hover:bg-[#507FEB]",
       )}
       onClick={onClick}
@@ -43,7 +44,7 @@ export const CardAction: React.FC<CardActionProps> = (
           "group-hover:opacity-100",
         )}
       >
-        Explore
+        {props.title}
       </span>
     </button>
   );
