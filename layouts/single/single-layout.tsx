@@ -1,5 +1,3 @@
-import NextImage from "next/image";
-
 import { clsx } from "clsx";
 
 export type SingleLayoutProps = {
@@ -15,7 +13,10 @@ export const SingleLayout: React.FC<SingleLayoutProps> = (
     <section>
       {/* Content */}
       <div
-        className={clsx(props.className, "container-full flex gap-x-20 pt-20")}
+        className={clsx(
+          props.className,
+          "container-full flex items-start gap-x-20 pt-20",
+        )}
       >
         {/* Aside */}
         {props.AsideComponent}

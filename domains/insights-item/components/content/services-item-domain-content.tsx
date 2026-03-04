@@ -1,8 +1,6 @@
-import {
-  SingleLayout,
-  SingleLayoutContent,
-  SingleLayoutAside,
-} from "@/layouts/single";
+import { SingleLayout, SingleLayoutContent } from "@/layouts/single";
+
+import * as Components from "./components";
 
 import { clsx } from "clsx";
 
@@ -16,7 +14,7 @@ export const ServicesItemDomainContent: React.FC<
   return (
     <SingleLayout
       className={clsx(props.className, "")}
-      AsideComponent={<SingleLayoutAside />}
+      AsideComponent={<Components.Aside />}
       ContentComponent={<SingleLayoutContent content={content} />}
     />
   );

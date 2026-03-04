@@ -10,7 +10,10 @@ export const SingleLayoutAside: React.FC<SingleLayoutAsideProps> = (
 ): React.JSX.Element => {
   return (
     <aside
-      className={clsx(props.className, "flex w-95 shrink-0 flex-col gap-2.5")}
+      className={clsx(
+        props.className,
+        "sticky top-25 flex w-95 shrink-0 flex-col gap-2.5",
+      )}
     >
       {props.children}
     </aside>

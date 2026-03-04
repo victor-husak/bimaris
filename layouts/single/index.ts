@@ -1,5 +1,5 @@
 export { SingleLayout } from "./single-layout";
 
 // Components
-export { SingleLayoutAside, SingleLayoutAsideGroup } from "./components/aside";
+export { SingleLayoutAside } from "./components/aside";
 export { SingleLayoutContent } from "./components/content";

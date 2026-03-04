@@ -13,6 +13,7 @@ export type MarkdownProps = {
 export const Markdown: React.FC<MarkdownProps> = (props): React.JSX.Element => {
   return (
     <MarkdownJSX
+      id="markdown"
       className={clsx(props.className, "markdown")}
       options={{
         forceBlock: true,
