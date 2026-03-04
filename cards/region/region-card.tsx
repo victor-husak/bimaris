@@ -45,7 +45,7 @@ export const RegionCard: React.FC<RegionCardProps> = (
         {/* Title */}
         <NextLink
           className="underline-hover mr-auto mb-[25px] text-[16px]/[21px] tracking-[.024em] text-[#2D3A52]"
-          href="/insights/1"
+          href="/baltics-desk/latvia"
         >
           Latvia
         </NextLink>
@@ -60,7 +60,7 @@ export const RegionCard: React.FC<RegionCardProps> = (
         {/* Action */}
         <CardAction
           className="mt-[35px] mr-auto"
-          href="/insights/1"
+          href="/baltics-desk/latvia"
           title="Explore"
         />
       </div>
