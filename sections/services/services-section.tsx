@@ -6,11 +6,11 @@ import * as Components from "./components";
 
 import { clsx } from "clsx";
 
-export type RolesItemDomainServicesProps = {
+export type ServicesSectionProps = {
   className?: string;
 };
 
-export const RolesItemDomainServices: React.FC<RolesItemDomainServicesProps> = (
+export const ServicesSection: React.FC<ServicesSectionProps> = (
   props,
 ): React.JSX.Element => {
   return (

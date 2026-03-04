@@ -6,7 +6,7 @@ import * as Icons from "./icons";
 
 import { clsx } from "clsx";
 
-export type RolesItemDomainServicesItemProps = {
+export type ServicesSectionItemProps = {
   className?: string;
   data: {
     title: string;
@@ -15,9 +15,9 @@ export type RolesItemDomainServicesItemProps = {
   };
 };
 
-export const RolesItemDomainServicesItem: React.FC<
-  RolesItemDomainServicesItemProps
-> = (props): React.JSX.Element => {
+export const ServicesSectionItem: React.FC<ServicesSectionItemProps> = (
+  props,
+): React.JSX.Element => {
   return (
     <div
       className={clsx(
@@ -46,7 +46,7 @@ export const RolesItemDomainServicesItem: React.FC<
       <List className="my-[25px]" items={props.data.list} />
 
       {/* Action */}
-      <CardAction title="Explore" />
+      <CardAction className="mt-[25px]" title="Explore" />
     </div>
   );
 };

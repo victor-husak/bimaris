@@ -4,6 +4,7 @@ import { AdvantagesSection } from "@/sections/advantages";
 import { ContactSection } from "@/sections/contact";
 import { FaqsSection } from "@/sections/faqs";
 import { CasesSection } from "@/sections/cases";
+import { ServicesSection } from "@/sections/services";
 
 import { Rating } from "@/ui";
 
@@ -34,7 +35,7 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
       <Components.Points />
 
       {/* Services */}
-      <Components.Services className="section-gradient" />
+      <ServicesSection className="section-gradient" />
 
       {/* Cases */}
       <CasesSection className="mb-15" />

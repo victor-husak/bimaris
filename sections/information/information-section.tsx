@@ -32,7 +32,7 @@ export const InformationSection: React.FC<InformationSectionProps> = (
       </div>
 
       {/* Content */}
-      <div className="mt-[25px] flex max-w-[640px] flex-col items-start gap-[50px]">
+      <div className="flex max-w-[640px] flex-col items-start gap-[50px]">
         {/* Title */}
         <h2 className="text-[30px]/[42px] font-light text-[#507FEB]">
           {props.title}
