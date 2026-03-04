@@ -25,7 +25,7 @@ export const AsideContent: React.FC<AsideContentProps> = (
         {headings.map((h) => (
           <li
             className={clsx(
-              "underline-hover font-sf-pro cursor-pointer text-[14px]/[16px] text-[#6B7586] transition-all",
+              "underline-hover font-sf-pro line-clamp-1 cursor-pointer text-[14px]/[16px] text-[#6B7586] transition-all",
               "hover:text-secondary",
             )}
             key={h.id}
