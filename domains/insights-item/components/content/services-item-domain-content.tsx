@@ -14,7 +14,7 @@ export const ServicesItemDomainContent: React.FC<
   return (
     <SingleLayout
       className={clsx(props.className, "")}
-      AsideComponent={<Components.Aside />}
+      AsideComponent={<Components.Aside content={content} />}
       ContentComponent={<SingleLayoutContent content={content} />}
     />
   );

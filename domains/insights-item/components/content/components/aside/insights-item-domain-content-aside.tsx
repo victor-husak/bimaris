@@ -6,6 +6,7 @@ import { clsx } from "clsx";
 
 export type InsightsItemDomainContentAsideProps = {
   className?: string;
+  content: string;
 };
 
 export const InsightsItemDomainContentAside: React.FC<
@@ -13,7 +14,7 @@ export const InsightsItemDomainContentAside: React.FC<
 > = (props): React.JSX.Element => {
   return (
     <SingleLayoutAside className={clsx(props.className, "")}>
-      <AsideContent />
+      <AsideContent content={props.content} />
 
       <AsideLists title="Related solutions" />
     </SingleLayoutAside>
