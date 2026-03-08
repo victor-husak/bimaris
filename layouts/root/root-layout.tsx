@@ -1,4 +1,12 @@
+import { Suspense } from "react";
+
+import dynamic from "next/dynamic";
+
 import * as Components from "./components";
+
+const Overlays = dynamic(() =>
+  import("./overlays").then((mod) => mod.RootLayoutOverlays),
+);
 
 import { clsx } from "clsx";
 
@@ -11,14 +19,20 @@ export const RootLayout: React.FC<RootLayoutProps> = (
   props,
 ): React.JSX.Element => {
   return (
-    <Components.Scroll className={clsx(props.className, "relative")}>
-      <Components.Topline />
+    <>
+      <Components.Scroll className={clsx(props.className, "relative")}>
+        <Components.Topline />
 
-      <Components.Header />
+        <Components.Header />
 
-      {props.children}
+        {props.children}
 
-      <Components.Footer />
-    </Components.Scroll>
+        <Components.Footer />
+      </Components.Scroll>
+
+      <Suspense>
+        <Overlays />
+      </Suspense>
+    </>
   );
 };

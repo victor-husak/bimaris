@@ -6,3 +6,4 @@ export { List } from "./list";
 export { Tag } from "./tag";
 export { Markdown } from "./markdown";
 export { Alert } from "./alert";
+export { Loading } from "./loading";

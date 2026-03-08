@@ -1731,6 +1731,7 @@ __metadata:
     react-collapsed: ^4.2.0
     react-dom: 19.2.3
     react-scroll: ^1.9.3
+    react-spinners: ^0.17.0
     react-transition-group: ^4.4.5
     sass: ^1.97.3
     swiper: ^12.1.2
@@ -4357,6 +4358,16 @@ __metadata:
     react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   checksum: 8fe3c64c5026637bde84dde111689f34026a709b6acae444d4546546f1ba595f7bf85d5759e3cd6a83c80b50c2df270279c381250f1af89130167d0cd45c4785
+  languageName: node
+  linkType: hard
+
+"react-spinners@npm:^0.17.0":
+  version: 0.17.0
+  resolution: "react-spinners@npm:0.17.0"
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 5790462437cae07763657cc32e7ebd2252465df70b1ee822a34c92191496219e8c77a2a10f55b9a9f804ec6d79c690c6dedfefd96333228b0a4ffd6d9dcf3d04
   languageName: node
   linkType: hard
 

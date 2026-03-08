@@ -7,6 +7,8 @@ import { Button } from "@/components";
 import * as Components from "./components";
 import * as Icons from "./icons";
 
+import { useRootLayoutHeader } from "./root-layout-header.hook";
+
 import { usePathname } from "next/navigation";
 
 import { clsx } from "clsx";
@@ -18,21 +20,35 @@ export type RootLayoutHeaderProps = {
 export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
   props,
 ): React.JSX.Element => {
+  const { onTriggerOverfay } = useRootLayoutHeader();
+
   const pathname = usePathname();
 
   return (
     <header
       className={clsx(
         props.className,
-        "container-full bg-background-secondary sticky top-0 z-9 flex h-17.5 items-center shadow-[0_1px_2px_rgba(0,0,0,0.02)]",
+        "container-full bg-background-secondary sticky top-0 z-9 flex h-17.5 items-center border-b border-[#F4F5FA] shadow-[0_1px_2px_rgba(0,0,0,0.02)]",
       )}
     >
       <ul className="ml-[-12.5px] flex">
-        <Components.Item withArrow title="Businesses" />
+        <Components.Item
+          withArrow
+          title="Businesses"
+          onClick={() => onTriggerOverfay("businesses")}
+        />
 
-        <Components.Item withArrow title="Private clients" />
+        <Components.Item
+          withArrow
+          title="Private clients"
+          onClick={() => onTriggerOverfay("private-clients")}
+        />
 
-        <Components.Item withArrow title="Investors" />
+        <Components.Item
+          withArrow
+          title="Investors"
+          onClick={() => onTriggerOverfay("investors")}
+        />
       </ul>
 
       {/* Logo */}

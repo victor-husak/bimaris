@@ -1,6 +1,6 @@
 import { RootLayout } from "@/layouts/root";
 
-import type { Metadata } from "next";
+import { ContextModal } from "@/contexts/modal";
 
 import { HellixVFTRIA, SFProText, VanillaSans } from "./fonts";
 
@@ -9,6 +9,8 @@ import { CookiebotScript } from "./scripts/cookiebot-script";
 import { clsx } from "clsx";
 
 import "./globals.css";
+
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Bimaris",
@@ -37,7 +39,9 @@ export default function RootLayoutPage({
           "container-variable antialiased",
         )}
       >
-        <RootLayout>{children}</RootLayout>
+        <ContextModal>
+          <RootLayout>{children}</RootLayout>
+        </ContextModal>
       </body>
     </html>
   );

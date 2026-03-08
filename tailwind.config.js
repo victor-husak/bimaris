@@ -1,7 +1,4 @@
 // tailwind.config.js
 module.exports = {
-  plugins: [
-    require("@tailwindcss/line-clamp"),
-    // другие плагины
-  ],
+  plugins: [require("@tailwindcss/line-clamp")],
 };
