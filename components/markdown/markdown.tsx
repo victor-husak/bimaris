@@ -1,3 +1,4 @@
+// @ts-ignore
 import MarkdownJSX from "markdown-to-jsx";
 
 import * as Components from "./components";
