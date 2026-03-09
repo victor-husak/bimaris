@@ -9,5 +9,5 @@ export const useRootLayoutHeader = () => {
     modalContext?.setOverfay(key);
   }, []);
 
-  return { onTriggerOverfay };
+  return { onTriggerOverfay, modalContext };
 };

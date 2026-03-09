@@ -61,7 +61,7 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
 
           <Components.Menu title="Individuals" items={individualsOptions} />
 
-          <Components.Menu title="Contact" items={contactOptions} />
+          <Components.Menu title="Investors" items={investorsOptions} />
         </menu>
       </div>
 
@@ -97,8 +97,9 @@ const individualsOptions: MenuProps["items"] = [
   { key: "7", title: "Legal" },
 ];
 
-const contactOptions: MenuProps["items"] = [
-  { key: "1", title: "Contact us" },
-  { key: "2", title: "Our locations" },
-  { key: "3", title: "Book a meeting" },
+const investorsOptions: MenuProps["items"] = [
+  { key: "1", title: "Talent solutions" },
+  { key: "2", title: "Healthcare" },
+  { key: "3", title: "Finance" },
+  { key: "4", title: "Legal" },
 ];

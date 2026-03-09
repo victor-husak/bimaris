@@ -11,6 +11,7 @@ import { clsx } from "clsx";
 export type RootLayoutHeaderItemProps = {
   className?: string;
   title: string;
+  active?: boolean;
   href?: string;
   variant?: "base" | "invert";
   withArrow?: boolean;
@@ -52,7 +53,13 @@ export const RootLayoutHeaderItem: React.FC<RootLayoutHeaderItemProps> = (
           {props.title}
         </span>
 
-        {props.withArrow && <Icons.Arrow className="mt-0.5" />}
+        {props.withArrow && (
+          <Icons.Arrow
+            className={clsx("mt-0.5 transition-all", {
+              "rotate-180": props.active,
+            })}
+          />
+        )}
       </Box>
     </li>
   );

@@ -42,6 +42,12 @@ export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
         <Rating className="z-1" />
       </section>
 
+      {/* Experts */}
+      {/* <ExpertsSection className="z-1 mt-25" /> */}
+
+      {/* Faqs */}
+      {/* <FaqsSection className="z-1 mt-[110px]" /> */}
+
       {/* Publications */}
       <PublicationsSection className="z-1 mb-20" />
     </PageLayout>
