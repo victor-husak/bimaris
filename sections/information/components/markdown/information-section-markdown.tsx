@@ -1,5 +1,6 @@
 "use client";
 
+// @ts-ignore
 import MarkdownJSX from "markdown-to-jsx";
 
 import { clsx } from "clsx";
