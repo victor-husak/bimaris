@@ -19,7 +19,7 @@ export interface OverlayLayoutProps {
   loading?: boolean;
   children: React.ReactNode;
   open?: boolean;
-  RightComponent?: React.ReactNode;
+  // RightComponent?: React.ReactNode;
   onClose: () => void;
   onExited?: () => void;
 }
@@ -83,7 +83,7 @@ export const OverlayLayout: React.FC<OverlayLayoutProps> = (
             </div>
 
             {/* Right */}
-            {props.RightComponent}
+            <Components.Banner />
           </div>
 
           <Components.Footer />
