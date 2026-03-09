@@ -1157,15 +1157,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/markdown-to-jsx@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "@types/markdown-to-jsx@npm:7.0.1"
-  dependencies:
-    markdown-to-jsx: "*"
-  checksum: fff3d70abf3de90c7d9faf911def225431887685bb6c561bff34cdb1dd0cff2c4c22d0d900f64d28795eca1631f297163ab70dff14f53150b1ae1d8bdbc7c9c4
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:^20":
   version: 20.19.33
   resolution: "@types/node@npm:20.19.33"
@@ -1722,7 +1713,6 @@ __metadata:
     "@tailwindcss/line-clamp": ^0.4.4
     "@tailwindcss/postcss": ^4.1.18
     "@types/lodash-es": ^4.17.12
-    "@types/markdown-to-jsx": ^7.0.1
     "@types/node": ^20
     "@types/react": ^19
     "@types/react-dom": ^19
@@ -3654,26 +3644,6 @@ __metadata:
     promise-retry: "npm:^2.0.1"
     ssri: "npm:^13.0.0"
   checksum: 4fb9dbb739b33565c85dacdcff7eb9388d8f36f326a59dc13375f01af809c42c48aa5d1f4840ee36623b2461a15476e1e79e4548ca1af30b42e1e324705ac8b3
-  languageName: node
-  linkType: hard
-
-"markdown-to-jsx@npm:*":
-  version: 9.7.8
-  resolution: "markdown-to-jsx@npm:9.7.8"
-  peerDependencies:
-    react: ">= 16.0.0"
-    solid-js: ">=1.0.0"
-    vue: ">=3.0.0"
-  peerDependenciesMeta:
-    react:
-      optional: true
-    react-native:
-      optional: true
-    solid-js:
-      optional: true
-    vue:
-      optional: true
-  checksum: 3d11a2d5f40a93112e8d3d9a7c539911d8fa58087fb8932b8d162e3b75c23c06e268a240b0f33eb9eb0adb457d02ccf2d6506df2ce5c67b3c38b806790e301fe
   languageName: node
   linkType: hard
 
