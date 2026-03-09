@@ -20,7 +20,7 @@ export type RootLayoutHeaderProps = {
 export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
   props,
 ): React.JSX.Element => {
-  const { onTriggerOverfay, modalContext } = useRootLayoutHeader();
+  const { onTriggerOverlay, modalContext } = useRootLayoutHeader();
 
   const pathname = usePathname();
 
@@ -34,23 +34,23 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
       <ul className="ml-[-12.5px] flex">
         <Components.Item
           withArrow
-          active={modalContext?.overfay === "businesses"}
+          active={modalContext?.overlay === "businesses"}
           title="Businesses"
-          onClick={() => onTriggerOverfay("businesses")}
+          onClick={() => onTriggerOverlay("businesses")}
         />
 
         <Components.Item
           withArrow
-          active={modalContext?.overfay === "private-clients"}
+          active={modalContext?.overlay === "private-clients"}
           title="Private clients"
-          onClick={() => onTriggerOverfay("private-clients")}
+          onClick={() => onTriggerOverlay("private-clients")}
         />
 
         <Components.Item
           withArrow
-          active={modalContext?.overfay === "investors"}
+          active={modalContext?.overlay === "investors"}
           title="Investors"
-          onClick={() => onTriggerOverfay("investors")}
+          onClick={() => onTriggerOverlay("investors")}
         />
       </ul>
 

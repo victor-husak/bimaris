@@ -1,4 +1,4 @@
-import MarkdownJSX, { type MarkdownToJSX } from "markdown-to-jsx";
+import MarkdownJSX from "markdown-to-jsx";
 
 import * as Components from "./components";
 
@@ -7,7 +7,7 @@ import { clsx } from "clsx";
 export type MarkdownProps = {
   className?: string;
   content: string;
-  overrides?: MarkdownToJSX.Overrides;
+  overrides?: any;
 };
 
 export const Markdown: React.FC<MarkdownProps> = (props): React.JSX.Element => {

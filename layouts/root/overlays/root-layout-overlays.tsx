@@ -23,11 +23,11 @@ export const RootLayoutOverlays: React.FC<RootLayoutOverlaysProps> = (
     <>
       <BusinessesOverlay
         open={
-          modalContext?.overfay === "businesses" ||
-          modalContext?.overfay === "private-clients" ||
-          modalContext?.overfay === "investors"
+          modalContext?.overlay === "businesses" ||
+          modalContext?.overlay === "private-clients" ||
+          modalContext?.overlay === "investors"
         }
-        onClose={() => modalContext?.setOverfay(null)}
+        onClose={() => modalContext?.setOverlay(null)}
       />
     </>
   );

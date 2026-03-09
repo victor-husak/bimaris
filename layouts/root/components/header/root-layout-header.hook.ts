@@ -5,9 +5,9 @@ import { ModalContext } from "@/contexts/modal";
 export const useRootLayoutHeader = () => {
   const modalContext = useContext(ModalContext);
 
-  const onTriggerOverfay = useCallback((key: string) => {
-    modalContext?.setOverfay(key);
+  const onTriggerOverlay = useCallback((key: string) => {
+    modalContext?.setOverlay(key);
   }, []);
 
-  return { onTriggerOverfay, modalContext };
+  return { onTriggerOverlay, modalContext };
 };

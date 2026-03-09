@@ -1157,6 +1157,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/markdown-to-jsx@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@types/markdown-to-jsx@npm:7.0.1"
+  dependencies:
+    markdown-to-jsx: "*"
+  checksum: fff3d70abf3de90c7d9faf911def225431887685bb6c561bff34cdb1dd0cff2c4c22d0d900f64d28795eca1631f297163ab70dff14f53150b1ae1d8bdbc7c9c4
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:^20":
   version: 20.19.33
   resolution: "@types/node@npm:20.19.33"
@@ -1713,6 +1722,7 @@ __metadata:
     "@tailwindcss/line-clamp": ^0.4.4
     "@tailwindcss/postcss": ^4.1.18
     "@types/lodash-es": ^4.17.12
+    "@types/markdown-to-jsx": ^7.0.1
     "@types/node": ^20
     "@types/react": ^19
     "@types/react-dom": ^19
@@ -3647,7 +3657,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-to-jsx@npm:latest":
+"markdown-to-jsx@npm:*, markdown-to-jsx@npm:latest":
   version: 9.7.8
   resolution: "markdown-to-jsx@npm:9.7.8"
   peerDependencies:

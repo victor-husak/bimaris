@@ -8,10 +8,13 @@ export interface LayoutsContextModalProps {
 
 export interface ContextModalType {
   modal: string | null;
-  overfay: string | null;
-  setModal: (modal: string | null, data?: { [key: string]: object }) => void;
-  setOverfay: (
-    overfay: string | null,
+  overlay: string | null;
+  setModal: (
+    modal: string | null,
+    data?: { [key: string]: object | string },
+  ) => void;
+  setOverlay: (
+    overlay: string | null,
     data?: { [key: string]: object | string },
   ) => void;
   additionalData: { [key: string]: object | string };
@@ -23,23 +26,31 @@ export const ModalContext = createContext<ContextModalType | undefined>(
 
 export function ContextModal(props: LayoutsContextModalProps) {
   const [modal, setModal] = useState<string | null>(null);
-  const [overfay, setOverfay] = useState<string | null>(null);
+  const [overlay, setOverlay] = useState<string | null>(null);
   const [additionalData, setAdditionalData] = useState<{
     [key: string]: object | string;
   }>({});
 
   const setModalWithAdditionalData = useCallback(
-    (modal: string | null, data?: { [key: string]: object | string }) => {
-      setModal(modal);
-      if (!!data) setAdditionalData(data);
+    (_modal: string | null, data?: { [key: string]: object | string }) => {
+      setModal(_modal);
+      if (data) {
+        setAdditionalData(data);
+      } else if (_modal === null) {
+        setAdditionalData({});
+      }
     },
     [],
   );
 
-  const setOverfayWithAdditionalData = useCallback(
-    (overfay: string | null, data?: { [key: string]: object | string }) => {
-      setOverfay(overfay);
-      if (!!data) setAdditionalData(data);
+  const setOverlayWithAdditionalData = useCallback(
+    (_overlay: string | null, data?: { [key: string]: object | string }) => {
+      setOverlay(_overlay);
+      if (data) {
+        setAdditionalData(data);
+      } else if (_overlay === null) {
+        setAdditionalData({});
+      }
     },
     [],
   );
@@ -48,9 +59,9 @@ export function ContextModal(props: LayoutsContextModalProps) {
     <ModalContext.Provider
       value={{
         modal,
-        overfay,
+        overlay,
         setModal: setModalWithAdditionalData,
-        setOverfay: setOverfayWithAdditionalData,
+        setOverlay: setOverlayWithAdditionalData,
         additionalData,
       }}
     >
