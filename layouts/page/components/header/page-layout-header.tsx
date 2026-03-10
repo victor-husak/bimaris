@@ -68,6 +68,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
               <NextImage
                 className="h-full w-full object-cover object-center"
                 // {...props.media}
+                priority
                 src={props.media.url}
                 width={props.media.width}
                 height={props.media.height}
