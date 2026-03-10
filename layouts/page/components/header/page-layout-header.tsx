@@ -13,6 +13,7 @@ import { clsx } from "clsx";
 export type PageLayoutHeaderProps = {
   className?: string;
   classNameTitle?: string;
+  classNameDescription?: string;
   size?: "sm" | "md" | "lg";
   type?: "base" | "second";
   media: Media;
@@ -154,7 +155,10 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
             {!!props.description && (
               <motion.p
                 variants={itemVariants}
-                className="max-w-[530px] text-[14px]/[19px] tracking-[.024em] text-white/60"
+                className={clsx(
+                  "max-w-[530px] text-[14px]/[19px] tracking-[.024em] text-white/60",
+                  props.classNameDescription,
+                )}
               >
                 {props.description}
               </motion.p>

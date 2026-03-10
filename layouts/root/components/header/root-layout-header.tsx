@@ -75,14 +75,14 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
 
         <Components.Item title="Insights" href="/insights" />
 
-        <Components.Item title="Contact" />
+        <Components.Item title="Contact" href="/contact-us" />
       </ul>
 
       <Button
         className="ml-[27.5px]"
         size="small"
         animation="background"
-        href={"/"}
+        href={"/login"}
       >
         Log in
       </Button>
