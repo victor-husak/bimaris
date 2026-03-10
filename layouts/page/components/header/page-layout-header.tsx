@@ -2,8 +2,6 @@
 
 import NextImage from "next/image";
 
-import { Button } from "@/components";
-
 import * as Icons from "./icons";
 
 import { usePageLayoutHeader } from "./page-layout-header.hook";

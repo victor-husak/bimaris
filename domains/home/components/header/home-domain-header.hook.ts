@@ -98,6 +98,7 @@ const items = [
   {
     id: 1,
     title: "For individuals",
+    href: "/roles/individuals",
     avatar: {
       url: "/images/genereted/home/slide1.webp",
       width: 120,
@@ -108,6 +109,7 @@ const items = [
   {
     id: 2,
     title: "For businesses",
+    href: "/roles/businesses",
     avatar: {
       url: "/images/genereted/home/slide2.webp",
       width: 120,
@@ -118,6 +120,7 @@ const items = [
   {
     id: 3,
     title: "For investors",
+    href: "/roles/investors",
     avatar: {
       url: "/images/genereted/home/slide3.webp",
       width: 120,

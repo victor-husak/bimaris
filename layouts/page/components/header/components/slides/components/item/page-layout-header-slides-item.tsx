@@ -1,6 +1,13 @@
+"use client";
+
 import NextImage from "next/image";
+import NextLink from "next/link";
+
+import { Box } from "@/components";
 
 import * as Icons from "./icons";
+
+import { usePageLayoutHeaderSlidesItem } from "./page-layout-header-slides-item.hook";
 
 import { clsx } from "clsx";
 
@@ -9,6 +16,7 @@ export type PageLayoutHeaderSlidesItemProps = {
   data: {
     id: number;
     title: string;
+    href?: string;
     label?: string;
     avatar?: Media;
     icon?: React.ReactNode;
@@ -18,12 +26,15 @@ export type PageLayoutHeaderSlidesItemProps = {
 export const PageLayoutHeaderSlidesItem: React.FC<
   PageLayoutHeaderSlidesItemProps
 > = (props): React.JSX.Element => {
+  const { onClick } = usePageLayoutHeaderSlidesItem(props);
+
   return (
     <div
       className={clsx(
         props.className,
         "group flex h-15 cursor-pointer items-center gap-[15px] rounded-lg bg-white/10 p-2.5 pr-[15px] backdrop-blur-[30px] backdrop-brightness-110",
       )}
+      onClick={onClick}
     >
       {props.data.icon && (
         <div className="flex h-7.5 w-7.5 items-center justify-center rounded-full bg-white/10 backdrop-blur-[30px] backdrop-brightness-110">
@@ -56,9 +67,13 @@ export const PageLayoutHeaderSlidesItem: React.FC<
           </span>
         </div>
       ) : (
-        <span className="text-[13px]/[17px] tracking-[.012em] text-white">
+        <Box
+          className="text-[13px]/[17px] tracking-[.012em] text-white"
+          as={props.data.href ? NextLink : "span"}
+          {...(props.data.href ? { href: props.data.href } : {})}
+        >
           {props.data.title}
-        </span>
+        </Box>
       )}
 
       {/* Arrow */}
