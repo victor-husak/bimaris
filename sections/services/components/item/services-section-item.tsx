@@ -46,7 +46,11 @@ export const ServicesSectionItem: React.FC<ServicesSectionItemProps> = (
       <List className="my-[25px]" items={props.data.list} />
 
       {/* Action */}
-      <CardAction className="mt-[25px]" title="Explore" />
+      <CardAction
+        className="mt-[25px] group-hover:w-[105px]"
+        title="Read more"
+        href="/services/1"
+      />
     </div>
   );
 };

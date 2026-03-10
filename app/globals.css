@@ -48,3 +48,17 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-vanilla-sans);
 }
+
+
+.animate-fill-progress-indicator {
+  animation-duration: 8s;
+  animation-name: fillProgressIndicator;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fillProgressIndicator {
+  0% { width: 0%; transform: translateX(0); }
+  80% { width: 100%;transform: translateX(0); }
+  100% { width: 0%; transform: translateX(0); }
+}

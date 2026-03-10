@@ -10,24 +10,22 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
   const [loaded, setLoaded] = useState(false);
 
   const slides = useMemo(() => {
-    return items;
-    // return props.data.map((item) => ({
-    //   href: `/works/${item.work?.slug}`,
-    //   title: item.work?.name,
-    //   subtitle: "Recent",
-    //   description: item.work?.description,
-    //   image: item.preview ? item.preview : item.work?.image,
-    // }));
+    return items.map((item) => ({
+      id: item.id,
+      href: item.href,
+      title: item.tag,
+      avatar: item.avatar,
+    }));
   }, []);
 
   const { activeIndex, onChangeActiveIndex } = useCarousel({
-    count: slides.length,
+    count: items.length,
     duration: 8000,
   });
 
-  const activeSlide = useMemo(() => {
-    return slides[activeIndex];
-  }, [activeIndex, slides]);
+  const activeItem = useMemo(() => {
+    return items[activeIndex] ?? items.at(0);
+  }, [activeIndex]);
 
   // const slidesControl = useMemo(() => {
   //   return slides.map((item, index) => ({
@@ -84,10 +82,11 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
   }, []);
 
   return {
+    items,
     loaded,
     slides,
     // slidesControl,
-    activeSlide,
+    activeItem,
     activeIndex,
     onChangeActiveIndex,
     onChangeLoaded: setLoaded,
@@ -97,7 +96,11 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
 const items = [
   {
     id: 1,
-    title: "For individuals",
+    tag: "For individuals",
+    title: ["Immigration", "with clarity"],
+    subtitle: "Immigration services",
+    description:
+      "Personalized immigration legal support for individuals - from first consultation to long-term residency, handled with clarity, care, and precision.",
     href: "/roles/individuals",
     avatar: {
       url: "/images/genereted/home/slide1.webp",
@@ -105,10 +108,20 @@ const items = [
       height: 120,
       alt: "For individuals",
     },
+    media: {
+      url: "/images/home/home-header.webp",
+      width: 3978,
+      height: 1860,
+      alt: "Home header background",
+    },
   },
   {
     id: 2,
-    title: "For businesses",
+    tag: "For businesses",
+    title: ["Immigration", "for businesses"],
+    subtitle: "Immigration services",
+    description:
+      "Bimaris  helps individuals and families navigate the Ukrainian immigration process with clarity, confidence, and expert legal support.",
     href: "/roles/businesses",
     avatar: {
       url: "/images/genereted/home/slide2.webp",
@@ -116,16 +129,32 @@ const items = [
       height: 120,
       alt: "For businesses",
     },
+    media: {
+      url: "/images/genereted/role.webp",
+      width: 3978,
+      height: 1860,
+      alt: "Home header background",
+    },
   },
   {
     id: 3,
-    title: "For investors",
+    tag: "For investors",
+    title: ["Immigration", "for investors"],
+    subtitle: "Immigration services",
+    description:
+      "Personalized immigration legal support for investors - from initial consultation to long-term investment strategies, handled with clarity, care, and precision.",
     href: "/roles/investors",
     avatar: {
       url: "/images/genereted/home/slide3.webp",
       width: 120,
       height: 120,
       alt: "For investors",
+    },
+    media: {
+      url: "/images/genereted/service.webp",
+      width: 3978,
+      height: 1860,
+      alt: "Home header background",
     },
   },
 ];

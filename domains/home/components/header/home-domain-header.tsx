@@ -15,26 +15,22 @@ export type HomeDomainHeaderProps = {
 export const HomeDomainHeader: React.FC<HomeDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
-  const { slides } = useHomeDomainHeader(props);
+  const { slides, activeIndex, activeItem } = useHomeDomainHeader(props);
 
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
       size="lg"
-      description="Personalized immigration legal support for individuals - from first consultation to long-term residency, handled with clarity, care, and precision."
-      media={{
-        url: "/images/home/home-header.webp",
-        width: 3978,
-        height: 1860,
-        alt: "Home header background",
-      }}
+      activeIndex={activeIndex}
+      description={activeItem.description}
+      media={activeItem.media}
       title={
         <>
-          Immigration, <span>with clarity</span>
+          {activeItem.title.at(0)}, <span>{activeItem.title.at(1)}</span>
         </>
       }
-      subtitle="Immigration services"
-      tag="For individuals"
+      subtitle={activeItem.subtitle}
+      tag={activeItem.tag}
       ActionsComponent={
         <>
           <Button href="/" variant="white" size="medium" animation="scale">
@@ -42,7 +38,7 @@ export const HomeDomainHeader: React.FC<HomeDomainHeaderProps> = (
           </Button>
 
           <Button
-            href="/services/1"
+            href={activeItem.href}
             size="medium"
             variant="blur"
             animation="opacity"
@@ -56,6 +52,7 @@ export const HomeDomainHeader: React.FC<HomeDomainHeaderProps> = (
           withRating={false}
           title="Choose your role:"
           data={slides}
+          activeIndex={activeIndex}
         />
       }
     />

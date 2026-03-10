@@ -7,6 +7,7 @@ import type { PageLayoutHeaderSlidesItemProps } from "./components/item";
 export type PageLayoutHeaderSlidesProps = {
   className?: string;
   withRating?: boolean;
+  activeIndex?: number;
   title: string;
   data: Array<PageLayoutHeaderSlidesItemProps["data"]>;
 };
@@ -23,8 +24,12 @@ export const PageLayoutHeaderSlides: React.FC<PageLayoutHeaderSlidesProps> = (
 
       {/* Content */}
       <div className="flex w-65 flex-col gap-2.5">
-        {props.data.map((item) => (
-          <Components.Item data={item} key={item.id} />
+        {props.data.map((item, index) => (
+          <Components.Item
+            data={item}
+            key={item.id}
+            active={props.activeIndex === index}
+          />
         ))}
       </div>
 

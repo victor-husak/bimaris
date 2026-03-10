@@ -13,6 +13,7 @@ import { clsx } from "clsx";
 
 export type PageLayoutHeaderSlidesItemProps = {
   className?: string;
+  active?: boolean;
   data: {
     id: number;
     title: string;
@@ -32,7 +33,8 @@ export const PageLayoutHeaderSlidesItem: React.FC<
     <div
       className={clsx(
         props.className,
-        "group flex h-15 cursor-pointer items-center gap-[15px] rounded-lg bg-white/10 p-2.5 pr-[15px] backdrop-blur-[30px] backdrop-brightness-110",
+        "group flex h-15 cursor-pointer items-center gap-[15px] overflow-hidden rounded-lg bg-white/10 p-2.5 pr-[15px] backdrop-blur-[30px] backdrop-brightness-110 transition-all duration-400",
+        "hover:scale-103",
       )}
       onClick={onClick}
     >
@@ -79,7 +81,7 @@ export const PageLayoutHeaderSlidesItem: React.FC<
       {/* Arrow */}
       <button
         className={clsx(
-          "ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-white/15 transition-all duration-200",
+          "ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-white/15 transition-all duration-400",
           "group-hover:bg-white",
         )}
       >
@@ -90,6 +92,21 @@ export const PageLayoutHeaderSlidesItem: React.FC<
           )}
         />
       </button>
+
+      {/* Indicator */}
+      {props.active && (
+        <div
+          className={clsx(
+            "animate-fill-progress absolute right-0 bottom-0 left-0 z-1 h-[3px] w-full bg-white/30 transition-all",
+          )}
+        >
+          <div
+            className={clsx(
+              "animate-fill-progress-indicator h-full w-1/3 bg-white transition-all",
+            )}
+          />
+        </div>
+      )}
     </div>
   );
 };

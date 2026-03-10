@@ -40,7 +40,7 @@ export const CardAction: React.FC<CardActionProps> = (
 
       <span
         className={clsx(
-          "absolute left-[34px] text-[12px]/[15px] font-medium tracking-[.028em] whitespace-nowrap text-white opacity-0 transition-all duration-200",
+          "absolute left-[27px] text-[12px]/[15px] font-medium tracking-[.028em] whitespace-nowrap text-white opacity-0 transition-all duration-200",
           "group-hover:opacity-100",
         )}
       >

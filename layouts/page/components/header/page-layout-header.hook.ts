@@ -1,9 +1,21 @@
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useEffect, useState } from "react";
 
 import type { PageLayoutHeaderProps } from "./page-layout-header";
 
 export const usePageLayoutHeader = (props: PageLayoutHeaderProps) => {
   const [loaded, setLoaded] = useState(false);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useLayoutEffect(() => {
+    if ((props.activeIndex ?? 0) > 0 && isFirstLoad) {
+      setIsFirstLoad(false);
+    }
+  }, [props.activeIndex, isFirstLoad]);
 
   useLayoutEffect(() => {
     const layer = document.getElementById("layer-back");
@@ -53,6 +65,7 @@ export const usePageLayoutHeader = (props: PageLayoutHeaderProps) => {
 
   return {
     loaded,
+    mounted,
     onChangeLoaded: setLoaded,
   };
 };

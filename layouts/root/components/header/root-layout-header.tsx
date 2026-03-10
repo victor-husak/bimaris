@@ -87,7 +87,10 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
         Log in
       </Button>
 
-      <Components.Trigger className="absolute top-[100%] left-1/2 -translate-x-1/2 transform" />
+      <Components.Trigger
+        className="absolute top-[100%] left-1/2 -translate-x-1/2 transform"
+        onClick={() => onTriggerOverlay("private-clients")}
+      />
     </header>
   );
 };
