@@ -1,15 +1,18 @@
 import { clsx } from "clsx";
+import { forwardRef } from "react";
 
 export type SectionArrowsItemProps = {
   className?: string;
   children: React.ReactNode;
 };
 
-export const SectionArrowsItem: React.FC<SectionArrowsItemProps> = (
-  props,
-): React.JSX.Element => {
+export const SectionArrowsItem = forwardRef<
+  HTMLButtonElement,
+  SectionArrowsItemProps
+>((props, ref): React.JSX.Element => {
   return (
     <button
+      ref={ref}
       className={clsx(
         props.className,
         "flex h-9.5 w-9.5 cursor-pointer items-center justify-center rounded-full border border-[#E7EBF2] bg-[#F0F3F7] transition-all",
@@ -19,4 +22,6 @@ export const SectionArrowsItem: React.FC<SectionArrowsItemProps> = (
       {props.children}
     </button>
   );
-};
+});
+
+SectionArrowsItem.displayName = "SectionArrowsItem";

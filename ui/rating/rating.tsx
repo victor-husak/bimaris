@@ -1,4 +1,5 @@
 import NextImage from "next/image";
+import NextLink from "next/link";
 
 import * as Icons from "./icons";
 
@@ -56,9 +57,17 @@ export const Rating: React.FC<RatingProps> = (props): React.JSX.Element => {
         <div className="flex flex-1 flex-col items-start text-[12px]/[16px]">
           <span className="text-white/60">5.0 on Truspilot</span>
 
-          <span className="link-dashed text-white [--dashed-url:url(/images/underline.svg)]">
+          <NextLink
+            className={clsx(
+              "link-dashed text-white transition-all [--dashed-url:url(/images/underline.svg)]",
+              "hover:opacity-60",
+            )}
+            href="https://www.trustpilot.com/review/bimaris.legal"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
             Explore all reviews
-          </span>
+          </NextLink>
         </div>
 
         {/* Rating */}
