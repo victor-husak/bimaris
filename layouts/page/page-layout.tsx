@@ -22,7 +22,7 @@ export const PageLayout: React.FC<PageLayoutProps> = (
     >
       {!!props.routes?.length && (
         <Components.Route
-          className="container-full mt-4 mb-5"
+          className="container-full my-5"
           items={props.routes}
         />
       )}

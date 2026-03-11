@@ -20,24 +20,31 @@ export const Support: React.FC<SupportProps> = (props): React.JSX.Element => {
         Personalized immigration legal support for people and companies.{" "}
         <NextLink
           className={clsx(
-            "text-secondary link-with-arrow link-dashed transition-all [--dashed-url:url(/images/underline.svg)]",
-            "hover:opacity-80",
+            "text-secondary link-with-arrow transition-all",
+            "hover:opacity-70",
           )}
           href="/contact-us"
         >
-          <span>Read more</span>
+          <span className="link-dashed [--dashed-url:url(/images/underline-second.svg)]">
+            Read more
+          </span>
 
           <ArrowRightIcon className="mt-[3px] [&>path]:stroke-[#5373DB]" />
         </NextLink>
       </p>
 
-      <p className="text-[13px]/[17px] -tracking-[.008em] text-[#818796]">
+      <p className="text-[13px]/[17px] tracking-[.028em] text-[#818796]">
         Have questions.{" "}
         <NextLink
-          className="link-with-arrow text-secondary underline-hover"
+          className={clsx(
+            "link-with-arrow text-secondary transition-all",
+            "hover:opacity-70",
+          )}
           href="/contact-us"
         >
-          <span>Contact us</span>
+          <span className="link-dashed [--dashed-url:url(/images/underline-second.svg)]">
+            Contact us
+          </span>
 
           <ArrowRightIcon className="mt-[3px] [&>path]:stroke-[#5373DB]" />
         </NextLink>

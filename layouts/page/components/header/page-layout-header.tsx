@@ -22,6 +22,8 @@ export type PageLayoutHeaderProps = {
   tag: string;
   description?: string;
   activeIndex?: number;
+  children?: React.ReactNode;
+  InfoCpmponent?: React.ReactNode;
   RightComponent?: React.ReactNode;
   ActionsComponent?: React.ReactNode;
 };
@@ -163,6 +165,9 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
                 {props.description}
               </motion.p>
             )}
+
+            {/* Children */}
+            {props.InfoCpmponent}
 
             {/* Actions */}
             {!!props.ActionsComponent && (

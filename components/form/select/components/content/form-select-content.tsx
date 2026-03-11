@@ -34,7 +34,7 @@ export const FormSelectContent = forwardRef<
         <div
           className={clsx(
             classes.content,
-            "bg-overlay-background absolute top-[calc(100%+7px)] left-0 z-2 flex min-w-full flex-col overflow-hidden rounded-md border border-[#e7e9ed]",
+            "absolute top-[calc(100%+10px)] left-0 z-2 flex min-w-full flex-col overflow-hidden rounded-lg border border-[#ECEFF4] bg-[#fff]",
           )}
           data-lenis-prevent
         >

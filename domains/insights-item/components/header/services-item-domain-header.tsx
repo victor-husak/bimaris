@@ -17,7 +17,7 @@ export const ServicesItemDomainHeader: React.FC<
     <PageLayoutHeader
       className={clsx(props.className, "")}
       classNameTitle="max-w-[540px]"
-      size="md"
+      size="sm"
       type="second"
       media={{
         url: "/images/genereted/insights-item.webp",

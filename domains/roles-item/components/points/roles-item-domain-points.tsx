@@ -21,7 +21,7 @@ export const RolesItemDomainPoints: React.FC<RolesItemDomainPointsProps> = (
       {/* Content */}
       <div className="flex-1">
         {/* title */}
-        <h2 className="mb-20 max-w-[512px] text-[32px]/[43px] font-light tracking-[.024em] text-[#507FEB]">
+        <h2 className="mb-20 max-w-[512px] text-[32px]/[44px] font-light tracking-[.024em] text-[#507FEB]">
           Immigration should be a source of inspiration, not pain.
         </h2>
 

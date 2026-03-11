@@ -18,7 +18,7 @@ export const RolesItemDomainPointsItem: React.FC<
       )}
     >
       {/* Number */}
-      <span className="text-secondary mb-[42px] text-[20px]/[20px] tracking-[.024em]">
+      <span className="text-secondary mb-[42px] text-[22px]/[20px] font-light tracking-[.024em]">
         {props.number}
       </span>
 

@@ -32,7 +32,7 @@ export const CasesSection: React.FC<CasesSectionProps> = (
         title="Customer case studies"
         description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
         ActionComponent={
-          <Button href="/cases" animation="scale">
+          <Button href="/case-studies" animation="scale">
             View all
           </Button>
         }

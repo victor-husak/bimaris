@@ -18,7 +18,7 @@ export const AsideGroup: React.FC<AsideGroupProps> = (
     >
       {/* Header */}
       <header className="flex border-b border-[#E7EAF2] px-5 py-[15px]">
-        <div className="font-sf-pro rounded-full bg-[#C1DBFF] px-2 py-[5px] text-[12px]/[14px] text-[#00335A]">
+        <div className="font-sf-pro rounded-full bg-[#C1DBFF] px-2 py-[5px] text-[12px]/[14px] tracking-[.034em] text-[#00335A]">
           <span>{props.title}</span>
         </div>
       </header>

@@ -1,4 +1,4 @@
-import { List } from "@/components";
+import { List, Tag } from "@/components";
 
 import { CardAction } from "@/components/card";
 
@@ -10,6 +10,7 @@ export type ServicesSectionItemProps = {
   className?: string;
   data: {
     title: string;
+    tag?: string;
     description: string;
     list: string[];
   };
@@ -35,6 +36,17 @@ export const ServicesSectionItem: React.FC<ServicesSectionItemProps> = (
         <h3 className="text-[15px]/[19px] font-normal tracking-[.024em] text-[#2D3A52]">
           {props.data.title}
         </h3>
+
+        {/* Tag */}
+        {props.data.tag && (
+          <Tag
+            className={clsx("-my-[2.5px] ml-1.5", {
+              "bg-[#C1DBFF]": props.data.tag === "top-choice",
+              "bg-[#DEDBF4]": props.data.tag === "new",
+            })}
+            title={props.data.tag === "top-choice" ? "Top choice" : "New"}
+          />
+        )}
       </header>
 
       {/* Description */}
@@ -48,6 +60,7 @@ export const ServicesSectionItem: React.FC<ServicesSectionItemProps> = (
       {/* Action */}
       <CardAction
         className="mt-[25px] group-hover:w-[105px]"
+        size="small"
         title="Read more"
         href="/services/1"
       />

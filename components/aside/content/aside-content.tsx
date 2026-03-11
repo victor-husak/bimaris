@@ -29,7 +29,7 @@ export const AsideContent: React.FC<AsideContentProps> = (
           {headings.map((h) => (
             <li
               className={clsx(
-                "underline-hover font-sf-pro line-clamp-1 cursor-pointer text-[14px]/[16px] text-[#6B7586] transition-all",
+                "underline-hover font-sf-pro line-clamp-1 cursor-pointer text-[14px]/[16px] tracking-[.024em] text-[#6B7586] transition-all",
                 "hover:text-secondary",
                 { "text-secondary": activeId === h.id },
               )}
@@ -42,7 +42,7 @@ export const AsideContent: React.FC<AsideContentProps> = (
 
         {/* Indicator */}
         <div
-          className="absolute top-[24px] left-5 flex h-4.5 w-4.5 items-center justify-center rounded-full bg-[#C1DBFF] transition-all duration-500 ease-linear"
+          className="absolute top-[24px] left-5 flex h-4.5 w-4.5 items-center justify-center rounded-full bg-[#C1DBFF] transition-all duration-1000 ease-[cubic-bezier(.79,-0.01,.41,.99)]"
           style={{ transform: `translateY(${indicatorOffset}px)` }}
         >
           <ArrowRightIcon color="#00335A" />

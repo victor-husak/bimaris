@@ -17,7 +17,7 @@ export const PageLayoutHeaderSlidesRaiting: React.FC<
     <div className={clsx(props.className, "flex items-center gap-1.5")}>
       <Icons.Rating />
 
-      <p className="text-[13px]/[17px] text-white/60">
+      <p className="text-[13px]/[17px] tracking-[.024em] text-white/60">
         5.0 rating on{" "}
         <NextLink
           href="https://www.trustpilot.com"

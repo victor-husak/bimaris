@@ -14,7 +14,7 @@ export const Rating: React.FC<RatingProps> = (props): React.JSX.Element => {
     <div
       className={clsx(
         props.className,
-        "relative flex items-center justify-center overflow-hidden rounded-[11px] py-9",
+        "relative flex items-center justify-center overflow-hidden rounded-[11px] py-[31px]",
         "after:absolute after:inset-0 after:-z-1 after:bg-black/10",
       )}
     >

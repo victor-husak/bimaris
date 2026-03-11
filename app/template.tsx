@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 
 const pageVariants = {
   initial: {
-    opacity: 0,
-    y: 10,
-    scale: 0.98,
-    filter: "blur(2px)",
+    opacity: 1,
+    y: 0,
+    scale: 0.97,
+    filter: "blur(3px)",
   },
   animate: {
     opacity: 1,
@@ -17,10 +17,10 @@ const pageVariants = {
     filter: "blur(0px)",
   },
   exit: {
-    opacity: 0,
-    y: -10,
-    scale: 0.98,
-    filter: "blur(2px)",
+    opacity: 1,
+    y: 0,
+    scale: 0.97,
+    filter: "blur(3px)",
   },
 };
 

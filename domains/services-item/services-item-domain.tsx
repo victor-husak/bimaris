@@ -30,7 +30,11 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       HeaderComponent={<Components.Header />}
     >
       {/* Advantages */}
-      <AdvantagesSection className="mt-5" withBanner data={advantages} />
+      <AdvantagesSection
+        className="mt-5"
+        data={advantages}
+        BannerComponent={<Rating />}
+      />
 
       {/* Content */}
       <Components.Content className="pb-25" />
@@ -62,23 +66,23 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
 const advantages = [
   {
     key: "individuals",
-    title: "Solutions for individuals",
+    title: "98%",
     description:
-      "Personalized immigration support for individual needs, long-term goals, and personal circumstances.",
+      "Client satisfaction rate based on long-term partnerships and repeat engagements.",
     href: "/",
   },
   {
     key: "businesses",
-    title: "Solutions for businesses",
+    title: "1,200+",
     description:
-      "Strategic immigration advisory supporting companies with cross-border talent, compliance, and workforce.",
+      "Successful immigration cases handled for individuals across different personal backgrounds.",
     href: "/",
   },
   {
     key: "investors",
-    title: "Solutions for investors",
+    title: "10 years",
     description:
-      "We support investors entering the Ukrainian market with structured legal guidance.",
+      "Of combined professional experience supporting individuals with immigration and residency matters.",
     href: "/",
   },
 ];

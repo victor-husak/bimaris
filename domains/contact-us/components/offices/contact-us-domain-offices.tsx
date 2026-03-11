@@ -16,6 +16,7 @@ export const ContactUsDomainOffices: React.FC<ContactUsDomainOfficesProps> = (
       className={clsx(props.className)}
       HeaderComponent={
         <SectionHeader
+          classNameDescription="max-w-[500px]"
           title="Find our office"
           description="Our offices in Ukraine and Estonia ensure accessible, on-the-ground legal support for individuals and businesses."
         />

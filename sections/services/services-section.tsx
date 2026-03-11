@@ -28,6 +28,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = (
         <Components.Item
           data={{
             title: "Citizenship of Ukraine",
+            tag: "top-choice",
             description:
               "Comprehensive legal support for individuals seeking Ukrainian citizenship, with a structured approach to eligibility and documentation.",
             list: [
@@ -54,6 +55,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = (
         <Components.Item
           data={{
             title: "Permanent Residence Permit in Ukraine",
+
             description:
               "Legal support for obtaining permanent residence in Ukraine, enabling long-term stay with stable legal status and expanded rights.",
             list: [
@@ -66,6 +68,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = (
         <Components.Item
           data={{
             title: "Temporary Residence Permit in Ukraine",
+            tag: "new",
             description:
               "Assistance with obtaining a temporary residence permit in Ukraine, allowing lawful long-term stay based on work, family or study.",
             list: [
@@ -110,7 +113,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = (
       >
         <div
           className={clsx(
-            "relative h-[120px] w-full overflow-hidden rounded-md",
+            "relative h-[120px] w-full overflow-hidden rounded-[11px]",
             "after:absolute after:inset-0 after:z-1 after:bg-black/10",
           )}
         >

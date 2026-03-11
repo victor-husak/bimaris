@@ -8,6 +8,7 @@ import clsx from "clsx";
 
 export type CardActionProps = {
   className?: string;
+  size?: "base" | "small";
   disabled?: boolean;
   title: string;
   href?: string;
@@ -24,7 +25,11 @@ export const CardAction: React.FC<CardActionProps> = (
     <button
       className={clsx(
         props.className,
-        "relative flex h-[36px] w-[36px] cursor-pointer items-center overflow-hidden rounded-full border border-[#ECEFF4] transition-all duration-200",
+        "relative flex cursor-pointer items-center overflow-hidden rounded-full border border-[#ECEFF4] transition-all duration-200",
+        {
+          "h-[36px] w-[36px]": !props.size || props.size === "base",
+          "h-[32px] w-[32px]": props.size === "small",
+        },
         "group-hover:w-[93px] group-hover:border-[#507FEB] group-hover:bg-[#507FEB]",
       )}
       onClick={onClick}

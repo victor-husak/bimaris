@@ -18,7 +18,7 @@ export const PageLayoutRoute: React.FC<PageLayoutRouteProps> = (
     <div
       className={clsx(
         props.className,
-        "flex items-center text-[12px]/[15px] tracking-[.012em] text-[#8D98A8]",
+        "flex items-center text-[12px]/[15px] tracking-[.024em] text-[#8D98A8]",
       )}
     >
       {props.items.map((item, index) => (

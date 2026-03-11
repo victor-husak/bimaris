@@ -2,7 +2,7 @@
 
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
-import { Button } from "@/components/button";
+import { Button, List } from "@/components";
 
 import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
 
@@ -21,10 +21,10 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
       classNameDescription="max-w-[400px]!"
       size="md"
       media={{
-        url: "/images/genereted/role.webp",
+        url: "/images/home/home-header.webp",
         width: 3978,
         height: 1860,
-        alt: "Role header background",
+        alt: "Home header background",
       }}
       title={
         <>
@@ -34,6 +34,12 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
       description="Share a few details about your situation, and our team will get back to you with clear next steps."
       subtitle="Explore"
       tag="Connect"
+      InfoCpmponent={
+        <List
+          className="mt-[25px] text-[white]"
+          items={["+380 44 995 35 35", "info@bimaris.legal", "Show on the map"]}
+        />
+      }
       ActionsComponent={
         <>
           <Button href="/" variant="white" size="medium" animation="scale">
@@ -44,7 +50,7 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={items} />
       }
-    />
+    ></PageLayoutHeader>
   );
 };
 

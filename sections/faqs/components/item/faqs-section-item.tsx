@@ -43,7 +43,7 @@ export const FaqsSectionItem: React.FC<FaqsSectionItemProps> = (
       {/* Content */}
       <div {...getCollapseProps()}>
         <div className="px-[15px] pb-5">
-          <p className="text-[14px]/[20px] tracking-[.028em] text-[#8A91A2]">
+          <p className="text-[15px]/[22px] tracking-[.024em] text-[#8A91A2]">
             {props.description}
           </p>
         </div>

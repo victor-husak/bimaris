@@ -1,3 +1,5 @@
+"use client";
+
 import { FormSelectContent } from "@/components/form/select";
 
 import * as Icons from "./icons";
@@ -25,15 +27,15 @@ export const FormDropdown: React.FC<FormDropdownProps> = (
       {/* Inner */}
       <div
         className={clsx(
-          "flex h-7 cursor-pointer items-center justify-center gap-2 rounded-[5px] bg-[#EBEBEB] px-2.5 transition-colors",
-          "hover:bg-[#D9D9D9]",
+          "flex cursor-pointer items-center gap-2 rounded-full border border-[#E7EAF2] px-[15px] py-2.5 transition-all",
+          "hover:bg-[#EDF0F5]",
         )}
         onClick={onTrigger}
       >
         {props.IconComponent}
 
         {/* Title */}
-        <span className="font-sf-pro text-[12px]/[14px] tracking-[.008em] text-[#33383C]">
+        <span className="text-[12px]/[14px] tracking-[.008em] text-[#33383C]">
           {props.title}
         </span>
 
