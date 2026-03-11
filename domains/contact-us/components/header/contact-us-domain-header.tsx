@@ -47,7 +47,12 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
           </Button>
         </>
       }
-      RightComponent={<ContactForm className="-mb-[62px] max-w-[700px]" />}
+      RightComponent={
+        <ContactForm
+          className="mt-auto -mb-[62px] max-w-[700px]"
+          withTag={false}
+        />
+      }
       // RightComponent={
       //   <PageLayoutHeaderSlides title="Quick links:" data={items} />
       // }

@@ -22,7 +22,7 @@ export const ContactUsDomain: React.FC<ContactUsDomainProps> = (
       ]}
       HeaderComponent={<Components.Header />}
     >
-      <Components.Offices />
+      <Components.Offices className="mt-[62px]" />
 
       {/* Faqs */}
       <FaqsSection className="mt-25 mb-25" />

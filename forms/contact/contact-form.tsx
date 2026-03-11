@@ -18,6 +18,7 @@ import { clsx } from "clsx";
 
 export type ContactFormProps = {
   className?: string;
+  withTag?: boolean;
 };
 
 export const ContactForm: React.FC<ContactFormProps> = (
@@ -33,13 +34,15 @@ export const ContactForm: React.FC<ContactFormProps> = (
       {/* Content */}
       <div className="flex flex-1 flex-col bg-white p-[35px] pb-5">
         {/* Tag */}
-        <div className="mr-auto mb-[35px] flex items-center gap-2.5 rounded-full bg-[#EFF2F7] px-2.5 py-1 text-[#2D3A52]">
-          <ArrowRightIcon className="[&>path]:stroke-[#2D3A52]" />
+        {props.withTag !== false && (
+          <div className="mr-auto mb-[35px] flex items-center gap-2.5 rounded-full bg-[#EFF2F7] px-2.5 py-1 text-[#2D3A52]">
+            <ArrowRightIcon className="[&>path]:stroke-[#2D3A52]" />
 
-          <span className="text-[12px]/[15px] tracking-[.028em]">
-            Fill out the form
-          </span>
-        </div>
+            <span className="text-[12px]/[15px] tracking-[.028em]">
+              Fill out the form
+            </span>
+          </div>
+        )}
 
         <form className="flex flex-col">
           <div className="flex flex-col gap-[15px]">
