@@ -1,6 +1,6 @@
 import { SingleLayoutAside } from "@/layouts/single";
 
-import { AsideContent, AsideLists } from "@/components/aside";
+import { AsideContent, AsideLists, AsideActions } from "@/components/aside";
 
 import { clsx } from "clsx";
 
@@ -17,6 +17,8 @@ export const InsightsItemDomainContentAside: React.FC<
       <AsideContent content={props.content} />
 
       <AsideLists title="Related solutions" />
+
+      <AsideActions />
     </SingleLayoutAside>
   );
 };

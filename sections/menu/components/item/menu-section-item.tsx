@@ -39,7 +39,7 @@ export const MenuSectionItem: React.FC<MenuSectionItemProps> = (
           {/* Title */}
           <span
             className={clsx(
-              "underline-hover text-[14px]/[18px] tracking-[0.012em] transition-opacity",
+              "underline-hover text-[15px]/[18px] tracking-[.024em] transition-opacity",
               "group-hover:decoration-current-color group-hover:underline",
             )}
           >

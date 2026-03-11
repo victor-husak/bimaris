@@ -1,6 +1,16 @@
-import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
+"use client";
+
+import {
+  PageLayoutHeader,
+  PageLayoutHeaderSlides,
+  PageLayoutHeaderArrows,
+} from "@/layouts/page";
+
+import { Button } from "@/components";
 
 import { AlertIcon, FileIcon } from "@/icons/header-links";
+
+import { useInsightsDomainHeader } from "./insights-domain-header.hook";
 
 import { clsx } from "clsx";
 
@@ -11,23 +21,31 @@ export type InsightsDomainHeaderProps = {
 export const InsightsDomainHeader: React.FC<InsightsDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
+  const { activeIndex, activeItem, onTrigger } = useInsightsDomainHeader();
+
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
       classNameTitle="max-w-[500px]"
-      size="md"
+      size="sm"
       type="second"
-      media={{
-        url: "/images/insights.webp",
-        width: 3978,
-        height: 1560,
-        alt: "Insights header background",
-      }}
-      title="Changes to entry and stay rules for foreign nationals"
+      activeIndex={activeIndex}
+      media={activeItem.media}
+      title={activeItem.title}
       subtitle="Featured"
       tag="Legal alert"
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={items} />
+      }
+      ContentComponent={
+        <PageLayoutHeaderArrows
+          onTrigger={onTrigger}
+          ActionComponent={
+            <Button variant="white" animation="scale" href={activeItem.href}>
+              Read case study
+            </Button>
+          }
+        />
       }
     />
   );

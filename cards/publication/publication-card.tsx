@@ -20,7 +20,8 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
     <div
       className={clsx(
         props.className,
-        "group flex flex-col rounded-[11px] bg-white p-[25px]",
+        "group flex flex-col rounded-[11px] bg-white p-[25px] transition-all",
+        "hover:-translate-y-2.5",
       )}
     >
       <Tag className="mr-auto mb-[25px] bg-[#E7EFFC]" title="Insight" />
@@ -70,9 +71,9 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
 
         {/* Action */}
         <CardAction
-          className="mt-[25px] mr-auto"
+          className="mt-[25px] mr-auto group-hover:w-[110px]"
           href="/insights/1"
-          title="Explore"
+          title="Read more"
         />
       </div>
     </div>

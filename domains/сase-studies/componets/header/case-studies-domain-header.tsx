@@ -1,10 +1,12 @@
 "use client";
 
-import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
+import {
+  PageLayoutHeader,
+  PageLayoutHeaderSlides,
+  PageLayoutHeaderArrows,
+} from "@/layouts/page";
 
-import { Button, ButtonIcon } from "@/components";
-
-import { ArrowRightIcon } from "@/icons";
+import { Button } from "@/components";
 
 import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
 
@@ -19,8 +21,7 @@ export type CaseStudiesDomainHeaderProps = {
 export const CaseStudiesDomainHeader: React.FC<CaseStudiesDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
-  const { activeIndex, activeItem, onTrigger } =
-    useCaseStudiesDomainHeader(props);
+  const { activeIndex, activeItem, onTrigger } = useCaseStudiesDomainHeader();
 
   return (
     <PageLayoutHeader
@@ -37,29 +38,14 @@ export const CaseStudiesDomainHeader: React.FC<CaseStudiesDomainHeaderProps> = (
         <PageLayoutHeaderSlides title="Quick links:" data={links} />
       }
       ContentComponent={
-        <div className="mt-[30px] flex items-center">
-          {/* Arrows */}
-          <div className={clsx("flex items-center gap-2")}>
-            <ButtonIcon
-              className="rotate-180"
-              onClick={() => onTrigger("prev")}
-            >
-              <ArrowRightIcon color="#fff" />
-            </ButtonIcon>
-
-            <ButtonIcon onClick={() => onTrigger("next")}>
-              <ArrowRightIcon color="#fff" />
-            </ButtonIcon>
-          </div>
-
-          {/* Hr */}
-          <div className="mx-[15px] h-2 w-px bg-white/20" />
-
-          {/* Action */}
-          <Button variant="white" animation="scale" href={activeItem.href}>
-            Read case study
-          </Button>
-        </div>
+        <PageLayoutHeaderArrows
+          onTrigger={onTrigger}
+          ActionComponent={
+            <Button variant="white" animation="scale" href={activeItem.href}>
+              Read case study
+            </Button>
+          }
+        />
       }
     />
   );
@@ -75,5 +61,6 @@ const links = [
     id: 2,
     title: "Schedule a meeting",
     icon: <MeetingIcon />,
+    href: "/contact-us",
   },
 ];
