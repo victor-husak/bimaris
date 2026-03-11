@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 
 const pageVariants = {
   initial: {
-    opacity: 0.8,
-    y: 0,
+    opacity: 0,
+    y: 10,
     scale: 0.98,
     filter: "blur(2px)",
   },
@@ -17,16 +17,16 @@ const pageVariants = {
     filter: "blur(0px)",
   },
   exit: {
-    opacity: 0.8,
-    y: 0,
+    opacity: 0,
+    y: -10,
     scale: 0.98,
     filter: "blur(2px)",
   },
 };
 
 const pageTransition = {
-  duration: 1,
-  ease: [0.16, 1, 0.3, 1] as const, // Ultra smooth easing curve
+  duration: 0.7,
+  ease: [0.22, 1, 0.36, 1] as const, // Custom cubic bezier for smooth easing
 };
 
 export default function Template({ children }: { children: React.ReactNode }) {
