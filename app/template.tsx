@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const pageVariants = {
   initial: {
-    opacity: 1,
+    opacity: 0.8,
     y: 0,
     scale: 0.98,
     filter: "blur(2px)",
@@ -17,7 +17,7 @@ const pageVariants = {
     filter: "blur(0px)",
   },
   exit: {
-    opacity: 1,
+    opacity: 0.8,
     y: 0,
     scale: 0.98,
     filter: "blur(2px)",
@@ -25,7 +25,7 @@ const pageVariants = {
 };
 
 const pageTransition = {
-  duration: 0.9,
+  duration: 1,
   ease: [0.16, 1, 0.3, 1] as const, // Ultra smooth easing curve
 };
 

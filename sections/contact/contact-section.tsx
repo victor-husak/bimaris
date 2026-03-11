@@ -1,5 +1,7 @@
 import { Banner, BannerList } from "@/ui";
 
+import { ContactForm } from "@/forms/contact";
+
 import { Section, SectionHeader, Button } from "@/components";
 
 import * as Components from "./components";
@@ -54,7 +56,7 @@ export const ContactSection: React.FC<ContactSectionProps> = (
         </div>
 
         {/* Form */}
-        <Components.Form className="flex-1" />
+        <ContactForm className="flex-1" />
       </div>
     </Section>
   );

@@ -13,7 +13,7 @@ export const ButtonIcon: React.FC<ButtonIconProps> = (
     <button
       className={clsx(
         props.className,
-        "flex h-[34px] w-[34px] cursor-pointer items-center justify-center rounded-full bg-white/15 backdrop-blur-[30px] backdrop-brightness-115 transition-all",
+        "flex h-[34px] w-[34px] cursor-pointer items-center justify-center rounded-full bg-white/25 transition-all",
       )}
       onClick={props.onClick}
     >

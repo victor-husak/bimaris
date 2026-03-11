@@ -1,10 +1,10 @@
 "use client";
 
-import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
+import { PageLayoutHeader } from "@/layouts/page";
+
+import { ContactForm } from "@/forms/contact";
 
 import { Button, List } from "@/components";
-
-import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
 
 import { clsx } from "clsx";
 
@@ -47,22 +47,10 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
           </Button>
         </>
       }
-      RightComponent={
-        <PageLayoutHeaderSlides title="Quick links:" data={items} />
-      }
+      RightComponent={<ContactForm className="-mb-[62px] max-w-[700px]" />}
+      // RightComponent={
+      //   <PageLayoutHeaderSlides title="Quick links:" data={items} />
+      // }
     ></PageLayoutHeader>
   );
 };
-
-const items = [
-  {
-    id: 1,
-    title: "Browse services",
-    icon: <ServiceIcon />,
-  },
-  {
-    id: 2,
-    title: "Schedule a meeting",
-    icon: <MeetingIcon />,
-  },
-];
