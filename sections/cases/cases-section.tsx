@@ -2,8 +2,6 @@
 
 import { CaseCard } from "@/cards/case";
 
-import { SectionHeader, Button } from "@/components";
-
 import { SectionArrows } from "@/components/section";
 
 import { useSwiper } from "@/hooks";
@@ -13,10 +11,9 @@ import { Navigation } from "swiper/modules";
 
 import { clsx } from "clsx";
 
-import "swiper/css";
-
 export type CasesSectionProps = {
   className?: string;
+  HeaderComponent?: React.JSX.Element;
 };
 
 export const CasesSection: React.FC<CasesSectionProps> = (
@@ -26,17 +23,8 @@ export const CasesSection: React.FC<CasesSectionProps> = (
 
   return (
     <section className={clsx(props.className, "")}>
-      <SectionHeader
-        className="container-full pb-0"
-        classNameDescription="max-w-[500px]"
-        title="Customer case studies"
-        description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
-        ActionComponent={
-          <Button href="/case-studies" animation="scale">
-            View all
-          </Button>
-        }
-      />
+      {/* Header */}
+      {props.HeaderComponent}
 
       <Swiper
         className="px-(--local-container-offset)! pt-25! pb-[35px]!"
@@ -60,7 +48,6 @@ export const CasesSection: React.FC<CasesSectionProps> = (
       </Swiper>
 
       {/* Actions */}
-
       <SectionArrows
         className="container-full"
         prevRef={prevRef}

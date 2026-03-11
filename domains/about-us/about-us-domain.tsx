@@ -1,4 +1,4 @@
-import { SectionHeader } from "@/components";
+import { SectionHeader, Button } from "@/components";
 
 import { PageLayout } from "@/layouts/page";
 
@@ -56,7 +56,22 @@ export const AboutUsDomain: React.FC<AboutUsDomainProps> = (
       <ExpertsSection />
 
       {/* Cases */}
-      <CasesSection className="mb-[60px]" />
+      <CasesSection
+        className="mb-[60px]"
+        HeaderComponent={
+          <SectionHeader
+            className="container-full pb-0"
+            classNameDescription="max-w-[500px]"
+            title="Customer case studies"
+            description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+            ActionComponent={
+              <Button href="/case-studies" animation="scale">
+                View all
+              </Button>
+            }
+          />
+        }
+      />
 
       {/* Rating */}
       <section className="container-full">

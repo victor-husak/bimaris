@@ -21,7 +21,11 @@ export const AsideContent: React.FC<AsideContentProps> = (
   );
 
   return (
-    <AsideGroup className={clsx(props.className, "")} title="Contents">
+    <AsideGroup
+      className={clsx(props.className, "")}
+      variant="secondary"
+      title="Contents"
+    >
       {/* Content */}
       <div className="relative py-[25px] pr-[52px] pl-[58px]">
         {/* List */}

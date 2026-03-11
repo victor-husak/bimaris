@@ -2,6 +2,7 @@ import { clsx } from "clsx";
 
 export type AsideGroupProps = {
   className?: string;
+  variant?: "base" | "secondary";
   title: string;
   children: React.ReactNode;
 };
@@ -18,7 +19,16 @@ export const AsideGroup: React.FC<AsideGroupProps> = (
     >
       {/* Header */}
       <header className="flex border-b border-[#E7EAF2] px-5 py-[15px]">
-        <div className="font-sf-pro rounded-full bg-[#C1DBFF] px-2 py-[5px] text-[12px]/[14px] tracking-[.034em] text-[#00335A]">
+        <div
+          className={clsx(
+            "rounded-full px-2 py-[5px] text-[12px]/[14px] tracking-[.034em]",
+            {
+              "bg-[#DEDBF4] text-[#3B3255]":
+                !props.variant || props.variant === "base",
+              "bg-[#C1DBFF] text-[#00335A]": props.variant === "secondary",
+            },
+          )}
+        >
           <span>{props.title}</span>
         </div>
       </header>

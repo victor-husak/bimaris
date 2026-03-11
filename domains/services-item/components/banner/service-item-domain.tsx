@@ -13,12 +13,12 @@ export const ServiceItemDomain: React.FC<ServiceItemDomainProps> = (
     <div
       className={clsx(
         props.className,
-        "group border-footer-border relative mt-0 overflow-hidden border-t border-[#F4F5F7] pt-[35px]",
+        "group border-footer-border relative mt-0 overflow-hidden pt-[35px]",
       )}
     >
       <div
         className={clsx(
-          "relative h-[120px] w-full overflow-hidden rounded-md",
+          "relative h-[120px] w-full overflow-hidden rounded-[11px]",
           "after:absolute after:inset-0 after:z-1 after:bg-black/10",
         )}
       >

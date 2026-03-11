@@ -1,9 +1,8 @@
-import { SectionArrows } from "@/components/section";
-
 import { clsx } from "clsx";
 
 export type ExpertsSectionHeaderProps = {
   className?: string;
+  RightComponent?: React.ReactNode;
 };
 
 export const ExpertsSectionHeader: React.FC<ExpertsSectionHeaderProps> = (
@@ -26,7 +25,7 @@ export const ExpertsSectionHeader: React.FC<ExpertsSectionHeaderProps> = (
         </p>
 
         {/* Arrows */}
-        <SectionArrows className="ml-auto" />
+        {props.RightComponent}
       </div>
     </header>
   );

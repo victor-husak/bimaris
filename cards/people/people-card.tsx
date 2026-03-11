@@ -18,7 +18,8 @@ export const PeopleCard: React.FC<PeopleCardProps> = (
     <div
       className={clsx(
         props.className,
-        "group flex flex-col rounded-[11px] bg-white p-2.5",
+        "group flex flex-col rounded-[11px] bg-white p-2.5 transition-all",
+        "hover:-translate-y-2.5",
       )}
     >
       {/* Preview */}

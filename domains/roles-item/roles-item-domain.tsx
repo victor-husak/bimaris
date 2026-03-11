@@ -6,6 +6,8 @@ import { FaqsSection } from "@/sections/faqs";
 import { CasesSection } from "@/sections/cases";
 import { ServicesSection } from "@/sections/services";
 
+import { SectionHeader, Button } from "@/components";
+
 import { Rating } from "@/ui";
 
 import * as Components from "./components";
@@ -38,7 +40,22 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
       <ServicesSection className="section-gradient" />
 
       {/* Cases */}
-      <CasesSection className="mb-15" />
+      <CasesSection
+        className="mb-15"
+        HeaderComponent={
+          <SectionHeader
+            className="container-full pb-0"
+            classNameDescription="max-w-[500px]"
+            title="Customer case studies"
+            description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+            ActionComponent={
+              <Button href="/case-studies" animation="scale">
+                View all
+              </Button>
+            }
+          />
+        }
+      />
 
       {/* FAQs */}
       <FaqsSection className="section-gradient z-1 mb-[100px] pt-[100px]" />

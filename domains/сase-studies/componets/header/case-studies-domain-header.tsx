@@ -16,7 +16,7 @@ export const CaseStudiesDomainHeader: React.FC<CaseStudiesDomainHeaderProps> = (
       className={clsx(props.className, "")}
       classNameTitle="max-w-[530px]"
       type="second"
-      size="md"
+      size="sm"
       media={{
         url: "/images/case-studies/header.webp",
         width: 3978,

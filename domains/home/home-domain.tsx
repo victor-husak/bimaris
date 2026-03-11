@@ -48,7 +48,22 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
       <UpdatesSection className="pb-27.5" />
 
       {/* Cases */}
-      <CasesSection className="section-gradient mb-[63px]" />
+      <CasesSection
+        className="section-gradient mb-[63px]"
+        HeaderComponent={
+          <SectionHeader
+            className="container-full pb-0"
+            classNameDescription="max-w-[500px]"
+            title="Customer case studies"
+            description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+            ActionComponent={
+              <Button href="/case-studies" animation="scale">
+                View all
+              </Button>
+            }
+          />
+        }
+      />
 
       <section className="container-full">
         <Rating />

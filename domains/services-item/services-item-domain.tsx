@@ -1,3 +1,5 @@
+import { SectionHeader, Button } from "@/components";
+
 import { PageLayout } from "@/layouts/page";
 
 import { AdvantagesSection } from "@/sections/advantages";
@@ -39,7 +41,7 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       {/* Content */}
       <Components.Content className="pb-25" />
 
-      <div className="container-full section-gradient mb-[100px]">
+      <div className="container-full section-gradient z-1 mb-[100px]">
         <Components.Banner />
       </div>
 
@@ -50,7 +52,22 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       <FaqsSection className="z-1 mb-[110px]" />
 
       {/* Cases */}
-      <CasesSection className="section-gradient mb-[70px]" />
+      <CasesSection
+        className="section-gradient mb-[70px]"
+        HeaderComponent={
+          <SectionHeader
+            className="container-full pb-0"
+            classNameDescription="max-w-[500px]"
+            title="Related case studies"
+            description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+            ActionComponent={
+              <Button href="/case-studies" animation="scale">
+                View all
+              </Button>
+            }
+          />
+        }
+      />
 
       {/* Rating */}
       <section className="container-full">

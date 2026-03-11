@@ -33,7 +33,12 @@ export const AboutUsDomainHeader: React.FC<AboutUsDomainHeaderProps> = (
       tag="Our story"
       ActionsComponent={
         <>
-          <Button href="/" variant="white" size="medium" animation="scale">
+          <Button
+            href="/contact-us"
+            variant="white"
+            size="medium"
+            animation="scale"
+          >
             Connect with our team
           </Button>
 
@@ -43,7 +48,7 @@ export const AboutUsDomainHeader: React.FC<AboutUsDomainHeaderProps> = (
             variant="blur"
             animation="opacity"
           >
-            Open services
+            Who we serve
           </Button>
         </>
       }

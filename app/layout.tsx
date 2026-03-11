@@ -9,6 +9,7 @@ import { CookiebotScript } from "./scripts/cookiebot-script";
 import { clsx } from "clsx";
 
 import "./globals.css";
+import "swiper/css";
 
 import type { Metadata } from "next";
 

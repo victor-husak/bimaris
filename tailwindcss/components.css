@@ -63,7 +63,10 @@
     }
 
     &:where([data-animation="scale"]) {
-      @apply hover:brightness-95;
+      &:where([data-variant="base"]) {
+        @apply hover:before:bg-[#4775DD];
+      }
+      /* @apply hover:brightness-95; */
 
       &::before {
         transform: scale(1) perspective(1px);

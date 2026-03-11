@@ -6,6 +6,8 @@ import { ContactSection } from "@/sections/contact";
 import { CasesSection } from "@/sections/cases";
 import { ServicesSection } from "@/sections/services";
 
+import { SectionHeader, Button } from "@/components";
+
 import { Rating } from "@/ui/rating";
 import { Support } from "@/ui/support";
 
@@ -47,7 +49,22 @@ export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
       <ServicesSection className="section-gradient" />
 
       {/* Cases */}
-      <CasesSection className="mb-[60px]" />
+      <CasesSection
+        className="mb-[60px]"
+        HeaderComponent={
+          <SectionHeader
+            className="container-full pb-0"
+            classNameDescription="max-w-[500px]"
+            title="Customer case studies"
+            description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+            ActionComponent={
+              <Button href="/case-studies" animation="scale">
+                View all
+              </Button>
+            }
+          />
+        }
+      />
 
       {/* Faqs */}
       <FaqsSection className="section-gradient mb-25 pt-25" />
