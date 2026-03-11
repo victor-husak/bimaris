@@ -1,0 +1,45 @@
+import { useMemo } from "react";
+
+import { useCarousel } from "@/hooks";
+
+import type { CaseStudiesDomainHeaderProps } from "./case-studies-domain-header";
+
+export const useCaseStudiesDomainHeader = (
+  props: CaseStudiesDomainHeaderProps,
+) => {
+  const { activeIndex, onTrigger } = useCarousel({
+    count: items.length,
+    duration: 8000,
+  });
+
+  const activeItem = useMemo(() => {
+    return items[activeIndex] ?? items.at(0);
+  }, [activeIndex]);
+
+  return { activeIndex, activeItem, onTrigger };
+};
+
+const items = [
+  {
+    id: 1,
+    title: "Changes to entry and stay rules for foreign nationals",
+    href: "/case-studies/1",
+    media: {
+      url: "/images/case-studies/header.webp",
+      width: 3978,
+      height: 1560,
+      alt: "Case studies header background",
+    },
+  },
+  {
+    id: 2,
+    title: "Relocating a European technology company to Ukraine",
+    href: "/case-studies/2",
+    media: {
+      url: "/images/insights.webp",
+      width: 3978,
+      height: 1560,
+      alt: "Insights header background",
+    },
+  },
+];

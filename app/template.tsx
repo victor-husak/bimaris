@@ -7,8 +7,8 @@ const pageVariants = {
   initial: {
     opacity: 1,
     y: 0,
-    scale: 0.97,
-    filter: "blur(3px)",
+    scale: 0.98,
+    filter: "blur(2px)",
   },
   animate: {
     opacity: 1,
@@ -19,14 +19,14 @@ const pageVariants = {
   exit: {
     opacity: 1,
     y: 0,
-    scale: 0.97,
-    filter: "blur(3px)",
+    scale: 0.98,
+    filter: "blur(2px)",
   },
 };
 
 const pageTransition = {
-  duration: 0.7,
-  ease: [0.22, 1, 0.36, 1] as const, // Custom cubic bezier for smooth easing
+  duration: 0.9,
+  ease: [0.16, 1, 0.3, 1] as const, // Ultra smooth easing curve
 };
 
 export default function Template({ children }: { children: React.ReactNode }) {

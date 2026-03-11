@@ -14,6 +14,7 @@ export type PageLayoutHeaderProps = {
   className?: string;
   classNameTitle?: string;
   classNameDescription?: string;
+  classNameActions?: string;
   size?: "sm" | "md" | "lg";
   type?: "base" | "second";
   media: Media;
@@ -26,6 +27,7 @@ export type PageLayoutHeaderProps = {
   InfoCpmponent?: React.ReactNode;
   RightComponent?: React.ReactNode;
   ActionsComponent?: React.ReactNode;
+  ContentComponent?: React.ReactNode;
 };
 
 export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
@@ -141,7 +143,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
               }}
               className={clsx(
                 props.classNameTitle,
-                "font-season-mix mb-5 font-light tracking-[.038em] text-white",
+                "font-season-mix font-light tracking-[.038em] text-white",
                 "[&>span]:text-[#D8E8FF]",
                 {
                   "text-[40px]/[50px]": props.size === "lg",
@@ -158,7 +160,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
               <motion.p
                 variants={itemVariants}
                 className={clsx(
-                  "max-w-[530px] text-[14px]/[19px] tracking-[.024em] text-white/60",
+                  "mt-5 max-w-[530px] text-[14px]/[19px] tracking-[.024em] text-white/60",
                   props.classNameDescription,
                 )}
               >
@@ -169,11 +171,16 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
             {/* Children */}
             {props.InfoCpmponent}
 
+            {props.ContentComponent}
+
             {/* Actions */}
             {!!props.ActionsComponent && (
               <motion.div
                 variants={itemVariants}
-                className="mt-[25px] flex flex-col items-start gap-2.5"
+                className={clsx(
+                  "mt-[25px] flex flex-col items-start gap-2.5",
+                  props.classNameActions,
+                )}
               >
                 {props.ActionsComponent}
               </motion.div>

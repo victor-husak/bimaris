@@ -1,4 +1,5 @@
 export { Button } from "./button";
+export { ButtonIcon } from "./button-icon";
 export { Section, SectionHeader } from "./section";
 export { Box } from "./box";
 export { Lang } from "./lang";
