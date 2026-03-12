@@ -19,6 +19,8 @@
 }
 
 @theme inline {
+   --breakpoint-2xl: 1526px;
+
   --color-secondary: #507FEB;
 
   --color-background: #F5F7FA;
