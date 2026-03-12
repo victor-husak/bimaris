@@ -7,8 +7,12 @@ import * as Components from "./componets";
 
 import { clsx } from "clsx";
 
+import type { PublicationShort } from "@/types/publication";
+
 export type InsightsDomainProps = {
   className?: string;
+  publications: StrapiCollection<PublicationShort>;
+  searchParams?: SearchParams;
 };
 
 export const InsightsDomain: React.FC<InsightsDomainProps> = (
@@ -27,7 +31,10 @@ export const InsightsDomain: React.FC<InsightsDomainProps> = (
 
       <UpdatesSection className="mb-25" />
 
-      <Components.List className="section-gradient" />
+      <Components.List
+        className="section-gradient"
+        publications={props.publications}
+      />
     </PageLayout>
   );
 };

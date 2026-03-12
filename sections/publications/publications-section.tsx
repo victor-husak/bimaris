@@ -6,12 +6,18 @@ import { SectionArrows } from "@/components/section";
 
 import { clsx } from "clsx";
 
+import type { PublicationShort } from "@/types/publication";
+
 export type PublicationsSectionProps = {
   className?: string;
-  // HeaderComponent?: React.ReactNode;
+  slug: string;
 };
 
-export const PublicationsSection: React.FC<PublicationsSectionProps> = (
+export type PublicationsSectionCombinedProps = PublicationsSectionProps & {
+  data?: PublicationShort[];
+};
+
+export const PublicationsSection: React.FC<PublicationsSectionCombinedProps> = (
   props,
 ): React.JSX.Element => {
   return (
@@ -26,11 +32,9 @@ export const PublicationsSection: React.FC<PublicationsSectionProps> = (
     >
       <div className="border-b border-[#E7EBF2] pb-15">
         <div className="grid grid-cols-3 gap-[30px]">
-          <PublicationCard />
-
-          <PublicationCard />
-
-          <PublicationCard />
+          {props.data?.map((publication) => (
+            <PublicationCard key={publication.id} data={publication} />
+          ))}
         </div>
 
         <SectionArrows className="mt-10" />

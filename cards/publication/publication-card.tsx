@@ -1,5 +1,6 @@
 import NextImage from "next/image";
 import NextLink from "next/link";
+import { clsx } from "clsx";
 
 import { Tag } from "@/components";
 
@@ -7,15 +8,20 @@ import { CardAction } from "@/components/card";
 
 import * as Icons from "./icons";
 
-import { clsx } from "clsx";
+import { usePublicationCard } from "./publication-card.hook";
+
+import type { PublicationShort } from "@/types/publication";
 
 export type PublicationCardProps = {
   className?: string;
+  data: PublicationShort;
 };
 
 export const PublicationCard: React.FC<PublicationCardProps> = (
   props,
 ): React.JSX.Element => {
+  const { href, data } = usePublicationCard(props);
+
   return (
     <div
       className={clsx(
@@ -24,13 +30,16 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         "hover:-translate-y-2.5",
       )}
     >
-      <Tag className="mr-auto mb-[25px] bg-[#E7EFFC]" title="Insight" />
+      <Tag
+        className="mr-auto mb-[25px] bg-[#E7EFFC]"
+        title={data.category.name}
+      />
 
       {/* Preview */}
       <div className="h-[180px] overflow-hidden rounded-lg bg-gray-300">
         <NextImage
           className="h-full w-full object-cover"
-          src="/images/genereted/case.webp"
+          src={data.preview}
           alt="Case preview"
           width={960}
           height={540}
@@ -50,7 +59,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
           {/* Date */}
           <div className="flex rounded-full bg-[#EFF2F7] px-2 py-[5px]">
             <span className="font-sf-pro text-[12px]/[14px] text-[#2D3A52]">
-              05.01.2026
+              {data.date}
             </span>
           </div>
         </div>
@@ -58,21 +67,20 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         {/* Title */}
         <NextLink
           className="underline-hover mr-auto mb-[15px] text-[16px]/[22px] tracking-[.024em] text-[#2D3A52]"
-          href="/insights/1"
+          href={href}
         >
-          Ukraine updates documentation rules for temporary residence permits
+          {data.name}
         </NextLink>
 
         {/* Description */}
         <p className="text-[14px]/[20px] tracking-[.024em] text-[#969BA7]">
-          Assisting individual professionals with immigration planning and legal
-          support complex.
+          {data.description}
         </p>
 
         {/* Action */}
         <CardAction
           className="mt-[25px] mr-auto group-hover:w-[110px]"
-          href="/insights/1"
+          href={href}
           title="Read more"
         />
       </div>

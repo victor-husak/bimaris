@@ -16,3 +16,9 @@ type Route = {
   value: string;
   // key: string;
 };
+
+type Params = {
+  slug: string;
+};
+
+type SearchParams = Record<string, string | string[] | boolean>;

@@ -8,6 +8,7 @@ export type ListLayoutProps = {
   className?: string;
   title: string;
   description: string;
+  totalCount?: number;
   children?: React.ReactNode;
 };
 
@@ -26,12 +27,14 @@ export const ListLayout: React.FC<ListLayoutProps> = (
         </div>
 
         {/* Action */}
-        <Button
-          className="mx-auto"
-          title="Show more (+6)"
-          animation="scale"
-          href="/"
-        />
+        {props.totalCount && props.totalCount > 6 && (
+          <Button
+            className="mx-auto"
+            title={`Show more (+${props.totalCount})`}
+            animation="scale"
+            href="/"
+          />
+        )}
       </div>
     </section>
   );

@@ -1,3 +1,5 @@
+import { clsx } from "clsx";
+
 import { PageLayout } from "@/layouts/page";
 
 import { Support } from "@/ui/support";
@@ -7,27 +9,25 @@ import { PublicationsSection } from "@/sections/publications";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import { useInsightsItemDomain } from "./insights-item-domain.hook";
+
+import type { Publication } from "@/types/publication";
 
 export type InsightsItemDomainProps = {
   className?: string;
+  data: Publication;
 };
 
 export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
   props,
 ): React.JSX.Element => {
+  const { routes } = useInsightsItemDomain(props);
+
   return (
     <PageLayout
       className={clsx(props.className, "")}
-      routes={[
-        { label: "Home", value: "/" },
-        { label: "Insights", value: "/insights" },
-        {
-          label: "Relocating a European technology company to Ukraine",
-          value: "/insights/relocating-european-tech-company",
-        },
-      ]}
-      HeaderComponent={<Components.Header />}
+      routes={routes}
+      HeaderComponent={<Components.Header data={props.data} />}
     >
       {/* Support */}
       <section className="container-full">
@@ -35,7 +35,7 @@ export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
       </section>
 
       {/* Content */}
-      <Components.Content className="pb-20" />
+      <Components.Content className="pb-20" data={props.data} />
 
       {/* Rating */}
       <section className="container-full section-gradient pt-20">
@@ -49,7 +49,7 @@ export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
       {/* <FaqsSection className="z-1 mt-[110px]" /> */}
 
       {/* Publications */}
-      <PublicationsSection className="z-1 mb-20" />
+      <PublicationsSection className="z-1 mb-20" slug={props.data.slug} />
     </PageLayout>
   );
 };

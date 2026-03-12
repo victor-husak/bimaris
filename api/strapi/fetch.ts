@@ -1,7 +1,7 @@
 "use server";
 
 import { StrapiError, StrapiAuthError, StrapiNotFoundError } from "./errors";
-import { StrapiErrorResponse } from "./strapi-error.types";
+import type { StrapiErrorResponse } from "./strapi-error.types";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL!;
 const STRAPI_TOKEN = process.env.NEXT_PUBLIC_STRAPI_TOKEN;

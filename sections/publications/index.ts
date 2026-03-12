@@ -1,1 +1,1 @@
-export { PublicationsSection } from "./publications-section";
+export { PublicationsSectionBackend as PublicationsSection } from "./publications-section.backend";

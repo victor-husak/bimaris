@@ -1,4 +1,4 @@
-import { StrapiErrorResponse } from "./strapi-error.types";
+import type { StrapiErrorResponse } from "./strapi-error.types";
 
 export class StrapiError extends Error {
   status: number;

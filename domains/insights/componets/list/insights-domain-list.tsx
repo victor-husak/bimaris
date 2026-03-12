@@ -4,8 +4,11 @@ import { clsx } from "clsx";
 
 import { ListLayout } from "@/layouts/list";
 
+import type { PublicationShort } from "@/types/publication";
+
 export type InsightsDomainListProps = {
   className?: string;
+  publications: StrapiCollection<PublicationShort>;
 };
 
 export const InsightsDomainList: React.FC<InsightsDomainListProps> = (
@@ -16,31 +19,11 @@ export const InsightsDomainList: React.FC<InsightsDomainListProps> = (
       className={clsx(props.className, "")}
       title="All publications"
       description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+      totalCount={props.publications.meta?.pagination.total || 0}
     >
-      {items.map((item) => (
-        <PublicationCard key={item.id} />
+      {props.publications.data.map((item) => (
+        <PublicationCard key={item.id} data={item} />
       ))}
     </ListLayout>
   );
 };
-
-const items = [
-  {
-    id: 1,
-  },
-  {
-    id: 2,
-  },
-  {
-    id: 3,
-  },
-  {
-    id: 4,
-  },
-  {
-    id: 5,
-  },
-  {
-    id: 6,
-  },
-];
