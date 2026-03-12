@@ -1738,6 +1738,7 @@ __metadata:
     nextjs-toploader: ^3.9.17
     prettier: ^3.8.1
     prettier-plugin-tailwindcss: ^0.7.2
+    qs: ^6.15.0
     react: 19.2.3
     react-collapsed: ^4.2.0
     react-dom: 19.2.3
@@ -4357,6 +4358,15 @@ __metadata:
   version: 2.3.1
   resolution: "punycode@npm:2.3.1"
   checksum: bb0a0ceedca4c3c57a9b981b90601579058903c62be23c5e8e843d2c2d4148a3ecf029d5133486fb0e1822b098ba8bba09e89d6b21742d02fa26bda6441a6fb2
+  languageName: node
+  linkType: hard
+
+"qs@npm:^6.15.0":
+  version: 6.15.0
+  resolution: "qs@npm:6.15.0"
+  dependencies:
+    side-channel: ^1.1.0
+  checksum: 65e797e3747fa1092e062da7b3e0684a9194e07ccab3a9467d416d2579d2feab0adf3aa4b94446e9f69ba7426589a8728f78a10a549308c97563a79d1c0d8595
   languageName: node
   linkType: hard
 

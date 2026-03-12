@@ -17,6 +17,7 @@
     "markdown-to-jsx": "latest",
     "next": "16.1.6",
     "nextjs-toploader": "^3.9.17",
+    "qs": "^6.15.0",
     "react": "19.2.3",
     "react-collapsed": "^4.2.0",
     "react-dom": "19.2.3",
