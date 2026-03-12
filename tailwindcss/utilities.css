@@ -80,6 +80,11 @@
       --local-container-small-offset: calc((100vw - 66.5rem) / 2);
     }
 
+    @media (min-width: 1526px) {
+      --local-container-offset: calc((100vw - 1460px) / 2);
+      --local-container-large-offset: calc((100vw - (1460px + 46px)) / 2);
+    }
+
     --local-container: calc(100vw - var(--local-container-offset) * 2);
     --local-container-small: calc(100vw - var(--local-container-small-offset) * 2);
     --local-container-large: calc(100vw - var(--local-container-large-offset) * 2);
