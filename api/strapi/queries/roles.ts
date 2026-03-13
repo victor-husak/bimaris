@@ -1,27 +1,88 @@
-// "use server";
+"use server";
 
-// import qs from "qs";
+import qs from "qs";
 
-// import { strapiFetch } from "../fetch";
+import { strapiFetch } from "../fetch";
 
-// import type { Expertise, ExpertiseShort } from "@/types/expertise";
-// import type { StrapiCollection } from "../types";
+import type { Role, RoleShort } from "@/types/roles";
 
-// export async function getExpertise() {
-//   let paramsQuery = {
-//     fields: ["id", "name", "slug"],
-//     populate: {
-//       preview: true,
-//     },
-//     pagination: {
-//       pageSize: 6,
-//     },
-//     sort: "rank:asc",
-//   };
+export async function getRoles({
+  filters,
+  pageSize = 6,
+}: {
+  filters?: SearchParams;
+  pageSize?: number;
+} = {}) {
+  const paramsQuery: any = {
+    fields: ["id", "name", "title", "slug", "createdAt"],
+    populate: {
+      mainImage: true,
+    },
+    pagination: {
+      pageSize,
+    },
+    sort: ["createdAt:desc"],
+  };
 
-//   const query = qs.stringify(paramsQuery, { encode: false });
+  if (filters) {
+    paramsQuery.filters = {};
+  }
 
-//   return strapiFetch<StrapiCollection<ExpertiseShort>>(`/expertise?${query}`, {
-//     next: { revalidate: 60, tags: ["expertise"] },
-//   });
-// }
+  const query = qs.stringify(paramsQuery, { encode: false });
+
+  return strapiFetch<StrapiCollection<RoleShort>>(`/role-types?${query}`, {
+    next: { revalidate: 60, tags: ["roles"] },
+  });
+}
+
+export async function getRoleBySlug(slug: string) {
+  const paramsQuery = {
+    filters: {
+      slug,
+    },
+    fields: ["id", "name", "title", "slug", "description", "createdAt"],
+    populate: {
+      mainImage: true,
+      services: {
+        fields: ["id", "name", "description", "slug", "createdAt"],
+        populate: {
+          mainImage: true,
+        },
+      },
+      case_studies: {
+        fields: ["id", "name", "description", "slug", "createdAt"],
+        populate: {
+          preview: true,
+        },
+      },
+    },
+    pagination: {
+      limit: 1,
+    },
+  };
+
+  const query = qs.stringify(paramsQuery, { encode: false });
+
+  return strapiFetch<StrapiCollection<Role>>(`/role-types?${query}`, {
+    next: { revalidate: 60, tags: [`roles/${slug}`] },
+  });
+}
+
+export async function getRoleSlugs() {
+  const paramsQuery: any = {
+    fields: ["slug", "updatedAt"],
+    sort: ["createdAt:desc"],
+    pagination: {
+      pageSize: 1000,
+    },
+  };
+
+  const query = qs.stringify(paramsQuery, { encode: false });
+
+  return strapiFetch<StrapiCollection<{ slug: string; updatedAt: string }>>(
+    `/role-types?${query}`,
+    {
+      next: { revalidate: 60, tags: ["role-slugs"] },
+    },
+  );
+}

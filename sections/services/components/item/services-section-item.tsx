@@ -13,6 +13,7 @@ export type ServicesSectionItemProps = {
     tag?: string;
     description: string;
     list: string[];
+    href: string;
   };
 };
 
@@ -62,7 +63,7 @@ export const ServicesSectionItem: React.FC<ServicesSectionItemProps> = (
         className="mt-[25px] group-hover:w-[105px]"
         size="small"
         title="Read more"
-        href="/services/1"
+        href={props.data.href}
       />
     </div>
   );

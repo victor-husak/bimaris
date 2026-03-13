@@ -1,23 +1,24 @@
-"use client";
-
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
 import { Button } from "@/components/button";
 
 import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
 
-// import { useRolesItemDomainHeader } from "./roles-item-domain-header.hook";
+import { useRolesItemDomainHeader } from "./roles-item-domain-header.hook";
 
 import { clsx } from "clsx";
 
+import type { Role } from "@/types/roles";
+
 export type RolesItemDomainHeaderProps = {
   className?: string;
+  data: Role;
 };
 
 export const RolesItemDomainHeader: React.FC<RolesItemDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
-  // const { slides } = useRolesItemDomainHeader(props);
+  const { data } = useRolesItemDomainHeader(props);
 
   return (
     <PageLayoutHeader
@@ -29,12 +30,8 @@ export const RolesItemDomainHeader: React.FC<RolesItemDomainHeaderProps> = (
         height: 1860,
         alt: "Role header background",
       }}
-      title={
-        <>
-          Immigration, <span>built for you</span>
-        </>
-      }
-      description="Bimaris  helps individuals and families navigate the Ukrainian immigration process with clarity, confidence, and expert legal support."
+      title={data.name}
+      description={data.description}
       subtitle="Immigration services"
       tag="For individuals"
       ActionsComponent={

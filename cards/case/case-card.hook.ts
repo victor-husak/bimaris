@@ -1,0 +1,21 @@
+import { useMemo } from "react";
+
+import { format } from "date-fns";
+
+import type { CaseCardProps } from "./case-card";
+
+export const useCaseCard = (props: CaseCardProps) => {
+  const data = useMemo(() => {
+    return {
+      date: format(new Date(props.data.createdAt), "MMMM dd, yyyy"),
+      name: props.data.name,
+      description: props.data.description,
+      preview: props.data.preview
+        ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${props.data.preview.url}`
+        : "",
+      href: `/cases/${props.data.slug}`,
+    };
+  }, [props.data]);
+
+  return { data };
+};

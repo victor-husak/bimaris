@@ -1,17 +1,23 @@
 import NextLink from "next/link";
 import NextImage from "next/image";
+import { clsx } from "clsx";
 
 import { CardAction } from "@/components/card";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import { useCaseCard } from "./case-card.hook";
+
+import type { CaseStudyShort } from "@/types/case-studies";
 
 export type CaseCardProps = {
   className?: string;
+  data: CaseStudyShort;
 };
 
 export const CaseCard: React.FC<CaseCardProps> = (props): React.JSX.Element => {
+  const { data } = useCaseCard(props);
+
   return (
     <div
       className={clsx(
@@ -31,7 +37,7 @@ export const CaseCard: React.FC<CaseCardProps> = (props): React.JSX.Element => {
       <div className="mx-[15px] h-[180px] overflow-hidden rounded-lg bg-gray-300">
         <NextImage
           className="h-full w-full object-cover"
-          src="/images/genereted/case.webp"
+          src={data.preview}
           alt="Case preview"
           width={960}
           height={540}
@@ -43,15 +49,14 @@ export const CaseCard: React.FC<CaseCardProps> = (props): React.JSX.Element => {
         {/* Title */}
         <NextLink
           className="underline-hover mr-auto mb-[17px] text-[15px]/[19px] tracking-[.024em] text-[#2D3A52]"
-          href="/cases/1"
+          href={data.href}
         >
-          Midvale
+          {data.name}
         </NextLink>
 
         {/* Description */}
         <p className="text-[14px]/[20px] tracking-[.024em] text-[#969BA7]">
-          Midvale Ltd is a UK-based supplier of certified timber and structural
-          materials, delivering sustainable wood products to construction.
+          {data.description}
         </p>
 
         {/* Action */}

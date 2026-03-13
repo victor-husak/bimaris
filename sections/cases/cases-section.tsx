@@ -11,8 +11,11 @@ import { Navigation } from "swiper/modules";
 
 import { clsx } from "clsx";
 
+import type { CaseStudyShort } from "@/types/case-studies";
+
 export type CasesSectionProps = {
   className?: string;
+  data: CaseStudyShort[];
   HeaderComponent?: React.JSX.Element;
 };
 
@@ -31,18 +34,15 @@ export const CasesSection: React.FC<CasesSectionProps> = (
         modules={[Navigation]}
         slidesPerView="auto"
         onBeforeInit={onBeforeInit}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
+        navigation
       >
-        {items.map((item) => (
+        {props.data.map((item) => (
           <SwiperSlide
             className="not-last:pr-5"
             key={item.id}
             style={{ width: "auto" }}
           >
-            <CaseCard className="w-[350px]" />
+            <CaseCard className="w-[350px]" data={item} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -56,16 +56,3 @@ export const CasesSection: React.FC<CasesSectionProps> = (
     </section>
   );
 };
-
-const items = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
-  { id: 6 },
-  { id: 7 },
-  { id: 8 },
-  { id: 9 },
-  { id: 10 },
-];

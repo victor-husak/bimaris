@@ -14,21 +14,25 @@ import * as Components from "./components";
 
 import { clsx } from "clsx";
 
+import { useRolesItemDomain } from "./roles-item-domain.hook";
+
+import type { Role } from "@/types/roles";
+
 export type RolesItemDomainProps = {
   className?: string;
+  data: Role;
 };
 
 export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
   props,
 ): React.JSX.Element => {
+  const { routes } = useRolesItemDomain(props);
+
   return (
     <PageLayout
       className={clsx(props.className, "")}
-      routes={[
-        { label: "Home", value: "/" },
-        { label: "Private clients", value: "/roles/private-clients" },
-      ]}
-      HeaderComponent={<Components.Header />}
+      routes={routes}
+      HeaderComponent={<Components.Header data={props.data} />}
     >
       {/* Advantages */}
       <AdvantagesSection className="mt-5" withBanner data={advantages} />
@@ -37,11 +41,15 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
       <Components.Points />
 
       {/* Services */}
-      <ServicesSection className="section-gradient" />
+      <ServicesSection
+        className="section-gradient"
+        data={props.data.services}
+      />
 
       {/* Cases */}
       <CasesSection
         className="mb-15"
+        data={props.data.case_studies}
         HeaderComponent={
           <SectionHeader
             className="container-full pb-0"

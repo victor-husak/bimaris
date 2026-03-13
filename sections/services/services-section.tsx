@@ -6,8 +6,11 @@ import * as Components from "./components";
 
 import { clsx } from "clsx";
 
+import type { ServiceShort } from "@/types/services";
+
 export type ServicesSectionProps = {
   className?: string;
+  data: ServiceShort[];
 };
 
 export const ServicesSection: React.FC<ServicesSectionProps> = (
@@ -25,85 +28,21 @@ export const ServicesSection: React.FC<ServicesSectionProps> = (
       }
     >
       <div className="mb-15 grid grid-cols-2 gap-5">
-        <Components.Item
-          data={{
-            title: "Citizenship of Ukraine",
-            tag: "top-choice",
-            description:
-              "Comprehensive legal support for individuals seeking Ukrainian citizenship, with a structured approach to eligibility and documentation.",
-            list: [
-              "Eligibility assessment and strategy",
-              "Attorney-led application process",
-              "End-to-end legal support",
-            ],
-          }}
-        />
-
-        <Components.Item
-          data={{
-            title: "D Visa to Ukraine",
-            description:
-              "Legal assistance with obtaining a Ukrainian D Visa, providing a clear entry pathway for long-term residence, work or family reunification.",
-            list: [
-              "Purpose-based visa strategy",
-              "Accurate documentation preparation",
-              "Lawyer-supervised process",
-            ],
-          }}
-        />
-
-        <Components.Item
-          data={{
-            title: "Permanent Residence Permit in Ukraine",
-
-            description:
-              "Legal support for obtaining permanent residence in Ukraine, enabling long-term stay with stable legal status and expanded rights.",
-            list: [
-              "Eligibility and pathway analysis",
-              "Structured documentation and filings",
-              "Long-term status planning",
-            ],
-          }}
-        />
-        <Components.Item
-          data={{
-            title: "Temporary Residence Permit in Ukraine",
-            tag: "new",
-            description:
-              "Assistance with obtaining a temporary residence permit in Ukraine, allowing lawful long-term stay based on work, family or study.",
-            list: [
-              "Ground-based eligibility review",
-              "Status continuity and compliance",
-              "End-to-end application support",
-            ],
-          }}
-        />
-
-        <Components.Item
-          data={{
-            title: "Permanent Residence Permit in Ukraine",
-            description:
-              "Legal support for obtaining permanent residence in Ukraine, enabling long-term stay with stable legal status and expanded rights.",
-            list: [
-              "Eligibility and pathway analysis",
-              "Structured documentation and filings",
-              "Long-term status planning",
-            ],
-          }}
-        />
-
-        <Components.Item
-          data={{
-            title: "Temporary Residence Permit in Ukraine",
-            description:
-              "Assistance with obtaining a temporary residence permit in Ukraine, allowing lawful long-term stay based on work, family or study.",
-            list: [
-              "Ground-based eligibility review",
-              "Status continuity and compliance",
-              "End-to-end application support",
-            ],
-          }}
-        />
+        {props.data.map((item) => (
+          <Components.Item
+            key={item.id}
+            data={{
+              title: item.name,
+              description: item.description,
+              list: [
+                "Ground-based eligibility review",
+                "Status continuity and compliance",
+                "End-to-end application support",
+              ],
+              href: `/services/${item.slug}`,
+            }}
+          />
+        ))}
       </div>
 
       <div
