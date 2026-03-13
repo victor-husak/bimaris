@@ -5,9 +5,13 @@ import { MenuSection } from "@/sections/menu";
 import * as Components from "./componets";
 
 import { clsx } from "clsx";
+import { CaseStudyShort } from "@/types/case-studies";
 
 export type CaseStudiesDomainProps = {
   className?: string;
+  caseStudies: StrapiCollection<CaseStudyShort>;
+  featuredCaseStudies: StrapiCollection<CaseStudyShort>;
+  searchParams?: SearchParams;
 };
 
 export const CaseStudiesDomain: React.FC<CaseStudiesDomainProps> = (
@@ -20,11 +24,16 @@ export const CaseStudiesDomain: React.FC<CaseStudiesDomainProps> = (
         { label: "Home", value: "/" },
         { label: "Case Studies", value: "/case-studies" },
       ]}
-      HeaderComponent={<Components.Header className="mb-5" />}
+      HeaderComponent={
+        <Components.Header
+          className="mb-5"
+          data={props.featuredCaseStudies.data}
+        />
+      }
     >
       <MenuSection data={menu} />
 
-      <Components.List />
+      <Components.List caseStudies={props.caseStudies} />
     </PageLayout>
   );
 };

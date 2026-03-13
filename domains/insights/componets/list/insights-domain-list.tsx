@@ -22,7 +22,7 @@ export const InsightsDomainList: React.FC<InsightsDomainListProps> = (
       totalCount={props.publications.meta?.pagination.total || 0}
     >
       {props.publications.data.map((item) => (
-        <PublicationCard key={item.id} data={item} />
+        <PublicationCard key={item.id} data={item} type="publication" />
       ))}
     </ListLayout>
   );

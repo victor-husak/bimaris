@@ -14,14 +14,18 @@ import { useCaseStudiesDomainHeader } from "./case-studies-domain-header.hook";
 
 import { clsx } from "clsx";
 
+import type { CaseStudyShort } from "@/types/case-studies";
+
 export type CaseStudiesDomainHeaderProps = {
   className?: string;
+  data: CaseStudyShort[];
 };
 
 export const CaseStudiesDomainHeader: React.FC<CaseStudiesDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
-  const { activeIndex, activeItem, onTrigger } = useCaseStudiesDomainHeader();
+  const { activeIndex, activeItem, onTrigger } =
+    useCaseStudiesDomainHeader(props);
 
   return (
     <PageLayoutHeader

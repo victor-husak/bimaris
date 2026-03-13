@@ -12,10 +12,11 @@ import * as Components from "./components";
 import { useInsightsItemDomain } from "./insights-item-domain.hook";
 
 import type { Publication } from "@/types/publication";
+import type { CaseStudy } from "@/types/case-studies";
 
 export type InsightsItemDomainProps = {
   className?: string;
-  data: Publication;
+  data: Publication | CaseStudy;
 };
 
 export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (

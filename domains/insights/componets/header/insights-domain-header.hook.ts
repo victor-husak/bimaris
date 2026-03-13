@@ -2,7 +2,26 @@ import { useMemo } from "react";
 
 import { useCarousel } from "@/hooks";
 
-export const useInsightsDomainHeader = () => {
+import { InsightsDomainHeaderProps } from "./insights-domain-header";
+
+export const useInsightsDomainHeader = (props: InsightsDomainHeaderProps) => {
+  const items = useMemo(() => {
+    return props.data.map((item) => {
+      return {
+        id: item.id,
+        title: item.name,
+        href: `/insights/${item.slug}`,
+        media: {
+          url: `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.preview.url}`,
+          width: item.preview.width,
+          height: item.preview.height,
+          alt: item.preview.alternativeText || "",
+        },
+        category: item.category?.name,
+      };
+    });
+  }, [props.data]);
+
   const { activeIndex, onTrigger } = useCarousel({
     count: items.length,
     duration: 8000,
@@ -10,32 +29,7 @@ export const useInsightsDomainHeader = () => {
 
   const activeItem = useMemo(() => {
     return items[activeIndex] ?? items.at(0);
-  }, [activeIndex]);
+  }, [activeIndex, items]);
 
   return { activeIndex, activeItem, onTrigger };
 };
-
-const items = [
-  {
-    id: 1,
-    title: "Changes to entry and stay rulesfor foreign nationals",
-    href: "/insights/1",
-    media: {
-      url: "/images/insights.webp",
-      width: 3978,
-      height: 1560,
-      alt: "Insights header background",
-    },
-  },
-  {
-    id: 2,
-    title: "Relocating a European technology company to Ukraine",
-    href: "/insights/2",
-    media: {
-      url: "/images/case-studies/header.webp",
-      width: 3978,
-      height: 1560,
-      alt: "Case studies header background",
-    },
-  },
-];

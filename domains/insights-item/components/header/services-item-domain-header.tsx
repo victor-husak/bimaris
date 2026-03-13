@@ -7,10 +7,11 @@ import { clsx } from "clsx";
 import { useServicesItemDomainHeader } from "./services-item-domain-header.hook";
 
 import type { Publication } from "@/types/publication";
+import type { CaseStudy } from "@/types/case-studies";
 
 export type ServicesItemDomainHeaderProps = {
   className?: string;
-  data: Publication;
+  data: Publication | CaseStudy;
 };
 
 export const ServicesItemDomainHeader: React.FC<
@@ -32,7 +33,7 @@ export const ServicesItemDomainHeader: React.FC<
       }}
       title={data.name}
       subtitle="Posted in"
-      tag={data.category.name}
+      tag={data.category?.name || ""}
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={slides} />
       }

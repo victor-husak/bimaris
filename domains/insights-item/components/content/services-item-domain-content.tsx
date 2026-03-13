@@ -5,10 +5,11 @@ import * as Components from "./components";
 import { clsx } from "clsx";
 
 import type { Publication } from "@/types/publication";
+import type { CaseStudy } from "@/types/case-studies";
 
 export type ServicesItemDomainContentProps = {
   className?: string;
-  data: Publication;
+  data: Publication | CaseStudy;
 };
 
 export const ServicesItemDomainContent: React.FC<

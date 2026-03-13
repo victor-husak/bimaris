@@ -11,16 +11,18 @@ import * as Icons from "./icons";
 import { usePublicationCard } from "./publication-card.hook";
 
 import type { PublicationShort } from "@/types/publication";
+import { CaseStudyShort } from "@/types/case-studies";
 
 export type PublicationCardProps = {
   className?: string;
-  data: PublicationShort;
+  data: PublicationShort | CaseStudyShort;
+  type?: "publication" | "case-study";
 };
 
 export const PublicationCard: React.FC<PublicationCardProps> = (
   props,
 ): React.JSX.Element => {
-  const { href, data } = usePublicationCard(props);
+  const { data } = usePublicationCard(props);
 
   return (
     <div
@@ -30,10 +32,12 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         "hover:-translate-y-2.5",
       )}
     >
-      <Tag
-        className="mr-auto mb-[25px] bg-[#E7EFFC]"
-        title={data.category.name}
-      />
+      {!!data.category && (
+        <Tag
+          className="mr-auto mb-[25px] bg-[#E7EFFC]"
+          title={data.category.name}
+        />
+      )}
 
       {/* Preview */}
       <div className="h-[180px] overflow-hidden rounded-lg bg-gray-300">
@@ -67,7 +71,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         {/* Title */}
         <NextLink
           className="underline-hover mr-auto mb-[15px] text-[16px]/[22px] tracking-[.024em] text-[#2D3A52]"
-          href={href}
+          href={data.href}
         >
           {data.name}
         </NextLink>
@@ -80,7 +84,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         {/* Action */}
         <CardAction
           className="mt-[25px] mr-auto group-hover:w-[110px]"
-          href={href}
+          href={data.href}
           title="Read more"
         />
       </div>

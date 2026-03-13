@@ -66,18 +66,18 @@ export async function getPublications({
     //     };
     // }
 
-    if (filters.featured !== undefined) {
-      if (filters.featured === true) {
-        // Только записи с featured = true
-        paramsQuery.filters.featured = true;
-      } else {
-        // featured = false ИЛИ поле отсутствует (null)
-        paramsQuery.filters.$or = [
-          { featured: false },
-          { featured: { $null: true } },
-        ];
-      }
-    }
+    // if (filters.featured !== undefined) {
+    //   if (filters.featured === true) {
+    //     // Только записи с featured = true
+    //     paramsQuery.filters.featured = true;
+    //   } else {
+    //     // featured = false ИЛИ поле отсутствует (null)
+    //     paramsQuery.filters.$or = [
+    //       { featured: false },
+    //       { featured: { $null: true } },
+    //     ];
+    //   }
+    // }
   }
 
   const query = qs.stringify(paramsQuery, { encode: false });

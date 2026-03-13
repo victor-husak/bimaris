@@ -4,15 +4,9 @@ import qs from "qs";
 
 import { strapiFetch } from "../fetch";
 
-import type { Publication, PublicationShort } from "@/types/publication";
+import type { CaseStudy, CaseStudyShort } from "@/types/case-studies";
 
-// import { getDateRange } from "@/utils/date";
-
-// import type { Insight, InsightShort } from "@/types/insight";
-
-// import type { StrapiCollection } from "../types";
-
-export async function getPublications({
+export async function getCaseStudies({
   filters,
   pageSize = 6,
 }: {
@@ -23,9 +17,6 @@ export async function getPublications({
     fields: ["id", "name", "description", "slug", "createdAt"],
     populate: {
       preview: true,
-      category: {
-        fields: ["slug", "name"],
-      },
     },
     pagination: {
       pageSize,
@@ -35,36 +26,6 @@ export async function getPublications({
 
   if (filters) {
     paramsQuery.filters = {};
-
-    // if (filters.topic) {
-    //   paramsQuery.filters.topics = { slug: { $in: filters.topic } };
-    // }
-
-    // if (filters.type) {
-    //   paramsQuery.filters.types = { slug: { $in: filters.type } };
-    // }
-
-    // if (filters.expertise) {
-    //   paramsQuery.filters.expertise = {
-    //     slug: { $in: filters.expertise },
-    //   };
-    // }
-
-    // if (filters.person) {
-    //   paramsQuery.filters.person = {
-    //     slug: { $in: filters.person },
-    //   };
-    // }
-
-    // if (filters.date) {
-    //   const range = getDateRange(filters.date as string);
-
-    //   if (range)
-    //     paramsQuery.filters.createdAt = {
-    //       $gte: range.from.toISOString(),
-    //       $lte: range.to.toISOString(),
-    //     };
-    // }
 
     if (filters.featured !== undefined) {
       if (filters.featured === true) {
@@ -82,15 +43,15 @@ export async function getPublications({
 
   const query = qs.stringify(paramsQuery, { encode: false });
 
-  return strapiFetch<StrapiCollection<PublicationShort>>(
-    `/publications?${query}`,
+  return strapiFetch<StrapiCollection<CaseStudyShort>>(
+    `/case-studies?${query}`,
     {
-      next: { revalidate: 60, tags: ["publications"] },
+      next: { revalidate: 60, tags: ["case-studies"] },
     },
   );
 }
 
-export async function getPublicationBySlug(slug: string) {
+export async function getCaseStudyBySlug(slug: string) {
   const paramsQuery = {
     filters: {
       slug,
@@ -98,9 +59,6 @@ export async function getPublicationBySlug(slug: string) {
     fields: ["id", "name", "description", "slug", "content", "createdAt"],
     populate: {
       preview: true,
-      category: {
-        fields: ["slug", "name"],
-      },
     },
     pagination: {
       limit: 1,
@@ -109,12 +67,12 @@ export async function getPublicationBySlug(slug: string) {
 
   const query = qs.stringify(paramsQuery, { encode: false });
 
-  return strapiFetch<StrapiCollection<Publication>>(`/publications?${query}`, {
-    next: { revalidate: 60, tags: [`publications/${slug}`] },
+  return strapiFetch<StrapiCollection<CaseStudy>>(`/case-studies?${query}`, {
+    next: { revalidate: 60, tags: [`case-studies/${slug}`] },
   });
 }
 
-export async function getPublicationsRecommended({
+export async function getCaseStudiesRecommended({
   slug,
 }: {
   slug: string;
@@ -124,9 +82,6 @@ export async function getPublicationsRecommended({
     fields: ["id", "name", "description", "slug", "createdAt"],
     populate: {
       preview: true,
-      category: {
-        fields: ["slug", "name"],
-      },
     },
     pagination: {
       pageSize: 4,
@@ -141,15 +96,15 @@ export async function getPublicationsRecommended({
 
   const query = qs.stringify(paramsQuery, { encode: false });
 
-  return strapiFetch<StrapiCollection<PublicationShort>>(
-    `/publications?${query}`,
+  return strapiFetch<StrapiCollection<CaseStudyShort>>(
+    `/case-studies?${query}`,
     {
-      next: { revalidate: 60, tags: ["publications-recommended"] },
+      next: { revalidate: 60, tags: ["case-studies-recommended"] },
     },
   );
 }
 
-export async function getPublicationSlugs() {
+export async function getCaseStudySlugs() {
   const paramsQuery: any = {
     fields: ["slug", "updatedAt"],
     sort: ["createdAt:desc"],
@@ -161,9 +116,9 @@ export async function getPublicationSlugs() {
   const query = qs.stringify(paramsQuery, { encode: false });
 
   return strapiFetch<StrapiCollection<{ slug: string; updatedAt: string }>>(
-    `/publications?${query}`,
+    `/case-studies?${query}`,
     {
-      next: { revalidate: 60, tags: ["publication-slugs"] },
+      next: { revalidate: 60, tags: ["case-study-slugs"] },
     },
   );
 }

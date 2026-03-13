@@ -14,14 +14,17 @@ import { useInsightsDomainHeader } from "./insights-domain-header.hook";
 
 import { clsx } from "clsx";
 
+import type { PublicationShort } from "@/types/publication";
+
 export type InsightsDomainHeaderProps = {
   className?: string;
+  data: PublicationShort[];
 };
 
 export const InsightsDomainHeader: React.FC<InsightsDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
-  const { activeIndex, activeItem, onTrigger } = useInsightsDomainHeader();
+  const { activeIndex, activeItem, onTrigger } = useInsightsDomainHeader(props);
 
   return (
     <PageLayoutHeader
@@ -33,7 +36,7 @@ export const InsightsDomainHeader: React.FC<InsightsDomainHeaderProps> = (
       media={activeItem.media}
       title={activeItem.title}
       subtitle="Featured"
-      tag="Legal alert"
+      tag={activeItem.category}
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={items} />
       }

@@ -33,7 +33,11 @@ export const PublicationsSection: React.FC<PublicationsSectionCombinedProps> = (
       <div className="border-b border-[#E7EBF2] pb-15">
         <div className="grid grid-cols-3 gap-[30px]">
           {props.data?.map((publication) => (
-            <PublicationCard key={publication.id} data={publication} />
+            <PublicationCard
+              key={publication.id}
+              data={publication}
+              type="publication"
+            />
           ))}
         </div>
 

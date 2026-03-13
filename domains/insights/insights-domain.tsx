@@ -12,6 +12,7 @@ import type { PublicationShort } from "@/types/publication";
 export type InsightsDomainProps = {
   className?: string;
   publications: StrapiCollection<PublicationShort>;
+  featuredPublications: StrapiCollection<PublicationShort>;
   searchParams?: SearchParams;
 };
 
@@ -25,7 +26,12 @@ export const InsightsDomain: React.FC<InsightsDomainProps> = (
         { label: "Home", value: "/" },
         { label: "Insights", value: "/insights" },
       ]}
-      HeaderComponent={<Components.Header className="mb-5" />}
+      HeaderComponent={
+        <Components.Header
+          className="mb-5"
+          data={props.featuredPublications.data}
+        />
+      }
     >
       <MenuSection data={menu} />
 

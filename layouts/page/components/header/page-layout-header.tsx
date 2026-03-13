@@ -34,7 +34,7 @@ export type PageLayoutHeaderProps = {
 export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
   props,
 ): React.JSX.Element => {
-  const { loaded, mounted } = usePageLayoutHeader(props);
+  const { mounted } = usePageLayoutHeader(props);
 
   return (
     <header className={clsx(props.className, "")}>

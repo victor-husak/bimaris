@@ -13,8 +13,6 @@ export type PublicationShort = {
 
 export type Publication = PublicationShort & {
   content: string;
-  images: Array<Image>;
-  // person: PeopleShort;
   updatedAt: string;
   topics?: Array<{ id: number; slug: string; name: string }>;
   types?: Array<{
