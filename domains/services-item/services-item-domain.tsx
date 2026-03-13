@@ -60,6 +60,7 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       {/* Cases */}
       <CasesSection
         className="section-gradient mb-[70px]"
+        data={[]}
         HeaderComponent={
           <SectionHeader
             className="container-full pb-0"

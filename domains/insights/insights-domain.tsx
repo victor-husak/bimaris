@@ -35,7 +35,7 @@ export const InsightsDomain: React.FC<InsightsDomainProps> = (
     >
       <MenuSection data={menu} />
 
-      <UpdatesSection className="mb-25" />
+      <UpdatesSection className="mb-25" data={[]} />
 
       <Components.List
         className="section-gradient"

@@ -46,11 +46,12 @@ export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
       />
 
       {/* Services */}
-      <ServicesSection className="section-gradient" />
+      <ServicesSection className="section-gradient" data={[]} />
 
       {/* Cases */}
       <CasesSection
         className="mb-[60px]"
+        data={[]}
         HeaderComponent={
           <SectionHeader
             className="container-full pb-0"
@@ -80,29 +81,29 @@ export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
   );
 };
 
-const advantages = [
-  {
-    key: "Estonia",
-    title: "Solutions in Estonia",
-    description:
-      "Client satisfaction rate based on long-term partnerships and repeat engagements.",
-    href: "/",
-  },
-  {
-    key: "Latvia",
-    title: "Solutions in Latvia",
-    description:
-      "Strategic advisory on Latvian residence programs, investor immigration, and company setup.",
-    href: "/",
-  },
-  {
-    key: "Lithuania",
-    title: "Solutions in Lithuania",
-    description:
-      "Legal assistance for relocation to Lithuania, covering temporary and permanent residence permits.",
-    href: "/",
-  },
-];
+// const advantages = [
+//   {
+//     key: "Estonia",
+//     title: "Solutions in Estonia",
+//     description:
+//       "Client satisfaction rate based on long-term partnerships and repeat engagements.",
+//     href: "/",
+//   },
+//   {
+//     key: "Latvia",
+//     title: "Solutions in Latvia",
+//     description:
+//       "Strategic advisory on Latvian residence programs, investor immigration, and company setup.",
+//     href: "/",
+//   },
+//   {
+//     key: "Lithuania",
+//     title: "Solutions in Lithuania",
+//     description:
+//       "Legal assistance for relocation to Lithuania, covering temporary and permanent residence permits.",
+//     href: "/",
+//   },
+// ];
 
 const information = `That’s why we provide expert legal support to help you achieve your dreams of living and working in a new country. At our firm, we pride ourselves on being more than just lawyers – we are [dedicated partners in your journey.](/)
 
