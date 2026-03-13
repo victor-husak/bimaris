@@ -93,20 +93,23 @@
 
     @media (width >= 768px /* 768px */) {
       --local-container-offset: calc((100vw - 720px) / 2);
+      --local-container-large-offset: var(--local-container-offset);
     }
 
     @media (width >= 992px /* 768px */) {
       --local-container-offset: calc((100vw - 960px) / 2);
+      --local-container-large-offset: var(--local-container-offset);
     }
 
     @media (width >= 1024px) {
-      --local-container-offset: calc((100vw - 938px) / 2);
+      --local-container-offset: calc((100vw - (1024px - (43px * 2))) / 2);
+      --local-container-large-offset: calc((100vw - (1024px - 46px)) / 2);
       /* --local-container-large-offset: calc((100vw - 1140px) / 2); */
     }
 
-    @media (width >= 1194px) {
-      --local-container-offset: calc((100vw - 1194px) / 2);
-      --local-container-small-offset: calc((100vw - 1194px - 46px) / 2);
+    @media (width >= 1200px) {
+      --local-container-offset: calc((100vw - (1200px - (43px * 2))) / 2);
+      --local-container-large-offset: calc((100vw - (1200px - 46px)) / 2);
     }
 
     @media (width >= 1436px) {
