@@ -1,6 +1,6 @@
 "use client";
 
-import { CaseCard } from "@/cards/case";
+import { PublicationCard } from "@/cards/publication";
 
 import { SectionArrows } from "@/components/section";
 
@@ -42,7 +42,11 @@ export const CasesSection: React.FC<CasesSectionProps> = (
             key={item.id}
             style={{ width: "auto" }}
           >
-            <CaseCard className="w-[350px]" data={item} />
+            <PublicationCard
+              className="w-[350px]"
+              data={item}
+              type="case-study"
+            />
           </SwiperSlide>
         ))}
       </Swiper>
