@@ -1,5 +1,29 @@
 @layer utilities {
-   .container {
+  /* .container {
+    @apply flex-1 mx-(--local-container-large);
+  }
+
+  .container-small {
+    @apply flex-1 mx-(--local-container-small-offset);
+  }
+
+  .container-large {
+    @apply flex-1 mx-(--local-container-large-offset);
+  }
+
+  .container-full {
+    @apply max-w-full px-(--local-container-offset) w-full;
+  }
+
+  .container-small-full {
+    @apply max-w-full px-(--local-container-small-offset) w-full;
+  }
+
+  .container-large-full {
+    @apply max-w-full px-(--local-container-large-offset) w-full;
+  } */
+
+  .container {
     @apply flex-1 mx-(--local-container-large);
   }
 
@@ -80,10 +104,15 @@
       --local-container-small-offset: calc((100vw - 66.5rem) / 2);
     }
 
-    @media (min-width: 1546px) {
+    @media (width >= 1546px /* 1536px */) {
+      --local-container-offset: calc((100vw - 1460px) / 2);
+      --local-container-large-offset: calc((100vw - 1460px - 46px) / 2);
+    }
+
+    /* @media (min-width: 1546px) {
       --local-container-offset: calc((100vw - 1460px) / 2);
       --local-container-large-offset: calc((100vw - (1460px + 46px)) / 2);
-    }
+    } */
 
     --local-container: calc(100vw - var(--local-container-offset) * 2);
     --local-container-small: calc(100vw - var(--local-container-small-offset) * 2);
