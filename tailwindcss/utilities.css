@@ -103,13 +103,13 @@
 
     @media (width >= 1024px) {
       --local-container-offset: calc((100vw - (1024px - (43px * 2))) / 2);
-      --local-container-large-offset: calc((100vw - (1024px - 46px)) / 2);
+      --local-container-large-offset: var(--local-container-offset);
       /* --local-container-large-offset: calc((100vw - 1140px) / 2); */
     }
 
     @media (width >= 1200px) {
-      --local-container-offset: calc((100vw - (1200px - (43px * 2))) / 2);
-      --local-container-large-offset: calc((100vw - (1200px - 46px)) / 2);
+      --local-container-offset: calc((100vw - 1140px) / 2);
+      --local-container-large-offset: var(--local-container-offset);
     }
 
     @media (width >= 1436px) {
