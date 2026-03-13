@@ -32,11 +32,15 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         "hover:-translate-y-2.5",
       )}
     >
-      {!!data.category && (
+      {props.type === "publication" && !!data.category && (
         <Tag
           className="mr-auto mb-[25px] bg-[#E7EFFC]"
           title={data.category.name}
         />
+      )}
+
+      {props.type === "case-study" && (
+        <Tag className="mr-auto mb-[25px] bg-[#E7EFFC]" title="Case study" />
       )}
 
       {/* Preview */}
