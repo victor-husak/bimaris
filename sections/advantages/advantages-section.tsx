@@ -56,7 +56,6 @@ export const AdvantagesSection: React.FC<AdvantagesSectionProps> = (
                   src="/images/advantages.webp"
                   width={3768}
                   height={360}
-                  objectFit="cover"
                   alt="Smotrow design banner"
                 />
               </div>

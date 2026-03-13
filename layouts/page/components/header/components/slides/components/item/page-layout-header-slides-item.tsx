@@ -53,8 +53,6 @@ export const PageLayoutHeaderSlidesItem: React.FC<
             width={props.data.avatar.width}
             height={props.data.avatar.height}
             alt={props.data.avatar.alt || props.data.title}
-            objectFit="cover"
-            objectPosition="center"
           />
         </div>
       )}

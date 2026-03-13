@@ -123,7 +123,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = (
             src="/images/solutions.webp"
             width={3768}
             height={360}
-            objectFit="cover"
             alt="Smotrow design banner"
           />
         </div>

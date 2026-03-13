@@ -1,3 +1,6 @@
+import { Suspense } from "react";
+import { clsx } from "clsx";
+
 import { SectionHeader, Button } from "@/components";
 
 import { PageLayout } from "@/layouts/page";
@@ -12,10 +15,11 @@ import { Rating } from "@/ui/rating";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import type { Service } from "@/types/services";
 
 export type ServicesItemDomainProps = {
   className?: string;
+  data: Service;
 };
 
 export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
@@ -29,7 +33,7 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
         { label: "Private clients", value: "/roles/private-clients" },
         { label: "Citizenship of Ukraine", value: "/services/1" },
       ]}
-      HeaderComponent={<Components.Header />}
+      HeaderComponent={<Components.Header data={props.data} />}
     >
       {/* Advantages */}
       <AdvantagesSection
@@ -39,14 +43,16 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       />
 
       {/* Content */}
-      <Components.Content className="pb-25" />
+      <Components.Content className="pb-25" data={props.data} />
 
       <div className="container-full section-gradient z-1 mb-[100px]">
         <Components.Banner />
       </div>
 
       {/* Experts */}
-      <ExpertsSection className="z-1 mb-[110px]" />
+      <Suspense>
+        <ExpertsSection className="z-1 mb-[110px]" />
+      </Suspense>
 
       {/* Faqs */}
       <FaqsSection className="z-1 mb-[110px]" />

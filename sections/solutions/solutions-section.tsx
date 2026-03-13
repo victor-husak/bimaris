@@ -59,7 +59,6 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = (
                 src="/images/solutions.webp"
                 width={3768}
                 height={360}
-                objectFit="cover"
                 alt="Smotrow design banner"
               />
             </div>

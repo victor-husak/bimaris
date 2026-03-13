@@ -28,7 +28,6 @@ export const BannerImage: React.FC<BannerImageProps> = (
         alt={props.media.alt || "Banner image"}
         width={props.media.width}
         height={props.media.height}
-        objectFit="cover"
       />
     </div>
   );

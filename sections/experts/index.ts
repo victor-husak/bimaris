@@ -1,1 +1,1 @@
-export { ExpertsSection } from "./experts-section";
+export { ExpertsSectionBackend as ExpertsSection } from "./experts-section.backend";

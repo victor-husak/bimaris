@@ -79,8 +79,6 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
                     src={props.media.url}
                     width={props.media.width}
                     height={props.media.height}
-                    objectFit="cover"
-                    objectPosition="center"
                     alt={props.media.alt || "Header background"}
                   />
                 </motion.div>

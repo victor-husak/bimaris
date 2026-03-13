@@ -33,8 +33,6 @@ export const OfficeCard: React.FC<OfficeCardProps> = (
         className="aspect-auto=[357px/180px] w-full rounded-lg bg-gray-300 object-cover object-center"
         src="/images/genereted/latvia.webp"
         alt="Case preview"
-        objectFit="cover"
-        objectPosition="center"
         width={1071}
         height={540}
       />

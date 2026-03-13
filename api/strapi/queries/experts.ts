@@ -1,0 +1,76 @@
+"use server";
+
+import qs from "qs";
+
+import { strapiFetch } from "../fetch";
+
+import type { Expert, ExpertShort } from "@/types/experts";
+
+export async function getExperts({
+  filters,
+  pageSize = 6,
+}: {
+  filters?: SearchParams;
+  pageSize?: number;
+} = {}) {
+  const paramsQuery: any = {
+    fields: ["id", "name", "position", "slug", "createdAt"],
+    populate: {
+      avatar: true,
+    },
+    pagination: {
+      pageSize,
+    },
+    sort: ["createdAt:desc"],
+  };
+
+  if (filters) {
+    paramsQuery.filters = {};
+  }
+
+  const query = qs.stringify(paramsQuery, { encode: false });
+
+  return strapiFetch<StrapiCollection<ExpertShort>>(`/experts?${query}`, {
+    next: { revalidate: 60, tags: ["experts"] },
+  });
+}
+
+export async function getExpertBySlug(slug: string) {
+  const paramsQuery = {
+    filters: {
+      slug,
+    },
+    fields: ["id", "name", "position", "slug", "content", "createdAt"],
+    populate: {
+      avatar: true,
+    },
+    pagination: {
+      limit: 1,
+    },
+  };
+
+  const query = qs.stringify(paramsQuery, { encode: false });
+
+  return strapiFetch<StrapiCollection<Expert>>(`/experts?${query}`, {
+    next: { revalidate: 60, tags: [`experts/${slug}`] },
+  });
+}
+
+export async function getExpertSlugs() {
+  const paramsQuery: any = {
+    fields: ["slug", "updatedAt"],
+    sort: ["createdAt:desc"],
+    pagination: {
+      pageSize: 1000,
+    },
+  };
+
+  const query = qs.stringify(paramsQuery, { encode: false });
+
+  return strapiFetch<StrapiCollection<{ slug: string; updatedAt: string }>>(
+    `/experts?${query}`,
+    {
+      next: { revalidate: 60, tags: ["expert-slugs"] },
+    },
+  );
+}

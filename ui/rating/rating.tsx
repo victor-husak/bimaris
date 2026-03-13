@@ -25,8 +25,6 @@ export const Rating: React.FC<RatingProps> = (props): React.JSX.Element => {
         width={3840}
         height={360}
         className="absolute inset-0 -z-2 h-full w-full object-cover object-center"
-        objectFit="cover"
-        objectPosition="center"
       />
 
       {/* Hr */}

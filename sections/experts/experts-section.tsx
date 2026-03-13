@@ -15,11 +15,17 @@ import { Navigation } from "swiper/modules";
 
 import { clsx } from "clsx";
 
+import type { ExpertShort } from "@/types/experts";
+
 export type ExpertsSectionProps = {
   className?: string;
 };
 
-export const ExpertsSection: React.FC<ExpertsSectionProps> = (
+export type ExpertsSectionCombinedProps = ExpertsSectionProps & {
+  data: ExpertShort[];
+};
+
+export const ExpertsSection: React.FC<ExpertsSectionCombinedProps> = (
   props,
 ): React.JSX.Element => {
   const { prevRef, nextRef, onBeforeInit } = useSwiper();
@@ -43,28 +49,22 @@ export const ExpertsSection: React.FC<ExpertsSectionProps> = (
         modules={[Navigation]}
         slidesPerView="auto"
         onBeforeInit={onBeforeInit}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
+        navigation
+        // navigation={{
+        //   prevEl: prevRef.current,
+        //   nextEl: nextRef.current,
+        // }}
       >
-        {items.map((item) => (
+        {props.data?.map((item) => (
           <SwiperSlide
             className="not-last:pr-7.5"
             key={item.id}
             style={{ width: "auto" }}
           >
-            <PeopleCard className="w-[350px]" />
+            <PeopleCard className="w-[350px]" data={item} />
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* <div className="container-full flex gap-[30px]">
-        <PeopleCard className="w-[350px]" />
-
-        <PeopleCard className="w-[350px]" />
-
-        <PeopleCard className="w-[350px]" />
-      </div> */}
 
       {/* Footer */}
       <footer className="container-full">
@@ -73,13 +73,3 @@ export const ExpertsSection: React.FC<ExpertsSectionProps> = (
     </section>
   );
 };
-
-const items = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
-  { id: 6 },
-  { id: 7 },
-];

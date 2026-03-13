@@ -20,8 +20,6 @@ export const FaqsSection: React.FC<FaqsSectionProps> = (
         alt="FAQs"
         width={1500}
         height={1590}
-        objectFit="cover"
-        objectPosition="center"
       />
 
       {/* Content */}

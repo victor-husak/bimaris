@@ -8,29 +8,32 @@ import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
 
 import { clsx } from "clsx";
 
+import { useServicesItemDomainHeader } from "./services-item-domain-header.hook";
+
+import type { Service } from "@/types/services";
+
 export type ServicesItemDomainHeaderProps = {
   className?: string;
+  data: Service;
 };
 
 export const ServicesItemDomainHeader: React.FC<
   ServicesItemDomainHeaderProps
 > = (props): React.JSX.Element => {
+  const { data } = useServicesItemDomainHeader(props);
+
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
       size="md"
       media={{
-        url: "/images/genereted/service.webp",
+        url: data.preview,
         width: 3978,
         height: 1860,
         alt: "Service header background",
       }}
-      title={
-        <>
-          Citizenship of <span>Ukraine</span>
-        </>
-      }
-      description="Professional legal guidance for obtaining Ukrainian citizenship, from eligibility assessment to final approval, handled with care and clarity."
+      title={<>{data.name}</>}
+      description={data.description}
       subtitle="Immigration services"
       tag="For individuals"
       ActionsComponent={

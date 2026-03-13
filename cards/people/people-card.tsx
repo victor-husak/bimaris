@@ -7,13 +7,20 @@ import { CardAction } from "@/components/card";
 
 import { clsx } from "clsx";
 
+import { usePeopleCard } from "./people-card.hook";
+
+import type { ExpertShort } from "@/types/experts";
+
 export type PeopleCardProps = {
   className?: string;
+  data: ExpertShort;
 };
 
 export const PeopleCard: React.FC<PeopleCardProps> = (
   props,
 ): React.JSX.Element => {
+  const { data } = usePeopleCard(props);
+
   return (
     <div
       className={clsx(
@@ -29,10 +36,8 @@ export const PeopleCard: React.FC<PeopleCardProps> = (
             "transition-img h-full w-full object-contain object-center",
             "group-hover:transform-[scale(1.03)]",
           )}
-          src="/images/genereted/people.webp"
-          alt="Case preview"
-          objectFit="contain"
-          objectPosition="center"
+          src={data.avatar}
+          alt={data.name}
           width={660}
           height={660}
         />
@@ -45,13 +50,10 @@ export const PeopleCard: React.FC<PeopleCardProps> = (
           className="underline-hover mr-auto mb-5 text-[16px]/[21px] tracking-[.024em] text-[#333333]"
           href="/insights/1"
         >
-          Mr. Taras Horbatiuk
+          {data.name}
         </NextLink>
 
-        <Tag
-          className="mb-[25px] bg-[#E6EFFC]"
-          title="Founder & Managing Partner"
-        />
+        <Tag className="mb-[25px] bg-[#E6EFFC]" title={data.position} />
 
         {/* List */}
         <List

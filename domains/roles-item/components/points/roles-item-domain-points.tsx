@@ -59,8 +59,6 @@ export const RolesItemDomainPoints: React.FC<RolesItemDomainPointsProps> = (
         alt="FAQs"
         width={1500}
         height={1590}
-        objectFit="cover"
-        objectPosition="center"
       />
     </div>
   );
