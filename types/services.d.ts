@@ -5,6 +5,10 @@ export type ServiceShort = {
   description: string;
   createdAt: string;
   mainImage: Image;
+  items: {
+    id: number;
+    name: string;
+  }[];
 };
 
 export type Service = ServiceShort & {

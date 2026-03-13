@@ -47,6 +47,7 @@ export async function getRoleBySlug(slug: string) {
         fields: ["id", "name", "description", "slug", "createdAt"],
         populate: {
           mainImage: true,
+          items: true,
         },
       },
       case_studies: {

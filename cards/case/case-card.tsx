@@ -60,7 +60,11 @@ export const CaseCard: React.FC<CaseCardProps> = (props): React.JSX.Element => {
         </p>
 
         {/* Action */}
-        <CardAction className="mt-[25px] mr-auto" title="Explore" />
+        <CardAction
+          className="mt-[25px] mr-auto"
+          title="Explore"
+          href={data.href}
+        />
       </div>
     </div>
   );

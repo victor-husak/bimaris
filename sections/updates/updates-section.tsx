@@ -1,18 +1,24 @@
 import NextImage from "next/image";
+import { clsx } from "clsx";
 
 import { SectionHeader, Section, Button } from "@/components";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import { useUpdatesSectionHeader } from "./updates-section.hook";
+
+import type { PublicationShort } from "@/types/publication";
 
 export type UpdatesSectionProps = {
   className?: string;
+  data: PublicationShort[];
 };
 
 export const UpdatesSection: React.FC<UpdatesSectionProps> = (
   props,
 ): React.JSX.Element => {
+  const { data } = useUpdatesSectionHeader(props);
+
   return (
     <Section
       className={clsx(props.className, "")}
@@ -32,25 +38,9 @@ export const UpdatesSection: React.FC<UpdatesSectionProps> = (
       <div className="flex gap-12.5">
         {/* List */}
         <div className="flex flex-1 flex-col gap-3.5">
-          <Components.Item
-            title="Updates to temporary residence permit requirements"
-            description="The Ukrainian authorities have introduced updated documentation requirements for certain Temporary Residence Permit applications."
-          />
-
-          <Components.Item
-            title="Changes to entry and stay rules for foreign nationals"
-            description="Recent adjustments to entry regulations impact visa-free stays and permitted duration rules for several nationalities."
-          />
-
-          <Components.Item
-            title="New guidelines for Ukrainian citizenship applications"
-            description="Authorities have clarified procedural requirements and documentation standards for citizenship applications."
-          />
-
-          <Components.Item
-            title="Updated work permit processing timelines"
-            description="Processing timelines for work permits have been revised, with faster review periods for priority employment sectors and international specialists."
-          />
+          {data.map((item) => (
+            <Components.Item key={item.id} data={item} />
+          ))}
         </div>
 
         {/* Preview */}

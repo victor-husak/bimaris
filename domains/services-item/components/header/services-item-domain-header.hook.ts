@@ -9,7 +9,9 @@ export const useServicesItemDomainHeader = (
     return {
       name: props.data.name,
       description: props.data.description,
-      preview: `${process.env.NEXT_PUBLIC_STRAPI_URL}${props.data.mainImage.url}`,
+      preview: !!props.data.mainImage
+        ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${props.data.mainImage.url}`
+        : "",
       category: "category" in props.data ? props.data.category : undefined,
     };
   }, [props.data]);

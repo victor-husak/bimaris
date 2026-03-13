@@ -1,3 +1,5 @@
+import { clsx } from "clsx";
+
 import { SectionHeader, Button } from "@/components";
 
 import { PageLayout } from "@/layouts/page";
@@ -12,10 +14,13 @@ import { Rating } from "@/ui";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import type { CaseStudyShort } from "@/types/case-studies";
+import type { PublicationShort } from "@/types/publication";
 
 export type HomeDomainProps = {
   className?: string;
+  caseStudies: CaseStudyShort[];
+  publications: PublicationShort[];
 };
 
 export const HomeDomain: React.FC<HomeDomainProps> = (
@@ -45,11 +50,12 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
       />
 
       {/* Updates */}
-      <UpdatesSection className="pb-27.5" />
+      <UpdatesSection className="pb-27.5" data={props.publications} />
 
       {/* Cases */}
       <CasesSection
         className="section-gradient mb-[63px]"
+        data={props.caseStudies}
         HeaderComponent={
           <SectionHeader
             className="container-full pb-0"

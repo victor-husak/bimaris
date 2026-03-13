@@ -1,10 +1,11 @@
 import NextImage from "next/image";
+import { clsx } from "clsx";
 
 import { Section, SectionHeader } from "@/components";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import { useServicesSectionHeader } from "./services-section.hook";
 
 import type { ServiceShort } from "@/types/services";
 
@@ -16,6 +17,8 @@ export type ServicesSectionProps = {
 export const ServicesSection: React.FC<ServicesSectionProps> = (
   props,
 ): React.JSX.Element => {
+  const { data } = useServicesSectionHeader(props);
+
   return (
     <Section
       className={clsx(props.className, "")}
@@ -28,20 +31,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = (
       }
     >
       <div className="mb-15 grid grid-cols-2 gap-5">
-        {props.data.map((item) => (
-          <Components.Item
-            key={item.id}
-            data={{
-              title: item.name,
-              description: item.description,
-              list: [
-                "Ground-based eligibility review",
-                "Status continuity and compliance",
-                "End-to-end application support",
-              ],
-              href: `/services/${item.slug}`,
-            }}
-          />
+        {data.map((item) => (
+          <Components.Item key={item.id} data={item} />
         ))}
       </div>
 

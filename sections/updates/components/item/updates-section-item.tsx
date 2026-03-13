@@ -1,18 +1,25 @@
 import * as Icons from "./icons";
 
 import { clsx } from "clsx";
+import NextLink from "next/link";
 
 export type UpdatesSectionItemProps = {
   className?: string;
-  title: string;
-  description: string;
+  data: {
+    id: number;
+    title: string;
+    description: string;
+    href: string;
+    createdAt: string;
+  };
 };
 
 export const UpdatesSectionItem: React.FC<UpdatesSectionItemProps> = (
   props,
 ): React.JSX.Element => {
   return (
-    <div
+    <NextLink
+      href={props.data.href}
       className={clsx(
         props.className,
         "group flex cursor-pointer rounded-[11px] border border-[#E7EAF2] p-6.25 transition-all",
@@ -37,7 +44,7 @@ export const UpdatesSectionItem: React.FC<UpdatesSectionItemProps> = (
       <div className="flex flex-1 flex-col">
         {/* Title */}
         <p className="mb-3.75 text-[15px]/[19px] tracking-[.024em]">
-          {props.title}
+          {props.data.title}
         </p>
 
         {/* Description */}
@@ -50,9 +57,9 @@ export const UpdatesSectionItem: React.FC<UpdatesSectionItemProps> = (
               } as React.CSSProperties
             }
           >
-            01.02.2026
+            {props.data.createdAt}
           </span>{" "}
-          - {props.description}
+          - {props.data.description}
         </p>
       </div>
 
@@ -70,6 +77,6 @@ export const UpdatesSectionItem: React.FC<UpdatesSectionItemProps> = (
           )}
         />
       </div>
-    </div>
+    </NextLink>
   );
 };

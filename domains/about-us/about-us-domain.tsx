@@ -1,3 +1,6 @@
+import { clsx } from "clsx";
+import { Suspense } from "react";
+
 import { SectionHeader, Button } from "@/components";
 
 import { PageLayout } from "@/layouts/page";
@@ -13,10 +16,11 @@ import { Rating } from "@/ui/rating";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import type { CaseStudyShort } from "@/types/case-studies";
 
 export type AboutUsDomainProps = {
   className?: string;
+  caseStudies: CaseStudyShort[];
 };
 
 export const AboutUsDomain: React.FC<AboutUsDomainProps> = (
@@ -53,11 +57,14 @@ export const AboutUsDomain: React.FC<AboutUsDomainProps> = (
       />
 
       {/* Experts */}
-      <ExpertsSection />
+      <Suspense>
+        <ExpertsSection />
+      </Suspense>
 
       {/* Cases */}
       <CasesSection
         className="mb-[60px]"
+        data={props.caseStudies}
         HeaderComponent={
           <SectionHeader
             className="container-full pb-0"

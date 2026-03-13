@@ -13,7 +13,7 @@ export const useCaseCard = (props: CaseCardProps) => {
       preview: props.data.preview
         ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${props.data.preview.url}`
         : "",
-      href: `/cases/${props.data.slug}`,
+      href: `/case-studies/${props.data.slug}`,
     };
   }, [props.data]);
 

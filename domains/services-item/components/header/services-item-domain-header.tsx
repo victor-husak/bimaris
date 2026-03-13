@@ -32,7 +32,7 @@ export const ServicesItemDomainHeader: React.FC<
         height: 1860,
         alt: "Service header background",
       }}
-      title={<>{data.name}</>}
+      title={data.name}
       description={data.description}
       subtitle="Immigration services"
       tag="For individuals"

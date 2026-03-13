@@ -40,9 +40,9 @@ export async function getPublications({
     //   paramsQuery.filters.topics = { slug: { $in: filters.topic } };
     // }
 
-    // if (filters.type) {
-    //   paramsQuery.filters.types = { slug: { $in: filters.type } };
-    // }
+    if (filters.category) {
+      paramsQuery.filters.category = { slug: { $in: filters.category } };
+    }
 
     // if (filters.expertise) {
     //   paramsQuery.filters.expertise = {
