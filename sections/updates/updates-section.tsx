@@ -12,6 +12,7 @@ import type { PublicationShort } from "@/types/publication";
 export type UpdatesSectionProps = {
   className?: string;
   data: PublicationShort[];
+  HeaderComponent?: React.ReactNode;
 };
 
 export const UpdatesSection: React.FC<UpdatesSectionProps> = (
@@ -23,15 +24,17 @@ export const UpdatesSection: React.FC<UpdatesSectionProps> = (
     <Section
       className={clsx(props.className, "")}
       HeaderComponent={
-        <SectionHeader
-          title="Legal alerts and updates"
-          description="Stay informed about key immigration law changes, policy updates, and regulatory developments affecting individuals moving in Ukraine."
-          ActionComponent={
-            <Button animation="scale" href="/">
-              Newsroom
-            </Button>
-          }
-        />
+        props.HeaderComponent || (
+          <SectionHeader
+            title="Legal alerts and updates"
+            description="Stay informed about key immigration law changes, policy updates, and regulatory developments affecting individuals moving in Ukraine."
+            ActionComponent={
+              <Button animation="scale" href="/">
+                Newsroom
+              </Button>
+            }
+          />
+        )
       }
     >
       {/* Content */}
