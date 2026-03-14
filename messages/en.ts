@@ -248,7 +248,84 @@ const message = {
     },
   },
   overlays: {},
-  sections: {},
+  sections: {
+    experts: {
+      header: {
+        title: "Our experts",
+        description:
+          "Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach andlong-term legal support.",
+      },
+    },
+    contact: {
+      header: {
+        title: "Contact us",
+        description:
+          "Reach out to our communications experts for personalized support or inquiries. We’re ready to help you stay connected across the Balkans and beyond.",
+      },
+      banner: {
+        title: "Start the conversation",
+        description:
+          "Share a few details about your situation, and our team will review your request and get back to you with clear next steps.",
+        list: {
+          map: "Show on the map",
+        },
+        action: "Schedule a meeting",
+      },
+      offices: {
+        main: {
+          tag: "Main office",
+          items: {
+            address1: "Ukraine, 01033, Kyiv",
+            address2: "Zhylianska 68, office 167",
+          },
+        },
+        back: {
+          tag: "Back office",
+          items: {
+            address1: "Estonia, 10149, Tallinn ",
+            address2: "4 Saani tn 2/2-26, Põhja-Tallinna",
+          },
+        },
+        action: "Show on map",
+      },
+      form: {
+        tag: "Fill in the form",
+        name: {
+          label: "Name",
+        },
+        surname: {
+          label: "Surname",
+        },
+        company: {
+          label: "Company",
+        },
+        country: {
+          label: "Country of origin",
+        },
+        email: {
+          label: "Business email",
+        },
+        phone: {
+          label: "Phone number",
+        },
+        message: {
+          label: "Message",
+          placeholder: "Please, add more details...",
+        },
+        consent:
+          "I agree to receive occasional updates, insights, and relevant information from Bimaris.",
+        action: "Send",
+        footer: {
+          description: {
+            part1: "By clicking send, you confirm that you’ve read the",
+            part2:
+              "and consent to the processing of your personal data for the purposes described in the statement.",
+          },
+          link: pages["privacy-policy"].title,
+        },
+      },
+    },
+  },
 };
 
 export default message;

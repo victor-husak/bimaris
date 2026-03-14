@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 import { Banner, BannerList } from "@/ui";
 
 import { ContactForm } from "@/forms/contact";
@@ -15,14 +17,16 @@ export type ContactSectionProps = {
 export const ContactSection: React.FC<ContactSectionProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("sections.contact");
+
   return (
     <Section
       className={clsx(props.className, "")}
       HeaderComponent={
         <SectionHeader
           classNameDescription="max-w-[500px]"
-          title="Contact us"
-          description="Connect with our team in the way that suits you best - to ask questions, or explore the right immigration path forward."
+          title={t("header.title")}
+          description={t("header.description")}
         />
       }
     >
@@ -33,20 +37,20 @@ export const ContactSection: React.FC<ContactSectionProps> = (
           <Banner
             className="rounded-b-lg bg-[#E0EBFA] pt-[50px] pb-[50px] text-[#507FEB] shadow-[0_0_1px_2px_black/3]"
             classNameDescription="max-w-[400px] text-[#818796]"
-            title="Start the conversation"
-            description="Share a few details about your situation, and our team will review your request and get back to you with clear next steps."
+            title={t("banner.title")}
+            description={t("banner.description")}
             ListComponent={
               <BannerList
                 items={[
                   "+380 44 995 35 35",
                   "info@bimaris.legal",
-                  "Show on the map",
+                  t("banner.list.map"),
                 ]}
               />
             }
             ActionComponent={
               <Button href="/contact" animation="scale">
-                Schedule a meeting
+                {t("banner.action")}
               </Button>
             }
           />

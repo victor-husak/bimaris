@@ -1,6 +1,7 @@
 "use client";
 
 import NextLink from "next/link";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components";
 
@@ -24,6 +25,8 @@ export type ContactFormProps = {
 export const ContactForm: React.FC<ContactFormProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("sections.contact.form");
+
   return (
     <div className={clsx(props.className, "flex flex-col rounded-2xl")}>
       {/* Content */}
@@ -41,7 +44,7 @@ export const ContactForm: React.FC<ContactFormProps> = (
             <ArrowRightIcon className="[&>path]:stroke-[#2D3A52]" />
 
             <span className="text-[12px]/[15px] tracking-[.028em]">
-              Fill out the form
+              {t("tag")}
             </span>
           </div>
         )}
@@ -49,37 +52,37 @@ export const ContactForm: React.FC<ContactFormProps> = (
         <form className="flex flex-col">
           <div className="flex flex-col gap-[15px]">
             <FormRow>
-              <FormItem required label="Name">
+              <FormItem required label={t("name.label")}>
                 <FormInput placeholder="-" />
               </FormItem>
 
-              <FormItem required label="Surname">
-                <FormInput placeholder="-" />
-              </FormItem>
-            </FormRow>
-
-            <FormRow>
-              <FormItem required label="Company">
-                <FormInput placeholder="-" />
-              </FormItem>
-
-              <FormItem required label="Country of origin">
+              <FormItem required label={t("surname.label")}>
                 <FormInput placeholder="-" />
               </FormItem>
             </FormRow>
 
             <FormRow>
-              <FormItem required label="Business email">
+              <FormItem required label={t("company.label")}>
+                <FormInput placeholder="-" />
+              </FormItem>
+
+              <FormItem required label={t("country.label")}>
+                <FormInput placeholder="-" />
+              </FormItem>
+            </FormRow>
+
+            <FormRow>
+              <FormItem required label={t("email.label")}>
                 <FormInput placeholder="example@gmail.com" />
               </FormItem>
 
-              <FormItem required label="Phone number">
+              <FormItem required label={t("phone.label")}>
                 <FormInput placeholder="+38" />
               </FormItem>
             </FormRow>
 
-            <FormItem required label="Message">
-              <FormTextarea placeholder="Please, add more details..." />
+            <FormItem required label={t("message.label")}>
+              <FormTextarea placeholder={t("message.placeholder")} />
             </FormItem>
           </div>
 
@@ -100,8 +103,7 @@ export const ContactForm: React.FC<ContactFormProps> = (
                 "group-hover:text-foreground",
               )}
             >
-              I agree to receive occasional updates, insights, and relevant
-              information from Bimaris.
+              {t("consent")}
             </span>
           </div>
 
@@ -110,7 +112,7 @@ export const ContactForm: React.FC<ContactFormProps> = (
             size="large"
             animation="scale-small"
           >
-            Send
+            {t("action")}
           </Button>
         </form>
       </div>
@@ -118,7 +120,7 @@ export const ContactForm: React.FC<ContactFormProps> = (
       {/* Footer */}
       <footer className="rounded-b-2xl bg-[#FCFCFC] px-[35px] py-5 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)]">
         <p className="text-[13px]/[18px] tracking-[.028em] text-[#838891]">
-          By clicking send, you confirm that you’ve read the{" "}
+          {t("footer.description.part1")}{" "}
           <NextLink
             className={clsx(
               "text-secondary underline transition-all",
@@ -126,10 +128,9 @@ export const ContactForm: React.FC<ContactFormProps> = (
             )}
             href="/privacy-statement"
           >
-            privacy statement
+            {t("footer.link")}
           </NextLink>{" "}
-          and consent to the processing of your personal data for the purposes
-          described in the statement.
+          {t("footer.description.part2")}
         </p>
       </footer>
     </div>

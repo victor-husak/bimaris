@@ -1,9 +1,8 @@
-"use client";
-
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 
 // import { useSwiper } from "@/hooks";
+import { useContactSectionOffices } from "./contact-section-offices.hook";
 
 import * as Components from "./components";
 
@@ -18,6 +17,7 @@ export type ContactSectionOfficesProps = {
 export const ContactSectionOffices: React.FC<ContactSectionOfficesProps> = (
   props,
 ): React.JSX.Element => {
+  const { items } = useContactSectionOffices();
   // const {
   //   activeIndex,
   //   prevRef,
@@ -70,26 +70,3 @@ export const ContactSectionOffices: React.FC<ContactSectionOfficesProps> = (
     // </div>
   );
 };
-
-const items = [
-  {
-    id: 1,
-    tag: "Main office",
-    items: [
-      "Ukraine, 01033, Kyiv",
-      "Zhylianska 68, office 167",
-      "info@bimaris.legal",
-    ],
-    action: "Show on map",
-  },
-  {
-    id: 2,
-    tag: "Back office",
-    items: [
-      "Estonia, 10149, Tallinn ",
-      "4 Saani tn 2/2-26, Põhja-Tallinna",
-      "estonia@bimaris.legal",
-    ],
-    action: "Schedule meeting",
-  },
-];
