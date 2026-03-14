@@ -13,6 +13,7 @@ import type { PublicationShort } from "@/types/publication";
 export type UpdatesSectionProps = {
   className?: string;
   data: PublicationShort[];
+  HeaderComponent?: React.ReactNode;
 };
 
 export const UpdatesSection: React.FC<UpdatesSectionProps> = (
@@ -26,15 +27,17 @@ export const UpdatesSection: React.FC<UpdatesSectionProps> = (
     <Section
       className={clsx(props.className, "")}
       HeaderComponent={
-        <SectionHeader
-          title={t("header.title")}
-          description={t("header.description")}
-          ActionComponent={
-            <Button animation="scale" href="/insights">
-              {t("header.action")}
-            </Button>
-          }
-        />
+        props.HeaderComponent || (
+          <SectionHeader
+            title={t("header.title")}
+            description={t("header.description")}
+            ActionComponent={
+              <Button animation="scale" href="/insights">
+                {t("header.action")}
+              </Button>
+            }
+          />
+        )
       }
     >
       {/* Content */}

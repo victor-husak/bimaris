@@ -1,5 +1,7 @@
 import { PageLayout } from "@/layouts/page";
 
+import { SectionHeader } from "@/components";
+
 import { MenuSection } from "@/sections/menu";
 import { UpdatesSection } from "@/sections/updates";
 
@@ -35,7 +37,16 @@ export const InsightsDomain: React.FC<InsightsDomainProps> = (
     >
       <MenuSection data={menu} />
 
-      <UpdatesSection className="mb-25" data={[]} />
+      <UpdatesSection
+        className="mb-25"
+        data={[]}
+        HeaderComponent={
+          <SectionHeader
+            title="Selected legal alerts"
+            description="Timely legal updates on immigration rules, regulatory changes, and official announcements."
+          />
+        }
+      />
 
       <Components.List
         className="section-gradient"
