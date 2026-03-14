@@ -1,6 +1,6 @@
 "use client";
 
-import NextLink from "next/link";
+import { NextLink } from "@/i18n/routing";
 
 import { Lang } from "@/components";
 

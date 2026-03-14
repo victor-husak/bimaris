@@ -1,5 +1,5 @@
 import NextImage from "next/image";
-import NextLink from "next/link";
+import { NextLink } from "@/i18n/routing";
 
 import { Tag, List } from "@/components";
 

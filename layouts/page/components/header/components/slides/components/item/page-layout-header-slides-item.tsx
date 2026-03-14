@@ -1,7 +1,7 @@
 "use client";
 
 import NextImage from "next/image";
-import NextLink from "next/link";
+import { NextLink } from "@/i18n/routing";
 
 import { Box } from "@/components";
 

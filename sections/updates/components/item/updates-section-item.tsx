@@ -1,7 +1,7 @@
 import * as Icons from "./icons";
 
 import { clsx } from "clsx";
-import NextLink from "next/link";
+import { NextLink } from "@/i18n/routing";
 
 export type UpdatesSectionItemProps = {
   className?: string;

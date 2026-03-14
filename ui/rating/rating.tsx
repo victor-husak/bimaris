@@ -1,5 +1,7 @@
 import NextImage from "next/image";
-import NextLink from "next/link";
+import { NextLink } from "@/i18n/routing";
+
+import { useTranslations } from "next-intl";
 
 import * as Icons from "./icons";
 
@@ -10,6 +12,8 @@ export type RatingProps = {
 };
 
 export const Rating: React.FC<RatingProps> = (props): React.JSX.Element => {
+  const t = useTranslations("ui.rating");
+
   return (
     <div
       className={clsx(
@@ -53,7 +57,7 @@ export const Rating: React.FC<RatingProps> = (props): React.JSX.Element => {
 
         {/* Info */}
         <div className="flex flex-1 flex-col items-start text-[12px]/[16px]">
-          <span className="text-white/60">5.0 on Truspilot</span>
+          <span className="text-white/60">5.0 {t("on")} Truspilot</span>
 
           <NextLink
             className={clsx(
@@ -64,7 +68,7 @@ export const Rating: React.FC<RatingProps> = (props): React.JSX.Element => {
             target="_blank"
             rel="nofollow noopener noreferrer"
           >
-            Explore all reviews
+            {t("action")}
           </NextLink>
         </div>
 

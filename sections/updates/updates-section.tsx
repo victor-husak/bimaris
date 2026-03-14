@@ -1,5 +1,6 @@
 import NextImage from "next/image";
 import { clsx } from "clsx";
+import { useTranslations } from "next-intl";
 
 import { SectionHeader, Section, Button } from "@/components";
 
@@ -17,6 +18,8 @@ export type UpdatesSectionProps = {
 export const UpdatesSection: React.FC<UpdatesSectionProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("sections.updates");
+
   const { data } = useUpdatesSectionHeader(props);
 
   return (
@@ -24,11 +27,11 @@ export const UpdatesSection: React.FC<UpdatesSectionProps> = (
       className={clsx(props.className, "")}
       HeaderComponent={
         <SectionHeader
-          title="Legal alerts and updates"
-          description="Stay informed about key immigration law changes, policy updates, and regulatory developments affecting individuals moving in Ukraine."
+          title={t("header.title")}
+          description={t("header.description")}
           ActionComponent={
-            <Button animation="scale" href="/">
-              Newsroom
+            <Button animation="scale" href="/insights">
+              {t("header.action")}
             </Button>
           }
         />

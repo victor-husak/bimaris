@@ -1,4 +1,4 @@
-import NextLink from "next/link";
+import { NextLink } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
 import * as Icons from "./icons";

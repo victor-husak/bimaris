@@ -1,4 +1,4 @@
-import NextLink from "next/link";
+import { NextLink } from "@/i18n/routing";
 
 import { CaretIcon } from "@/icons";
 

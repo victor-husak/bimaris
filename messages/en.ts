@@ -38,17 +38,6 @@ const message = {
       "terms-of-use": pages["terms-of-use"].title,
       "cookies-policy": pages["cookies-policy"].title,
     },
-    // filters: {
-    //   checkbox: {
-    //     search: "Name…",
-    //     empty: "Nothing found",
-    //   },
-    // },
-    // form: {
-    //   select: {
-    //     placeholder: "Select",
-    //   },
-    // },
   },
   pages: {
     home: {
@@ -128,46 +117,6 @@ const message = {
           call: "Call Sales",
         },
         tags: ["IP Voice"],
-      },
-    },
-    insights: {
-      meta: {
-        title: "Publications | Neofone",
-        description:
-          "Stay up to date with the latest news, announcements, and insights from Neofone. Explore our recent publications to learn more about our innovations, solitions, and industry developments.",
-      },
-      publications: {
-        title: "Publications",
-        description:
-          "Stay up to date with the latest news, announcements, and insights from Neofone. Explore our recent publications to learn more about our **innovations, solitions**, and **industry developments**.",
-        grid: {
-          empty: {
-            title: "Nothing found",
-            description:
-              "No results were found for your search parameters. Adjust your search criteria or browse all publications.",
-            action: "All publications",
-          },
-        },
-        filters: {
-          type: "Type",
-          date: "Publication Date",
-          solution: "Solution",
-          "date-options": {
-            today: "Today",
-            week: "This week",
-            month: "This month",
-            year: "This year",
-          },
-        },
-        featured: {
-          tag: "Featured",
-          action: "Read more",
-          footer: [
-            "Stay connected",
-            "To get in touch with the firm, please fill in this",
-            "form",
-          ],
-        },
       },
     },
   },
@@ -324,6 +273,28 @@ const message = {
           link: pages["privacy-policy"].title,
         },
       },
+    },
+    updates: {
+      header: {
+        title: "Legal alerts and updates",
+        description:
+          "Stay informed about key immigration law changes, policy updates, and regulatory developments affecting individuals moving in Ukraine.",
+        action: "Newsroom",
+      },
+    },
+    "case-studies": {
+      header: {
+        title: "Case studies",
+        description:
+          "Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support.",
+        action: "View all",
+      },
+    },
+  },
+  ui: {
+    rating: {
+      action: "Explore all reviews",
+      on: "on",
     },
   },
 };

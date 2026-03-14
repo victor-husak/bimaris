@@ -1,33 +1,33 @@
 const pages = {
   home: {
-    title: "Kryefaqja",
+    title: "Головна",
   },
   about: {
-    title: "Rreth nesh",
+    title: "Про нас",
   },
   contact: {
-    title: "Na kontaktoni",
+    title: "Зв’язатися з нами",
   },
   insights: {
-    title: "Njohuri",
+    title: "Інсайти",
   },
   "privacy-policy": {
-    title: "Politika e privatësisë",
+    title: "Політика конфіденційності",
   },
   "cookies-policy": {
-    title: "Politika e cookies",
+    title: "Політика файлів cookie",
   },
   "terms-of-use": {
-    title: "Kushtet e përdorimit",
+    title: "Умови використання",
   },
 };
 
 const message = {
   common: {
     meta: {
-      title: "Neofone",
+      title: "Bimaris",
       description:
-        "Neofone është ofruesi i shërbimeve VoIP në Shqipëri, duke ofruar zgjidhje komunikimi pa ndërprerje dhe me cilësi të lartë që ju mbajnë në kontakt me të dashurit, kudo në botë.",
+        "Bimaris допомагає людям та сім’ям проходити імміграційний процес в Україні з ясністю, впевненістю та професійною юридичною підтримкою.",
     },
     routes: {
       home: pages.home.title,
@@ -38,255 +38,263 @@ const message = {
       "terms-of-use": pages["terms-of-use"].title,
       "cookies-policy": pages["cookies-policy"].title,
     },
-    filters: {
-      checkbox: {
-        search: "Emri…",
-        empty: "Asgjë nuk u gjet",
-      },
-    },
-    form: {
-      select: {
-        placeholder: "Zgjidh",
-      },
-    },
   },
-
   pages: {
-    home: {},
+    home: {
+      meta: {
+        title: "Головна | Bimaris",
+        description:
+          "Bimaris допомагає людям та сім’ям проходити імміграційний процес в Україні з ясністю, впевненістю та професійною юридичною підтримкою.",
+      },
+    },
     contact: {
       meta: {
-        title: "Forma e Kontaktit | Neofone",
+        title: "Контактна форма | Bimaris",
         description:
-          "Krejoni kontakt me ekspertët tanë të komunikimeve për mbështetje të personalizuar ose pyetje. Ne jemi gati t'ju ndihmojmë të qëndroni të lidhur nëpër Ballkan dhe më gjerë.",
+          "Зверніться до наших експертів з комунікацій для отримання персоналізованої підтримки або консультацій. Ми готові допомогти вам залишатися на зв’язку на Балканах та за їх межами.",
       },
-      title: "Forma e Kontaktit",
+      title: "Контактна форма",
       description:
-        "Krejoni kontakt me ekspertët tanë të komunikimeve për mbështetje të personalizuar ose pyetje. Ne jemi gati t'ju ndihmojmë të qëndroni të lidhur nëpër Ballkan dhe më gjerë.",
+        "Зверніться до наших експертів з комунікацій для отримання персоналізованої підтримки або консультацій. Ми готові допомогти вам залишатися на зв’язку на Балканах та за їх межами.",
       form: {
-        title: "Plotësoni formularin",
+        title: "Заповніть форму",
         name: {
-          label: "Emri",
-          placeholder: "Shkruani emrin tuaj",
+          label: "Ім’я",
+          placeholder: "Введіть ваше ім’я",
         },
         surname: {
-          label: "Mbiemri",
-          placeholder: "Shkruani mbiemrin tuaj",
+          label: "Прізвище",
+          placeholder: "Введіть ваше прізвище",
         },
         сountry: {
-          label: "Vendi",
-          placeholder: "Shkruani vendin",
+          label: "Країна",
+          placeholder: "Введіть країну",
         },
         phone: {
-          label: "Telefon",
-          placeholder: "Shkruani numrin e telefonit",
+          label: "Телефон",
+          placeholder: "Введіть номер телефону",
         },
         email: {
           label: "Email",
         },
         solution: {
-          label: "Zgjidhja e lidhur",
-          placeholder: "Zgjidhni zgjidhjen (opsionale)",
+          label: "Пов’язане рішення",
+          placeholder: "Оберіть рішення (необов’язково)",
         },
         message: {
-          label: "Mesazhi",
-          placeholder: "Shkruani mesazhin tuaj",
+          label: "Повідомлення",
+          placeholder: "Напишіть ваше повідомлення",
         },
         footer: {
           description: {
-            text: "Duke dërguar këtë formular, po pajtoheni që ne të mbetemi në kontakt në lidhje me shërbimet tona satelitore. Ne respektojmë privatësinë tuaj të të dhënave dhe do ta përdorim informacionin tuaj vetëm siç është përshkruar në",
+            text: "Надсилаючи цю форму, ви погоджуєтеся отримувати від нас повідомлення щодо наших супутникових сервісів. Ми поважаємо конфіденційність ваших даних і використовуватимемо вашу інформацію лише відповідно до",
             link: pages["privacy-policy"].title,
           },
-          button: "Dërgo formularin",
+          button: "Надіслати форму",
         },
         congratulation: {
-          title: "Formulari u dorëzua!",
+          title: "Форму надіслано!",
           description:
-            "Formulari është dërguar me sukses në Neofone,<br />dhe ekipi ynë do të kontaktojë me ju brenda <span>1 dite pune</span>.",
-          button: "Kthehu në faqen kryesore",
+            "Форма була успішно надіслана до Neofone,<br />і наша команда зв’яжеться з вами протягом <span>1 робочого дня</span>.",
+          button: "Перейти на головну сторінку",
         },
         toast: {
-          success: "Ju keni abonuar me sukses në <span>newsletter</span>",
+          success: "Ви успішно <span>підписалися</span> на розсилку новин",
         },
       },
       banner: {
-        title: "I pafund. Lidhje.",
+        title: "Безмежний. Зв’язок.",
       },
       faq: {
-        title: "Pyetje të Shpeshta",
+        title: "Поширені запитання",
       },
       sales: {
-        title:
-          "Kompania ndërkombëtare e transportit **përmes TDM dhe IP Voice**",
+        title: "Міжнародний оператор\n**через TDM та IP Voice**",
         description:
-          "Keni pyetje? Ekipa jonë e mbështetjes është këtu për t'ju ndihmuar me çdo problem. Krijoni kontakt me ne në çdo kohë dhe përjetoni komunikim pa ndërprerje me ekipin e Mbështetjes së Neofone.",
+          "Маєте запитання? Наша команда підтримки готова допомогти з будь-якими питаннями. Зв’яжіться з нами у будь-який час і відчуйте безперебійну комунікацію з командою підтримки Neofone.",
         actions: {
-          call: "Thirrni Shitjet",
+          call: "Зателефонувати до відділу продажів",
         },
         tags: ["IP Voice"],
-      },
-    },
-    insights: {
-      meta: {
-        title: "Publikime | Neofone",
-        description:
-          "Qëndroni të informuar me lajmet, njoftimet dhe njohuritë më të fundit nga Neofone. Eksploroni publikimet tona të fundit për të mësuar më shumë rreth risive, zgjidhjeve dhe zhvillimeve në industri.",
-      },
-      publications: {
-        title: "Botime",
-        description:
-          "Qëndroni të përditësuar me lajmet më të fundit, njoftimet dhe njohuritë nga Neofone. Eksploroni botimet tona të fundit për të mësuar më shumë rreth **inovacioneve, zgjidhjeve**, dhe **zhvillimeve në industrinë**.",
-        grid: {
-          empty: {
-            title: "Nuk u gjet asgjë",
-            description:
-              "Nuk u gjetën rezultate për parametrat tuaj të kërkimit. Rregulloni kriteret e kërkimit ose shfletoni të gjitha botimet.",
-            action: "Të gjitha botimet",
-          },
-        },
-        filters: {
-          type: "Lloji",
-          date: "Data e Botimit",
-          solution: "Zgjidhja",
-        },
-        featured: {
-          tag: "I veçuar",
-          action: "Lexoni më shumë",
-          footer: [
-            "Qëndroni të lidhur",
-            "Për t'u lidhur me firmën, ju lutemi plotësoni këtë",
-            "formular",
-          ],
-        },
       },
     },
   },
   layouts: {
     root: {
-      feedback: {
-        title: "Përgjigje",
-      },
-      topline: {
-        promotion: {
-          title:
-            "Zgjidhje komunikimi me cilësi të lartë për t’ju mbajtur në kontakt, kudo në Shqipëri.",
-          action: "Zbuloni zgjidhjet",
-        },
-        personal: "Personal",
-        commercial: "Komercial",
-        talk: "Flisni me shitjet",
-        meeting: "Rezervoni një takim",
-      },
+      topline: {},
       header: {
+        businesses: "Бізнесу",
+        "private-clients": "Приватним клієнтам",
+        investors: "Інвесторам",
         about: pages.about.title,
+        "case-studies": "Кейси",
         insights: pages.insights.title,
         contact: pages.contact.title,
-        support: "Mbështetje",
+        "log-in": "Увійти",
+        trigger: {
+          menu: "Меню",
+        },
       },
       footer: {
-        promo: {
-          title: "Lidhje pa kufij - me Neofone",
-          description:
-            "Neofone është ofruesi i VoIP në Shqipëri, duke ofruar zgjidhje të përshtatshme dhe të cilësisë së lartë që ju mbajnë të lidhur me të dashurit tuaj, kudo në botë.",
-        },
+        title: "Імміграція — з ясністю",
+        description:
+          "Персоналізована юридична підтримка з імміграції для приватних осіб — з ясністю, турботою та точністю.",
+        action: pages.contact.title,
         menu: {
-          about: {
-            title: "Për ne",
+          company: {
+            title: "Компанія",
             items: {
               about: pages.about.title,
+              newsroom: "Новини",
+              capabilities: "Можливості",
               contact: pages.contact.title,
-              insights: pages.insights.title,
+              people: "Команда",
             },
           },
-          industries: {
-            title: "Industria",
+          businesses: {
+            title: "Бізнесу",
+            items: {
+              companyFormation: "Реєстрація компанії в Україні",
+              businessImmigration: "Бізнес-імміграція до України",
+              corporateImmigration: "Корпоративна імміграція до України",
+              representativeOffice: "Реєстрація представництва",
+            },
           },
-          practices: {
-            title: "Praktika",
+          individuals: {
+            title: "Приватним особам",
+            items: {
+              crypto: "Крипто",
+              marketing: "Маркетинг та реклама",
+              consumerGoods: "Споживчі товари",
+              talentSolutions: "Рішення для талантів",
+              healthcare: "Охорона здоров’я",
+              finance: "Фінанси",
+              legal: "Юридичні послуги",
+            },
           },
+          investors: {
+            title: "Інвесторам",
+            items: {
+              talentSolutions: "Рішення для талантів",
+              healthcare: "Охорона здоров’я",
+              finance: "Фінанси",
+              legal: "Юридичні послуги",
+            },
+          },
+        },
+        info: {
+          address: "Україна, 01033, Київ, вул. Жилянська 68, офіс 167",
+          subscribe: "Підписатися",
         },
         "bottom-line": {
-          copyright: "Neofone Albania, Të drejtat e rezervuara",
+          copyright: "© 2026 Bimaris Legal. Усі права захищені",
           "privacy-policy": pages["privacy-policy"].title,
           "cookies-policy": pages["cookies-policy"].title,
-          "terms-of-use": pages["terms-of-use"].title,
-          "exclusively-designed": "Projektuar ekskluzivisht nga",
+          "exclusively-designed": "Дизайн розроблено",
         },
       },
     },
-    overfay: {
-      footer: {
-        "get-touch": "Kontakto me ne",
-        "customer-support": "Mbështetje për klientët",
-      },
-    },
-    single: {
-      actions: {
-        share: "Ndaje",
-        print: "Printo",
-        contact: "Kontakto shitjet",
-      },
-      aside: {
-        contents: "Përmbajtja",
-        posted: "Publikuar më",
-        in: "në",
-      },
-    },
   },
-  overlays: {
-    about: {
-      tag: "Për ne",
-      title: "Zgjidhje Telekomunikacioni dhe VoIP **në Shqipëri**",
-      items: [
-        "Zgjidhje moderne VoIP",
-        "Ekip mbështetje profesionist",
-        "Çmime të qarta dhe konkurruese",
-      ],
-      action: "Për ne",
-    },
-    solutions: {
-      tag: "Kartë",
-      title: "Telefonata të pakufizuara me **Neofone Card**",
-      items: [
-        "Nuk ka komisione të fshehura",
-        "Për klientët Vodafone dhe AMC",
-        "Përdoret vetëm në Shqipëri",
-      ],
-      action: "Merr Néofone Card",
-    },
-  },
-  banners: {
-    mission: {
-      title: "Përshëndetje, ne jemi\n**Neofone Albania**",
-      description:
-        "Ne jemi të angazhuar për të pionieruar bashkimin e teknologjisë së avancuar me mbështetje të palëkundur për klientët dhe komunikim pa ndërprerje dhe të besueshëm.",
-      actions: ["Misioni ynë", "Rreth Nesh"],
-      tag: "Misioni ynë",
-    },
-    support: {
-      title: "Mbështetje pa ndërprerje **kurdo që ta keni nevojë**",
-      description:
-        "Keni pyetje? Ekipa jonë e mbështetjes është këtu për t'ju ndihmuar me çdo problem. Krijoni kontakt me ne në çdo kohë dhe përjetoni komunikim pa ndërprerje me ekipin e Mbështetjes së Neofone.",
-      actions: ["Kontaktoni Mbështetje për Klientët", "Qendra e Ndihmës"],
-      tag: "Mbështetje",
-    },
-  },
+  overlays: {},
   sections: {
-    purchasing: {
-      tag: "Blerja",
-      description: [
-        "Lejoni që të ndihmojmë",
-        "të zgjidhni një zgjidhje që plotëson nevojat tuaja",
-      ],
-      action: "Thirrni Shitjet",
-    },
-    help: {
-      questions: {
-        title: "Keni pyetje? Kontaktoni mbështetjen",
+    experts: {
+      header: {
+        title: "Наші експерти",
         description:
-          "Qoftë se keni pyetje teknike apo keni nevojë për udhëzime mbi shërbimet tona, jemi vetëm një telefonatë larg. Na kontaktoni për ndihmë të shpejtë dhe të besueshme.",
-        action: "Kontakto Néofone",
+          "Ознайомтеся з прикладами імміграційних справ, які ми супроводжували для приватних осіб та бізнесу, демонструючи наш структурований підхід і довгострокову юридичну підтримку.",
       },
-      contact: pages["contact"].title,
+    },
+    contact: {
+      header: {
+        title: "Зв’яжіться з нами",
+        description:
+          "Зверніться до наших експертів з комунікацій для отримання персоналізованої підтримки або консультацій. Ми готові допомогти вам залишатися на зв’язку на Балканах та за їх межами.",
+      },
+      banner: {
+        title: "Почнімо розмову",
+        description:
+          "Поділіться кількома деталями про вашу ситуацію, і наша команда розгляне ваш запит та надасть чіткі наступні кроки.",
+        list: {
+          map: "Показати на карті",
+        },
+        action: "Запланувати зустріч",
+      },
+      offices: {
+        main: {
+          tag: "Головний офіс",
+          items: {
+            address1: "Україна, 01033, Київ",
+            address2: "вул. Жилянська 68, офіс 167",
+          },
+        },
+        back: {
+          tag: "Бек-офіс",
+          items: {
+            address1: "Естонія, 10149, Таллінн",
+            address2: "Saani tn 2/2-26, Põhja-Tallinna",
+          },
+        },
+        action: "Показати на карті",
+      },
+      form: {
+        tag: "Заповніть форму",
+        name: {
+          label: "Ім’я",
+        },
+        surname: {
+          label: "Прізвище",
+        },
+        company: {
+          label: "Компанія",
+        },
+        country: {
+          label: "Країна походження",
+        },
+        email: {
+          label: "Корпоративний email",
+        },
+        phone: {
+          label: "Номер телефону",
+        },
+        message: {
+          label: "Повідомлення",
+          placeholder: "Будь ласка, додайте більше деталей...",
+        },
+        consent:
+          "Я погоджуюся отримувати періодичні оновлення, аналітику та релевантну інформацію від Bimaris.",
+        action: "Надіслати",
+        footer: {
+          description: {
+            part1:
+              "Натискаючи «Надіслати», ви підтверджуєте, що ознайомилися з",
+            part2:
+              "та погоджуєтесь на обробку ваших персональних даних для цілей, описаних у цій заяві.",
+          },
+          link: pages["privacy-policy"].title,
+        },
+      },
+    },
+    updates: {
+      header: {
+        title: "Юридичні оновлення та повідомлення",
+        description:
+          "Будьте в курсі ключових змін імміграційного законодавства, оновлень політик та регуляторних змін, що впливають на людей, які переїжджають до України.",
+        action: "Новини",
+      },
+    },
+    "case-studies": {
+      header: {
+        title: "Кейси",
+        description:
+          "Ознайомтеся з прикладами імміграційних справ, які ми супроводжували для приватних осіб та бізнесу, демонструючи наш структурований підхід і довгострокову юридичну підтримку.",
+        action: "Дізнатися більше",
+      },
+    },
+  },
+  ui: {
+    rating: {
+      action: "Переглянути всі відгуки",
+      on: "на",
     },
   },
 };

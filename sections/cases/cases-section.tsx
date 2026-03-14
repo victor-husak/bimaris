@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { PublicationCard } from "@/cards/publication";
 
 import { SectionArrows } from "@/components/section";
@@ -24,6 +26,7 @@ export type CasesSectionProps = {
 export const CasesSection: React.FC<CasesSectionProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("sections.case-studies");
   const { prevRef, nextRef, onBeforeInit } = useSwiper();
 
   return (
@@ -33,11 +36,11 @@ export const CasesSection: React.FC<CasesSectionProps> = (
         <SectionHeader
           className="container-full pb-0"
           classNameDescription="max-w-[500px]"
-          title="Customer case studies"
-          description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+          title={t("header.title")}
+          description={t("header.description")}
           ActionComponent={
             <Button href="/case-studies" animation="scale">
-              View all
+              {t("header.action")}
             </Button>
           }
         />

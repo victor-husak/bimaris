@@ -1,4 +1,4 @@
-import NextLink from "next/link";
+import { NextLink } from "@/i18n/routing";
 import NextImage from "next/image";
 import { clsx } from "clsx";
 
