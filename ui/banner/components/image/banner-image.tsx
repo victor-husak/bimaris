@@ -13,7 +13,7 @@ export const BannerImage: React.FC<BannerImageProps> = (
 ): React.JSX.Element => {
   return (
     <div
-      className={clsx(props.className, "rounded-[97px]", {
+      className={clsx(props.className, "shrink-0 rounded-[97px]", {
         "overflow-hidden": !props.withOverlay,
         "relative z-1": props.withOverlay,
         "after:absolute after:-top-[5px] after:-bottom-[5px] after:-left-[5px] after:-z-1 after:w-full after:rounded-full after:bg-(--overlay-bg)":
