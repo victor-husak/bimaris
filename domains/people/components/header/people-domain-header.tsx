@@ -1,3 +1,5 @@
+import NextImage from "next/image";
+
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
 import { Support } from "@/ui/support";
@@ -29,6 +31,7 @@ export const PeopleDomainHeader: React.FC<PeopleDomainHeaderProps> = (
     <PageLayoutHeader
       className={clsx(props.className, "")}
       classNameTitle="max-w-[540px]"
+      classNameOverlay="after:opacity-20 after:bg-[linear-gradient(90deg,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_100%)] before:hidden"
       size="sm"
       type="second"
       media={{
@@ -60,7 +63,15 @@ export const PeopleDomainHeader: React.FC<PeopleDomainHeaderProps> = (
           <Support />
         </div>
       }
-    />
+    >
+      <NextImage
+        className="absolute right-[300px] bottom-0 h-[420px] w-[460px] object-contain object-center"
+        src="/images/genereted/people.webp"
+        alt="Mr. Taras Horbatiuk"
+        width={660}
+        height={660}
+      />
+    </PageLayoutHeader>
   );
 };
 

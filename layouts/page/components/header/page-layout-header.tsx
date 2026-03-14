@@ -15,6 +15,7 @@ export type PageLayoutHeaderProps = {
   classNameTitle?: string;
   classNameDescription?: string;
   classNameActions?: string;
+  classNameOverlay?: string;
   size?: "sm" | "md" | "lg";
   type?: "base" | "second";
   media: Media;
@@ -91,6 +92,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
               "absolute inset-0 -z-1 overflow-hidden rounded-2xl",
               "after:absolute after:inset-0 after:bg-black/20",
               "before:absolute before:right-0 before:bottom-0 before:left-0 before:h-95 before:bg-linear-to-b before:from-black/0 before:to-black/30",
+              props.classNameOverlay,
             )}
           />
 
