@@ -1,3 +1,7 @@
+import { PageLayout } from "@/layouts/page";
+
+import * as Components from "./components";
+
 import { clsx } from "clsx";
 
 export type PeopleDomainProps = {
@@ -7,5 +11,14 @@ export type PeopleDomainProps = {
 export const PeopleDomain: React.FC<PeopleDomainProps> = (
   props,
 ): React.JSX.Element => {
-  return <div className={clsx(props.className, "")}></div>;
+  return (
+    <PageLayout
+      className={clsx(props.className, "")}
+      routes={[
+        { label: "Home", value: "/" },
+        { label: "Insights", value: "/insights" },
+      ]}
+      HeaderComponent={<Components.Header data={props.data} />}
+    ></PageLayout>
+  );
 };

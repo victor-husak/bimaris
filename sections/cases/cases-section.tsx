@@ -4,6 +4,8 @@ import { PublicationCard } from "@/cards/publication";
 
 import { SectionArrows } from "@/components/section";
 
+import { SectionHeader, Button } from "@/components";
+
 import { useSwiper } from "@/hooks";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -27,7 +29,19 @@ export const CasesSection: React.FC<CasesSectionProps> = (
   return (
     <section className={clsx(props.className, "")}>
       {/* Header */}
-      {props.HeaderComponent}
+      {props.HeaderComponent || (
+        <SectionHeader
+          className="container-full pb-0"
+          classNameDescription="max-w-[500px]"
+          title="Customer case studies"
+          description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+          ActionComponent={
+            <Button href="/case-studies" animation="scale">
+              View all
+            </Button>
+          }
+        />
+      )}
 
       <Swiper
         className="px-(--local-container-offset)! pt-25! pb-[35px]!"

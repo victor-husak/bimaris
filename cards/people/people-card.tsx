@@ -48,7 +48,7 @@ export const PeopleCard: React.FC<PeopleCardProps> = (
         {/* Title */}
         <NextLink
           className="underline-hover mr-auto mb-5 text-[16px]/[21px] tracking-[.024em] text-[#333333]"
-          href="/insights/1"
+          href={`/people/${props.data.slug}`}
         >
           {data.name}
         </NextLink>
@@ -61,7 +61,7 @@ export const PeopleCard: React.FC<PeopleCardProps> = (
         {/* Action */}
         <CardAction
           className="mt-10 group-hover:w-[110px]"
-          href="/insights/1"
+          href={`/people/${props.data.slug}`}
           title="Read more"
         />
       </div>
