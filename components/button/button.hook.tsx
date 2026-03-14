@@ -2,7 +2,7 @@ import type { MouseEvent as ReactMouseEvent } from "react";
 
 import { useCallback } from "react";
 
-import { useRouter } from "nextjs-toploader/app";
+import { useRouter } from "@/i18n/routing";
 
 import type { ButtonProps } from "./button";
 

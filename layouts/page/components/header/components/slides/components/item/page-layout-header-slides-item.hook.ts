@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/routing";
 
 import type { PageLayoutHeaderSlidesItemProps } from "./page-layout-header-slides-item";
 
@@ -13,7 +13,7 @@ export const usePageLayoutHeaderSlidesItem = (
     if (props.data.href) {
       router.push(props.data.href);
     }
-  }, [props.data.href]);
+  }, [props.data.href, router]);
 
   return { onClick };
 };

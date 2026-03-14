@@ -25,7 +25,7 @@ const pageVariants = {
 };
 
 const pageTransition = {
-  duration: 0.7,
+  duration: 0.4,
   ease: [0.22, 1, 0.36, 1] as const, // Custom cubic bezier for smooth easing
 };
 
