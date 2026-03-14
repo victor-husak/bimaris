@@ -1,4 +1,5 @@
 import NextLink from "next/link";
+import { useTranslations } from "next-intl";
 
 import * as Icons from "./icons";
 
@@ -13,6 +14,8 @@ export type RootLayoutFooterBottomProps = {
 export const RootLayoutFooterBottom: React.FC<RootLayoutFooterBottomProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("layouts.root.footer.bottom-line");
+
   return (
     <div
       className={clsx(
@@ -21,7 +24,7 @@ export const RootLayoutFooterBottom: React.FC<RootLayoutFooterBottomProps> = (
       )}
     >
       {/* copyright */}
-      <p>© 2026 Bimaris Legal. All Rights Reserved</p>
+      <p>{t("copyright")}</p>
 
       <div className="mx-[15px] h-2 w-px bg-[#2E2E2E]" />
 
@@ -33,17 +36,17 @@ export const RootLayoutFooterBottom: React.FC<RootLayoutFooterBottomProps> = (
         )}
       >
         <li>
-          <NextLink href="/cookie-preferences">Cookie Preferences</NextLink>
+          <NextLink href="/cookie-preferences">{t("cookies-policy")}</NextLink>
         </li>
 
         <li>
-          <NextLink href="/privacy-policy">Privacy Policy</NextLink>
+          <NextLink href="/privacy-policy">{t("privacy-policy")}</NextLink>
         </li>
       </ul>
 
       {/* designed */}
       <div className="ml-auto flex gap-[11px] text-[#727272]">
-        <span>Exclusively designed by</span>
+        <span>{t("exclusively-designed")}</span>
 
         <NextLink
           href="https://smotrow.com/"

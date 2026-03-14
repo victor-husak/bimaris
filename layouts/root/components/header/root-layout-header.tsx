@@ -10,6 +10,7 @@ import * as Icons from "./icons";
 import { useRootLayoutHeader } from "./root-layout-header.hook";
 
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 import { clsx } from "clsx";
 
@@ -20,6 +21,8 @@ export type RootLayoutHeaderProps = {
 export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("layouts.root.header");
+
   const { onTriggerOverlay, modalContext } = useRootLayoutHeader();
 
   const pathname = usePathname();
@@ -35,21 +38,21 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
         <Components.Item
           withArrow
           active={modalContext?.overlay === "businesses"}
-          title="Businesses"
+          title={t("businesses")}
           onClick={() => onTriggerOverlay("businesses")}
         />
 
         <Components.Item
           withArrow
           active={modalContext?.overlay === "private-clients"}
-          title="Private clients"
+          title={t("private-clients")}
           onClick={() => onTriggerOverlay("private-clients")}
         />
 
         <Components.Item
           withArrow
           active={modalContext?.overlay === "investors"}
-          title="Investors"
+          title={t("investors")}
           onClick={() => onTriggerOverlay("investors")}
         />
       </ul>
@@ -69,13 +72,13 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
       </div>
 
       <ul className="ml-auto flex">
-        <Components.Item title="About us" href="/about-us" />
+        <Components.Item title={t("about")} href="/about-us" />
 
-        <Components.Item title="Case studies" href="/case-studies" />
+        <Components.Item title={t("case-studies")} href="/case-studies" />
 
-        <Components.Item title="Insights" href="/insights" />
+        <Components.Item title={t("insights")} href="/insights" />
 
-        <Components.Item title="Contact" href="/contact-us" />
+        <Components.Item title={t("contact")} href="/contact-us" />
       </ul>
 
       <Button
@@ -84,7 +87,7 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
         animation="background"
         href={"/login"}
       >
-        Log in
+        {t("log-in")}
       </Button>
 
       <Components.Trigger

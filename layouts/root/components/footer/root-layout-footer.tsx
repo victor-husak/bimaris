@@ -4,7 +4,7 @@ import * as Components from "./components";
 
 import { clsx } from "clsx";
 
-import { type MenuProps } from "./components";
+import { useRootLayoutFooter } from "./root-layout-header.hook";
 
 export type RootLayoutFooterProps = {
   className?: string;
@@ -13,6 +13,14 @@ export type RootLayoutFooterProps = {
 export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
   props,
 ): React.JSX.Element => {
+  const {
+    t,
+    companyOptions,
+    businessesOptions,
+    individualsOptions,
+    investorsOptions,
+  } = useRootLayoutFooter();
+
   return (
     <footer
       className={clsx(
@@ -33,13 +41,12 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
         <div className="flex max-w-[350px] flex-1 flex-col items-start">
           {/* Title */}
           <span className="text-footer-second mb-[13px] text-[14px]/[18px] font-medium tracking-[.024em]">
-            Immigration, with clarity
+            {t("title")}
           </span>
 
           {/* Description */}
           <p className="text-footer max-w-[300px] text-[14px]/[19px] tracking-[.012em]">
-            Personalized immigration legal support for individuals - handled
-            with clarity, care, and precision.
+            {t("description")}
           </p>
 
           {/* Action */}
@@ -49,19 +56,31 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
             href="/"
             animation="scale"
           >
-            Contact us
+            {t("action")}
           </Button>
         </div>
 
         {/* Menu */}
         <menu className="flex gap-[50px]">
-          <Components.Menu title="Company" items={companyOptions} />
+          <Components.Menu
+            title={t("menu.company.title")}
+            items={companyOptions}
+          />
 
-          <Components.Menu title="Businesses" items={businessesOptions} />
+          <Components.Menu
+            title={t("menu.businesses.title")}
+            items={businessesOptions}
+          />
 
-          <Components.Menu title="Individuals" items={individualsOptions} />
+          <Components.Menu
+            title={t("menu.individuals.title")}
+            items={individualsOptions}
+          />
 
-          <Components.Menu title="Investors" items={investorsOptions} />
+          <Components.Menu
+            title={t("menu.investors.title")}
+            items={investorsOptions}
+          />
         </menu>
       </div>
 
@@ -72,34 +91,34 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
   );
 };
 
-const companyOptions: MenuProps["items"] = [
-  { key: "1", title: "About us", href: "/about-us" },
-  { key: "2", title: "Newsroom", href: "/insights" },
-  { key: "3", title: "Capabilities" },
-  { key: "4", title: "Contact us", href: "/contact-us" },
-  { key: "5", title: "People" },
-];
+// const companyOptions: MenuProps["items"] = [
+//   { key: "1", title: "About us", href: "/about-us" },
+//   { key: "2", title: "Newsroom", href: "/insights" },
+//   { key: "3", title: "Capabilities" },
+//   { key: "4", title: "Contact us", href: "/contact-us" },
+//   { key: "5", title: "People" },
+// ];
 
-const businessesOptions: MenuProps["items"] = [
-  { key: "1", title: "Company formation in Ukraine" },
-  { key: "2", title: "Business immigration to Ukraine" },
-  { key: "3", title: "Corporate immigration to Ukraine" },
-  { key: "4", title: "Registration representative office" },
-];
+// const businessesOptions: MenuProps["items"] = [
+//   { key: "1", title: "Company formation in Ukraine" },
+//   { key: "2", title: "Business immigration to Ukraine" },
+//   { key: "3", title: "Corporate immigration to Ukraine" },
+//   { key: "4", title: "Registration representative office" },
+// ];
 
-const individualsOptions: MenuProps["items"] = [
-  { key: "1", title: "Crypto" },
-  { key: "2", title: "Marketing and advertising" },
-  { key: "3", title: "Consumer goods" },
-  { key: "4", title: "Talent solutions" },
-  { key: "5", title: "Healthcare" },
-  { key: "6", title: "Finance" },
-  { key: "7", title: "Legal" },
-];
+// const individualsOptions: MenuProps["items"] = [
+//   { key: "1", title: "Crypto" },
+//   { key: "2", title: "Marketing and advertising" },
+//   { key: "3", title: "Consumer goods" },
+//   { key: "4", title: "Talent solutions" },
+//   { key: "5", title: "Healthcare" },
+//   { key: "6", title: "Finance" },
+//   { key: "7", title: "Legal" },
+// ];
 
-const investorsOptions: MenuProps["items"] = [
-  { key: "1", title: "Talent solutions" },
-  { key: "2", title: "Healthcare" },
-  { key: "3", title: "Finance" },
-  { key: "4", title: "Legal" },
-];
+// const investorsOptions: MenuProps["items"] = [
+//   { key: "1", title: "Talent solutions" },
+//   { key: "2", title: "Healthcare" },
+//   { key: "3", title: "Finance" },
+//   { key: "4", title: "Legal" },
+// ];

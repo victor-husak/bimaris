@@ -1,4 +1,5 @@
 import NextLink from "next/link";
+import { useTranslations } from "next-intl";
 
 import * as Icons from "./icons";
 
@@ -11,6 +12,8 @@ export type RootLayoutFooterInfoProps = {
 export const RootLayoutFooterInfo: React.FC<RootLayoutFooterInfoProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("layouts.root.footer.info");
+
   return (
     <div
       className={clsx(
@@ -49,7 +52,7 @@ export const RootLayoutFooterInfo: React.FC<RootLayoutFooterInfoProps> = (
             className="link-dashed transition-all hover:text-white"
             href="mailto:reception@agalawyers.org"
           >
-            Ukraine, 01033, Kyiv Zhylianska 68, office 167
+            {t("address")}
           </NextLink>
         </li>
       </ul>
@@ -79,7 +82,7 @@ export const RootLayoutFooterInfo: React.FC<RootLayoutFooterInfoProps> = (
             "hover:border-white hover:bg-white hover:text-[#0B0B0B]",
           )}
         >
-          Subscribe
+          {t("subscribe")}
         </button>
       </div>
     </div>

@@ -4,6 +4,8 @@ import * as Icons from "./icons";
 
 import { clsx } from "clsx";
 
+import { useTranslations } from "next-intl";
+
 export type RootLayoutHeaderTriggerProps = {
   className?: string;
   onClick?: () => void;
@@ -12,6 +14,8 @@ export type RootLayoutHeaderTriggerProps = {
 export const RootLayoutHeaderTrigger: React.FC<RootLayoutHeaderTriggerProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("layouts.root.header.trigger");
+
   return (
     <div
       className={clsx(
@@ -22,7 +26,7 @@ export const RootLayoutHeaderTrigger: React.FC<RootLayoutHeaderTriggerProps> = (
       onClick={props.onClick}
     >
       <span className="text-[12px]/[15px] tracking-[.024em] text-white">
-        Menu
+        {t("menu")}
       </span>
 
       <Icons.Arrow />

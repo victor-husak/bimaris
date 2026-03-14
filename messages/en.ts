@@ -25,9 +25,9 @@ const pages = {
 const message = {
   common: {
     meta: {
-      title: "Neofone",
+      title: "Bimaris",
       description:
-        "Neofone is Albania's VoIP provider, delivering seamless, high-quality communication solutions that keep you in touch with the loved ones, anywhere in the world.",
+        "Bimaris helps individuals and families navigate the Ukrainian immigration process with clarity, confidence, and expert legal support.",
     },
     routes: {
       home: pages.home.title,
@@ -51,10 +51,16 @@ const message = {
     // },
   },
   pages: {
-    home: {},
+    home: {
+      meta: {
+        title: "Home | Bimaris",
+        description:
+          "Bimaris helps individuals and families navigate the Ukrainian immigration process with clarity, confidence, and expert legal support.",
+      },
+    },
     contact: {
       meta: {
-        title: "Contact form | Neofone",
+        title: "Contact form | Bimaris",
         description:
           "Reach out to our communications experts for personalized support or inquiries. We’re ready to help you stay connected across the Balkans and beyond.",
       },
@@ -167,133 +173,82 @@ const message = {
   },
   layouts: {
     root: {
-      feedback: {
-        title: "Feedback",
-      },
-      topline: {
-        promotion: {
-          title:
-            "High-quality communication solutions to keep you in touch, anywhere in Albania.",
-          action: "Discover solutions",
-        },
-        personal: "Personal",
-        commercial: "Commercial",
-        talk: "Talk to sales",
-        meeting: "Book a meeting",
-      },
+      topline: {},
       header: {
+        businesses: "Businesses",
+        "private-clients": "Private clients",
+        investors: "Investors",
         about: pages.about.title,
+        "case-studies": "Case studies",
         insights: pages.insights.title,
         contact: pages.contact.title,
-        support: "Support",
+        "log-in": "Log in",
+        trigger: {
+          menu: "Menu",
+        },
       },
       footer: {
-        promo: {
-          title: "Connectivity without borders - with Neofone",
-          description:
-            "Neofone is Albania’s VoIP provider, delivering seamless, high-quality communication solutions that keep you in touch with the loved ones, anywhere in the world.",
-        },
+        title: "Immigration, with clarity",
+        description:
+          "Personalized immigration legal support for individuals - handled with clarity, care, and precision.",
+        action: pages.contact.title,
         menu: {
-          about: {
-            title: "About us",
+          company: {
+            title: "Company",
             items: {
               about: pages.about.title,
+              newsroom: "Newsroom",
+              capabilities: "Capabilities",
               contact: pages.contact.title,
-              insights: pages.insights.title,
+              people: "People",
             },
           },
-          industries: {
-            title: "Industries",
+          businesses: {
+            title: "Businesses",
+            items: {
+              companyFormation: "Company formation in Ukraine",
+              businessImmigration: "Business immigration to Ukraine",
+              corporateImmigration: "Corporate immigration to Ukraine",
+              representativeOffice: "Registration representative office",
+            },
           },
-          practices: {
-            title: "Practices",
+          individuals: {
+            title: "Individuals",
+            items: {
+              crypto: "Crypto",
+              marketing: "Marketing and advertising",
+              consumerGoods: "Consumer goods",
+              talentSolutions: "Talent solutions",
+              healthcare: "Healthcare",
+              finance: "Finance",
+              legal: "Legal",
+            },
+          },
+          investors: {
+            title: "Investors",
+            items: {
+              talentSolutions: "Talent solutions",
+              healthcare: "Healthcare",
+              finance: "Finance",
+              legal: "Legal",
+            },
           },
         },
+        info: {
+          address: "Ukraine, 01033, Kyiv Zhylianska 68, office 167",
+          subscribe: "Subscribe",
+        },
         "bottom-line": {
-          copyright: "Neofone Albania, All rights reserved",
+          copyright: "© 2026 Bimaris Legal. All Rights Reserved",
           "privacy-policy": pages["privacy-policy"].title,
           "cookies-policy": pages["cookies-policy"].title,
-          "terms-of-use": pages["terms-of-use"].title,
           "exclusively-designed": "Exclusively designed by",
         },
       },
     },
-    overfay: {
-      footer: {
-        "get-touch": "Get in touch",
-        "customer-support": "Customer Support",
-      },
-    },
-    single: {
-      actions: {
-        share: "Share",
-        print: "Print",
-        contact: "Contact sales",
-      },
-      aside: {
-        contents: "Contents",
-        posted: "Posted on",
-        in: "in",
-      },
-    },
   },
-  overlays: {
-    about: {
-      tag: "About us",
-      title: "Telecom and VoIP solutions\n**in Albania**",
-      items: [
-        "Modern VoIP solutions",
-        "Professional support team",
-        "Clear, competitive pricing",
-      ],
-      action: "About us",
-    },
-    solutions: {
-      tag: "Card",
-      title: "Unlimited\nphone calls with\n**Neofone Card**",
-      items: [
-        "No hidden fees",
-        "Vodafone and AMC customers",
-        "Can be used only in Albania",
-      ],
-      action: "Get Néofone Card",
-    },
-  },
-  banners: {
-    mission: {
-      title: "Hello, we are\n**Neofone Albania**",
-      description:
-        "We are committed to pioneering the fusion of advanced technology with unwavering customer support and seamless and reliable communication",
-      actions: ["Our Mission", "About Us"],
-      tag: "Our mission",
-    },
-    support: {
-      title: "Seamless support -\n**whenever you need it**",
-      description:
-        "Have questions? Our support team is here to help you with any issues. Get in touch with us anytime and experience seamless communication with the Neofone Support team.",
-      actions: ["Contact Customer Support", "Help Center"],
-      tag: "Support",
-    },
-  },
-  sections: {
-    purchasing: {
-      tag: "Purchasing",
-      description: [
-        "Let us help you",
-        "choose a solution that meets your needs",
-      ],
-      action: "Call Sales",
-    },
-    help: {
-      questions: {
-        title: "Have questions? Contact support",
-        description:
-          "Whether you have technical questions or require guidance on services, we’re just a call away. Get in touch with us for fast and reliable support.",
-        action: "Contact Néofone",
-      },
-      contact: pages["contact"].title,
-    },
-  },
+  overlays: {},
+  sections: {},
 };
 
 export default message;
