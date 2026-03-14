@@ -19,6 +19,7 @@ type Route = {
 
 type Params = {
   slug: string;
+  locale: string;
 };
 
 type SearchParams = Record<string, string | string[] | boolean>;

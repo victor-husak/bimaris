@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 
+import { routing } from "@/i18n/routing";
+
 import {
   getPublicationBySlug,
   getPublicationSlugs,
@@ -39,9 +41,12 @@ export async function generateMetadata(
 export async function generateStaticParams() {
   const res = await getPublicationSlugs();
 
-  return res.data.map((item) => ({
-    slug: item.slug,
-  }));
+  return routing.locales.flatMap((locale) =>
+    res.data.map((item) => ({
+      locale,
+      slug: item.slug,
+    })),
+  );
 }
 
 export default async function InsightsItemPage(props: InsightsItemPageProps) {

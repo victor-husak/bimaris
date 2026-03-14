@@ -1,3 +1,5 @@
+import { clsx } from "clsx";
+
 import { PageLayout } from "@/layouts/page";
 
 import { InformationSection } from "@/sections/information";
@@ -11,10 +13,11 @@ import { Support } from "@/ui/support";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import type { CommonData } from "@/types/common";
 
 export type BalticsDeskItemDomainProps = {
   className?: string;
+  commonData: CommonData | null;
 };
 
 export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
@@ -50,7 +53,12 @@ export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
       <CasesSection className="mb-[60px]" data={[]} />
 
       {/* Faqs */}
-      <FaqsSection className="section-gradient mb-25 pt-25" />
+      {props.commonData && (
+        <FaqsSection
+          className="section-gradient mb-25 pt-25"
+          data={props.commonData.faqs}
+        />
+      )}
 
       {/* Rating */}
       <section className="container-full">

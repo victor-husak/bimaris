@@ -6,8 +6,11 @@ import * as Components from "./components";
 
 import { clsx } from "clsx";
 
+import type { CommonData } from "@/types/common";
+
 export type ContactUsDomainProps = {
   className?: string;
+  commonData: CommonData | null;
 };
 
 export const ContactUsDomain: React.FC<ContactUsDomainProps> = (
@@ -25,7 +28,9 @@ export const ContactUsDomain: React.FC<ContactUsDomainProps> = (
       <Components.Offices className="mt-[62px]" />
 
       {/* Faqs */}
-      <FaqsSection className="mt-25 mb-25" />
+      {props.commonData && (
+        <FaqsSection className="mt-25 mb-25" data={props.commonData.faqs} />
+      )}
     </PageLayout>
   );
 };

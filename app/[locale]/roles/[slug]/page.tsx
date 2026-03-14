@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 
+import { routing } from "@/i18n/routing";
+
 import { getRoleBySlug, getRoleSlugs } from "@/api/strapi/queries/roles";
 
 import { RolesItemDomain } from "@/domains/roles-item";
@@ -38,9 +40,12 @@ export async function generateMetadata(
 export async function generateStaticParams() {
   const res = await getRoleSlugs();
 
-  return res.data.map((item) => ({
-    slug: item.slug,
-  }));
+  return routing.locales.flatMap((locale) =>
+    res.data.map((item) => ({
+      locale,
+      slug: item.slug,
+    })),
+  );
 }
 
 export default async function RolesItemPage(props: RolesItemPageProps) {

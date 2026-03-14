@@ -1,3 +1,5 @@
+import { Faq } from "./components";
+
 type Image = {
   id: number;
   documentId: string;
@@ -47,4 +49,9 @@ type CommonHeritage = {
   id: number;
   name: string;
   href: string;
+};
+
+type CommonData = {
+  id: number;
+  faqs: Faq;
 };

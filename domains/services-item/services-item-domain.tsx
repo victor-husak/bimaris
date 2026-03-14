@@ -16,10 +16,12 @@ import { Rating } from "@/ui/rating";
 import * as Components from "./components";
 
 import type { Service } from "@/types/services";
+import type { CommonData } from "@/types/common";
 
 export type ServicesItemDomainProps = {
   className?: string;
   data: Service;
+  commonData: CommonData | null;
 };
 
 export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
@@ -55,7 +57,9 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       </Suspense>
 
       {/* Faqs */}
-      <FaqsSection className="z-1 mb-[110px]" />
+      {props.commonData && (
+        <FaqsSection className="z-1 mb-[110px]" data={props.commonData.faqs} />
+      )}
 
       {/* Cases */}
       <CasesSection

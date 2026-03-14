@@ -1,4 +1,4 @@
-// import { getCaseStudies } from "@/api/strapi/queries/case-studies";
+import { getCommonData } from "@/api/strapi/queries/common";
 
 import { BalticsDeskDomain } from "@/domains/baltics-desk";
 
@@ -27,6 +27,7 @@ interface BalticsDeskPageProps {
 // }
 
 export default async function BalticsDeskPage(props: BalticsDeskPageProps) {
+  const commonData = await getCommonData();
   // const searchParams = await props.searchParams;
 
   // const [caseStudies, featuredCaseStudies] = await Promise.all([
@@ -40,9 +41,10 @@ export default async function BalticsDeskPage(props: BalticsDeskPageProps) {
 
   return (
     <BalticsDeskDomain
-    // caseStudies={caseStudies}
-    // featuredCaseStudies={featuredCaseStudies}
-    // searchParams={searchParams}
+      commonData={commonData.data}
+      // caseStudies={caseStudies}
+      // featuredCaseStudies={featuredCaseStudies}
+      // searchParams={searchParams}
     />
   );
 }

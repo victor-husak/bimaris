@@ -1,3 +1,5 @@
+import { clsx } from "clsx";
+
 import { PageLayout } from "@/layouts/page";
 
 import { InformationSection } from "@/sections/information";
@@ -6,10 +8,11 @@ import { FaqsSection } from "@/sections/faqs";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import type { CommonData } from "@/types/common";
 
 export type BalticsDeskDomainProps = {
   className?: string;
+  commonData: CommonData | null;
 };
 
 export const BalticsDeskDomain: React.FC<BalticsDeskDomainProps> = (
@@ -38,7 +41,9 @@ export const BalticsDeskDomain: React.FC<BalticsDeskDomainProps> = (
       <Components.Regions className="mb-25" />
 
       {/* Faqs */}
-      <FaqsSection className="mb-25" />
+      {props.commonData && (
+        <FaqsSection className="mb-25" data={props.commonData.faqs} />
+      )}
     </PageLayout>
   );
 };
