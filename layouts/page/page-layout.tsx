@@ -16,7 +16,7 @@ export const PageLayout: React.FC<PageLayoutProps> = (
 ): React.JSX.Element => {
   return (
     <main
-      className={clsx(props.className, "flex flex-col", {
+      className={clsx(props.className, "relative z-1 flex flex-col", {
         "pt-5": !props.routes,
       })}
     >

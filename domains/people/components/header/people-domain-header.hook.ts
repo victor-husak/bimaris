@@ -9,7 +9,7 @@ export const usePeopleDomainHeader = (props: PeopleDomainHeaderProps) => {
     //   preview: `${process.env.NEXT_PUBLIC_STRAPI_URL}${props.data.preview.url}`,
     //   category: "category" in props.data ? props.data.category : undefined,
     // };
-  }, [props.data]);
+  }, []);
 
   return { data };
 };

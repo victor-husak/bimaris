@@ -1,23 +1,29 @@
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
+import { Support } from "@/ui/support";
+
+import { ButtonIcon } from "@/components";
+
 import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
+
+import * as Icons from "./icons";
 
 import { clsx } from "clsx";
 
-import { usePeopleDomainHeader } from "./people-domain-header.hook";
+// import { usePeopleDomainHeader } from "./people-domain-header.hook";
 
-import type { Publication } from "@/types/publication";
-import type { CaseStudy } from "@/types/case-studies";
+// import type { Publication } from "@/types/publication";
+// import type { CaseStudy } from "@/types/case-studies";
 
 export type PeopleDomainHeaderProps = {
   className?: string;
-  data: Publication | CaseStudy;
+  // data: Publication | CaseStudy;
 };
 
 export const PeopleDomainHeader: React.FC<PeopleDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
-  const { data } = usePeopleDomainHeader(props);
+  // const { data } = usePeopleDomainHeader(props);
 
   return (
     <PageLayoutHeader
@@ -37,6 +43,22 @@ export const PeopleDomainHeader: React.FC<PeopleDomainHeaderProps> = (
       tag="People"
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={slides} />
+      }
+      InfoCpmponent={
+        <div className="items mt-[25px] flex gap-2">
+          <ButtonIcon>
+            <Icons.Like />
+          </ButtonIcon>
+
+          <ButtonIcon>
+            <Icons.Linkedin />
+          </ButtonIcon>
+        </div>
+      }
+      FooterComponent={
+        <div className="container-full">
+          <Support />
+        </div>
       }
     />
   );

@@ -42,7 +42,7 @@ export const InformationSection: React.FC<InformationSectionProps> = (
         <Components.Markdown className="mt-auto" content={props.description} />
 
         {/* Action */}
-        <Button href="/">Open case studies</Button>
+        <Button href="/case-studies">Open case studies</Button>
       </div>
     </section>
   );
