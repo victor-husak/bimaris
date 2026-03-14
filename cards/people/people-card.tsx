@@ -56,9 +56,7 @@ export const PeopleCard: React.FC<PeopleCardProps> = (
         <Tag className="mb-[25px] bg-[#E6EFFC]" title={data.position} />
 
         {/* List */}
-        <List
-          items={["t.horbatiuk@bimaris.legal", "Book a meeting", "LinkedIn"]}
-        />
+        <List items={data.items} />
 
         {/* Action */}
         <CardAction

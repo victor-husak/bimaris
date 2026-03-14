@@ -66,7 +66,10 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
       />
 
       {/* FAQs */}
-      <FaqsSection className="section-gradient z-1 mb-[100px] pt-[100px]" />
+      <FaqsSection
+        className="section-gradient z-1 mb-[100px] pt-[100px]"
+        data={props.data.faqs}
+      />
 
       {/* Rating */}
       <section className="container-full">

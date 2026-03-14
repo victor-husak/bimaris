@@ -14,7 +14,15 @@ export async function getExperts({
   pageSize?: number;
 } = {}) {
   const paramsQuery: any = {
-    fields: ["id", "name", "position", "slug", "createdAt"],
+    fields: [
+      "id",
+      "name",
+      "position",
+      "linkedIn",
+      "email",
+      "slug",
+      "createdAt",
+    ],
     populate: {
       avatar: true,
     },

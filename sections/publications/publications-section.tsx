@@ -10,14 +10,15 @@ import type { PublicationShort } from "@/types/publication";
 
 export type PublicationsSectionProps = {
   className?: string;
-  slug: string;
-};
-
-export type PublicationsSectionCombinedProps = PublicationsSectionProps & {
+  // slug?: string;
   data?: PublicationShort[];
 };
 
-export const PublicationsSection: React.FC<PublicationsSectionCombinedProps> = (
+// export type PublicationsSectionCombinedProps = PublicationsSectionProps & {
+//   data?: PublicationShort[];
+// };
+
+export const PublicationsSection: React.FC<PublicationsSectionProps> = (
   props,
 ): React.JSX.Element => {
   return (

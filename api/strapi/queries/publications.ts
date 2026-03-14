@@ -101,6 +101,15 @@ export async function getPublicationBySlug(slug: string) {
       category: {
         fields: ["slug", "name"],
       },
+      relatedPublications: {
+        fields: ["id", "name", "description", "slug", "createdAt"],
+        populate: {
+          preview: true,
+          category: {
+            fields: ["slug", "name"],
+          },
+        },
+      },
     },
     pagination: {
       limit: 1,

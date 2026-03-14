@@ -10,7 +10,7 @@ export const useUpdatesSectionHeader = (props: UpdatesSectionProps) => {
       title: item.name,
       description: item.description,
       href: `/insights/${item.slug}`,
-      createdAt: format(new Date(item.createdAt), "MM-dd-yyyy"),
+      createdAt: format(new Date(item.createdAt), "MMMM dd, yyyy"),
     }));
   }, [props.data]);
 

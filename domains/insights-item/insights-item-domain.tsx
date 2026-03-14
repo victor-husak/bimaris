@@ -50,7 +50,13 @@ export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
       {/* <FaqsSection className="z-1 mt-[110px]" /> */}
 
       {/* Publications */}
-      <PublicationsSection className="z-1 mb-20" slug={props.data.slug} />
+      {"relatedPublications" in props.data &&
+        props.data.relatedPublications.length > 0 && (
+          <PublicationsSection
+            className="z-1 mb-20"
+            data={props.data.relatedPublications}
+          />
+        )}
     </PageLayout>
   );
 };

@@ -73,10 +73,10 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
 };
 
 const companyOptions: MenuProps["items"] = [
-  { key: "1", title: "About us" },
-  { key: "2", title: "Newsroom" },
+  { key: "1", title: "About us", href: "/about-us" },
+  { key: "2", title: "Newsroom", href: "/insights" },
   { key: "3", title: "Capabilities" },
-  { key: "4", title: "Contact us" },
+  { key: "4", title: "Contact us", href: "/contact-us" },
   { key: "5", title: "People" },
 ];
 

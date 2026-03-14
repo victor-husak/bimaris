@@ -3,6 +3,8 @@ export type ExpertShort = {
   slug: string;
   name: string;
   position: string;
+  linkedIn: string;
+  email: string;
   avatar?: Image;
   createdAt: string;
 };

@@ -20,4 +20,5 @@ export type Publication = PublicationShort & {
     slug: string;
     name: string;
   }>;
+  relatedPublications: PublicationShort[];
 };

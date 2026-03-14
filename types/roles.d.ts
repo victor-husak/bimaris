@@ -1,5 +1,6 @@
 import type { ServiceShort } from "@/types/services";
 import type { CaseStudyShort } from "@/types/case-studies";
+import type { Faq } from "@/types/components";
 
 export type RoleShort = {
   id: number;
@@ -14,5 +15,6 @@ export type RoleShort = {
 export type Role = RoleShort & {
   services: ServiceShort[];
   case_studies: CaseStudyShort[];
+  faqs: Faq;
   updatedAt: string;
 };
