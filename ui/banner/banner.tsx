@@ -15,12 +15,14 @@ export const Banner: React.FC<BannerProps> = (props): React.JSX.Element => {
   return (
     <div
       className={clsx(
-        "group relative flex min-h-[380px] items-center justify-between gap-5 rounded-2xl pt-[30px] pr-[30px] pb-[30px] pl-[40px]",
+        "group relative flex min-h-[380px] flex-col-reverse items-center gap-x-5 gap-y-10 rounded-2xl p-[25px]",
+        "sm:flex-row sm:items-center sm:justify-between",
+        "lg:pt-[30px] lg:pr-[30px] lg:pb-[30px] lg:pl-[40px]",
         props.className,
       )}
     >
       {/* Content */}
-      <div className="flex flex-col items-start">
+      <div className="flex w-full flex-1 flex-col items-start">
         {/* Title */}
         <h3
           className={clsx("mb-[45px] font-light tracking-[.024em]", {

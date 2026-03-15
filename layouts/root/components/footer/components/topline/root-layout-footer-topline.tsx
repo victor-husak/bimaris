@@ -27,7 +27,7 @@ export const RootLayoutFooterTopline: React.FC<RootLayoutFooterToplineProps> = (
       )}
     >
       {/* logo */}
-      <div className="absolute left-1/2 -translate-x-1/2">
+      <div className={clsx("md:absolute md:left-1/2 md:-translate-x-1/2")}>
         {pathname === "/" ? (
           <Icons.Logo />
         ) : (

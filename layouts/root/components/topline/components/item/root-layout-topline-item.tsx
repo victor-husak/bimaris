@@ -13,9 +13,9 @@ export const RootLayoutToplineItem: React.FC<RootLayoutToplineItemProps> = (
     <li
       className={clsx(
         props.className,
-        "flex items-center underline-hover first:before:hidden",
+        "underline-hover flex items-center last:after:hidden",
         "hover:text-secondary",
-        "before:mx-3.75 before:h-2 before:w-px before:bg-[#E4E8F0]",
+        "after:mx-3.75 after:h-2 after:w-px after:bg-[#E4E8F0]",
       )}
     >
       {props.children}

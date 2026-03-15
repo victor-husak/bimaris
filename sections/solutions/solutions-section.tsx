@@ -25,12 +25,12 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = (
     <section className={clsx(props.className)}>
       <div
         className={clsx("container-large bg-background-secondary rounded-2xl", {
-          "pb-[35px]": props.withBanner,
+          "pb-[25px] xl:pb-[35px]": props.withBanner,
         })}
       >
         <div
           className={clsx(
-            "grid grid-cols-1 gap-x-[21px] gap-y-[35px] p-2.5",
+            "grid grid-cols-1 gap-x-[21px] p-2.5",
             "md:grid-cols-2",
             "xl:grid-cols-3",
           )}
@@ -44,7 +44,8 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = (
         {!!props.withBanner && (
           <div
             className={clsx(
-              "group border-footer-border relative mx-[35px] overflow-hidden border-t border-[#F4F5F7] pt-[35px]",
+              "group border-footer-border relative mx-[25px] overflow-hidden border-t border-[#F4F5F7] pt-[25px]",
+              "xl:mx-[35px] xl:pt-[35px]",
             )}
           >
             <div

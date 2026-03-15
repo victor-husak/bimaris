@@ -34,7 +34,13 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
         "container-full bg-background-secondary sticky top-0 z-9 flex h-17.5 items-center border-b border-[#F4F5FA] shadow-[0_1px_2px_rgba(0,0,0,0.02)]",
       )}
     >
-      <ul className="ml-[-12.5px] flex">
+      <ul
+        className={clsx(
+          "ml-[-12.5px] hidden",
+          "sm:flex",
+          "2xl:mr-auto 2xl:flex",
+        )}
+      >
         <Components.Item
           withArrow
           active={modalContext?.overlay === "businesses"}
@@ -58,7 +64,12 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
       </ul>
 
       {/* Logo */}
-      <div className="absolute left-1/2 -translate-x-1/2">
+      <div
+        className={clsx(
+          "-order-1 mr-auto",
+          "2xl:absolute 2xl:left-1/2 2xl:order-[initial] 2xl:mr-0 2xl:-translate-x-1/2",
+        )}
+      >
         {pathname === "/" ? (
           <Icons.Logo />
         ) : (
@@ -71,7 +82,7 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
         )}
       </div>
 
-      <ul className="ml-auto flex">
+      <ul className={clsx("ml-auto hidden", "2xl:flex")}>
         <Components.Item title={t("about")} href="/about-us" />
 
         <Components.Item title={t("case-studies")} href="/case-studies" />

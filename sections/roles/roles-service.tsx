@@ -20,14 +20,15 @@ export const RolesService: React.FC<RolesServiceProps> = (
       {/* Content */}
       <div
         className={clsx(
-          "grid grid-cols-2 grid-rows-1 gap-5",
+          "grid grid-cols-1 gap-5",
+          "2xl:grid-cols-2",
           // "md:grid-cols-2",
           // "xl:grid-cols-2 xl:grid-rows-[minmax(413px,auto)_auto]",
         )}
       >
         <Banner
           className="bg-[#EAF0F8] text-[#314B48]"
-          classNameDescription="text-[#818796] max-w-[310px]"
+          classNameDescription="text-[#818796] sm:max-w-[310px]"
           title="Individuals"
           description="We help individuals navigate the Ukrainian immigration process with confidence, clarity, and professional legal support."
           ListComponent={
@@ -65,7 +66,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
 
         <Banner
           className="bg-[#507FEB] text-[#FFFFFF]"
-          classNameDescription="text-white/70 max-w-[340px]"
+          classNameDescription="text-white/70 sm:max-w-[340px]"
           title="Businesses"
           description="We empower businesses to build borderless teams, access the worlds talent, and create an employee experience that redefines global work."
           ListComponent={
@@ -103,7 +104,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
         />
 
         <Banner
-          className="col-span-2 bg-[#D9EAE7] text-[#2F4B40]"
+          className={clsx("bg-[#D9EAE7] text-[#2F4B40]", "2xl:col-span-2")}
           classNameDescription="text-[#768480] max-w-[720px]"
           title="Investors and market entry"
           description="We support international investors entering the Ukrainian market with structured legal guidance, regulatory clarity, and risk-aware immigration solutions. From initial market entry planning to long-term presence, our team helps navigate legal frameworks and compliance requirements."
@@ -118,9 +119,12 @@ export const RolesService: React.FC<RolesServiceProps> = (
             />
           }
           ImageComponent={
-            <div className="relative z-1 flex">
+            <div className="relative z-1 flex shrink-0">
               <BannerImage
-                className="absolute -left-[71px] -z-2 border-[5px] border-[#D9EAE7]"
+                className={clsx(
+                  "absolute -left-[71px] -z-2 hidden border-[5px] border-[#D9EAE7]",
+                  "2xl:flex",
+                )}
                 media={{
                   url: "/images/genereted/home/role-investors.webp",
                   alt: "Investors and market entry",
@@ -130,7 +134,10 @@ export const RolesService: React.FC<RolesServiceProps> = (
               />
 
               <BannerImage
-                className="absolute -left-[32px] -z-1 border-[5px] border-[#D9EAE7]"
+                className={clsx(
+                  "absolute -left-[32px] -z-1 hidden border-[5px] border-[#D9EAE7]",
+                  "2xl:flex",
+                )}
                 media={{
                   url: "/images/genereted/home/role-investors.webp",
                   alt: "Investors and market entry",
@@ -140,7 +147,10 @@ export const RolesService: React.FC<RolesServiceProps> = (
               />
 
               <BannerImage
-                className="border-[5px] border-[#D9EAE7]"
+                className={clsx(
+                  "[--overlay-bg:[#D9EAE7]",
+                  "2xl:border-[5px] 2xl:border-[#D9EAE7]",
+                )}
                 media={{
                   url: "/images/genereted/home/role-investors.webp",
                   alt: "Investors and market entry",

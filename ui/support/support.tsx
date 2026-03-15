@@ -13,7 +13,8 @@ export const Support: React.FC<SupportProps> = (props): React.JSX.Element => {
     <footer
       className={clsx(
         props.className,
-        "flex items-center justify-between border-b border-[#E7EBF2] py-[25px]",
+        "flex flex-col gap-y-4 border-b border-[#E7EBF2] py-[25px]",
+        "md:flex-row md:items-center md:justify-between",
       )}
     >
       <p className="text-[13px]/[17px] tracking-[.028em] text-[#818796]">

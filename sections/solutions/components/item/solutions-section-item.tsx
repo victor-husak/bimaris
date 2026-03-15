@@ -31,7 +31,10 @@ export const SolutionsSectionItem: React.FC<SolutionsSectionItemProps> = (
       onClick={props.onClick}
     >
       <NextLink
-        className="flex flex-1 flex-col gap-2.5 px-[25px] pt-[23px] pb-[27px]"
+        className={clsx(
+          "flex flex-1 flex-col gap-2.5 px-[15px] py-[20px]",
+          "xl:px-[25px] xl:pt-[23px] xl:pb-[27px]",
+        )}
         href={props.data.href}
       >
         {/* Header */}

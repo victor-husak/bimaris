@@ -21,7 +21,8 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
         "container-full bg-background-secondary relative z-10 flex items-center justify-between border border-[#F4F5FA] pt-2.75 pb-3 text-[12px]/[15px] tracking-[.024em] text-[#8D98A8]",
       )}
     >
-      <ul className="flex">
+      <ul className={clsx("hidden", "2xl:flex")}>
+        {/* flex */}
         <Components.Item>
           <NextLink href="tel:+380449953535">+380 44 995 35 35</NextLink>
         </Components.Item>
@@ -34,7 +35,12 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
       </ul>
 
       {/* description */}
-      <p className="absolute left-1/2 -translate-x-1/2 transform text-[12px]/[14px] tracking-[.024em]">
+      <p
+        className={clsx(
+          "transform text-[12px]/[14px] tracking-[.024em]",
+          "2xl:absolute 2xl:left-1/2 2xl:-translate-x-1/2",
+        )}
+      >
         Innovative immigration legal consultancy.{" "}
         <NextLink
           className={clsx(
@@ -48,22 +54,15 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
           </span>
 
           <Icons.Arrow className="mt-[3px]" />
-
-          {/* <PlusIcon
-            className="transition-all group-hover:rotate-360"
-            width={6}
-            height={6}
-            color={props.variant === "invert" ? "#fff" : "#33383C"}
-          /> */}
         </NextLink>
       </p>
 
-      <ul className="flex">
-        <Components.Item>
+      <ul className={clsx("hidden", "sm:flex")}>
+        <Components.Item className="max-lg:hidden">
           <NextLink href="/baltics-desk">Baltics desk</NextLink>
         </Components.Item>
 
-        <Components.Item>
+        <Components.Item className="max-lg:hidden">
           <NextLink href="mailto:office@bimaris.legal">
             Schedule a meeting
           </NextLink>

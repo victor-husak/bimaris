@@ -15,7 +15,8 @@ export const RootLayoutFooterMenu: React.FC<RootLayoutFooterMenuProps> = (
     <div
       className={clsx(
         props.className,
-        "flex min-w-[172px] flex-col gap-[25px]",
+        "flex flex-col gap-[25px]",
+        "2xl:min-w-[172px]",
       )}
     >
       {/* title */}

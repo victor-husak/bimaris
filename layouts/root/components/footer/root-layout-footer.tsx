@@ -4,7 +4,7 @@ import * as Components from "./components";
 
 import { clsx } from "clsx";
 
-import { useRootLayoutFooter } from "./root-layout-header.hook";
+import { useRootLayoutFooter } from "./root-layout-footer.hook";
 
 export type RootLayoutFooterProps = {
   className?: string;
@@ -36,16 +36,32 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
       <Components.Topline />
 
       {/* Content */}
-      <div className="border-footer-b gap-x-15px flex justify-between border-b pt-15 pb-[89px]">
+      <div
+        className={clsx(
+          "border-footer-b gap-x-15px flex flex-col justify-between gap-x-[30px] gap-y-[60px] border-b pt-15 pb-[89px]",
+          "xl:flex-row",
+          "2xl:gap-x-[50px]",
+        )}
+      >
         {/* Info */}
-        <div className="flex max-w-[350px] flex-1 flex-col items-start">
+        <div
+          className={clsx(
+            "flex max-w-[450px] flex-1 flex-col items-start",
+            "xl:max-w-[350px]",
+          )}
+        >
           {/* Title */}
           <span className="text-footer-second mb-[13px] text-[14px]/[18px] font-medium tracking-[.024em]">
             {t("title")}
           </span>
 
           {/* Description */}
-          <p className="text-footer max-w-[300px] text-[14px]/[19px] tracking-[.012em]">
+          <p
+            className={clsx(
+              "text-footer text-[14px]/[19px] tracking-[.012em]",
+              "2xl:max-w-[350px]",
+            )}
+          >
             {t("description")}
           </p>
 
@@ -61,7 +77,13 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
         </div>
 
         {/* Menu */}
-        <menu className="flex gap-[50px]">
+        <div
+          className={clsx(
+            "grid flex-1 grid-cols-1 gap-[50px]",
+            "md:grid-cols-2",
+            "2xl:flex",
+          )}
+        >
           <Components.Menu
             title={t("menu.company.title")}
             items={companyOptions}
@@ -81,7 +103,7 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
             title={t("menu.investors.title")}
             items={investorsOptions}
           />
-        </menu>
+        </div>
       </div>
 
       <Components.Info />

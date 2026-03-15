@@ -32,7 +32,8 @@ export const ContactForm: React.FC<ContactFormProps> = (
       {/* Content */}
       <div
         className={clsx(
-          "flex flex-1 flex-col rounded-t-2xl bg-white p-[35px] pb-5",
+          "flex flex-1 flex-col rounded-t-2xl bg-white p-[25px] pb-5",
+          "xl:p-[35px]",
           {
             "pt-[40px]": props.withHeader === false,
           },
@@ -40,7 +41,12 @@ export const ContactForm: React.FC<ContactFormProps> = (
       >
         {/* Tag */}
         {props.withHeader !== false && (
-          <div className="mr-auto mb-[35px] flex items-center gap-2.5 rounded-full bg-[#EFF2F7] px-2.5 py-1 text-[#2D3A52]">
+          <div
+            className={clsx(
+              "mr-auto mb-[25px] flex items-center gap-2.5 rounded-full bg-[#EFF2F7] px-2.5 py-1 text-[#2D3A52]",
+              "xl:mb-[35px]",
+            )}
+          >
             <ArrowRightIcon className="[&>path]:stroke-[#2D3A52]" />
 
             <span className="text-[12px]/[15px] tracking-[.028em]">
@@ -118,7 +124,12 @@ export const ContactForm: React.FC<ContactFormProps> = (
       </div>
 
       {/* Footer */}
-      <footer className="rounded-b-2xl bg-[#FCFCFC] px-[35px] py-5 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)]">
+      <footer
+        className={clsx(
+          "rounded-b-2xl bg-[#FCFCFC] px-[25px] py-5 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)]",
+          "xl:px-[35px]",
+        )}
+      >
         <p className="text-[13px]/[18px] tracking-[.028em] text-[#838891]">
           {t("footer.description.part1")}{" "}
           <NextLink

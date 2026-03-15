@@ -14,6 +14,7 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
       id: item.id,
       href: item.href,
       title: item.tag,
+      shortTitle: item.name,
       avatar: item.avatar,
     }));
   }, []);
@@ -97,6 +98,7 @@ const items = [
   {
     id: 1,
     tag: "For individuals",
+    name: "Individuals",
     title: ["Immigration", "with clarity"],
     subtitle: "Immigration services",
     description:
@@ -118,6 +120,7 @@ const items = [
   {
     id: 2,
     tag: "For businesses",
+    name: "Businesses",
     title: ["Immigration", "for businesses"],
     subtitle: "Immigration services",
     description:
@@ -139,6 +142,7 @@ const items = [
   {
     id: 3,
     tag: "For investors",
+    name: "Investors",
     title: ["Immigration", "for investors"],
     subtitle: "Immigration services",
     description:

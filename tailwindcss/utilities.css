@@ -48,47 +48,14 @@
   }
 
   .container-variable {
-    /* --local-container-offset: 20px;
-    --local-container-small-offset: 20px;
-    --local-container-large-offset: 20px;
-
-    @media (width >= 576px)  {
-      --local-container-offset: calc((100vw - 540px) / 2);
-      --local-container-small-offset: calc((100vw - 540px) / 2);
-    }
-
-    @media (width >= 768px) {
-      --local-container-offset: calc((100vw - 720px) / 2);
-      --local-container-small-offset: calc((100vw - 720px) / 2);
-    }
-
-    @media (width >= 992px) {
-      --local-container-offset: calc((100vw - 960px) / 2);
-      --local-container-large-offset: calc((100vw - 960px) / 2);
-    }
-
-    @media (width >= 1200px) {
-      --local-container-offset: calc((100vw - 1140px) / 2);
-      --local-container-large-offset: calc((100vw - 1140px) / 2);
-    }
-
-    @media (width >= 1440px) {
-      --local-container-offset: calc((100vw - (1440px - (43px * 2))) / 2);
-      --local-container-large-offset: calc((100vw - (1440px - (43px * 2) + 46px)) / 2);
-    }
-
-    @media (width >= calc(1526px)) {
-      --local-container-offset: calc((100vw - 1460px) / 2);
-      --local-container-large-offset: calc((100vw - (1460px + 46px)) / 2);
-    } */
-
     --local-container-offset: 20px;
     --local-container-small-offset: 20px;
     --local-container-large-offset: 20px;
 
     @media (width >= 576px /* 640px */) {
       --local-container-offset: calc((100vw - 540px) / 2);
-      --local-container-small-offset: var(--local-container-offset);
+      --local-container-large-offset: var(--local-container-offset);
+      /* --local-container-small-offset: var(--local-container-offset); */
     }
 
     @media (width >= 768px /* 768px */) {
