@@ -1,3 +1,6 @@
+import { Suspense } from "react";
+import { clsx } from "clsx";
+
 import { PageLayout } from "@/layouts/page";
 
 import { AdvantagesSection } from "@/sections/advantages";
@@ -9,8 +12,6 @@ import { ServicesSection } from "@/sections/services";
 import { Rating } from "@/ui";
 
 import * as Components from "./components";
-
-import { clsx } from "clsx";
 
 import { useRolesItemDomain } from "./roles-item-domain.hook";
 
@@ -59,7 +60,9 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
       </section>
 
       {/* Contact */}
-      <ContactSection className="mb-[50px]" />
+      <Suspense>
+        <ContactSection className="mb-[50px]" />
+      </Suspense>
     </PageLayout>
   );
 };

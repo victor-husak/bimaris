@@ -4,7 +4,6 @@ import { routing } from "@/i18n/routing";
 
 import { getBalticBySlug, getBalticSlugs } from "@/api/strapi/queries/baltics";
 import { getCommonData } from "@/api/strapi/queries/common";
-import { getOffices } from "@/api/strapi/queries/offices";
 
 import { BalticsDeskItemDomain } from "@/domains/baltics-desk-item";
 
@@ -53,20 +52,13 @@ export default async function BalticsDeskItemPage(
 ) {
   const params = await props.params;
 
-  const [res, commonData, offices] = await Promise.all([
+  const [res, commonData] = await Promise.all([
     getBalticBySlug(params.slug),
     getCommonData(),
-    getOffices(),
   ]);
   const baltic = res.data[0];
 
   if (!baltic) notFound();
 
-  return (
-    <BalticsDeskItemDomain
-      data={baltic}
-      commonData={commonData.data}
-      offices={offices.data}
-    />
-  );
+  return <BalticsDeskItemDomain data={baltic} commonData={commonData.data} />;
 }

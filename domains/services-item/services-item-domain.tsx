@@ -86,7 +86,9 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       </section>
 
       {/* Contact */}
-      <ContactSection className="mb-[50px]" />
+      <Suspense>
+        <ContactSection className="mb-[50px]" />
+      </Suspense>
     </PageLayout>
   );
 };

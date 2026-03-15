@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { Suspense } from "react";
 
 import { PageLayout } from "@/layouts/page";
 
@@ -14,7 +15,6 @@ import { Support } from "@/ui/support";
 import * as Components from "./components";
 
 import type { Baltic } from "@/types/baltics";
-import type { Office } from "@/types/offices";
 
 // import type { CommonData } from "@/types/common";
 
@@ -22,7 +22,6 @@ export type BalticsDeskItemDomainProps = {
   className?: string;
   data: Baltic;
   commonData: CommonData | null;
-  offices: Office[];
 };
 
 export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
@@ -74,7 +73,9 @@ export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
       </section>
 
       {/* Contact */}
-      <ContactSection className="mb-[50px]" offices={props.offices} />
+      <Suspense>
+        <ContactSection className="mb-[50px]" />
+      </Suspense>
     </PageLayout>
   );
 };

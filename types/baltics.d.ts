@@ -5,7 +5,7 @@ export type BalticShort = {
   slug: string;
   name: string;
   description: string;
-  preview?: Image;
+  preview: Image;
   createdAt: string;
 };
 

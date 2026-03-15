@@ -1,1 +1,1 @@
-export { ContactSection } from "./contact-section";
+export { ContactSectionBackend as ContactSection } from "./contact-section.backend";

@@ -70,7 +70,9 @@ export const AboutUsDomain: React.FC<AboutUsDomainProps> = (
       </section>
 
       {/* Contact */}
-      <ContactSection className="mb-[50px]" />
+      <Suspense>
+        <ContactSection className="mb-[50px]" />
+      </Suspense>
     </PageLayout>
   );
 };

@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { Suspense } from "react";
 
 import { SectionHeader, Button } from "@/components";
 
@@ -16,13 +17,11 @@ import * as Components from "./components";
 
 import type { CaseStudyShort } from "@/types/case-studies";
 import type { PublicationShort } from "@/types/publication";
-import type { Office } from "@/types/offices";
 
 export type HomeDomainProps = {
   className?: string;
   caseStudies: CaseStudyShort[];
   publications: PublicationShort[];
-  offices: Office[];
 };
 
 export const HomeDomain: React.FC<HomeDomainProps> = (
@@ -64,7 +63,9 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
         <Rating />
       </section>
 
-      <ContactSection className="mb-[50px]" offices={props.offices} />
+      <Suspense>
+        <ContactSection className="mb-[50px]" />
+      </Suspense>
     </PageLayout>
   );
 };

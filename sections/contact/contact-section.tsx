@@ -13,10 +13,13 @@ import type { Office } from "@/types/offices";
 
 export type ContactSectionProps = {
   className?: string;
+};
+
+export type ContactSectionCombinedProps = ContactSectionProps & {
   offices: Office[];
 };
 
-export const ContactSection: React.FC<ContactSectionProps> = (
+export const ContactSection: React.FC<ContactSectionCombinedProps> = (
   props,
 ): React.JSX.Element => {
   const t = useTranslations("sections.contact");
