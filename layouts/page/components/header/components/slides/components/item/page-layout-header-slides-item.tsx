@@ -34,8 +34,8 @@ export const PageLayoutHeaderSlidesItem: React.FC<
     <div
       className={clsx(
         props.className,
-        "group flex cursor-pointer flex-col items-center gap-[6px] overflow-hidden rounded-lg bg-white/10 p-2.5 pr-[15px] backdrop-blur-[30px] backdrop-brightness-110 transition-all duration-400",
-        "md:h-15 md:flex-row md:gap-[15px]",
+        "group flex cursor-pointer items-center gap-[10px] overflow-hidden rounded-lg bg-white/10 p-2.5 pr-[15px] backdrop-blur-[30px] backdrop-brightness-110 transition-all duration-400",
+        "sm:h-15 sm:flex-row sm:gap-[15px]",
         "hover:scale-103",
       )}
       onClick={onClick}
@@ -43,7 +43,8 @@ export const PageLayoutHeaderSlidesItem: React.FC<
       {props.data.icon && (
         <div
           className={clsx(
-            "flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-[30px] backdrop-brightness-110",
+            "hidden h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-[30px] backdrop-brightness-110",
+            "sm:flex",
             // "lg:h-7.5 lg:w-7.5",
           )}
         >
@@ -55,8 +56,8 @@ export const PageLayoutHeaderSlidesItem: React.FC<
       {props.data.avatar && (
         <div
           className={clsx(
-            "h-9 w-9 shrink-0 overflow-hidden rounded-full",
-            "md:h-10 md:w-10",
+            "flex h-6 w-6 shrink-0 overflow-hidden rounded-full",
+            "sm:h-10 sm:w-10",
           )}
         >
           <NextImage
@@ -82,7 +83,7 @@ export const PageLayoutHeaderSlidesItem: React.FC<
         <Box
           className={clsx(
             "text-center text-[13px]/[17px] tracking-[.012em] text-white",
-            "md:text-left",
+            "sm:text-left",
           )}
           // text-white
           as={props.data.href ? NextLink : "span"}

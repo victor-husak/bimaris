@@ -21,7 +21,7 @@ export type PageLayoutHeaderProps = {
   media: Media;
   title: React.ReactNode;
   subtitle: string;
-  tag: string;
+  tag?: string;
   description?: string;
   activeIndex?: number;
   children?: React.ReactNode;
@@ -123,22 +123,24 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
               exit="exit"
             >
               {/* Meta */}
-              <motion.div
-                variants={itemVariants}
-                className="mb-[15px] flex items-center gap-1.5"
-              >
-                {/* Text */}
-                <span className="text-[13px]/[17px] tracking-[.024em] text-white/60">
-                  {props.subtitle}
-                </span>
-
-                {/* Tag */}
-                <div className="flex rounded-full bg-[#C1DBFF] px-2 pt-1 pb-[5px]">
-                  <span className="test-[#00335A] text-[12px]/[15px] tracking-[.024em]">
-                    {props.tag}
+              {!!props.tag && (
+                <motion.div
+                  variants={itemVariants}
+                  className="mb-[15px] flex items-center gap-1.5"
+                >
+                  {/* Text */}
+                  <span className="text-[13px]/[17px] tracking-[.024em] text-white/60">
+                    {props.subtitle}
                   </span>
-                </div>
-              </motion.div>
+
+                  {/* Tag */}
+                  <div className="flex rounded-full bg-[#C1DBFF] px-2 pt-1 pb-[5px]">
+                    <span className="test-[#00335A] text-[12px]/[15px] tracking-[.024em]">
+                      {props.tag}
+                    </span>
+                  </div>
+                </motion.div>
+              )}
 
               {/* Title */}
               <motion.h1

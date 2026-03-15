@@ -38,24 +38,26 @@ export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
       {/* Content */}
       <Components.Content className="pb-20" data={props.data} />
 
-      {/* Rating */}
-      <section className="container-full section-gradient pt-20">
-        <Rating className="z-1" />
-      </section>
-
       {/* Experts */}
       {/* <ExpertsSection className="z-1 mt-25" /> */}
 
       {/* Faqs */}
       {/* <FaqsSection className="z-1 mt-[110px]" /> */}
 
-      {/* Publications */}
       {"relatedPublications" in props.data &&
         props.data.relatedPublications.length > 0 && (
-          <PublicationsSection
-            className="z-1 mb-20"
-            data={props.data.relatedPublications}
-          />
+          <>
+            {/* Rating */}
+            <section className="container-full section-gradient pt-20">
+              <Rating className="z-1" />
+            </section>
+
+            {/* Publications */}
+            <PublicationsSection
+              className="z-1 mb-20"
+              data={props.data.relatedPublications}
+            />
+          </>
         )}
     </PageLayout>
   );

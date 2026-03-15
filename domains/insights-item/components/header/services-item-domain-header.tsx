@@ -29,11 +29,11 @@ export const ServicesItemDomainHeader: React.FC<
         url: data.preview,
         width: 3978,
         height: 1860,
-        alt: "Service header background",
+        alt: data.name,
       }}
       title={data.name}
       subtitle="Posted in"
-      tag={data.category?.name || ""}
+      tag={data.category?.name}
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={slides} />
       }

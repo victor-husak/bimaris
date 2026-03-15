@@ -49,7 +49,7 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
       <ul
         className={clsx(
           "ml-[-12.5px] hidden",
-          "sm:flex",
+          "2xl:flex",
           "2xl:mr-auto 2xl:flex",
         )}
       >
@@ -89,7 +89,7 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
         )}
       </div>
 
-      <ul className={clsx("ml-auto hidden", "2xl:flex")}>
+      <ul className={clsx("mr-auto hidden", "xl:flex 2xl:mr-0 2xl:ml-auto")}>
         <Components.Item title={t("about")} href="/about-us" />
 
         <Components.Item title={t("case-studies")} href="/case-studies" />
