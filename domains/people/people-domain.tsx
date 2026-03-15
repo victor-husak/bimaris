@@ -1,3 +1,5 @@
+import { clsx } from "clsx";
+
 import { PageLayout } from "@/layouts/page";
 
 import { Rating } from "@/ui/rating";
@@ -6,10 +8,11 @@ import { Rating } from "@/ui/rating";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import type { Expert } from "@/types/experts";
 
 export type PeopleDomainProps = {
   className?: string;
+  data: Expert;
 };
 
 export const PeopleDomain: React.FC<PeopleDomainProps> = (
@@ -22,10 +25,10 @@ export const PeopleDomain: React.FC<PeopleDomainProps> = (
         { label: "Home", value: "/" },
         { label: "Insights", value: "/insights" },
       ]}
-      HeaderComponent={<Components.Header />}
+      HeaderComponent={<Components.Header data={props.data} />}
     >
       {/* Content */}
-      <Components.Content className="pb-20" />
+      <Components.Content className="pb-20" data={props.data} />
 
       {/* Rating */}
       <section

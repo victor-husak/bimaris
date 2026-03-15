@@ -4,12 +4,14 @@ import type { PeopleDomainHeaderProps } from "./people-domain-header";
 
 export const usePeopleDomainHeader = (props: PeopleDomainHeaderProps) => {
   const data = useMemo(() => {
-    // return {
-    //   name: props.data.name,
-    //   preview: `${process.env.NEXT_PUBLIC_STRAPI_URL}${props.data.preview.url}`,
-    //   category: "category" in props.data ? props.data.category : undefined,
-    // };
-  }, []);
+    return {
+      name: props.data.name,
+      position: props.data.position,
+      avatar: props.data.avatar
+        ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${props.data.avatar.url}`
+        : "",
+    };
+  }, [props.data]);
 
   return { data };
 };

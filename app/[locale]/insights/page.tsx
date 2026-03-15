@@ -29,19 +29,26 @@ export async function generateMetadata(
 export default async function InsightsPage(props: InsightsPageProps) {
   const searchParams = await props.searchParams;
 
-  const [publications, featuredPublications] = await Promise.all([
-    getPublications({ filters: searchParams }),
-    getPublications({
-      filters: {
-        featured: true,
-      },
-    }),
-  ]);
+  const [publications, featuredPublications, legalPublications] =
+    await Promise.all([
+      getPublications({ filters: searchParams }),
+      getPublications({
+        filters: {
+          featured: true,
+        },
+      }),
+      getPublications({
+        filters: {
+          category: "legal-alert",
+        },
+      }),
+    ]);
 
   return (
     <InsightsDomain
       publications={publications}
       featuredPublications={featuredPublications}
+      legalPublications={legalPublications}
       searchParams={searchParams}
     />
   );

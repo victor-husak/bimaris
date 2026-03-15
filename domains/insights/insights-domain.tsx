@@ -15,6 +15,7 @@ export type InsightsDomainProps = {
   className?: string;
   publications: StrapiCollection<PublicationShort>;
   featuredPublications: StrapiCollection<PublicationShort>;
+  legalPublications: StrapiCollection<PublicationShort>;
   searchParams?: SearchParams;
 };
 
@@ -39,7 +40,7 @@ export const InsightsDomain: React.FC<InsightsDomainProps> = (
 
       <UpdatesSection
         className="mb-25"
-        data={[]}
+        data={props.legalPublications.data}
         HeaderComponent={
           <SectionHeader
             title="Selected legal alerts"

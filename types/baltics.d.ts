@@ -11,5 +11,6 @@ export type BalticShort = {
 
 export type Baltic = BalticShort & {
   services: ServiceShort[];
+  case_studies: CaseStudyShort[];
   updatedAt: string;
 };

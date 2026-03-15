@@ -50,6 +50,12 @@ export async function getBalticBySlug(slug: string) {
           items: true,
         },
       },
+      case_studies: {
+        fields: ["id", "name", "description", "slug", "createdAt"],
+        populate: {
+          preview: true,
+        },
+      },
     },
     pagination: {
       limit: 1,

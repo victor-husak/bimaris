@@ -1,4 +1,5 @@
 import NextImage from "next/image";
+import { clsx } from "clsx";
 
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
@@ -10,22 +11,23 @@ import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
 
 import * as Icons from "./icons";
 
-import { clsx } from "clsx";
+import type { Expert } from "@/types/experts";
 
-// import { usePeopleDomainHeader } from "./people-domain-header.hook";
+import { usePeopleDomainHeader } from "./people-domain-header.hook";
 
 // import type { Publication } from "@/types/publication";
 // import type { CaseStudy } from "@/types/case-studies";
 
 export type PeopleDomainHeaderProps = {
   className?: string;
+  data: Expert;
   // data: Publication | CaseStudy;
 };
 
 export const PeopleDomainHeader: React.FC<PeopleDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
-  // const { data } = usePeopleDomainHeader(props);
+  const { data } = usePeopleDomainHeader(props);
 
   return (
     <PageLayoutHeader
@@ -40,9 +42,9 @@ export const PeopleDomainHeader: React.FC<PeopleDomainHeaderProps> = (
         height: 1560,
         alt: "Service header background",
       }}
-      title={"Mr. Taras Horbatiuk"}
+      title={data.name}
       subtitle="Explore our"
-      description="Founder & Managing Partner"
+      description={data.position}
       tag="People"
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={slides} />
@@ -66,8 +68,8 @@ export const PeopleDomainHeader: React.FC<PeopleDomainHeaderProps> = (
     >
       <NextImage
         className="absolute right-[300px] bottom-0 h-[420px] w-[460px] object-contain object-center"
-        src="/images/genereted/people.webp"
-        alt="Mr. Taras Horbatiuk"
+        src={data.avatar}
+        alt={data.name}
         width={660}
         height={660}
       />
