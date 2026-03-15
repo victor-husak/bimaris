@@ -6,14 +6,14 @@ import { clsx } from "clsx";
 
 import { useTranslations } from "next-intl";
 
-export type RootLayoutHeaderTriggerProps = {
+export type RootLayoutHeaderMenuTriggerProps = {
   className?: string;
   onClick?: () => void;
 };
 
-export const RootLayoutHeaderTrigger: React.FC<RootLayoutHeaderTriggerProps> = (
-  props,
-): React.JSX.Element => {
+export const RootLayoutHeaderMenuTrigger: React.FC<
+  RootLayoutHeaderMenuTriggerProps
+> = (props): React.JSX.Element => {
   const t = useTranslations("layouts.root.header.trigger");
 
   return (

@@ -33,6 +33,7 @@ export const PageLayoutHeaderSlides: React.FC<PageLayoutHeaderSlidesProps> = (
       <div className={clsx("flex gap-2.5", "2xl:w-65 2xl:flex-col")}>
         {props.data.map((item, index) => (
           <Components.Item
+            className={clsx("flex-1", "md:flex-initial")}
             data={item}
             key={item.id}
             active={props.activeIndex === index}
