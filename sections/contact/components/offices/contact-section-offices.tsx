@@ -2,22 +2,25 @@
 // import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 
 // import { useSwiper } from "@/hooks";
+import { clsx } from "clsx";
+
 import { useContactSectionOffices } from "./contact-section-offices.hook";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import type { Office } from "@/types/offices";
 
 // import "swiper/css";
 
 export type ContactSectionOfficesProps = {
   className?: string;
+  data: Office[];
 };
 
 export const ContactSectionOffices: React.FC<ContactSectionOfficesProps> = (
   props,
 ): React.JSX.Element => {
-  const { items } = useContactSectionOffices();
+  const { items } = useContactSectionOffices(props);
   // const {
   //   activeIndex,
   //   prevRef,
@@ -34,11 +37,11 @@ export const ContactSectionOffices: React.FC<ContactSectionOfficesProps> = (
         "flex gap-2.5 overflow-x-auto px-[25px] py-[25px]",
       )}
     >
-      {items.map((item, index) => (
+      {items.map((item) => (
         <Components.Item
           key={item.id}
           data={item}
-          variant={index === 0 ? "secondary" : "base"}
+          variant={item.isMain ? "secondary" : "base"}
         />
       ))}
     </div>

@@ -1,5 +1,6 @@
 import { getCaseStudies } from "@/api/strapi/queries/case-studies";
 import { getPublications } from "@/api/strapi/queries/publications";
+import { getOffices } from "@/api/strapi/queries/offices";
 
 import { HomeDomain } from "@/domains/home";
 
@@ -12,19 +13,21 @@ export function generateStaticParams() {
 }
 
 export default async function CaseStudiesPage() {
-  const [caseStudies, publications] = await Promise.all([
+  const [caseStudies, publications, offices] = await Promise.all([
     getCaseStudies({}),
     getPublications({
       filters: {
         category: "legal-alert",
       },
     }),
+    getOffices({}),
   ]);
 
   return (
     <HomeDomain
       caseStudies={caseStudies.data}
       publications={publications.data}
+      offices={offices.data}
     />
   );
 }

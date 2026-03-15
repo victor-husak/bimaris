@@ -177,19 +177,9 @@ const message = {
         action: "Запланувати зустріч",
       },
       offices: {
-        main: {
-          tag: "Головний офіс",
-          items: {
-            address1: "Україна, 01033, Київ",
-            address2: "вул. Жилянська 68, офіс 167",
-          },
-        },
-        back: {
-          tag: "Бек-офіс",
-          items: {
-            address1: "Естонія, 10149, Таллінн",
-            address2: "Saani tn 2/2-26, Põhja-Tallinna",
-          },
+        tag: {
+          main: "Головний офіс",
+          back: "Бек-офіс",
         },
         action: "Показати на карті",
       },

@@ -179,19 +179,9 @@ const message = {
         action: "Schedule a meeting",
       },
       offices: {
-        main: {
-          tag: "Main office",
-          items: {
-            address1: "Ukraine, 01033, Kyiv",
-            address2: "Zhylianska 68, office 167",
-          },
-        },
-        back: {
-          tag: "Back office",
-          items: {
-            address1: "Estonia, 10149, Tallinn ",
-            address2: "4 Saani tn 2/2-26, Põhja-Tallinna",
-          },
+        tag: {
+          main: "Main office",
+          back: "Back office",
         },
         action: "Show on map",
       },

@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { clsx } from "clsx";
 
 import { Banner, BannerList } from "@/ui";
 
@@ -8,10 +9,11 @@ import { Section, SectionHeader, Button } from "@/components";
 
 import * as Components from "./components";
 
-import { clsx } from "clsx";
+import type { Office } from "@/types/offices";
 
 export type ContactSectionProps = {
   className?: string;
+  offices: Office[];
 };
 
 export const ContactSection: React.FC<ContactSectionProps> = (
@@ -61,7 +63,7 @@ export const ContactSection: React.FC<ContactSectionProps> = (
           />
 
           {/* Offices */}
-          <Components.Offices />
+          <Components.Offices data={props.offices} />
         </div>
 
         {/* Form */}

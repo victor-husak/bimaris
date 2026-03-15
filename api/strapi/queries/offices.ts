@@ -18,6 +18,7 @@ export async function getOffices({
       "id",
       "slug",
       "name",
+      "city",
       "address",
       "email",
       "url",
