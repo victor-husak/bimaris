@@ -17,6 +17,7 @@ export type PageLayoutHeaderSlidesItemProps = {
   data: {
     id: number;
     title: string;
+    shortTitle?: string;
     href?: string;
     label?: string;
     avatar?: Media;
@@ -87,7 +88,16 @@ export const PageLayoutHeaderSlidesItem: React.FC<
           as={props.data.href ? NextLink : "span"}
           {...(props.data.href ? { href: props.data.href } : {})}
         >
-          {props.data.title}
+          {/* {props.data.title} */}
+          {!!props.data.shortTitle && (
+            <span className="flex md:hidden">{props.data.shortTitle}</span>
+          )}
+
+          <span
+            className={clsx("md:flex", { hidden: !!props.data.shortTitle })}
+          >
+            {props.data.title}
+          </span>
         </Box>
       )}
 
