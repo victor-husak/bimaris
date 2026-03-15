@@ -1,3 +1,5 @@
+import { head } from "lodash-es";
+
 const pages = {
   home: {
     title: "Home",
@@ -53,70 +55,26 @@ const message = {
         description:
           "Reach out to our communications experts for personalized support or inquiries. We’re ready to help you stay connected across the Balkans and beyond.",
       },
-      title: "Contact form",
-      description:
-        "Reach out to our communications experts for personalized support or inquiries. We’re ready to help you stay connected across the Balkans and beyond.",
-      form: {
-        title: "Fill in the form",
-        name: {
-          label: "Name",
-          placeholder: "Enter your name",
-        },
-        surname: {
-          label: "Surname",
-          placeholder: "Enter your surname",
-        },
-        сountry: {
-          label: "Country",
-          placeholder: "Enter country",
-        },
-        phone: {
-          label: "Phone",
-          placeholder: "Enter phone number",
-        },
-        email: {
-          label: "Email",
-        },
-        solution: {
-          label: "Related solution",
-          placeholder: "Select solution (optional)",
-        },
-        message: {
-          label: "Message",
-          placeholder: "Write your message",
+      offices: {
+        title: "Find our office",
+        description:
+          "Our offices in Ukraine and Estonia ensure accessible, on-the-ground legal support for individuals and businesses.",
+      },
+      header: {
+        title: "Connect with",
+        description:
+          "Share a few details about your situation, and our team will get back to you with clear next steps.",
+        subtitle: "Explore",
+        tag: "Connect",
+        actions: "Book a meeting in Calendly",
+        items: {
+          map: "Show on the map",
         },
         footer: {
-          description: {
-            text: "By submitting this form, you are agreeing to let us keep in touch regarding our satellite services. We respect your data privacy and will only use your information as outlined in our",
-            link: pages["privacy-policy"].title,
-          },
-          button: "Submit the form",
-        },
-        congratulation: {
-          title: "The form was submitted!",
           description:
-            "The form has been successfully sent to Neofone,<br />and our team will contact you within <span>1 business day</span>.",
-          button: "Go to main page",
+            "Personalized immigration legal support for people and companies.",
+          action: "Read more",
         },
-        toast: {
-          success:
-            "You have successfully <span>subscribed</span> to newsletter",
-        },
-      },
-      banner: {
-        title: "Unlimited. Connection.",
-      },
-      faq: {
-        title: "FAQs",
-      },
-      sales: {
-        title: "International carrier\n**via TDM and IP Voice**",
-        description:
-          "Have questions? Our support team is here to help with any issues. Get in touch with us anytime and experience seamless communication with the Neofone Support team.",
-        actions: {
-          call: "Call Sales",
-        },
-        tags: ["IP Voice"],
       },
     },
   },
@@ -295,6 +253,15 @@ const message = {
     rating: {
       action: "Explore all reviews",
       on: "on",
+    },
+  },
+  cards: {
+    office: {
+      action: "Show on map",
+      tag: {
+        main: "Main office",
+        back: "Back office",
+      },
     },
   },
 };

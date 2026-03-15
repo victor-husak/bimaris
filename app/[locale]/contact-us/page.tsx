@@ -1,4 +1,5 @@
 import { getCommonData } from "@/api/strapi/queries/common";
+import { getOffices } from "@/api/strapi/queries/offices";
 
 import { ContactUsDomain } from "@/domains/contact-us";
 
@@ -11,7 +12,12 @@ export function generateStaticParams() {
 }
 
 export default async function ContactUsPage() {
-  const commonData = await getCommonData();
+  const [commonData, offices] = await Promise.all([
+    getCommonData(),
+    getOffices(),
+  ]);
 
-  return <ContactUsDomain commonData={commonData.data} />;
+  return (
+    <ContactUsDomain commonData={commonData.data} offices={offices.data} />
+  );
 }

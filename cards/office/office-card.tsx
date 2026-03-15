@@ -1,4 +1,7 @@
 import NextImage from "next/image";
+import { clsx } from "clsx";
+
+import { useTranslations } from "next-intl";
 
 import { Tag } from "@/components";
 
@@ -6,15 +9,22 @@ import { CardAction } from "@/components/card";
 
 import { ArrowRightIcon } from "@/icons";
 
-import { clsx } from "clsx";
+import { useOfficeCard } from "./office-card.hook";
+
+import type { Office } from "@/types/offices";
 
 export type OfficeCardProps = {
   className?: string;
+  data: Office;
 };
 
 export const OfficeCard: React.FC<OfficeCardProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("cards.office");
+
+  const { data } = useOfficeCard(props);
+
   return (
     <div
       className={clsx(
@@ -24,14 +34,14 @@ export const OfficeCard: React.FC<OfficeCardProps> = (
     >
       <Tag
         className="bg-secondary mr-auto mb-[25px] text-white"
-        title="Main office"
+        title={data.isMain ? t("tag.main") : t("tag.back")}
         IconComponent={<ArrowRightIcon color="#fff" />}
       />
 
       {/* Preview */}
       <NextImage
         className="aspect-auto=[357px/180px] w-full rounded-lg bg-gray-300 object-cover object-center"
-        src="/images/genereted/latvia.webp"
+        src={data.preview}
         alt="Case preview"
         width={1071}
         height={540}
@@ -41,7 +51,7 @@ export const OfficeCard: React.FC<OfficeCardProps> = (
       <div className="flex flex-col pt-[25px]">
         {/* Title */}
         <span className="mr-auto mb-[25px] text-[16px]/[21px] tracking-[.024em] text-[#2D3A52]">
-          Kyiv, Ukraine
+          {data.name}
         </span>
 
         {/* Description */}
@@ -53,9 +63,9 @@ export const OfficeCard: React.FC<OfficeCardProps> = (
 
         {/* Action */}
         <CardAction
-          className="mt-[35px] mr-auto group-hover:w-[125px]"
-          href="/baltics-desk/latvia"
-          title="Show on map"
+          className="mt-[35px] mr-auto group-hover:w-[150px]"
+          href={data.url}
+          title={t("action")}
         />
       </div>
     </div>

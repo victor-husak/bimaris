@@ -1,4 +1,5 @@
-"use client";
+import { clsx } from "clsx";
+import { useTranslations } from "next-intl";
 
 import { NextLink } from "@/i18n/routing";
 
@@ -10,8 +11,6 @@ import { ContactForm } from "@/forms/contact";
 
 import { Button, List } from "@/components";
 
-import { clsx } from "clsx";
-
 export type ContactUsDomainHeaderProps = {
   className?: string;
 };
@@ -19,6 +18,8 @@ export type ContactUsDomainHeaderProps = {
 export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("pages.contact.header");
+
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
@@ -32,22 +33,22 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
       }}
       title={
         <>
-          Connect with <span>Bimáris</span>
+          {t("title")} <span>Bimáris</span>
         </>
       }
-      description="Share a few details about your situation, and our team will get back to you with clear next steps."
-      subtitle="Explore"
-      tag="Connect"
+      description={t("description")}
+      subtitle={t("subtitle")}
+      tag={t("tag")}
       InfoCpmponent={
         <List
           className="mt-[25px] text-[white]"
-          items={["+380 44 995 35 35", "info@bimaris.legal", "Show on the map"]}
+          items={["+380 44 995 35 35", "info@bimaris.legal", t("items.map")]}
         />
       }
       ActionsComponent={
         <>
           <Button href="/" variant="white" size="medium" animation="scale">
-            Book a meeting in Calendly ($99)
+            {t("actions")} ($99)
           </Button>
         </>
       }
@@ -55,7 +56,7 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
         <div className="container-full">
           <div className="flex max-w-[calc(100%-700px-25px-17px)] items-center justify-between border-b border-[#E7EBF2] py-[25px]">
             <p className="text-[13px]/[17px] tracking-[.028em] text-[#818796]">
-              Personalized immigration legal support for people and companies.{" "}
+              {t("footer.description")}{" "}
               <NextLink
                 className={clsx(
                   "text-secondary link-with-arrow transition-all",
@@ -64,7 +65,7 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
                 href="/contact-us"
               >
                 <span className="link-dashed [--dashed-url:url(/images/underline-second.svg)]">
-                  Read more
+                  {t("footer.action")}
                 </span>
 
                 <ArrowRightIcon className="mt-[3px] [&>path]:stroke-[#5373DB]" />
