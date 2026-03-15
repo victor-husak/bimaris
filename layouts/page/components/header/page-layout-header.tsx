@@ -103,9 +103,11 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
           <AnimatePresence mode="wait">
             <motion.div
               className={clsx(
-                "relative z-2 my-auto mt-[35px] flex flex-col items-start",
-                "md:mt-[45px]",
-                "2xl:mt-0 2xl:mb-0",
+                "relative z-2 my-auto flex flex-col items-start",
+                // mt-[35px]
+                // "md:mt-[45px]",
+                "2xl:mb-0",
+                // 2xl:mt-0
               )}
               key={props.activeIndex ?? 0}
               variants={containerVariants}
