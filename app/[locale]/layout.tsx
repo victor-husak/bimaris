@@ -34,7 +34,7 @@ export default async function RootLayoutPage({
 }: Readonly<RootLayoutPageProps>) {
   const { locale } = await params;
 
-  setRequestLocale(locale);
+  // setRequestLocale(locale);
 
   return (
     <html lang={locale}>
