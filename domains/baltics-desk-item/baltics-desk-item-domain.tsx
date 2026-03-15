@@ -14,9 +14,9 @@ import { Support } from "@/ui/support";
 
 import * as Components from "./components";
 
-import type { Baltic } from "@/types/baltics";
+import { useBalticsDeskItemDomain } from "./baltics-desk-item-domain.hook";
 
-// import type { CommonData } from "@/types/common";
+import type { Baltic } from "@/types/baltics";
 
 export type BalticsDeskItemDomainProps = {
   className?: string;
@@ -27,14 +27,12 @@ export type BalticsDeskItemDomainProps = {
 export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
   props,
 ): React.JSX.Element => {
+  const { routes } = useBalticsDeskItemDomain(props);
+
   return (
     <PageLayout
       className={clsx(props.className, "")}
-      routes={[
-        { label: "Home", value: "/" },
-        { label: "Baltics desk", value: "/baltics-desk" },
-        { label: "Estonia", value: "/baltics-desk/estonia" },
-      ]}
+      routes={routes}
       HeaderComponent={<Components.Header />}
     >
       <div className="container-full mb-25">

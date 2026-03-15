@@ -2,12 +2,12 @@ import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 
 export const useContactUsDomain = () => {
-  const t = useTranslations("common");
+  const t = useTranslations("common.routes");
 
   const routes = useMemo(() => {
     return [
-      { label: t("routes.home"), value: "/" },
-      { label: t("routes.contact"), value: "/contact-us" },
+      { label: t("home"), value: "/" },
+      { label: t("contact"), value: "/contact-us" },
     ];
   }, [t]);
 

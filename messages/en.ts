@@ -13,6 +13,9 @@ const pages = {
   insights: {
     title: "Insights",
   },
+  "baltics-desk": {
+    title: "Baltics desk",
+  },
   "privacy-policy": {
     title: "Privacy policy",
   },
@@ -39,6 +42,7 @@ const message = {
       "privacy-policy": pages["privacy-policy"].title,
       "terms-of-use": pages["terms-of-use"].title,
       "cookies-policy": pages["cookies-policy"].title,
+      "baltics-desk": pages["baltics-desk"].title,
     },
   },
   pages: {

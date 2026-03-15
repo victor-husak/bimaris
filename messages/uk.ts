@@ -11,6 +11,9 @@ const pages = {
   insights: {
     title: "Інсайти",
   },
+  "baltics-desk": {
+    title: "Балтійський напрямок",
+  },
   "privacy-policy": {
     title: "Політика конфіденційності",
   },
@@ -37,6 +40,7 @@ const message = {
       "privacy-policy": pages["privacy-policy"].title,
       "terms-of-use": pages["terms-of-use"].title,
       "cookies-policy": pages["cookies-policy"].title,
+      "baltics-desk": pages["baltics-desk"].title,
     },
   },
   pages: {
