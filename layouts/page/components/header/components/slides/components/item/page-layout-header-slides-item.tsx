@@ -43,8 +43,8 @@ export const PageLayoutHeaderSlidesItem: React.FC<
       {props.data.icon && (
         <div
           className={clsx(
-            "hidden h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-[30px] backdrop-brightness-110",
-            "sm:flex",
+            "flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-[30px] backdrop-brightness-110",
+            // "sm:flex",
             // "lg:h-7.5 lg:w-7.5",
           )}
         >
