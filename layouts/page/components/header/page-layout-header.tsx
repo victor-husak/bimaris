@@ -48,7 +48,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
       >
         <div
           className={clsx(
-            "relative flex h-full flex-col justify-between rounded-2xl px-[16px]",
+            "relative flex h-full flex-col justify-between rounded-2xl px-[20px]",
             "md:px-[35px]",
             // "max-sm:w-[100vw! max-sm:-mx-5 max-sm:-mt-5 max-sm:max-w-[100vw]!",
             // "pl-[53px]",
@@ -113,7 +113,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
                 "relative z-2 my-auto flex flex-col items-start",
                 // mt-[35px]
                 // "md:mt-[45px]",
-                "2xl:mb-0",
+                "2xl:my-0",
                 // 2xl:mt-0
               )}
               key={props.activeIndex ?? 0}

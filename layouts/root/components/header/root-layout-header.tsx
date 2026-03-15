@@ -31,9 +31,21 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
     <header
       className={clsx(
         props.className,
-        "container-full bg-background-secondary sticky top-0 z-9 flex h-17.5 items-center border-b border-[#F4F5FA] shadow-[0_1px_2px_rgba(0,0,0,0.02)]",
+        "container-full bg-background-secondary sticky top-0 z-9 flex h-17.5 items-center justify-between border-b border-[#F4F5FA] shadow-[0_1px_2px_rgba(0,0,0,0.02)]",
       )}
     >
+      {/* Action */}
+      <button
+        className={clsx(
+          "-ml-1.5 flex h-6 w-6 cursor-pointer items-center justify-center transition-opacity",
+          "xl:hidden",
+          "hover:opacity-60",
+        )}
+        // onClick={() => onTriggerOverfay(isMobile ? "menu" : "heritage")}
+      >
+        <Icons.Menu />
+      </button>
+
       <ul
         className={clsx(
           "ml-[-12.5px] hidden",
@@ -64,12 +76,7 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
       </ul>
 
       {/* Logo */}
-      <div
-        className={clsx(
-          "-order-1 mr-auto",
-          "2xl:absolute 2xl:left-1/2 2xl:order-[initial] 2xl:mr-0 2xl:-translate-x-1/2",
-        )}
-      >
+      <div className={clsx("absolute left-1/2 mr-0 -translate-x-1/2")}>
         {pathname === "/" ? (
           <Icons.Logo />
         ) : (

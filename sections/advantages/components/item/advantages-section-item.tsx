@@ -31,7 +31,10 @@ export const AdvantagesSectionItem: React.FC<AdvantagesSectionItemProps> = (
       onClick={props.onClick}
     >
       <NextLink
-        className={clsx("flex flex-1 flex-col gap-2.5 p-[15px]", "xl:p-[25px]")}
+        className={clsx(
+          "flex flex-1 flex-col gap-2.5 px-[10px] py-[15px]",
+          "xl:p-[25px]",
+        )}
         href={props.data.href}
       >
         {/* Header */}
