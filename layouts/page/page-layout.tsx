@@ -17,7 +17,7 @@ export const PageLayout: React.FC<PageLayoutProps> = (
   return (
     <main
       className={clsx(props.className, "relative z-1 flex flex-col", {
-        "pt-5": !props.routes,
+        "md:pt-5": !props.routes,
       })}
     >
       {!!props.routes?.length && (

@@ -40,7 +40,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
   return (
     <header className={clsx(props.className, "")}>
       <div
-        className={clsx("container-large-full relative", {
+        className={clsx("container-large-full relative", "max-sm:px-0!", {
           "h-155": props.size === "lg",
           "h-147.5": props.size === "md",
           "h-130": props.size === "sm",
@@ -50,12 +50,18 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
           className={clsx(
             "relative flex h-full flex-col justify-between rounded-2xl px-[25px]",
             "md:px-[35px]",
+            // "max-sm:w-[100vw! max-sm:-mx-5 max-sm:-mt-5 max-sm:max-w-[100vw]!",
             // "pl-[53px]",
             "2xl:flex-row 2xl:items-center 2xl:pl-[140px]",
           )}
         >
           {/* Background */}
-          <div className="absolute inset-0 -z-3 h-full w-full overflow-hidden rounded-2xl">
+          <div
+            className={clsx(
+              "absolute inset-0 -z-3 h-full w-full overflow-hidden",
+              "sm:rounded-2xl",
+            )}
+          >
             <div
               id="layer-back"
               className="h-full w-full will-change-transform"
@@ -92,7 +98,8 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
 
           <div
             className={clsx(
-              "absolute inset-0 -z-1 overflow-hidden rounded-2xl",
+              "absolute inset-0 -z-1 overflow-hidden",
+              "sm:rounded-2xl",
               "after:absolute after:inset-0 after:bg-black/20",
               "before:absolute before:right-0 before:bottom-0 before:left-0 before:h-95 before:bg-linear-to-b before:from-black/0 before:to-black/30",
               props.classNameOverlay,

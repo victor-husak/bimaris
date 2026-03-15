@@ -48,9 +48,9 @@
   }
 
   .container-variable {
-    --local-container-offset: 20px;
-    --local-container-small-offset: 20px;
-    --local-container-large-offset: 20px;
+    --local-container-offset: 16px;
+    --local-container-small-offset: 16px;
+    --local-container-large-offset: 16px;
 
     @media (width >= 576px /* 640px */) {
       --local-container-offset: calc((100vw - 540px) / 2);
