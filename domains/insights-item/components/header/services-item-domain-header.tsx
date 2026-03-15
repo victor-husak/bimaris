@@ -33,7 +33,7 @@ export const ServicesItemDomainHeader: React.FC<
       }}
       title={data.name}
       subtitle="Posted in"
-      tag={data.category?.name}
+      tag="Case study"
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={slides} />
       }
