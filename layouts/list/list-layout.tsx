@@ -24,8 +24,8 @@ export const ListLayout: React.FC<ListLayoutProps> = (
       <div className="flex flex-col gap-[50px] border-b border-[#E7EBF2] pb-15">
         <div
           className={clsx(
-            "grid grid-cols-1 gap-x-[30px] gap-y-[60px]",
-            "md:grid-cols-2",
+            "grid grid-cols-1 gap-x-[30px] gap-y-[30px]",
+            "md:grid-cols-2 md:gap-y-[60px]",
             "2xl:grid-cols-3",
           )}
         >
