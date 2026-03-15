@@ -19,7 +19,7 @@ export const PageLayoutHeaderSlides: React.FC<PageLayoutHeaderSlidesProps> = (
     <div
       className={clsx(
         props.className,
-        "mb-[25px] flex flex-col gap-[15px]",
+        "mb-[20px] flex flex-col gap-[15px]",
         "md:mb-[35px]",
         "2xl:mr-[53px] 2xl:mb-0",
       )}

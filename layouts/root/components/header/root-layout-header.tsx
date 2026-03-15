@@ -102,7 +102,10 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
       </Button>
 
       <Components.Trigger
-        className="absolute top-[100%] left-1/2 -translate-x-1/2 transform"
+        className={clsx(
+          "absolute top-[100%] left-1/2 hidden -translate-x-1/2 transform",
+          "2xl:flex",
+        )}
         onClick={() => onTriggerOverlay("private-clients")}
       />
     </header>
