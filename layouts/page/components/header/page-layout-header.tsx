@@ -48,7 +48,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
       >
         <div
           className={clsx(
-            "relative flex h-full flex-col justify-between rounded-2xl px-[25px]",
+            "relative flex h-full flex-col justify-between rounded-2xl px-[16px]",
             "md:px-[35px]",
             // "max-sm:w-[100vw! max-sm:-mx-5 max-sm:-mt-5 max-sm:max-w-[100vw]!",
             // "pl-[53px]",
