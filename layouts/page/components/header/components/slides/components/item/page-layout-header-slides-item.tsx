@@ -34,7 +34,7 @@ export const PageLayoutHeaderSlidesItem: React.FC<
     <div
       className={clsx(
         props.className,
-        "group flex cursor-pointer flex-col items-center gap-[8px] overflow-hidden rounded-lg bg-white/10 p-2.5 pr-[15px] backdrop-blur-[30px] backdrop-brightness-110 transition-all duration-400",
+        "group flex cursor-pointer flex-col items-center gap-[6px] overflow-hidden rounded-lg bg-white/10 p-2.5 pr-[15px] backdrop-blur-[30px] backdrop-brightness-110 transition-all duration-400",
         "md:h-15 md:flex-row md:gap-[15px]",
         "hover:scale-103",
       )}
@@ -55,7 +55,7 @@ export const PageLayoutHeaderSlidesItem: React.FC<
       {props.data.avatar && (
         <div
           className={clsx(
-            "h-8 w-8 shrink-0 overflow-hidden rounded-full",
+            "h-9 w-9 shrink-0 overflow-hidden rounded-full",
             "md:h-10 md:w-10",
           )}
         >
