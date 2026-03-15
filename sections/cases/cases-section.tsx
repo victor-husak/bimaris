@@ -55,12 +55,12 @@ export const CasesSection: React.FC<CasesSectionProps> = (
       >
         {props.data.map((item) => (
           <SwiperSlide
-            className="not-last:pr-5"
+            className="h-full not-last:pr-5"
             key={item.id}
             style={{ width: "auto" }}
           >
             <PublicationCard
-              className="w-[350px]"
+              className="h-full w-[350px]"
               data={item}
               type="case-study"
             />

@@ -12,7 +12,9 @@ export const SingleLayoutAside: React.FC<SingleLayoutAsideProps> = (
     <aside
       className={clsx(
         props.className,
-        "sticky top-25 flex w-95 shrink-0 flex-col gap-2.5",
+        "flex w-full max-w-75 shrink-0 flex-col gap-2.5",
+        "xl:sticky xl:top-25",
+        "2xl:max-w-95",
       )}
     >
       {props.children}

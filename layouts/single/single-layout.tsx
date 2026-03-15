@@ -15,7 +15,8 @@ export const SingleLayout: React.FC<SingleLayoutProps> = (
       <div
         className={clsx(
           props.className,
-          "container-full flex items-start gap-x-20 pt-20",
+          "container-full flex flex-col items-start gap-x-20 gap-y-15 pt-15",
+          "xl:flex-row xl:pt-20",
         )}
       >
         {/* Aside */}

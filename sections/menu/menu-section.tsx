@@ -21,7 +21,7 @@ export const MenuSection: React.FC<MenuSectionProps> = (
     <section className={clsx(props.className)}>
       <div
         className={clsx(
-          "container-large bg-background-secondary grid grid-cols-1 gap-x-[21px] gap-y-[35px] rounded-2xl p-2.5",
+          "container-large bg-background-secondary grid grid-cols-1 gap-x-[21px] rounded-2xl p-2.5",
           "md:grid-cols-2",
           "xl:grid-cols-3",
         )}

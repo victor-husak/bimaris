@@ -20,7 +20,7 @@ export const AsideActions: React.FC<AsideActionsProps> = (
     <div
       className={clsx(
         props.className,
-        "flex items-center gap-2.5 rounded-[11px] border border-[#E7EAF2] p-5",
+        "flex flex-wrap items-center gap-2.5 rounded-[11px] border border-[#E7EAF2] p-5",
       )}
     >
       <Components.Item title="Listen - 4:35" IconComponent={<Icons.Listen />} />

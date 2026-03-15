@@ -55,7 +55,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
       </div>
 
       {/* Content */}
-      <div className="flex flex-col pt-[25px]">
+      <div className="flex flex-1 flex-col pt-[25px]">
         {/* Meta */}
         <div className="mb-[25px] flex gap-2">
           <Tag
@@ -81,7 +81,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         </NextLink>
 
         {/* Description */}
-        <p className="text-[14px]/[20px] tracking-[.024em] text-[#969BA7]">
+        <p className="mb-auto text-[14px]/[20px] tracking-[.024em] text-[#969BA7]">
           {data.description}
         </p>
 
