@@ -1,11 +1,14 @@
+import { clsx } from "clsx";
+
 import { Section, SectionHeader } from "@/components";
 
 import { RegionCard } from "@/cards/region";
 
-import { clsx } from "clsx";
+import type { BalticShort } from "@/types/baltics";
 
 export type BalticsDeskDomainRegionsProps = {
   className?: string;
+  baltics: BalticShort[];
 };
 
 export const BalticsDeskDomainRegions: React.FC<
@@ -22,11 +25,9 @@ export const BalticsDeskDomainRegions: React.FC<
       }
     >
       <div className="grid grid-cols-3 gap-[30px] border-b border-[#E7EBF2] pb-25">
-        <RegionCard />
-
-        <RegionCard />
-
-        <RegionCard />
+        {props.baltics.map((baltic) => (
+          <RegionCard key={baltic.id} data={baltic} />
+        ))}
       </div>
     </Section>
   );

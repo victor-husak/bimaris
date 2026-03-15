@@ -16,7 +16,7 @@ import { Rating } from "@/ui/rating";
 import * as Components from "./components";
 
 import type { Service } from "@/types/services";
-import type { CommonData } from "@/types/common";
+// import type { CommonData } from "@/types/common";
 
 export type ServicesItemDomainProps = {
   className?: string;

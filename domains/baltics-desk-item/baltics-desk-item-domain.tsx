@@ -13,11 +13,16 @@ import { Support } from "@/ui/support";
 
 import * as Components from "./components";
 
-import type { CommonData } from "@/types/common";
+import type { Baltic } from "@/types/baltics";
+import type { Office } from "@/types/offices";
+
+// import type { CommonData } from "@/types/common";
 
 export type BalticsDeskItemDomainProps = {
   className?: string;
+  data: Baltic;
   commonData: CommonData | null;
+  offices: Office[];
 };
 
 export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
@@ -47,7 +52,10 @@ export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
       />
 
       {/* Services */}
-      <ServicesSection className="section-gradient" data={[]} />
+      <ServicesSection
+        className="section-gradient"
+        data={props.data.services}
+      />
 
       {/* Cases */}
       <CasesSection className="mb-[60px]" data={[]} />
@@ -66,7 +74,7 @@ export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
       </section>
 
       {/* Contact */}
-      <ContactSection className="mb-[50px]" />
+      <ContactSection className="mb-[50px]" offices={props.offices} />
     </PageLayout>
   );
 };

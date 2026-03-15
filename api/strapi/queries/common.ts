@@ -4,7 +4,7 @@ import qs from "qs";
 
 import { strapiFetch } from "../fetch";
 
-import type { CommonData } from "@/types/common";
+// import type { CommonData } from "@/types/common";
 
 export async function getCommonData() {
   const paramsQuery = {

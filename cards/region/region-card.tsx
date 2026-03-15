@@ -1,5 +1,6 @@
 import NextImage from "next/image";
 import { NextLink } from "@/i18n/routing";
+import { clsx } from "clsx";
 
 import { Tag } from "@/components";
 
@@ -7,15 +8,20 @@ import { CardAction } from "@/components/card";
 
 import { ArrowRightIcon } from "@/icons";
 
-import { clsx } from "clsx";
+import { useRegionCard } from "./region-card.hook";
+
+import type { BalticShort } from "@/types/baltics";
 
 export type RegionCardProps = {
   className?: string;
+  data: BalticShort;
 };
 
 export const RegionCard: React.FC<RegionCardProps> = (
   props,
 ): React.JSX.Element => {
+  const { data } = useRegionCard(props);
+
   return (
     <div
       className={clsx(
@@ -32,7 +38,7 @@ export const RegionCard: React.FC<RegionCardProps> = (
       {/* Preview */}
       <NextImage
         className="aspect-auto=[357px/180px] w-full rounded-lg bg-gray-300 object-cover object-center"
-        src="/images/genereted/latvia.webp"
+        src={data.preview}
         alt="Case preview"
         width={1071}
         height={540}
@@ -43,22 +49,20 @@ export const RegionCard: React.FC<RegionCardProps> = (
         {/* Title */}
         <NextLink
           className="underline-hover mr-auto mb-[25px] text-[16px]/[21px] tracking-[.024em] text-[#2D3A52]"
-          href="/baltics-desk/latvia"
+          href={`/baltics-desk/${data.slug}`}
         >
-          Latvia
+          {data.name}
         </NextLink>
 
         {/* Description */}
         <p className="text-[14px]/[20px] tracking-[.024em] text-[#969BA7]">
-          Strategic access to the European Union with flexible residence and
-          investment pathways. We assist with residence permits, investor
-          programs, and corporate immigration matters.
+          {data.description}
         </p>
 
         {/* Action */}
         <CardAction
           className="mt-[35px] mr-auto"
-          href="/baltics-desk/latvia"
+          href={`/baltics-desk/${data.slug}`}
           title="Explore"
         />
       </div>

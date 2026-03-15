@@ -8,7 +8,7 @@ import * as Components from "./components";
 
 import { useContactUsDomain } from "./contact-us-domain.hook";
 
-import type { CommonData } from "@/types/common";
+// import type { CommonData } from "@/types/common";
 import type { Office } from "@/types/offices";
 
 export type ContactUsDomainProps = {

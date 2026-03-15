@@ -8,11 +8,13 @@ import { FaqsSection } from "@/sections/faqs";
 
 import * as Components from "./components";
 
-import type { CommonData } from "@/types/common";
+// import type { CommonData } from "@/types/common";
+import type { BalticShort } from "@/types/baltics";
 
 export type BalticsDeskDomainProps = {
   className?: string;
   commonData: CommonData | null;
+  baltics: BalticShort[];
 };
 
 export const BalticsDeskDomain: React.FC<BalticsDeskDomainProps> = (
@@ -38,7 +40,7 @@ export const BalticsDeskDomain: React.FC<BalticsDeskDomainProps> = (
       />
 
       {/* Regions */}
-      <Components.Regions className="mb-25" />
+      <Components.Regions className="mb-25" baltics={props.baltics} />
 
       {/* Faqs */}
       {props.commonData && (
