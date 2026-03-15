@@ -30,9 +30,14 @@ export const ContactSection: React.FC<ContactSectionProps> = (
         />
       }
     >
-      <div className="flex gap-5">
+      <div className={clsx("flex flex-col-reverse gap-5", "lg:flex-row")}>
         {/* Info */}
-        <div className="max-w-[560px] overflow-hidden rounded-2xl bg-[#D9E4F4]">
+        <div
+          className={clsx(
+            "flex-[1.7] overflow-hidden rounded-2xl bg-[#D9E4F4]",
+            "xl:max-w-[560px]",
+          )}
+        >
           {/* Banner */}
           <Banner
             className="rounded-b-lg bg-[#E0EBFA] pt-[50px] pb-[50px] text-[#507FEB] shadow-[0_0_1px_2px_black/3]"
@@ -60,7 +65,7 @@ export const ContactSection: React.FC<ContactSectionProps> = (
         </div>
 
         {/* Form */}
-        <ContactForm className="flex-1" />
+        <ContactForm className="flex-2" />
       </div>
     </Section>
   );

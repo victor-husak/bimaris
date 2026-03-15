@@ -20,7 +20,7 @@ export const RootLayoutFooterBottom: React.FC<RootLayoutFooterBottomProps> = (
     <div
       className={clsx(
         props.className,
-        "flex items-center justify-between pt-5 pb-8 text-[14px]/[18px] tracking-[.012em] text-[#8D8D91]",
+        "flex flex-wrap items-center justify-between gap-y-5 pt-5 pb-8 text-[14px]/[18px] tracking-[.012em] text-[#8D8D91]",
       )}
     >
       {/* copyright */}
@@ -45,7 +45,7 @@ export const RootLayoutFooterBottom: React.FC<RootLayoutFooterBottomProps> = (
       </ul>
 
       {/* designed */}
-      <div className="ml-auto flex gap-[11px] text-[#727272]">
+      <div className={clsx("flex gap-[11px] text-[#727272]", "lg:ml-auto")}>
         <span>{t("exclusively-designed")}</span>
 
         <NextLink

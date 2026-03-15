@@ -41,16 +41,21 @@ export const UpdatesSection: React.FC<UpdatesSectionProps> = (
       }
     >
       {/* Content */}
-      <div className="flex gap-12.5">
+      <div className={clsx("flex flex-col gap-12.5", "xl:flex-row")}>
         {/* List */}
-        <div className="flex flex-1 flex-col gap-3.5">
+        <div className="flex flex-[1.3] flex-col gap-3.5">
           {data.map((item) => (
             <Components.Item key={item.id} data={item} />
           ))}
         </div>
 
         {/* Preview */}
-        <div className="group aspect-square w-132.5 overflow-hidden rounded-2xl">
+        <div
+          className={clsx(
+            "group fr hidden aspect-square max-w-132.5 flex-1 overflow-hidden rounded-2xl",
+            "xl:flex",
+          )}
+        >
           <NextImage
             className={clsx(
               "transition-img h-full w-full object-cover",

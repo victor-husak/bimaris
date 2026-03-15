@@ -26,13 +26,17 @@ export const AdvantagesSection: React.FC<AdvantagesSectionProps> = (
       <div className="container-large bg-background-secondary rounded-2xl">
         <div
           className={clsx(
-            "grid grid-cols-1 gap-x-[21px] gap-y-[35px] p-2.5",
+            "grid grid-cols-1 gap-x-[21px] p-2.5",
             "md:grid-cols-2",
             "xl:grid-cols-3",
           )}
         >
           {props.data.map((item, index) => (
-            <Components.Item data={item} key={index} />
+            <Components.Item
+              className={clsx({ "lg:max-xl:col-span-2": index === 2 })}
+              data={item}
+              key={index}
+            />
           ))}
         </div>
 
@@ -40,7 +44,8 @@ export const AdvantagesSection: React.FC<AdvantagesSectionProps> = (
         {(props.withBanner || !!props.BannerComponent) && (
           <div
             className={clsx(
-              "group border-footer-border relative z-1 mx-[35px] mt-2.5 overflow-hidden border-t border-[#F4F5F7] py-[35px]",
+              "group border-footer-border relative z-1 mx-[25px] mt-2.5 overflow-hidden border-t border-[#F4F5F7] py-[25px]",
+              "xl:mx-[35px] xl:py-[35px]",
             )}
           >
             {props.BannerComponent || (

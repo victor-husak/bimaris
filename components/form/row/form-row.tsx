@@ -7,7 +7,13 @@ export type FormRowProps = {
 
 export const FormRow: React.FC<FormRowProps> = (props): React.JSX.Element => {
   return (
-    <div className={clsx(props.className, "grid grid-cols-2 gap-5")}>
+    <div
+      className={clsx(
+        props.className,
+        "grid grid-cols-1 gap-5",
+        "md:grid-cols-2",
+      )}
+    >
       {props.children}
     </div>
   );

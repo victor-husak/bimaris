@@ -48,7 +48,10 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
       >
         <div
           className={clsx(
-            "relative flex h-full items-center justify-between rounded-2xl pl-[140px]",
+            "relative flex h-full flex-col justify-between rounded-2xl px-[25px]",
+            "md:px-[35px]",
+            // "pl-[53px]",
+            "2xl:flex-row 2xl:items-center 2xl:pl-[140px]",
           )}
         >
           {/* Background */}
@@ -99,7 +102,10 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
           {/* Content */}
           <AnimatePresence mode="wait">
             <motion.div
-              className="relative z-2 my-auto flex flex-col items-start"
+              className={clsx(
+                "relative z-2 my-auto mt-[35px] flex flex-col items-start",
+                "2xl:mb-0",
+              )}
               key={props.activeIndex ?? 0}
               variants={containerVariants}
               initial="initial"
@@ -207,7 +213,12 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
 
           {/* Arrow */}
           {!props.children && (
-            <div className="absolute bottom-5 left-1/2 flex h-5 w-5 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5">
+            <div
+              className={clsx(
+                "absolute bottom-5 left-1/2 hidden h-5 w-5 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5",
+                "2xl:flex",
+              )}
+            >
               <Icons.Arrow />
             </div>
           )}

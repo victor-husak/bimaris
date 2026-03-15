@@ -18,15 +18,17 @@ export const RootLayoutFooterInfo: React.FC<RootLayoutFooterInfoProps> = (
     <div
       className={clsx(
         props.className,
-        "border-footer-b text-footer flex items-center justify-between border-b py-5 text-[14px]/[18px]",
+        "border-footer-b text-footer flex flex-col justify-between gap-y-5 border-b py-5 text-[14px]/[18px]",
+        "xl:flex-row xl:items-center",
       )}
     >
       {/* menu */}
       <ul
         className={clsx(
-          "flex items-center",
+          "flex flex-col gap-y-2.5",
           "[&>li]:flex [&>li]:items-center",
           "[&>li]:after:mx-[15px] [&>li]:after:flex [&>li]:after:h-2 [&>li]:after:w-px [&>li]:after:bg-[#2E2E2E]",
+          "md:flex-row md:items-center",
         )}
       >
         <li>

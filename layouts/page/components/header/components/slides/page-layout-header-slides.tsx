@@ -17,7 +17,12 @@ export const PageLayoutHeaderSlides: React.FC<PageLayoutHeaderSlidesProps> = (
 ): React.JSX.Element => {
   return (
     <div
-      className={clsx(props.className, "mr-[53px] flex flex-col gap-[15px]")}
+      className={clsx(
+        props.className,
+        "mb-[25px] flex flex-col gap-[15px]",
+        "md:mb-[35px]",
+        "2xl:mr-[53px] 2xl:mb-0",
+      )}
     >
       {/* Title */}
       <span className="text-[13px]/[17px] tracking-[0.024em] text-white/70">
@@ -25,7 +30,7 @@ export const PageLayoutHeaderSlides: React.FC<PageLayoutHeaderSlidesProps> = (
       </span>
 
       {/* Content */}
-      <div className="flex w-65 flex-col gap-2.5">
+      <div className={clsx("flex gap-2.5", "2xl:w-65 2xl:flex-col")}>
         {props.data.map((item, index) => (
           <Components.Item
             data={item}
