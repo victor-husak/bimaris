@@ -33,9 +33,19 @@ export const OfficeCard: React.FC<OfficeCardProps> = (
       )}
     >
       <Tag
-        className="bg-secondary mr-auto mb-[25px] text-white"
+        className={clsx("mr-auto mb-[25px]", {
+          "bg-secondary text-white": data.isMain,
+          "bg-[#E7EFFC] text-[#2D3A52]": !data.isMain,
+        })}
         title={data.isMain ? t("tag.main") : t("tag.back")}
-        IconComponent={<ArrowRightIcon color="#fff" />}
+        IconComponent={
+          <ArrowRightIcon
+            className={clsx({
+              "rotate-180": !data.isMain,
+            })}
+            color="currentColor"
+          />
+        }
       />
 
       {/* Preview */}
@@ -63,7 +73,7 @@ export const OfficeCard: React.FC<OfficeCardProps> = (
 
         {/* Action */}
         <CardAction
-          className="mt-[35px] mr-auto group-hover:w-[150px]"
+          className="mt-[35px] mr-auto group-hover:w-[125px]"
           href={data.url}
           title={t("action")}
         />
