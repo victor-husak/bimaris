@@ -1946,6 +1946,7 @@ __metadata:
     react-scroll: "npm:^1.9.3"
     react-spinners: "npm:^0.17.0"
     react-transition-group: "npm:^4.4.5"
+    remove-markdown: "npm:^0.6.3"
     sass: "npm:^1.97.3"
     swiper: "npm:^12.1.2"
     tailwindcss: "npm:^4.1.18"
@@ -4767,6 +4768,13 @@ __metadata:
     gopd: "npm:^1.2.0"
     set-function-name: "npm:^2.0.2"
   checksum: 10/8ab897ca445968e0b96f6237641510f3243e59c180ee2ee8d83889c52ff735dd1bf3657fcd36db053e35e1d823dd53f2565d0b8021ea282c9fe62401c6c3bd6d
+  languageName: node
+  linkType: hard
+
+"remove-markdown@npm:^0.6.3":
+  version: 0.6.3
+  resolution: "remove-markdown@npm:0.6.3"
+  checksum: 10/ede1a2ddc208c22db8d4f47d0a85bc02f0fd2a1ab62099beb0eee18e2cb8013c2568d69b9b36ff86215a86af60572f6e594abc680ca061c90d8c784ff097722c
   languageName: node
   linkType: hard
 

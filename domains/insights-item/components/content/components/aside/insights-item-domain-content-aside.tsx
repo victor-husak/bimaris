@@ -16,7 +16,7 @@ export const InsightsItemDomainContentAside: React.FC<
     <SingleLayoutAside className={clsx(props.className, "")}>
       <AsideContent content={props.content} />
 
-      <AsideActions />
+      <AsideActions listenText={props.content} name="Insight" />
     </SingleLayoutAside>
   );
 };

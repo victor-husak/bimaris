@@ -60,7 +60,7 @@ export const InsightsDomain: React.FC<InsightsDomainProps> = (
 const menu = [
   {
     key: "1",
-    title: "Legal alerts (+3)",
+    title: "Legal alerts",
     description:
       "Timely legal updates on immigration rules, regulatory changes, and official announcements.",
     href: "/",

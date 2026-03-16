@@ -17,9 +17,9 @@ export const Lang: React.FC<LangProps> = (props): React.JSX.Element => {
     <div
       className={clsx(
         props.className,
-        "group transition-color flex cursor-pointer items-center",
+        "group transition-color flex items-center",
       )}
-      onClick={onTriggerLang}
+      // onClick={onTriggerLang}
     >
       <Icons.Lang className="mr-2" />
 

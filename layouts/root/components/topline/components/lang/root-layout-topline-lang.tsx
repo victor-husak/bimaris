@@ -19,8 +19,8 @@ export const RootLayoutToplineLang: React.FC<RootLayoutToplineLangProps> = (
 
   return (
     <Item
-      className={clsx(props.className, "cursor-pointer")}
-      onClick={onTriggerLang}
+      className={clsx(props.className)}
+      // onClick={onTriggerLang}
     >
       <span>{langLabel}</span>
 

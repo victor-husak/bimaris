@@ -4,6 +4,7 @@ export type AsideActionsItemProps = {
   className?: string;
   title: string;
   IconComponent?: React.ReactNode;
+  onClick?: () => void;
 };
 
 export const AsideActionsItem: React.FC<AsideActionsItemProps> = (
@@ -16,6 +17,7 @@ export const AsideActionsItem: React.FC<AsideActionsItemProps> = (
         "flex cursor-pointer items-center gap-2 rounded-full border border-[#E7EAF2] px-[15px] py-2.5 transition-all",
         "hover:bg-[#EDF0F5]",
       )}
+      onClick={props.onClick}
     >
       {/* Icon */}
       {props.IconComponent}

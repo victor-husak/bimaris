@@ -18,7 +18,7 @@ export const ServicesItemDomainContentAside: React.FC<
 
       <AsideLists title="Related solutions" />
 
-      <AsideActions />
+      <AsideActions listenText={props.content} name="Services" />
     </SingleLayoutAside>
   );
 };
