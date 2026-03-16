@@ -4,6 +4,7 @@ export type RootLayoutToplineItemProps = {
   className?: string;
   children: React.ReactNode;
   variant?: "base" | "invert";
+  onClick?: () => void;
 };
 
 export const RootLayoutToplineItem: React.FC<RootLayoutToplineItemProps> = (
@@ -17,6 +18,7 @@ export const RootLayoutToplineItem: React.FC<RootLayoutToplineItemProps> = (
         "hover:text-secondary",
         "after:mx-3.75 after:h-2 after:w-px after:bg-[#E4E8F0]",
       )}
+      onClick={props.onClick}
     >
       {props.children}
     </li>

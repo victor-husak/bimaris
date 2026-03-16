@@ -1,9 +1,13 @@
+"use client";
+
 import { NextLink } from "@/i18n/routing";
 
 import { ArrowRightIcon } from "@/icons";
 
 import * as Components from "./components";
 import * as Icons from "./icons";
+
+import { useRootLayoutTopline } from "./root-layout-topline.hook";
 
 import { clsx } from "clsx";
 
@@ -14,6 +18,8 @@ export type RootLayoutToplineProps = {
 export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
   props,
 ): React.JSX.Element => {
+  const { langLabel, onTriggerLang } = useRootLayoutTopline();
+
   return (
     <div
       className={clsx(
@@ -72,8 +78,8 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
           <NextLink href="/Offices">Offices</NextLink>
         </Components.Item>
 
-        <Components.Item className="cursor-pointer">
-          <span>En</span>
+        <Components.Item className="cursor-pointer" onClick={onTriggerLang}>
+          <span>{langLabel}</span>
 
           <ArrowRightIcon className="[&>path]:stroke-current-color ml-1.25 [&>path]:transition-all" />
         </Components.Item>
