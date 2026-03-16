@@ -1,15 +1,16 @@
 import NextImage from "next/image";
-import { clsx } from "clsx";
 
-import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
+import {
+  PageLayoutHeader,
+  PageLayoutHeaderSlides,
+  PageLayoutActions,
+} from "@/layouts/page";
 
 import { Support } from "@/ui/support";
 
-import { ButtonIcon } from "@/components";
-
 import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
 
-import * as Icons from "./icons";
+import { clsx } from "clsx";
 
 import type { Expert } from "@/types/experts";
 
@@ -49,17 +50,7 @@ export const PeopleDomainHeader: React.FC<PeopleDomainHeaderProps> = (
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={slides} />
       }
-      InfoCpmponent={
-        <div className="items mt-[25px] flex gap-2">
-          <ButtonIcon>
-            <Icons.Like />
-          </ButtonIcon>
-
-          <ButtonIcon>
-            <Icons.Linkedin />
-          </ButtonIcon>
-        </div>
-      }
+      InfoCpmponent={<PageLayoutActions className="mt-[25px]" />}
       FooterComponent={
         <div className="container-full">
           <Support />

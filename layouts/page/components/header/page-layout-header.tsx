@@ -22,6 +22,7 @@ export type PageLayoutHeaderProps = {
   title: React.ReactNode;
   subtitle: string;
   tag?: string;
+  meta?: React.ReactNode;
   description?: string;
   activeIndex?: number;
   children?: React.ReactNode;
@@ -135,10 +136,22 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
 
                   {/* Tag */}
                   <div className="flex rounded-full bg-[#C1DBFF] px-2 pt-1 pb-[5px]">
-                    <span className="test-[#00335A] text-[12px]/[15px] tracking-[.024em]">
+                    <span className="text-[12px]/[15px] tracking-[.024em] text-[#00335A]">
                       {props.tag}
                     </span>
                   </div>
+
+                  {/* Meta */}
+                  {!!props.meta && (
+                    <span
+                      className={clsx(
+                        "relative flex items-center text-[13px]/[17px] tracking-[.024em] text-white/60",
+                        "before:mx-[15px] before:h-2 before:w-px before:bg-white/20",
+                      )}
+                    >
+                      {props.meta}
+                    </span>
+                  )}
                 </motion.div>
               )}
 
@@ -168,7 +181,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
                 }}
                 className={clsx(
                   props.classNameTitle,
-                  "font-season-mix font-light tracking-[.038em] text-white",
+                  "font-season-mix line-clamp-3 font-light tracking-[.038em] text-white",
                   "[&>span]:text-[#D8E8FF]",
                   {
                     "text-[40px]/[50px]": props.size === "lg",
