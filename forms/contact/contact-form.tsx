@@ -12,11 +12,13 @@ import {
   FormRow,
   FormItem,
   FormInput,
+  FormSelect,
   FormTextarea,
   FormCheckbox,
 } from "@/components/form";
 
 import { useContactForm } from "./contact-form.hook";
+import { countries } from "@/generated/countries";
 
 export type ContactFormProps = {
   className?: string;
@@ -94,12 +96,7 @@ export const ContactForm: React.FC<ContactFormProps> = (
               </FormItem>
 
               <FormItem required label={t("country.label")}>
-                <FormInput
-                  {...formMethods.register("country")}
-                  invalid={!!formMethods.formState.errors.country?.message}
-                  defaultValue={formMethods.formState.defaultValues?.country}
-                  placeholder="-"
-                />
+                <FormSelect options={countries} onChange={() => {}} />
               </FormItem>
             </FormRow>
 

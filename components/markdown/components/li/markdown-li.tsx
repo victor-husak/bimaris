@@ -6,6 +6,7 @@ import { clsx } from "clsx";
 
 export type MarkdownLiProps = {
   className?: string;
+  number?: number;
   children: React.ReactNode;
 };
 
@@ -15,8 +16,13 @@ export const MarkdownLi: React.FC<MarkdownLiProps> = (
   return (
     <li className={clsx(props.className, "group relative gap-5")}>
       {/* Arrow */}
-      <div className="absolute top-0.5 left-0 flex h-5 w-5 items-center justify-center rounded-full border border-[#E7EAF2]">
-        <ArrowRightIcon color="#333333" />
+
+      <div className="absolute top-[3px] left-0 flex h-5 w-5 items-center justify-center rounded-full border border-[#E7EAF2]">
+        {props.number ? (
+          <span className="text-[11px]/[1]">{props.number}</span>
+        ) : (
+          <ArrowRightIcon color="#333333" />
+        )}
       </div>
 
       {/* Texture */}
