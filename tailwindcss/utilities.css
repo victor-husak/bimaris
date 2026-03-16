@@ -76,12 +76,14 @@
 
     @media (width >= 1200px) {
       --local-container-offset: calc((100vw - 1140px) / 2);
-      --local-container-large-offset: var(--local-container-offset);
+      --local-container-large-offset: 20px
+      /* --local-container-large-offset: var(--local-container-offset); */
     }
 
     @media (width >= 1436px) {
       --local-container-offset: calc((100vw - 1350px) / 2);
-      --local-container-large-offset: calc((100vw - 1350px - 46px) / 2);
+      /* --local-container-large-offset: 20px */
+      --local-container-large-offset: calc((100vw - 1350px - 43px) / 2);
     }
 
     /* @media (min-width: 1546px) {
