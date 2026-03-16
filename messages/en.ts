@@ -23,6 +23,9 @@ const pages = {
   "terms-of-use": {
     title: "Terms of use",
   },
+  "case-studies": {
+    title: "Case studies",
+  },
 };
 
 const message = {
@@ -41,6 +44,7 @@ const message = {
       "terms-of-use": pages["terms-of-use"].title,
       "cookies-policy": pages["cookies-policy"].title,
       "baltics-desk": pages["baltics-desk"].title,
+      "case-studies": pages["case-studies"].title,
     },
   },
   pages: {
@@ -83,6 +87,25 @@ const message = {
             "Personalized immigration legal support for people and companies.",
           action: "Read more",
         },
+      },
+    },
+    "about-us": {
+      meta: {
+        title: "About us | Bimaris",
+        description:
+          "Bimaris helps individuals and families navigate the Ukrainian immigration process with clarity, confidence, and expert legal support.",
+      },
+      roles: {
+        title: "Who we serve",
+        description:
+          "Founded by professional lawyers and immigration experts, Bimaris provides structured, reliable immigration legal support for.",
+      },
+    },
+    "case-studies": {
+      meta: {
+        title: "Case studies | Bimaris",
+        description:
+          "Bimaris helps individuals and families navigate the Ukrainian immigration process with clarity, confidence, and expert legal support.",
       },
     },
   },

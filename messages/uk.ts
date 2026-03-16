@@ -23,6 +23,9 @@ const pages = {
   "terms-of-use": {
     title: "Умови використання",
   },
+  "case-studies": {
+    title: "Кейси",
+  },
 };
 
 const message = {
@@ -41,6 +44,7 @@ const message = {
       "terms-of-use": pages["terms-of-use"].title,
       "cookies-policy": pages["cookies-policy"].title,
       "baltics-desk": pages["baltics-desk"].title,
+      "case-studies": pages["case-studies"].title,
     },
   },
   pages: {
@@ -83,6 +87,18 @@ const message = {
             "Персоналізована юридична підтримка з імміграційних питань для людей та компаній.",
           action: "Детальніше",
         },
+      },
+    },
+    "about-us": {
+      meta: {
+        title: "Про нас | Bimaris",
+        description:
+          "Заснована професійними юристами та експертами з імміграції, Bimaris надає структуровану, надійну юридичну підтримку з імміграції для приватних осіб та бізнесу.",
+      },
+      roles: {
+        title: "Кому ми допомагаємо",
+        description:
+          "Заснована професійними юристами та експертами з імміграції, Bimaris надає структуровану та надійну юридичну підтримку з питань імміграції для.",
       },
     },
   },

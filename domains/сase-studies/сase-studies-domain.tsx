@@ -1,11 +1,14 @@
+import { clsx } from "clsx";
+
 import { PageLayout } from "@/layouts/page";
 
 import { MenuSection } from "@/sections/menu";
 
 import * as Components from "./componets";
 
-import { clsx } from "clsx";
-import { CaseStudyShort } from "@/types/case-studies";
+import { useCaseStudiesDomain } from "./сase-studies-domain.hook";
+
+import type { CaseStudyShort } from "@/types/case-studies";
 
 export type CaseStudiesDomainProps = {
   className?: string;
@@ -17,13 +20,12 @@ export type CaseStudiesDomainProps = {
 export const CaseStudiesDomain: React.FC<CaseStudiesDomainProps> = (
   props,
 ): React.JSX.Element => {
+  const { routes } = useCaseStudiesDomain();
+
   return (
     <PageLayout
       className={clsx(props.className, "")}
-      routes={[
-        { label: "Home", value: "/" },
-        { label: "Case Studies", value: "/case-studies" },
-      ]}
+      routes={routes}
       HeaderComponent={
         <Components.Header
           className="mb-5"

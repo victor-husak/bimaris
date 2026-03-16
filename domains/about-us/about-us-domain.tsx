@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import { Suspense } from "react";
+import { useTranslations } from "next-intl";
 
 import { SectionHeader } from "@/components";
 
@@ -16,6 +17,8 @@ import { Rating } from "@/ui/rating";
 
 import * as Components from "./components";
 
+import { useAboutUsDomain } from "./about-us-domain.hook";
+
 import type { CaseStudyShort } from "@/types/case-studies";
 
 export type AboutUsDomainProps = {
@@ -26,13 +29,14 @@ export type AboutUsDomainProps = {
 export const AboutUsDomain: React.FC<AboutUsDomainProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("pages.about-us");
+
+  const { routes } = useAboutUsDomain();
+
   return (
     <PageLayout
       className={clsx(props.className, "")}
-      routes={[
-        { label: "Home", value: "/" },
-        { label: "About us", value: "/about-us" },
-      ]}
+      routes={routes}
       HeaderComponent={<Components.Header className="mb-5" />}
     >
       {/* Advantages */}
@@ -50,8 +54,8 @@ export const AboutUsDomain: React.FC<AboutUsDomainProps> = (
         className="section-gradient mb-[100px]"
         HeaderComponent={
           <SectionHeader
-            title="Who we serve"
-            description="Founded by professional lawyers and immigration experts, Bimaris provides structured, reliable immigration legal support for."
+            title={t("roles.title")}
+            description={t("roles.description")}
           />
         }
       />
