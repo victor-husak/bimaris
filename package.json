@@ -32,7 +32,8 @@
     "react-transition-group": "^4.4.5",
     "remove-markdown": "^0.6.3",
     "swiper": "^12.1.2",
-    "usehooks-ts": "^3.1.1"
+    "usehooks-ts": "^3.1.1",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
