@@ -37,8 +37,12 @@ export const ServicesItemDomainHeader: React.FC<
       }}
       title={data.name}
       subtitle="Posted in"
-      meta={<>Updated on {data.createdAt}</>}
-      tag={data.category?.name}
+      meta={
+        <>
+          {data.isUpdated ? "Updated on" : "Posted on"} {data.date}
+        </>
+      }
+      tag="Insights"
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={slides} />
       }

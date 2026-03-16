@@ -104,7 +104,15 @@ export async function getPublicationBySlug({
     filters: {
       slug,
     },
-    fields: ["id", "name", "description", "slug", "content", "createdAt"],
+    fields: [
+      "id",
+      "name",
+      "description",
+      "slug",
+      "content",
+      "createdAt",
+      "updatedAt",
+    ],
     populate: {
       preview: true,
       category: {
