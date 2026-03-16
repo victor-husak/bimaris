@@ -18,7 +18,7 @@ export const AsideGroup: React.FC<AsideGroupProps> = (
       )}
     >
       {/* Header */}
-      <header className="flex border-b border-[#E7EAF2] px-5 py-[15px]">
+      <header className="flex border-b border-[#E7EAF2] px-5 py-[14px]">
         <div
           className={clsx(
             "rounded-full px-2 py-[5px] text-[12px]/[14px] tracking-[.034em]",
