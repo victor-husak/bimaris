@@ -26,6 +26,9 @@ export const Markdown: React.FC<MarkdownProps> = (props): React.JSX.Element => {
           ul: {
             component: Components.Ul,
           },
+          ol: {
+            component: Components.OL,
+          },
           ...props.overrides,
         },
       }}
