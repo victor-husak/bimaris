@@ -15,8 +15,9 @@ import { Rating } from "@/ui/rating";
 
 import * as Components from "./components";
 
+import { useServicesItemDomain } from "./services-item-domain.hook";
+
 import type { Service } from "@/types/services";
-// import type { CommonData } from "@/types/common";
 
 export type ServicesItemDomainProps = {
   className?: string;
@@ -27,14 +28,12 @@ export type ServicesItemDomainProps = {
 export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
   props,
 ): React.JSX.Element => {
+  const { routes } = useServicesItemDomain(props);
+
   return (
     <PageLayout
       className={clsx(props.className, "")}
-      routes={[
-        { label: "Home", value: "/" },
-        { label: "Private clients", value: "/roles/private-clients" },
-        { label: "Citizenship of Ukraine", value: "/services/1" },
-      ]}
+      routes={routes}
       HeaderComponent={<Components.Header data={props.data} />}
     >
       {/* Advantages */}

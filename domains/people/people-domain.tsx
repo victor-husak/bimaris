@@ -8,6 +8,8 @@ import { Rating } from "@/ui/rating";
 
 import * as Components from "./components";
 
+import { usePeopleDomain } from "./people-domain.hook";
+
 import type { Expert } from "@/types/experts";
 
 export type PeopleDomainProps = {
@@ -18,13 +20,12 @@ export type PeopleDomainProps = {
 export const PeopleDomain: React.FC<PeopleDomainProps> = (
   props,
 ): React.JSX.Element => {
+  const { routes } = usePeopleDomain(props);
+
   return (
     <PageLayout
       className={clsx(props.className, "")}
-      routes={[
-        { label: "Home", value: "/" },
-        { label: "Insights", value: "/insights" },
-      ]}
+      routes={routes}
       HeaderComponent={<Components.Header data={props.data} />}
     >
       {/* Content */}

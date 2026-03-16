@@ -2,18 +2,18 @@ import { useMemo } from "react";
 
 import { useTranslations } from "next-intl";
 
-import type { InsightsItemDomainProps } from "./insights-item-domain";
+import type { PeopleDomainProps } from "./people-domain";
 
-export const useInsightsItemDomain = (props: InsightsItemDomainProps) => {
+export const usePeopleDomain = (props: PeopleDomainProps) => {
   const t = useTranslations("common.routes");
 
   const routes = useMemo(() => {
     return [
       { label: t("home"), value: "/" },
-      { label: t("insights"), value: "/insights" },
+      // { label: "Insights", value: "/insights" },
       {
         label: props.data.name,
-        value: `/insights/${props.data.slug}`,
+        value: `/people/${props.data.slug}`,
       },
     ];
   }, [props.data, t]);

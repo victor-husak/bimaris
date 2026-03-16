@@ -1,3 +1,5 @@
+import { clsx } from "clsx";
+
 import { PageLayout } from "@/layouts/page";
 
 import { SectionHeader } from "@/components";
@@ -7,7 +9,7 @@ import { UpdatesSection } from "@/sections/updates";
 
 import * as Components from "./componets";
 
-import { clsx } from "clsx";
+import { useInsightsDomain } from "./insights-domain.hook";
 
 import type { PublicationShort } from "@/types/publication";
 
@@ -22,13 +24,11 @@ export type InsightsDomainProps = {
 export const InsightsDomain: React.FC<InsightsDomainProps> = (
   props,
 ): React.JSX.Element => {
+  const { routes } = useInsightsDomain();
   return (
     <PageLayout
       className={clsx(props.className, "")}
-      routes={[
-        { label: "Home", value: "/" },
-        { label: "Insights", value: "/insights" },
-      ]}
+      routes={routes}
       HeaderComponent={
         <Components.Header
           className="mb-5"

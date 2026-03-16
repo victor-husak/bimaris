@@ -8,7 +8,8 @@ import { FaqsSection } from "@/sections/faqs";
 
 import * as Components from "./components";
 
-// import type { CommonData } from "@/types/common";
+import { useBalticsDeskDomain } from "./baltics-desk-domain.hook";
+
 import type { BalticShort } from "@/types/baltics";
 
 export type BalticsDeskDomainProps = {
@@ -20,13 +21,12 @@ export type BalticsDeskDomainProps = {
 export const BalticsDeskDomain: React.FC<BalticsDeskDomainProps> = (
   props,
 ): React.JSX.Element => {
+  const { routes } = useBalticsDeskDomain();
+
   return (
     <PageLayout
       className={clsx(props.className, "")}
-      routes={[
-        { label: "Home", value: "/" },
-        { label: "Baltics desk", value: "/baltics-desk" },
-      ]}
+      routes={routes}
       HeaderComponent={<Components.Header className="mb-5" />}
     >
       {/* Advantages */}
