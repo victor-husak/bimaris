@@ -16,15 +16,14 @@ const schema = yup.object().shape({
   name: yup.string().required(),
   surname: yup.string(),
   companyName: yup.string(),
-  country: yup.string(),
-  // country: yup.object({
-  //   label: yup.string().required(),
-  //   value: yup.string().required(),
-  //   data: yup.object({
-  //     phonePrefix: yup.string().required(),
-  //     code: yup.string().required(),
-  //   }),
-  // }),
+  country: yup.object({
+    label: yup.string().required(),
+    value: yup.string().required(),
+    data: yup.object({
+      phonePrefix: yup.string().required(),
+      code: yup.string().required(),
+    }),
+  }),
   email: yup.string().email().required(),
   phone: yup
     .string()
@@ -35,12 +34,12 @@ const schema = yup.object().shape({
       async function (value) {
         const { isValidPhoneNumber } = await import("libphonenumber-js");
 
-        // const country = this.parent.country?.data.code;
+        const country = this.parent.country?.data.code;
 
-        if (!value) return false;
+        if (!value || !country) return false;
 
         try {
-          return isValidPhoneNumber(value, "UA");
+          return isValidPhoneNumber(value, country);
         } catch {
           return false;
         }
@@ -48,8 +47,6 @@ const schema = yup.object().shape({
     ),
   message: yup.string().required(),
 });
-
-// type FormData = yup.InferType<typeof schema>;
 
 export const useContactForm = () => {
   const [isSubmited, setIsSubmited] = useState(false);
@@ -61,12 +58,6 @@ export const useContactForm = () => {
 
   const country = useWatch({ control: formMethods.control, name: "country" });
 
-  // useDidMountEffect(() => {
-  //   if (isSubmited) {
-  //     setIsSubmited(false);
-  //   }
-  // }, []);
-
   const onSubmit = formMethods.handleSubmit(async (data) => {
     try {
       setLoading(true);
@@ -76,7 +67,7 @@ export const useContactForm = () => {
           name: data.name,
           surname: data.surname,
           companyName: data.companyName,
-          country: data.country,
+          country: data.country.label,
           email: data.email,
           phone: data.phone,
           message: data.message.replace(/[<>]/g, ""),
@@ -85,18 +76,13 @@ export const useContactForm = () => {
 
       console.log("body", body);
 
-      // if (data.country) body.data.surname = data.surname;
-
-      // if (data.jobTitle) body.data.jobTitle = data.jobTitle;
-
-      // if (data.companyName) body.data.companyName = data.companyName;
-
       // await cteateContactRequest(JSON.stringify(body));
 
       setIsSubmited(true);
 
       setLoading(false);
-      // formMethods.reset();
+
+      formMethods.reset();
     } catch (error) {
       console.error(error);
 
