@@ -2,6 +2,7 @@
 
 import { NextLink } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import { clsx } from "clsx";
 
 import { Button } from "@/components";
 
@@ -15,7 +16,7 @@ import {
   FormCheckbox,
 } from "@/components/form";
 
-import { clsx } from "clsx";
+import { useContactForm } from "./contact-form.hook";
 
 export type ContactFormProps = {
   className?: string;
@@ -26,6 +27,9 @@ export const ContactForm: React.FC<ContactFormProps> = (
   props,
 ): React.JSX.Element => {
   const t = useTranslations("sections.contact.form");
+
+  const { loading, isSubmited, country, formMethods, onSubmit } =
+    useContactForm();
 
   return (
     <div className={clsx(props.className, "flex flex-col rounded-2xl")}>
@@ -55,40 +59,77 @@ export const ContactForm: React.FC<ContactFormProps> = (
           </div>
         )}
 
-        <form className="flex flex-col">
+        <form className="flex flex-col" onSubmit={onSubmit}>
           <div className="flex flex-col gap-[15px]">
             <FormRow>
               <FormItem required label={t("name.label")}>
-                <FormInput placeholder="-" />
+                <FormInput
+                  {...formMethods.register("name")}
+                  invalid={!!formMethods.formState.errors.name?.message}
+                  defaultValue={formMethods.formState.defaultValues?.name}
+                  placeholder="-"
+                />
               </FormItem>
 
               <FormItem required label={t("surname.label")}>
-                <FormInput placeholder="-" />
+                <FormInput
+                  {...formMethods.register("surname")}
+                  invalid={!!formMethods.formState.errors.surname?.message}
+                  defaultValue={formMethods.formState.defaultValues?.surname}
+                  placeholder="-"
+                />
               </FormItem>
             </FormRow>
 
             <FormRow>
               <FormItem required label={t("company.label")}>
-                <FormInput placeholder="-" />
+                <FormInput
+                  {...formMethods.register("companyName")}
+                  invalid={!!formMethods.formState.errors.companyName?.message}
+                  defaultValue={
+                    formMethods.formState.defaultValues?.companyName
+                  }
+                  placeholder="-"
+                />
               </FormItem>
 
               <FormItem required label={t("country.label")}>
-                <FormInput placeholder="-" />
+                <FormInput
+                  {...formMethods.register("country")}
+                  invalid={!!formMethods.formState.errors.country?.message}
+                  defaultValue={formMethods.formState.defaultValues?.country}
+                  placeholder="-"
+                />
               </FormItem>
             </FormRow>
 
             <FormRow>
               <FormItem required label={t("email.label")}>
-                <FormInput placeholder="example@gmail.com" />
+                <FormInput
+                  {...formMethods.register("email")}
+                  invalid={!!formMethods.formState.errors.email?.message}
+                  defaultValue={formMethods.formState.defaultValues?.email}
+                  placeholder="example@gmail.com"
+                />
               </FormItem>
 
               <FormItem required label={t("phone.label")}>
-                <FormInput placeholder="+38" />
+                <FormInput
+                  {...formMethods.register("phone")}
+                  invalid={!!formMethods.formState.errors.phone?.message}
+                  defaultValue={formMethods.formState.defaultValues?.phone}
+                  placeholder="+38"
+                />
               </FormItem>
             </FormRow>
 
             <FormItem required label={t("message.label")}>
-              <FormTextarea placeholder={t("message.placeholder")} />
+              <FormTextarea
+                {...formMethods.register("message")}
+                invalid={!!formMethods.formState.errors.message?.message}
+                defaultValue={formMethods.formState.defaultValues?.message}
+                placeholder={t("message.placeholder")}
+              />
             </FormItem>
           </div>
 
