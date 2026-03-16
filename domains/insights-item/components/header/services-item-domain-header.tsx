@@ -1,4 +1,8 @@
-import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
+import {
+  PageLayoutHeader,
+  PageLayoutHeaderSlides,
+  PageLayoutHeaderActions,
+} from "@/layouts/page";
 
 import { LangIcon, MeetingIcon } from "@/icons/header-links";
 
@@ -33,10 +37,12 @@ export const ServicesItemDomainHeader: React.FC<
       }}
       title={data.name}
       subtitle="Posted in"
-      tag="Case study"
+      meta={<>Updated on {data.createdAt}</>}
+      tag={data.category?.name}
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={slides} />
       }
+      InfoCpmponent={<PageLayoutHeaderActions className="mt-[30px]" />}
     />
   );
 };

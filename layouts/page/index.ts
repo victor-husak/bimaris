@@ -6,4 +6,5 @@ export {
   PageLayoutHeader,
   PageLayoutHeaderSlides,
   PageLayoutHeaderArrows,
+  PageLayoutHeaderActions,
 } from "./components/header";
