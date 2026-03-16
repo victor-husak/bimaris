@@ -122,7 +122,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
             <div className="relative z-1 flex shrink-0">
               <BannerImage
                 className={clsx(
-                  "absolute -left-[71px] -z-2 hidden border-[5px] border-[#D9EAE7]",
+                  "absolute! -left-[71px] -z-2 hidden border-[5px] border-[#D9EAE7]",
                   "2xl:flex",
                 )}
                 media={{
@@ -135,7 +135,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
 
               <BannerImage
                 className={clsx(
-                  "absolute -left-[32px] -z-1 hidden border-[5px] border-[#D9EAE7]",
+                  "absolute! -left-[32px] -z-1 hidden border-[5px] border-[#D9EAE7]",
                   "2xl:flex",
                 )}
                 media={{
