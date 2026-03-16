@@ -3,7 +3,7 @@ import NextImage from "next/image";
 import {
   PageLayoutHeader,
   PageLayoutHeaderSlides,
-  PageLayoutActions,
+  PageLayoutHeaderActions,
 } from "@/layouts/page";
 
 import { Support } from "@/ui/support";
@@ -50,7 +50,7 @@ export const PeopleDomainHeader: React.FC<PeopleDomainHeaderProps> = (
       RightComponent={
         <PageLayoutHeaderSlides title="Quick links:" data={slides} />
       }
-      InfoCpmponent={<PageLayoutActions className="mt-[25px]" />}
+      InfoCpmponent={<PageLayoutHeaderActions className="mt-[25px]" />}
       FooterComponent={
         <div className="container-full">
           <Support />

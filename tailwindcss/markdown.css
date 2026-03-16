@@ -19,7 +19,7 @@
       @apply underline transition-all hover:opacity-60 text-secondary;
     }
 
-    h2 {
+    h2, h3 {
       font-family: var(--font-sagona);
       font-size: 28px;
       line-height: 35px;
@@ -30,6 +30,11 @@
       &:not(:first-child) {
         margin-top: 50px;
       }
+    }
+
+    h3 {
+      font-size: 22px;
+      line-height: 30px;
     }
 
     blockquote {
@@ -139,7 +144,7 @@
       }
     }
 
-    ol {
+    /* ol {
       padding-left: 19px;
 
       li {
@@ -147,9 +152,9 @@
           display: none;
         }
       }
-    }
+    } */
 
-    [data-type="chronology"] {
+    /* [data-type="chronology"] {
       ul {
         position: relative;
 
@@ -166,7 +171,7 @@
           background-size: contain;
         }
       }
-    }
+    } */
 
     & > hr {
       margin: 40px auto;

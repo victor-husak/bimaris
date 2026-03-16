@@ -23,8 +23,8 @@ export const Markdown: React.FC<MarkdownProps> = (props): React.JSX.Element => {
           a: {
             component: Components.Link,
           },
-          li: {
-            component: Components.Li,
+          ul: {
+            component: Components.Ul,
           },
           ...props.overrides,
         },
