@@ -41,24 +41,26 @@ export const UpdatesSection: React.FC<UpdatesSectionProps> = (
       }
     >
       {/* Content */}
-      <div className={clsx("flex flex-col gap-12.5", "xl:flex-row")}>
+      <div className={clsx("relative flex flex-col gap-12.5", "xl:flex-row")}>
         {/* List */}
-        <div className="flex flex-[1.3] flex-col gap-3.5">
+        <div className="sticky top-25 mb-auto flex flex-[1.3] flex-col gap-3.5">
           {data.map((item) => (
             <Components.Item key={item.id} data={item} />
           ))}
         </div>
 
         {/* Preview */}
+        {/* aspect-square */}
         <div
           className={clsx(
-            "group fr hidden aspect-square max-w-132.5 flex-1 overflow-hidden rounded-2xl",
+            "group fr relative hidden h-auto max-w-80 flex-1 overflow-hidden rounded-2xl",
+            "2xl:max-w-132.5",
             "xl:flex",
           )}
         >
           <NextImage
             className={clsx(
-              "transition-img h-full w-full object-cover",
+              "transition-img h-full w-full object-cover object-center",
               "group-hover:transform-[scale(1.03)]",
             )}
             src="/images/home/home-updates.webp"
