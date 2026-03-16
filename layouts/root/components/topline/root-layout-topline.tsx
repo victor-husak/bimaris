@@ -1,13 +1,9 @@
-"use client";
+import { useTranslations } from "next-intl";
 
 import { NextLink } from "@/i18n/routing";
 
-import { ArrowRightIcon } from "@/icons";
-
 import * as Components from "./components";
 import * as Icons from "./icons";
-
-import { useRootLayoutTopline } from "./root-layout-topline.hook";
 
 import { clsx } from "clsx";
 
@@ -18,7 +14,7 @@ export type RootLayoutToplineProps = {
 export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
   props,
 ): React.JSX.Element => {
-  const { langLabel, onTriggerLang } = useRootLayoutTopline();
+  const t = useTranslations("layouts.root.topline");
 
   return (
     <div
@@ -47,7 +43,7 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
           "2xl:absolute 2xl:left-1/2 2xl:-translate-x-1/2",
         )}
       >
-        Innovative immigration legal consultancy.{" "}
+        {t("description")}{" "}
         <NextLink
           className={clsx(
             "group link-with-arrow text-secondary inline-flex items-center transition-opacity",
@@ -56,7 +52,7 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
           href="/"
         >
           <span className="link-dashed [--dashed-url:url(/images/underline.svg)]">
-            Explore company
+            {t("action")}
           </span>
 
           <Icons.Arrow className="mt-[3px]" />
@@ -65,24 +61,20 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
 
       <ul className={clsx("hidden", "sm:flex")}>
         <Components.Item className="max-lg:hidden">
-          <NextLink href="/baltics-desk">Baltics desk</NextLink>
+          <NextLink href="/baltics-desk">{t("menu.baltics-desk")}</NextLink>
         </Components.Item>
 
         <Components.Item className="max-lg:hidden">
           <NextLink href="mailto:office@bimaris.legal">
-            Schedule a meeting
+            {t("menu.schedule")}
           </NextLink>
         </Components.Item>
 
         <Components.Item>
-          <NextLink href="/Offices">Offices</NextLink>
+          <NextLink href="/Offices">{t("menu.offices")}</NextLink>
         </Components.Item>
 
-        <Components.Item className="cursor-pointer" onClick={onTriggerLang}>
-          <span>{langLabel}</span>
-
-          <ArrowRightIcon className="[&>path]:stroke-current-color ml-1.25 [&>path]:transition-all" />
-        </Components.Item>
+        <Components.Lang />
       </ul>
     </div>
   );

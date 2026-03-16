@@ -1,8 +1,9 @@
+import { useTranslations } from "next-intl";
+import { clsx } from "clsx";
+
 import { Section, Button } from "@/components";
 
 import { Banner, BannerList, BannerImage, Support } from "@/ui";
-
-import { clsx } from "clsx";
 
 export type RolesServiceProps = {
   className?: string;
@@ -12,6 +13,8 @@ export type RolesServiceProps = {
 export const RolesService: React.FC<RolesServiceProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("sections.roles");
+
   return (
     <Section
       className={clsx(props.className, "")}
@@ -29,15 +32,15 @@ export const RolesService: React.FC<RolesServiceProps> = (
         <Banner
           className="bg-[#EAF0F8] text-[#314B48]"
           classNameDescription="text-[#818796] sm:max-w-[310px]"
-          title="Individuals"
-          description="We help individuals navigate the Ukrainian immigration process with confidence, clarity, and professional legal support."
+          title={t("individuals.title")}
+          description={t("individuals.description")}
           ListComponent={
             <BannerList
               className="[--link-dashed-border-color:#88A7F0]"
               items={[
-                "Personalized support",
-                "Attorney-led solutions",
-                "Automated workflow",
+                t("individuals.list.item1"),
+                t("individuals.list.item2"),
+                t("individuals.list.item3"),
               ]}
             />
           }
@@ -59,7 +62,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
               animation="scale"
               href="/roles/individuals"
             >
-              Open services
+              {t("action")}
             </Button>
           }
         />
@@ -67,15 +70,15 @@ export const RolesService: React.FC<RolesServiceProps> = (
         <Banner
           className="bg-[#507FEB] text-[#FFFFFF]"
           classNameDescription="text-white/70 sm:max-w-[340px]"
-          title="Businesses"
-          description="We empower businesses to build borderless teams, access the worlds talent, and create an employee experience that redefines global work."
+          title={t("businesses.title")}
+          description={t("businesses.description")}
           ListComponent={
             <BannerList
               className="[--link-dashed-border-color:#88A7F0]"
               items={[
-                "Personalized support",
-                "Attorney-led solutions",
-                "Best for IT professionals",
+                t("businesses.list.item1"),
+                t("businesses.list.item2"),
+                t("businesses.list.item3"),
               ]}
             />
           }
@@ -98,7 +101,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
               variant="white"
               href="/roles/businesses"
             >
-              Open services
+              {t("action")}
             </Button>
           }
         />
@@ -106,15 +109,15 @@ export const RolesService: React.FC<RolesServiceProps> = (
         <Banner
           className={clsx("bg-[#D9EAE7] text-[#2F4B40]", "2xl:col-span-2")}
           classNameDescription="text-[#768480] max-w-[720px]"
-          title="Investors and market entry"
-          description="We support international investors entering the Ukrainian market with structured legal guidance, regulatory clarity, and risk-aware immigration solutions. From initial market entry planning to long-term presence, our team helps navigate legal frameworks and compliance requirements."
+          title={t("investors.title")}
+          description={t("investors.description")}
           ListComponent={
             <BannerList
               className="[--link-dashed-border-color:#A7BAB7]"
               items={[
-                "Strategic market entry support",
-                "Regulatory and compliance guidance",
-                "Long-term presence and operational continuity",
+                t("investors.list.item1"),
+                t("investors.list.item2"),
+                t("investors.list.item3"),
               ]}
             />
           }
@@ -166,7 +169,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
               animation="scale"
               href="/roles/investors"
             >
-              Open services
+              {t("action")}
             </Button>
           }
         />

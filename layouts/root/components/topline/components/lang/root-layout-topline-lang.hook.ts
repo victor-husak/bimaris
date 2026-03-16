@@ -4,7 +4,7 @@ import { useLocale } from "next-intl";
 import { usePathname } from "@/i18n/routing";
 import { useRouter } from "nextjs-toploader/app";
 
-export const useRootLayoutTopline = () => {
+export const useRootLayoutToplineLang = () => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -16,7 +16,7 @@ export const useRootLayoutTopline = () => {
 
   const onTriggerLang = useCallback(() => {
     router.replace(`/${currentLocale === "en" ? "uk" : "en"}${pathname}`);
-  }, [currentLocale, pathname]);
+  }, [currentLocale, pathname, router]);
 
   return {
     currentLocale,

@@ -1,6 +1,8 @@
 import { clsx } from "clsx";
 import { Suspense } from "react";
 
+import { useTranslations } from "next-intl";
+
 import { SectionHeader, Button } from "@/components";
 
 import { PageLayout } from "@/layouts/page";
@@ -27,6 +29,7 @@ export type HomeDomainProps = {
 export const HomeDomain: React.FC<HomeDomainProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("pages.home");
   return (
     <PageLayout
       className={clsx(props.className, "")}
@@ -39,11 +42,11 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
       <RolesService
         HeaderComponent={
           <SectionHeader
-            title="Choose your role"
-            description="Founded by professional lawyers and immigration experts, Bimaris provides structured, reliable immigration legal support for individuals and businesses."
+            title={t("role.title")}
+            description={t("role.description")}
             ActionComponent={
               <Button animation="scale" href="/">
-                All services
+                {t("role.action")}
               </Button>
             }
           />

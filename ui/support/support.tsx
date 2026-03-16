@@ -1,4 +1,5 @@
 import { NextLink } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 import { ArrowRightIcon } from "@/icons";
 
@@ -9,6 +10,8 @@ export type SupportProps = {
 };
 
 export const Support: React.FC<SupportProps> = (props): React.JSX.Element => {
+  const t = useTranslations("ui.support");
+
   return (
     <footer
       className={clsx(
@@ -18,7 +21,7 @@ export const Support: React.FC<SupportProps> = (props): React.JSX.Element => {
       )}
     >
       <p className="text-[13px]/[17px] tracking-[.028em] text-[#818796]">
-        Personalized immigration legal support for people and companies.{" "}
+        {t("description")}{" "}
         <NextLink
           className={clsx(
             "text-secondary link-with-arrow transition-all",
@@ -27,7 +30,7 @@ export const Support: React.FC<SupportProps> = (props): React.JSX.Element => {
           href="/contact-us"
         >
           <span className="link-dashed [--dashed-url:url(/images/underline-second.svg)]">
-            Read more
+            {t("action")}
           </span>
 
           <ArrowRightIcon className="mt-[3px] [&>path]:stroke-[#5373DB]" />
@@ -35,7 +38,7 @@ export const Support: React.FC<SupportProps> = (props): React.JSX.Element => {
       </p>
 
       <p className="text-[13px]/[17px] tracking-[.028em] text-[#818796]">
-        Have questions.{" "}
+        {t("haveQuestions")}{" "}
         <NextLink
           className={clsx(
             "link-with-arrow text-secondary transition-all",
@@ -44,7 +47,7 @@ export const Support: React.FC<SupportProps> = (props): React.JSX.Element => {
           href="/contact-us"
         >
           <span className="link-dashed [--dashed-url:url(/images/underline-second.svg)]">
-            Contact us
+            {t("contact")}
           </span>
 
           <ArrowRightIcon className="mt-[3px] [&>path]:stroke-[#5373DB]" />

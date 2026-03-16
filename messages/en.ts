@@ -1,5 +1,3 @@
-import { head } from "lodash-es";
-
 const pages = {
   home: {
     title: "Home",
@@ -52,6 +50,12 @@ const message = {
         description:
           "Bimaris helps individuals and families navigate the Ukrainian immigration process with clarity, confidence, and expert legal support.",
       },
+      role: {
+        title: "Choose your role",
+        description:
+          "Founded by professional lawyers and immigration experts, Bimaris provides structured, reliable immigration legal support for individuals and businesses.",
+        action: "All services",
+      },
     },
     contact: {
       meta: {
@@ -84,7 +88,15 @@ const message = {
   },
   layouts: {
     root: {
-      topline: {},
+      topline: {
+        description: "Innovative immigration legal consultancy.",
+        action: "Explore company",
+        menu: {
+          "baltics-desk": pages["baltics-desk"].title,
+          schedule: "Schedule a meeting",
+          offices: "Offices",
+        },
+      },
       header: {
         businesses: "Businesses",
         "private-clients": "Private clients",
@@ -242,11 +254,51 @@ const message = {
         action: "View all",
       },
     },
+    roles: {
+      individuals: {
+        title: "Individuals",
+        description:
+          "We help individuals navigate the Ukrainian immigration process with confidence, clarity, and professional legal support.",
+        list: {
+          item1: "Personalized support",
+          item2: "Attorney-led solutions",
+          item3: "Automated workflow",
+        },
+      },
+      businesses: {
+        title: "Businesses",
+        description:
+          "We empower businesses to build borderless teams, access the worlds talent, and create an employee experience that redefines global work.",
+        list: {
+          item1: "Personalized support",
+          item2: "Attorney-led solutions",
+          item3: "Best for IT professionals",
+        },
+      },
+      investors: {
+        title: "Investors and market entry",
+        description:
+          "We support international investors entering the Ukrainian market with structured legal guidance, regulatory clarity, and risk-aware immigration solutions. From initial market entry planning to long-term presence, our team helps navigate legal frameworks and compliance requirements.",
+        list: {
+          item1: "Strategic market entry support",
+          item2: "Regulatory and compliance guidance",
+          item3: "Long-term presence and operational continuity",
+        },
+      },
+      action: "Open services",
+    },
   },
   ui: {
     rating: {
       action: "Explore all reviews",
       on: "on",
+    },
+    support: {
+      desciption:
+        "Personalized immigration legal support for people and companies.",
+      action: "Read more",
+      contact: "Contact us",
+      haveQuestions: "Have questions. ",
     },
   },
   cards: {
