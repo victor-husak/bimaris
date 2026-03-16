@@ -43,7 +43,7 @@ export const UpdatesSectionItem: React.FC<UpdatesSectionItemProps> = (
       {/* Content */}
       <div className="flex flex-1 flex-col">
         {/* Title */}
-        <p className="mb-3.75 text-[15px]/[19px] tracking-[.024em]">
+        <p className="mb-3.75 line-clamp-1 text-[15px]/[19px] tracking-[.024em]">
           {props.data.title}
         </p>
 

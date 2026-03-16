@@ -45,7 +45,7 @@ export const InsightsDomainHeader: React.FC<InsightsDomainHeaderProps> = (
           onTrigger={onTrigger}
           ActionComponent={
             <Button variant="white" animation="scale" href={activeItem.href}>
-              Read case study
+              Read more
             </Button>
           }
         />

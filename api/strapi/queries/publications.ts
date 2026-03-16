@@ -22,7 +22,15 @@ export async function getPublications({
   locale?: string;
 }) {
   const paramsQuery: any = {
-    fields: ["id", "name", "description", "slug", "createdAt"],
+    fields: [
+      "id",
+      "name",
+      "description",
+      "slug",
+      "createdAt",
+      "updatedAt",
+      "date",
+    ],
     populate: {
       preview: true,
       category: {
@@ -112,6 +120,7 @@ export async function getPublicationBySlug({
       "content",
       "createdAt",
       "updatedAt",
+      "date",
     ],
     populate: {
       preview: true,
@@ -119,7 +128,15 @@ export async function getPublicationBySlug({
         fields: ["slug", "name"],
       },
       relatedPublications: {
-        fields: ["id", "name", "description", "slug", "createdAt"],
+        fields: [
+          "id",
+          "name",
+          "description",
+          "slug",
+          "createdAt",
+          "updatedAt",
+          "date",
+        ],
         populate: {
           preview: true,
           category: {
