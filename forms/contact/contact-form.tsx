@@ -11,9 +11,12 @@ import {
   FormRow,
   FormItem,
   FormInput,
+  FormSelect,
   FormTextarea,
   FormCheckbox,
 } from "@/components/form";
+
+import { countries } from "@/generated/countries";
 
 import { clsx } from "clsx";
 
@@ -73,7 +76,7 @@ export const ContactForm: React.FC<ContactFormProps> = (
               </FormItem>
 
               <FormItem required label={t("country.label")}>
-                <FormInput placeholder="-" />
+                <FormSelect options={countries} onChange={() => {}} />
               </FormItem>
             </FormRow>
 
