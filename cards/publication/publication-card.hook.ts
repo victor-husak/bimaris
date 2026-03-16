@@ -7,8 +7,14 @@ import type { PublicationShort } from "@/types/publication";
 
 export const usePublicationCard = (props: PublicationCardProps) => {
   const data = useMemo(() => {
+    const date = props.data.date || props.data.createdAt;
+    const isUpdated = new Date(props.data.updatedAt) > new Date(date);
+
     return {
-      date: format(new Date(props.data.createdAt), "MMMM dd, yyyy"),
+      date: format(
+        new Date(isUpdated ? props.data.updatedAt : date),
+        "dd.MM.yyyy",
+      ),
       name: props.data.name,
       description: props.data.description,
       preview: `${process.env.NEXT_PUBLIC_STRAPI_URL}${props.data.preview.url}`,

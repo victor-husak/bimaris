@@ -3,7 +3,9 @@ export type PublicationShort = {
   slug: string;
   name: string;
   description: string;
+  date?: string;
   createdAt: string;
+  updatedAt: string;
   preview: Image;
   category: {
     slug: string;
@@ -13,7 +15,6 @@ export type PublicationShort = {
 
 export type Publication = PublicationShort & {
   content: string;
-  updatedAt: string;
   topics?: Array<{ id: number; slug: string; name: string }>;
   types?: Array<{
     id: number;

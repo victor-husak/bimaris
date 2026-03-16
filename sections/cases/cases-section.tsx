@@ -48,6 +48,7 @@ export const CasesSection: React.FC<CasesSectionProps> = (
 
       <Swiper
         className="px-(--local-container-offset)! pt-25! pb-[35px]!"
+        wrapperClass="items-stretch!"
         modules={[Navigation]}
         slidesPerView="auto"
         onBeforeInit={onBeforeInit}
@@ -55,7 +56,7 @@ export const CasesSection: React.FC<CasesSectionProps> = (
       >
         {props.data.map((item) => (
           <SwiperSlide
-            className="h-full not-last:pr-5"
+            className="h-auto! not-last:pr-5"
             key={item.id}
             style={{ width: "auto" }}
           >
