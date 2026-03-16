@@ -1,6 +1,7 @@
 import { NextLink } from "@/i18n/routing";
 import NextImage from "next/image";
 import { clsx } from "clsx";
+import { useTranslations } from "next-intl";
 
 import { CardAction } from "@/components/card";
 
@@ -16,6 +17,8 @@ export type CaseCardProps = {
 };
 
 export const CaseCard: React.FC<CaseCardProps> = (props): React.JSX.Element => {
+  const t = useTranslations("cards.case");
+
   const { data } = useCaseCard(props);
 
   return (
@@ -62,7 +65,7 @@ export const CaseCard: React.FC<CaseCardProps> = (props): React.JSX.Element => {
         {/* Action */}
         <CardAction
           className="mt-[25px] mr-auto"
-          title="Explore"
+          title={t("action")}
           href={data.href}
         />
       </div>

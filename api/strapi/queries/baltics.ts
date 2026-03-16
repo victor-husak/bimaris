@@ -9,10 +9,12 @@ import type { Baltic, BalticShort } from "@/types/baltics";
 export async function getBaltics({
   filters,
   pageSize = 6,
+  locale = "en",
 }: {
   filters?: SearchParams;
   pageSize?: number;
-} = {}) {
+  locale?: string;
+}) {
   const paramsQuery: any = {
     fields: ["id", "name", "description", "slug", "createdAt"],
     populate: {
@@ -22,6 +24,7 @@ export async function getBaltics({
       pageSize,
     },
     sort: ["createdAt:desc"],
+    locale,
   };
 
   if (filters) {
@@ -35,7 +38,13 @@ export async function getBaltics({
   });
 }
 
-export async function getBalticBySlug(slug: string) {
+export async function getBalticBySlug({
+  slug,
+  locale = "en",
+}: {
+  slug: string;
+  locale?: string;
+}) {
   const paramsQuery = {
     filters: {
       slug,
@@ -60,6 +69,7 @@ export async function getBalticBySlug(slug: string) {
     pagination: {
       limit: 1,
     },
+    locale,
   };
 
   const query = qs.stringify(paramsQuery, { encode: false });

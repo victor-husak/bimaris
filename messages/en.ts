@@ -169,6 +169,28 @@ const message = {
         },
       },
     },
+    page: {
+      solutions: {
+        individuals: {
+          title: "Solutions for individuals",
+          description:
+            "Personalized immigration support for individual needs, long-term goals, and personal circumstances.",
+          action: "Explore solutions",
+        },
+        businesses: {
+          title: "Solutions for businesses",
+          description:
+            "Strategic immigration support for business needs, long-term goals, and corporate circumstances.",
+          action: "Explore solutions",
+        },
+        investors: {
+          title: "Solutions for investors",
+          description:
+            "We support investors entering the Ukrainian market with structured legal guidance.",
+          action: "Explore solutions",
+        },
+      },
+    },
   },
   overlays: {},
   sections: {
@@ -294,7 +316,7 @@ const message = {
       on: "on",
     },
     support: {
-      desciption:
+      description:
         "Personalized immigration legal support for people and companies.",
       action: "Read more",
       contact: "Contact us",
@@ -308,6 +330,16 @@ const message = {
         main: "Main office",
         back: "Back office",
       },
+    },
+    people: {
+      action: "Read more",
+    },
+    publication: {
+      caseStudy: "Case study",
+      action: "Read more",
+    },
+    case: {
+      action: "Explore",
     },
   },
 };

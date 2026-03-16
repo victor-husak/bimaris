@@ -1,5 +1,6 @@
 import NextImage from "next/image";
 import { NextLink } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 import { Tag, List } from "@/components";
 
@@ -19,6 +20,8 @@ export type PeopleCardProps = {
 export const PeopleCard: React.FC<PeopleCardProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("cards.people");
+
   const { data } = usePeopleCard(props);
 
   return (
@@ -62,7 +65,7 @@ export const PeopleCard: React.FC<PeopleCardProps> = (
         <CardAction
           className="mt-10 group-hover:w-[110px]"
           href={`/people/${props.data.slug}`}
-          title="Read more"
+          title={t("action")}
         />
       </div>
     </div>

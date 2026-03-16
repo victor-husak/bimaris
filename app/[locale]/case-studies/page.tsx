@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 
 interface CaseStudiesPageProps {
   searchParams?: Promise<SearchParams>;
+  params: Promise<Params>;
 }
 
 export async function generateMetadata(
@@ -27,14 +28,18 @@ export async function generateMetadata(
 }
 
 export default async function CaseStudiesPage(props: CaseStudiesPageProps) {
-  const searchParams = await props.searchParams;
+  const [searchParams, params] = await Promise.all([
+    props.searchParams,
+    props.params,
+  ]);
 
   const [caseStudies, featuredCaseStudies] = await Promise.all([
-    getCaseStudies({ filters: searchParams }),
+    getCaseStudies({ filters: searchParams, locale: params.locale }),
     getCaseStudies({
       filters: {
         featured: true,
       },
+      locale: params.locale,
     }),
   ]);
 

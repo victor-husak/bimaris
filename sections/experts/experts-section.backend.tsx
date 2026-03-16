@@ -7,7 +7,7 @@ export type ExpertsSectionBackendProps = ExpertsSectionProps;
 export const ExpertsSectionBackend: React.FC<
   ExpertsSectionBackendProps
 > = async (props): Promise<React.JSX.Element> => {
-  const experts = await getExperts();
+  const experts = await getExperts({});
 
   return <ExpertsSection {...props} data={experts.data} />;
 };

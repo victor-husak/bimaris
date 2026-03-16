@@ -19,7 +19,10 @@ export async function generateMetadata(
 ): Promise<Metadata | undefined> {
   const params = await props.params;
 
-  const res = await getRoleBySlug(params.slug);
+  const res = await getRoleBySlug({
+    slug: params.slug,
+    locale: params.locale,
+  });
   const role = res.data[0];
 
   if (!role) return undefined;
@@ -51,7 +54,9 @@ export async function generateStaticParams() {
 export default async function RolesItemPage(props: RolesItemPageProps) {
   const params = await props.params;
 
-  const [res] = await Promise.all([getRoleBySlug(params.slug)]);
+  const [res] = await Promise.all([
+    getRoleBySlug({ slug: params.slug, locale: params.locale }),
+  ]);
 
   const role = res.data[0];
 

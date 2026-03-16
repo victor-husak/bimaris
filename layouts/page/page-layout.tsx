@@ -1,8 +1,10 @@
+import { clsx } from "clsx";
+
 import * as Components from "./components";
 
 import { SolutionsSection } from "@/sections/solutions";
 
-import { clsx } from "clsx";
+import { usePageLayout } from "./page-layout.hook";
 
 export type PageLayoutProps = {
   className?: string;
@@ -14,6 +16,8 @@ export type PageLayoutProps = {
 export const PageLayout: React.FC<PageLayoutProps> = (
   props,
 ): React.JSX.Element => {
+  const { data } = usePageLayout();
+
   return (
     <main
       className={clsx(props.className, "relative z-1 flex flex-col", {
@@ -35,27 +39,3 @@ export const PageLayout: React.FC<PageLayoutProps> = (
     </main>
   );
 };
-
-const data = [
-  {
-    key: "individuals",
-    title: "Solutions for individuals",
-    description:
-      "Personalized immigration support for individual needs, long-term goals, and personal circumstances.",
-    href: "/",
-  },
-  {
-    key: "businesses",
-    title: "Solutions for businesses",
-    description:
-      "Strategic immigration advisory supporting companies with cross-border talent, compliance, and workforce.",
-    href: "/",
-  },
-  {
-    key: "investors",
-    title: "Solutions for investors",
-    description:
-      "We support investors entering the Ukrainian market with structured legal guidance.",
-    href: "/",
-  },
-];

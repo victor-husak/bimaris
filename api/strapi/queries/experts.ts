@@ -9,10 +9,12 @@ import type { Expert, ExpertShort } from "@/types/experts";
 export async function getExperts({
   filters,
   pageSize = 6,
+  locale = "en",
 }: {
   filters?: SearchParams;
   pageSize?: number;
-} = {}) {
+  locale?: string;
+}) {
   const paramsQuery: any = {
     fields: [
       "id",
@@ -30,6 +32,7 @@ export async function getExperts({
       pageSize,
     },
     sort: ["createdAt:desc"],
+    locale,
   };
 
   if (filters) {
@@ -43,7 +46,13 @@ export async function getExperts({
   });
 }
 
-export async function getExpertBySlug(slug: string) {
+export async function getExpertBySlug({
+  slug,
+  locale = "en",
+}: {
+  slug: string;
+  locale?: string;
+}) {
   const paramsQuery = {
     filters: {
       slug,
@@ -55,6 +64,7 @@ export async function getExpertBySlug(slug: string) {
     pagination: {
       limit: 1,
     },
+    locale,
   };
 
   const query = qs.stringify(paramsQuery, { encode: false });

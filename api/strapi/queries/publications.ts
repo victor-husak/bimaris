@@ -15,10 +15,12 @@ import type { Publication, PublicationShort } from "@/types/publication";
 export async function getPublications({
   filters,
   pageSize = 6,
+  locale = "en",
 }: {
   filters?: SearchParams;
   pageSize?: number;
-} = {}) {
+  locale?: string;
+}) {
   const paramsQuery: any = {
     fields: ["id", "name", "description", "slug", "createdAt"],
     populate: {
@@ -31,6 +33,7 @@ export async function getPublications({
       pageSize,
     },
     sort: ["createdAt:desc"],
+    locale,
   };
 
   if (filters) {
@@ -90,7 +93,13 @@ export async function getPublications({
   );
 }
 
-export async function getPublicationBySlug(slug: string) {
+export async function getPublicationBySlug({
+  slug,
+  locale = "en",
+}: {
+  slug: string;
+  locale?: string;
+}) {
   const paramsQuery = {
     filters: {
       slug,
@@ -114,6 +123,7 @@ export async function getPublicationBySlug(slug: string) {
     pagination: {
       limit: 1,
     },
+    locale,
   };
 
   const query = qs.stringify(paramsQuery, { encode: false });
@@ -121,41 +131,6 @@ export async function getPublicationBySlug(slug: string) {
   return strapiFetch<StrapiCollection<Publication>>(`/publications?${query}`, {
     next: { revalidate: 60, tags: [`publications/${slug}`] },
   });
-}
-
-export async function getPublicationsRecommended({
-  slug,
-}: {
-  slug: string;
-  topics?: Array<string>;
-}) {
-  const paramsQuery: any = {
-    fields: ["id", "name", "description", "slug", "createdAt"],
-    populate: {
-      preview: true,
-      category: {
-        fields: ["slug", "name"],
-      },
-    },
-    pagination: {
-      pageSize: 4,
-    },
-    sort: ["createdAt:desc"],
-    filters: {
-      slug: {
-        $ne: slug,
-      },
-    },
-  };
-
-  const query = qs.stringify(paramsQuery, { encode: false });
-
-  return strapiFetch<StrapiCollection<PublicationShort>>(
-    `/publications?${query}`,
-    {
-      next: { revalidate: 60, tags: ["publications-recommended"] },
-    },
-  );
 }
 
 export async function getPublicationSlugs() {

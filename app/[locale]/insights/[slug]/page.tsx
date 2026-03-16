@@ -22,7 +22,10 @@ export async function generateMetadata(
 ): Promise<Metadata | undefined> {
   const params = await props.params;
 
-  const res = await getPublicationBySlug(params.slug);
+  const res = await getPublicationBySlug({
+    slug: params.slug,
+    locale: params.locale,
+  });
   const publication = res.data[0];
 
   if (!publication) return undefined;
@@ -52,7 +55,10 @@ export async function generateStaticParams() {
 export default async function InsightsItemPage(props: InsightsItemPageProps) {
   const params = await props.params;
 
-  const res = await getPublicationBySlug(params.slug);
+  const res = await getPublicationBySlug({
+    slug: params.slug,
+    locale: params.locale,
+  });
   const publication = res.data[0];
 
   if (!publication) notFound();

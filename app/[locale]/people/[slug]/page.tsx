@@ -19,7 +19,11 @@ export async function generateMetadata(
 ): Promise<Metadata | undefined> {
   const params = await props.params;
 
-  const res = await getExpertBySlug(params.slug);
+  const res = await getExpertBySlug({
+    slug: params.slug,
+    locale: params.locale,
+  });
+
   const expert = res.data[0];
 
   if (!expert) return undefined;
@@ -51,7 +55,9 @@ export async function generateStaticParams() {
 export default async function PeoplePage(props: PeoplePageProps) {
   const params = await props.params;
 
-  const [res] = await Promise.all([getExpertBySlug(params.slug)]);
+  const [res] = await Promise.all([
+    getExpertBySlug({ slug: params.slug, locale: params.locale }),
+  ]);
 
   const expert = res.data[0];
 

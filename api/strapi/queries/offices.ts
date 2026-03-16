@@ -9,10 +9,12 @@ import type { Office } from "@/types/offices";
 export async function getOffices({
   filters,
   pageSize = 6,
+  locale = "en",
 }: {
   filters?: SearchParams;
   pageSize?: number;
-} = {}) {
+  locale?: string;
+}) {
   const paramsQuery: any = {
     fields: [
       "id",
@@ -32,6 +34,7 @@ export async function getOffices({
       pageSize,
     },
     sort: ["createdAt:desc"],
+    locale,
   };
 
   if (filters) {

@@ -9,6 +9,7 @@ import { BalticsDeskDomain } from "@/domains/baltics-desk";
 
 interface BalticsDeskPageProps {
   searchParams?: Promise<SearchParams>;
+  params: Promise<Params>;
 }
 
 // export async function generateMetadata(
@@ -28,27 +29,18 @@ interface BalticsDeskPageProps {
 // }
 
 export default async function BalticsDeskPage(props: BalticsDeskPageProps) {
-  const [commonData, baltics] = await Promise.all([
-    getCommonData(),
-    getBaltics(),
-  ]);
-  // const searchParams = await props.searchParams;
+  const params = await props.params;
 
-  // const [caseStudies, featuredCaseStudies] = await Promise.all([
-  //   getCaseStudies({ filters: searchParams }),
-  //   getCaseStudies({
-  //     filters: {
-  //       featured: true,
-  //     },
-  //   }),
-  // ]);
+  const [commonData, baltics] = await Promise.all([
+    getCommonData({
+      locale: params.locale,
+    }),
+    getBaltics({
+      locale: params.locale,
+    }),
+  ]);
 
   return (
-    <BalticsDeskDomain
-      commonData={commonData.data}
-      baltics={baltics.data}
-      // featuredCaseStudies={featuredCaseStudies}
-      // searchParams={searchParams}
-    />
+    <BalticsDeskDomain commonData={commonData.data} baltics={baltics.data} />
   );
 }

@@ -30,6 +30,8 @@ export async function strapiFetch<T>(
       // Strapi иногда может вернуть HTML/пустое тело
     }
 
+    console.log("errorResponse", res);
+
     switch (res.status) {
       case 401:
       case 403:

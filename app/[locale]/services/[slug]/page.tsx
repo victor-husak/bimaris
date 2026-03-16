@@ -23,7 +23,10 @@ export async function generateMetadata(
 ): Promise<Metadata | undefined> {
   const params = await props.params;
 
-  const res = await getServiceBySlug(params.slug);
+  const res = await getServiceBySlug({
+    slug: params.slug,
+    locale: params.locale,
+  });
   const service = res.data[0];
 
   if (!service) return undefined;
@@ -54,8 +57,8 @@ export default async function ServicesItemPage(props: ServicesItemPageProps) {
   const params = await props.params;
 
   const [res, commonData] = await Promise.all([
-    getServiceBySlug(params.slug),
-    getCommonData(),
+    getServiceBySlug({ slug: params.slug, locale: params.locale }),
+    getCommonData({ locale: params.locale }),
   ]);
   const service = res.data[0];
 

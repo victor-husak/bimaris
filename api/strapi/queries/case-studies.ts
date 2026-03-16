@@ -9,10 +9,12 @@ import type { CaseStudy, CaseStudyShort } from "@/types/case-studies";
 export async function getCaseStudies({
   filters,
   pageSize = 6,
+  locale = "en",
 }: {
   filters?: SearchParams;
   pageSize?: number;
-} = {}) {
+  locale?: string;
+}) {
   const paramsQuery: any = {
     fields: ["id", "name", "description", "slug", "createdAt"],
     populate: {
@@ -22,6 +24,7 @@ export async function getCaseStudies({
       pageSize,
     },
     sort: ["createdAt:desc"],
+    locale,
   };
 
   if (filters) {
@@ -51,7 +54,13 @@ export async function getCaseStudies({
   );
 }
 
-export async function getCaseStudyBySlug(slug: string) {
+export async function getCaseStudyBySlug({
+  slug,
+  locale = "en",
+}: {
+  slug: string;
+  locale?: string;
+}) {
   const paramsQuery = {
     filters: {
       slug,
@@ -63,6 +72,7 @@ export async function getCaseStudyBySlug(slug: string) {
     pagination: {
       limit: 1,
     },
+    locale,
   };
 
   const query = qs.stringify(paramsQuery, { encode: false });

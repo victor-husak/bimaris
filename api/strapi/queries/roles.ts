@@ -9,10 +9,12 @@ import type { Role, RoleShort } from "@/types/roles";
 export async function getRoles({
   filters,
   pageSize = 6,
+  locale = "en",
 }: {
   filters?: SearchParams;
   pageSize?: number;
-} = {}) {
+  locale?: string;
+}) {
   const paramsQuery: any = {
     fields: ["id", "name", "title", "slug", "createdAt"],
     populate: {
@@ -22,6 +24,8 @@ export async function getRoles({
       pageSize,
     },
     sort: ["createdAt:desc"],
+
+    locale,
   };
 
   if (filters) {
@@ -35,7 +39,13 @@ export async function getRoles({
   });
 }
 
-export async function getRoleBySlug(slug: string) {
+export async function getRoleBySlug({
+  slug,
+  locale = "en",
+}: {
+  slug: string;
+  locale?: string;
+}) {
   const paramsQuery = {
     filters: {
       slug,
@@ -67,6 +77,7 @@ export async function getRoleBySlug(slug: string) {
     pagination: {
       limit: 1,
     },
+    locale,
   };
 
   const query = qs.stringify(paramsQuery, { encode: false });

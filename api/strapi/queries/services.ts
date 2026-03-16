@@ -9,10 +9,12 @@ import type { Service, ServiceShort } from "@/types/services";
 export async function getServices({
   filters,
   pageSize = 6,
+  locale = "en",
 }: {
   filters?: SearchParams;
   pageSize?: number;
-} = {}) {
+  locale?: string;
+}) {
   const paramsQuery: any = {
     fields: ["id", "name", "description", "slug", "createdAt"],
     populate: {
@@ -22,6 +24,7 @@ export async function getServices({
       pageSize,
     },
     sort: ["createdAt:desc"],
+    locale,
   };
 
   if (filters) {
@@ -35,7 +38,13 @@ export async function getServices({
   });
 }
 
-export async function getServiceBySlug(slug: string) {
+export async function getServiceBySlug({
+  slug,
+  locale = "en",
+}: {
+  slug: string;
+  locale?: string;
+}) {
   const paramsQuery = {
     filters: {
       slug,
@@ -47,6 +56,7 @@ export async function getServiceBySlug(slug: string) {
     pagination: {
       limit: 1,
     },
+    locale,
   };
 
   const query = qs.stringify(paramsQuery, { encode: false });

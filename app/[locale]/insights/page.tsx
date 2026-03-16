@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 
 interface InsightsPageProps {
   searchParams?: Promise<SearchParams>;
+  params: Promise<Params>;
 }
 
 export async function generateMetadata(
@@ -27,20 +28,25 @@ export async function generateMetadata(
 }
 
 export default async function InsightsPage(props: InsightsPageProps) {
-  const searchParams = await props.searchParams;
+  const [searchParams, params] = await Promise.all([
+    props.searchParams,
+    props.params,
+  ]);
 
   const [publications, featuredPublications, legalPublications] =
     await Promise.all([
-      getPublications({ filters: searchParams }),
+      getPublications({ filters: searchParams, locale: params.locale }),
       getPublications({
         filters: {
           featured: true,
         },
+        locale: params.locale,
       }),
       getPublications({
         filters: {
           category: "legal-alert",
         },
+        locale: params.locale,
       }),
     ]);
 

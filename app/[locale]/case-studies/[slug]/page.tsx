@@ -22,7 +22,10 @@ export async function generateMetadata(
 ): Promise<Metadata | undefined> {
   const params = await props.params;
 
-  const res = await getCaseStudyBySlug(params.slug);
+  const res = await getCaseStudyBySlug({
+    slug: params.slug,
+    locale: params.locale,
+  });
   const caseStudy = res.data[0];
 
   if (!caseStudy) return undefined;
@@ -54,7 +57,10 @@ export default async function CaseStudiesItemPage(
 ) {
   const params = await props.params;
 
-  const res = await getCaseStudyBySlug(params.slug);
+  const res = await getCaseStudyBySlug({
+    slug: params.slug,
+    locale: params.locale,
+  });
   const caseStudy = res.data[0];
 
   if (!caseStudy) notFound();

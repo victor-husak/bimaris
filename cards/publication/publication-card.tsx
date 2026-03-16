@@ -1,6 +1,7 @@
 import NextImage from "next/image";
 import { NextLink } from "@/i18n/routing";
 import { clsx } from "clsx";
+import { useTranslations } from "next-intl";
 
 import { Tag } from "@/components";
 
@@ -22,6 +23,8 @@ export type PublicationCardProps = {
 export const PublicationCard: React.FC<PublicationCardProps> = (
   props,
 ): React.JSX.Element => {
+  const t = useTranslations("cards.publication");
+
   const { data } = usePublicationCard(props);
 
   return (
@@ -40,7 +43,10 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
       )}
 
       {props.type === "case-study" && (
-        <Tag className="mr-auto mb-[25px] bg-[#E7EFFC]" title="Case study" />
+        <Tag
+          className="mr-auto mb-[25px] bg-[#E7EFFC]"
+          title={t("caseStudy")}
+        />
       )}
 
       {/* Preview */}
@@ -89,7 +95,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         <CardAction
           className="mt-[25px] mr-auto group-hover:w-[110px]"
           href={data.href}
-          title="Read more"
+          title={t("action")}
         />
       </div>
     </div>

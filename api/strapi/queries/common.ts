@@ -6,7 +6,7 @@ import { strapiFetch } from "../fetch";
 
 // import type { CommonData } from "@/types/common";
 
-export async function getCommonData() {
+export async function getCommonData({ locale = "en" }: { locale?: string }) {
   const paramsQuery = {
     fields: ["id"],
     populate: {
@@ -20,6 +20,7 @@ export async function getCommonData() {
         },
       },
     },
+    locale,
   };
 
   const query = qs.stringify(paramsQuery, { encode: false });

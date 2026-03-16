@@ -20,7 +20,11 @@ export async function generateMetadata(
 ): Promise<Metadata | undefined> {
   const params = await props.params;
 
-  const res = await getBalticBySlug(params.slug);
+  const res = await getBalticBySlug({
+    slug: params.slug,
+    locale: params.locale,
+  });
+
   const baltic = res.data[0];
 
   if (!baltic) return undefined;
@@ -53,8 +57,13 @@ export default async function BalticsDeskItemPage(
   const params = await props.params;
 
   const [res, commonData] = await Promise.all([
-    getBalticBySlug(params.slug),
-    getCommonData(),
+    getBalticBySlug({
+      slug: params.slug,
+      locale: params.locale,
+    }),
+    getCommonData({
+      locale: params.locale,
+    }),
   ]);
   const baltic = res.data[0];
 
