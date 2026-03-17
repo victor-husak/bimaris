@@ -86,7 +86,7 @@ export const OfficeCard: React.FC<OfficeCardProps> = (
           className="mt-[35px] mr-auto group-hover:w-[125px]"
           href={data.url}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
           title={t("action")}
         />
       </div>

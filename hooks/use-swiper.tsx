@@ -30,7 +30,7 @@ export const useSwiper = () => {
   }, []);
 
   const onSlideChange = useCallback((swiper: SwiperClass) => {
-    setActiveIndex(swiper.realIndex);
+    setActiveIndex(swiper.activeIndex);
   }, []);
 
   const onChangeActiveIndex = useCallback(

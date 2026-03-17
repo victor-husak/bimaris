@@ -39,13 +39,13 @@ export const ContactSection: React.FC<ContactSectionCombinedProps> = (
         {/* Info */}
         <div
           className={clsx(
-            "flex-[1.7] overflow-hidden rounded-2xl bg-[#D9E4F4]",
+            "flex flex-[1.7] flex-col overflow-hidden rounded-2xl bg-[#D9E4F4]",
             "xl:max-w-[560px]",
           )}
         >
           {/* Banner */}
           <Banner
-            className="rounded-b-lg bg-[#E0EBFA] pt-[50px] pb-[50px] text-[#507FEB] shadow-[0_0_1px_2px_black/3]"
+            className="flex-1 rounded-b-lg bg-[#E0EBFA] pt-[50px] pb-[50px] text-[#507FEB] shadow-[0_0_1px_2px_black/3]"
             classNameDescription="max-w-[400px] text-[#818796]"
             title={t("banner.title")}
             description={t("banner.description")}

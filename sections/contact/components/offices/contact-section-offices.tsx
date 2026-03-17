@@ -1,16 +1,15 @@
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation, Autoplay, EffectFade } from "swiper/modules";
-
-// import { useSwiper } from "@/hooks";
-import { clsx } from "clsx";
-
-import { useContactSectionOffices } from "./contact-section-offices.hook";
+"use client";
 
 import * as Components from "./components";
 
-import type { Office } from "@/types/offices";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
-// import "swiper/css";
+import { useSwiper } from "@/hooks";
+
+import { clsx } from "clsx";
+
+import type { Office } from "@/types/offices";
 
 export type ContactSectionOfficesProps = {
   className?: string;
@@ -20,56 +19,47 @@ export type ContactSectionOfficesProps = {
 export const ContactSectionOffices: React.FC<ContactSectionOfficesProps> = (
   props,
 ): React.JSX.Element => {
-  const { items } = useContactSectionOffices(props);
-  // const {
-  //   activeIndex,
-  //   prevRef,
-  //   nextRef,
-  //   onBeforeInit,
-  //   onSlideChange,
-  //   onChangeActiveIndex,
-  // } = useSwiper();
+  const { mainSwiper, prevRef, nextRef, onBeforeInit, onSlideChange } =
+    useSwiper();
 
   return (
-    <div
-      className={clsx(
-        props.className,
-        "flex gap-2.5 overflow-x-auto px-[25px] py-[25px]",
-      )}
-    >
-      {items.map((item) => (
-        <Components.Item
-          key={item.id}
-          data={item}
-          variant={item.isMain ? "secondary" : "base"}
-        />
-      ))}
+    <div className="relative flex items-center">
+      <Swiper
+        className={clsx(props.className, "px-[25px]! py-[25px]!")}
+        wrapperClass="items-stretch!"
+        modules={[Navigation]}
+        slidesPerView="auto"
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onBeforeInit={onBeforeInit}
+        onSlideChange={onSlideChange}
+      >
+        {props.data.map((item) => (
+          <SwiperSlide
+            className="h-auto! not-last:pr-2.5"
+            key={item.id}
+            style={{ width: "auto" }}
+          >
+            <Components.Item key={item.id} data={item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <Components.Arrow
+        className={clsx("absolute left-[10px] z-1 rotate-180", {
+          hidden: mainSwiper?.activeIndex === 0,
+        })}
+        ref={prevRef as React.Ref<HTMLButtonElement>}
+      />
+
+      <Components.Arrow
+        className={clsx("absolute right-[25px] z-1", {
+          hidden: mainSwiper?.activeIndex === props.data.length - 2,
+        })}
+        ref={nextRef as React.Ref<HTMLButtonElement>}
+      />
     </div>
-    // <Swiper
-    //   className="my-[25px]"
-    //   // className="h-full w-full"
-    //   // loop
-    //   // effect="fade"
-    //   // fadeEffect={{ crossFade: true }}
-    //   // autoplay={{ delay: 8000, disableOnInteraction: false }}
-    //   // speed={800}
-    //   spaceBetween={10}
-    //   slidesPerView="auto"
-    //   grabCursor={true}
-    //   modules={[Navigation]}
-    //   // navigation={{
-    //   //   prevEl: props.prevRef.current,
-    //   //   nextEl: props.nextRef.current,
-    //   // }}
-    //   // onBeforeInit={props.onBeforeInit}
-    //   // onSlideChange={props.onSlideChange}
-    // >
-    // {items.map((item) => (
-    //   <SwiperSlide className={clsx("relative !w-[300px]")} key={item.id}>
-    //     <Components.Item />
-    //   </SwiperSlide>
-    // ))}
-    // </Swiper>
-    // </div>
   );
 };
