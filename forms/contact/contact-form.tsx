@@ -33,7 +33,7 @@ export const ContactForm: React.FC<ContactFormProps> = (
 ): React.JSX.Element => {
   const t = useTranslations("sections.contact.form");
 
-  const { loading, isSubmited, country, formMethods, onSubmit } =
+  const { formRef, loading, isSubmited, country, formMethods, onSubmit } =
     useContactForm();
 
   return (
@@ -68,24 +68,56 @@ export const ContactForm: React.FC<ContactFormProps> = (
               </div>
             )}
 
-            <form className="flex flex-col" onSubmit={onSubmit}>
+            <form
+              ref={formRef}
+              className="flex flex-col"
+              action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dd1000009Ooz0"
+              method="POST"
+              onSubmit={formMethods.handleSubmit(onSubmit)}
+            >
+              <input type="hidden" name="oid" value="00Dd1000009Ooz0" />
+              {/* <input
+                type="hidden"
+                name="retURL"
+                value="https://your-site.com/thank-you"
+              /> */}
+
+              <input type="hidden" name="debug" value="1" />
+              <input
+                type="hidden"
+                name="debugEmail"
+                value="prod+vertex@synebo.io"
+              />
+
+              <input
+                type="hidden"
+                name="country_code"
+                value={country?.data?.code || ""}
+              />
+
               <div className="relative flex flex-col gap-[15px]">
                 <FormRow>
                   <FormItem required label={t("name.label")}>
                     <FormInput
-                      {...formMethods.register("name")}
-                      invalid={!!formMethods.formState.errors.name?.message}
-                      defaultValue={formMethods.formState.defaultValues?.name}
+                      {...formMethods.register("first_name")}
+                      invalid={
+                        !!formMethods.formState.errors.first_name?.message
+                      }
+                      defaultValue={
+                        formMethods.formState.defaultValues?.first_name
+                      }
                       placeholder="-"
                     />
                   </FormItem>
 
                   <FormItem required label={t("surname.label")}>
                     <FormInput
-                      {...formMethods.register("surname")}
-                      invalid={!!formMethods.formState.errors.surname?.message}
+                      {...formMethods.register("last_name")}
+                      invalid={
+                        !!formMethods.formState.errors.last_name?.message
+                      }
                       defaultValue={
-                        formMethods.formState.defaultValues?.surname
+                        formMethods.formState.defaultValues?.last_name
                       }
                       placeholder="-"
                     />
@@ -95,12 +127,10 @@ export const ContactForm: React.FC<ContactFormProps> = (
                 <FormRow>
                   <FormItem required label={t("company.label")}>
                     <FormInput
-                      {...formMethods.register("companyName")}
-                      invalid={
-                        !!formMethods.formState.errors.companyName?.message
-                      }
+                      {...formMethods.register("company")}
+                      invalid={!!formMethods.formState.errors.company?.message}
                       defaultValue={
-                        formMethods.formState.defaultValues?.companyName
+                        formMethods.formState.defaultValues?.company
                       }
                       placeholder="-"
                     />
@@ -147,9 +177,13 @@ export const ContactForm: React.FC<ContactFormProps> = (
 
                 <FormItem required label={t("message.label")}>
                   <FormTextarea
-                    {...formMethods.register("message")}
-                    invalid={!!formMethods.formState.errors.message?.message}
-                    defaultValue={formMethods.formState.defaultValues?.message}
+                    {...formMethods.register("description")}
+                    invalid={
+                      !!formMethods.formState.errors.description?.message
+                    }
+                    defaultValue={
+                      formMethods.formState.defaultValues?.description
+                    }
                     placeholder={t("message.placeholder")}
                   />
                 </FormItem>
@@ -176,10 +210,13 @@ export const ContactForm: React.FC<ContactFormProps> = (
                 </span>
               </div>
 
+              <pre>{JSON.stringify(country)}</pre>
+
               <Button
                 className={clsx("font-sf-pro mt-auto tracking-[.008em]")}
                 size="large"
                 animation="scale-small"
+                type="submit"
               >
                 {t("action")}
               </Button>

@@ -31,7 +31,7 @@ export async function getExperts({
     pagination: {
       pageSize,
     },
-    sort: ["createdAt:desc"],
+    sort: ["sortOrder:desc"],
     locale,
   };
 

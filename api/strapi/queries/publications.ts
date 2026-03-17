@@ -40,7 +40,7 @@ export async function getPublications({
     pagination: {
       pageSize,
     },
-    sort: ["createdAt:desc"],
+    sort: ["sortOrder:desc"],
     locale,
   };
 

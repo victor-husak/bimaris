@@ -23,7 +23,7 @@ export async function getBaltics({
     pagination: {
       pageSize,
     },
-    sort: ["createdAt:desc"],
+    sort: ["sortOrder:desc"],
     locale,
   };
 

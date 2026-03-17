@@ -23,7 +23,7 @@ export async function getRoles({
     pagination: {
       pageSize,
     },
-    sort: ["createdAt:desc"],
+    sort: ["sortOrder:desc"],
 
     locale,
   };

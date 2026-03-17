@@ -69,7 +69,7 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
           <Button
             className="mt-6 font-normal"
             variant="second"
-            href="/"
+            href="/contact-us"
             animation="scale"
           >
             {t("action")}

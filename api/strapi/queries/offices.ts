@@ -33,7 +33,7 @@ export async function getOffices({
     pagination: {
       pageSize,
     },
-    sort: ["createdAt:desc"],
+    sort: ["sortOrder:desc"],
     locale,
   };
 

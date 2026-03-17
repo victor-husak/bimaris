@@ -23,7 +23,7 @@ export async function getServices({
     pagination: {
       pageSize,
     },
-    sort: ["createdAt:desc"],
+    sort: ["sortOrder:desc"],
     locale,
   };
 
