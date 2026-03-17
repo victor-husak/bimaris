@@ -35,11 +35,11 @@ export const RootLayoutFooterBottom: React.FC<RootLayoutFooterBottomProps> = (
           "[&>li]:transition-colors [&>li]:hover:text-white",
         )}
       >
-        <li>
+        <li className="underline-hover">
           <NextLink href="/cookie-preferences">{t("cookies-policy")}</NextLink>
         </li>
 
-        <li>
+        <li className="underline-hover">
           <NextLink href="/privacy-policy">{t("privacy-policy")}</NextLink>
         </li>
       </ul>

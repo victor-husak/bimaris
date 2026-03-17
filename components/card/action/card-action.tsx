@@ -12,6 +12,7 @@ export type CardActionProps = {
   disabled?: boolean;
   title: string;
   href?: string;
+  rel?: string;
   target?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
@@ -32,6 +33,7 @@ export const CardAction: React.FC<CardActionProps> = (
         },
         "group-hover:w-[93px] group-hover:border-[#507FEB] group-hover:bg-[#507FEB]",
       )}
+      rel={props.rel}
       onClick={onClick}
       disabled={props.disabled}
     >

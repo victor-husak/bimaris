@@ -3,7 +3,7 @@ import { Suspense } from "react";
 
 import { useTranslations } from "next-intl";
 
-import { SectionHeader, Button } from "@/components";
+import { SectionHeader } from "@/components";
 
 import { PageLayout } from "@/layouts/page";
 
@@ -44,11 +44,6 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
           <SectionHeader
             title={t("role.title")}
             description={t("role.description")}
-            ActionComponent={
-              <Button animation="scale" href="/">
-                {t("role.action")}
-              </Button>
-            }
           />
         }
       />

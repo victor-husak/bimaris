@@ -31,26 +31,26 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
     <div
       className={clsx(
         props.className,
-        "group flex flex-col rounded-[11px] bg-white p-[25px] transition-all",
+        "group flex flex-col items-start rounded-[11px] bg-white py-[25px] transition-all",
         "hover:-translate-y-2.5",
       )}
     >
       {props.type === "publication" && !!data.category && (
         <Tag
-          className="mr-auto mb-[25px] bg-[#E7EFFC]"
+          className="mx-[25px] mb-[25px] bg-[#E7EFFC]"
           title={data.category.name}
         />
       )}
 
       {props.type === "case-study" && (
         <Tag
-          className="mr-auto mb-[25px] bg-[#E7EFFC]"
+          className="mx-[25px] mb-[25px] bg-[#E7EFFC]"
           title={t("caseStudy")}
         />
       )}
 
       {/* Preview */}
-      <div className="h-[180px] overflow-hidden rounded-lg bg-gray-300">
+      <div className="mx-[15px] h-[180px] w-[calc(100%-30px)]  overflow-hidden rounded-lg bg-gray-300">
         <NextImage
           className="h-full w-full object-cover"
           src={data.preview}
@@ -61,7 +61,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
       </div>
 
       {/* Content */}
-      <div className="flex flex-1 flex-col pt-[25px]">
+      <div className="mx-[25px] flex flex-1 flex-col pt-[25px]">
         {/* Meta */}
         <div className="mb-[25px] flex gap-2">
           <Tag
@@ -80,14 +80,14 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
 
         {/* Title */}
         <NextLink
-          className="underline-hover mr-auto mb-[15px] text-[16px]/[22px] tracking-[.024em] text-[#2D3A52]"
+          className="underline-hover mr-auto mb-[15px] line-clamp-2 text-[16px]/[22px] tracking-[.024em] text-[#2D3A52]"
           href={data.href}
         >
           {data.name}
         </NextLink>
 
         {/* Description */}
-        <p className="mb-auto text-[14px]/[20px] tracking-[.024em] text-[#969BA7]">
+        <p className="mb-auto line-clamp-4 text-[14px]/[20px] tracking-[.024em] text-[#969BA7]">
           {data.description}
         </p>
 

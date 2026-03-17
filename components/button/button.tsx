@@ -68,7 +68,7 @@ export const Button: React.FC<ButtonProps> = ({
 
       {RightIconComponent}
 
-      {!!href && <ArrowRightIcon className="[&>path]:stroke-current-color" />}
+      <ArrowRightIcon className="[&>path]:stroke-current-color" />
     </button>
   );
 };

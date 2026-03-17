@@ -1,3 +1,5 @@
+import type { ExpertShort } from "@/types/experts";
+
 export type CaseStudyShort = {
   id: number;
   slug: string;
@@ -11,4 +13,5 @@ export type CaseStudyShort = {
 
 export type CaseStudy = CaseStudyShort & {
   content: string;
+  expert?: ExpertShort;
 };

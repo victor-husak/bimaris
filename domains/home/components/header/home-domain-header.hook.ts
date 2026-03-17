@@ -1,6 +1,6 @@
-import { useLayoutEffect, useMemo, useState } from "react";
+import { useCallback, useLayoutEffect, useMemo, useState } from "react";
 
-import { useCarousel } from "@/hooks";
+import { useCarousel, useScrollToSection } from "@/hooks";
 
 // import type { Image } from "@/types/common";
 
@@ -23,6 +23,8 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
     count: items.length,
     duration: 8000,
   });
+
+  const { onScrollToSection } = useScrollToSection();
 
   const activeItem = useMemo(() => {
     return items[activeIndex] ?? items.at(0);
@@ -90,6 +92,7 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
     activeItem,
     activeIndex,
     onChangeActiveIndex,
+    onScrollToSection,
     onChangeLoaded: setLoaded,
   };
 };

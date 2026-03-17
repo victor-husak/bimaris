@@ -53,6 +53,10 @@
   --font-vanilla-sans: var(--font-vanilla-sans);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-background);
   color: var(--color-foreground);
