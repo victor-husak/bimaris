@@ -15,7 +15,8 @@ export type HomeDomainHeaderProps = {
 export const HomeDomainHeader: React.FC<HomeDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
-  const { slides, activeIndex, activeItem } = useHomeDomainHeader(props);
+  const { slides, activeIndex, activeItem, onScrollToSection } =
+    useHomeDomainHeader(props);
 
   return (
     <PageLayoutHeader
@@ -33,15 +34,20 @@ export const HomeDomainHeader: React.FC<HomeDomainHeaderProps> = (
       tag={activeItem.tag}
       ActionsComponent={
         <>
-          <Button href="/" variant="white" size="medium" animation="scale">
+          <Button
+            href="/contact-us"
+            variant="white"
+            size="medium"
+            animation="scale"
+          >
             Connect with our team
           </Button>
 
           <Button
-            href={activeItem.href}
             size="medium"
             variant="blur"
             animation="opacity"
+            onClick={() => onScrollToSection("section-roles")}
           >
             Open services
           </Button>

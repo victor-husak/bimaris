@@ -56,8 +56,8 @@ export const Rating: React.FC<RatingProps> = (props): React.JSX.Element => {
         </div>
 
         {/* Info */}
-        <div className="flex flex-1 flex-col items-start text-[12px]/[16px]">
-          <span className="text-white/60">5.0 {t("on")} Truspilot</span>
+        <div className="flex flex-1 flex-col items-start text-[12px]/[16px] tracking-[.024em]">
+          <span className="text-white/60">5.0 {t("on")} Trustpilot</span>
 
           <NextLink
             className={clsx(

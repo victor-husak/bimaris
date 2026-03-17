@@ -19,6 +19,10 @@ export const useSwiper = () => {
         navigation.nextEl = nextRef.current;
       }
     }
+
+    // Инициализация и обновление navigation после установки кастомных элементов
+    Swiper.navigation.init();
+    Swiper.navigation.update();
   }, []);
 
   const onSwiper = useCallback((swiper: SwiperClass) => {

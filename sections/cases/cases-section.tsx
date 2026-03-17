@@ -61,7 +61,7 @@ export const CasesSection: React.FC<CasesSectionProps> = (
             style={{ width: "auto" }}
           >
             <PublicationCard
-              className="h-full w-[350px]"
+              className="h-full w-[380px]"
               data={item}
               type="case-study"
             />

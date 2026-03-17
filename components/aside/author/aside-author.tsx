@@ -24,7 +24,9 @@ export const AsideAuthor: React.FC<AsideAuthorProps> = (
       {/* Avatar */}
       {!!data.avatar && (
         <NextImage
-          className={clsx("h-[46px] w-[46px] object-contain object-center")}
+          className={clsx(
+            "h-[46px] w-[46px] overflow-hidden rounded-full object-contain object-center",
+          )}
           src={data.avatar}
           alt={data.name}
           width={138}

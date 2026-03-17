@@ -18,6 +18,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
   return (
     <Section
       className={clsx(props.className, "")}
+      id="section-roles"
       HeaderComponent={props.HeaderComponent}
     >
       {/* Content */}
