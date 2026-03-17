@@ -23,7 +23,8 @@ export default async function HomePage(props: HomePageProps) {
     getCaseStudies({ locale: params.locale }),
     getPublications({
       filters: {
-        category: "legal-alert",
+        // category: "legal-alert",
+        category: ["legal-alert", "update"],
       },
       locale: params.locale,
     }),

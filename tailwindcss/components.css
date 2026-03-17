@@ -78,7 +78,7 @@
     }
 
     &:where([data-animation="scale-small"]) {
-      @apply hover:bg-[#6591F7];
+      @apply hover:before:bg-[#6591F7];
 
       &::before {
         transform: scale(1) perspective(1px);

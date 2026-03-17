@@ -30,8 +30,8 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
         </Components.Item>
 
         <Components.Item>
-          <NextLink href="mailto:office@bimaris.legal">
-            office@bimaris.legal
+          <NextLink href="mailto:info@bimaris.legal">
+            info@bimaris.legal
           </NextLink>
         </Components.Item>
       </ul>
@@ -65,9 +65,7 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
         </Components.Item>
 
         <Components.Item className="max-lg:hidden">
-          <NextLink href="mailto:office@bimaris.legal">
-            {t("menu.schedule")}
-          </NextLink>
+          <NextLink href="/contact-us">{t("menu.schedule")}</NextLink>
         </Components.Item>
 
         <Components.Item>

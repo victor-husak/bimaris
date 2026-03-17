@@ -51,8 +51,11 @@ export const CasesSection: React.FC<CasesSectionProps> = (
         wrapperClass="items-stretch!"
         modules={[Navigation]}
         slidesPerView="auto"
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
         onBeforeInit={onBeforeInit}
-        navigation
       >
         {props.data.map((item) => (
           <SwiperSlide
