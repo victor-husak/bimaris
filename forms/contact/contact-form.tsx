@@ -125,17 +125,6 @@ export const ContactForm: React.FC<ContactFormProps> = (
                 </FormRow>
 
                 <FormRow>
-                  <FormItem required label={t("company.label")}>
-                    <FormInput
-                      {...formMethods.register("company")}
-                      invalid={!!formMethods.formState.errors.company?.message}
-                      defaultValue={
-                        formMethods.formState.defaultValues?.company
-                      }
-                      placeholder="-"
-                    />
-                  </FormItem>
-
                   <FormItem required label={t("country.label")}>
                     <Controller
                       name="country"
@@ -165,14 +154,12 @@ export const ContactForm: React.FC<ContactFormProps> = (
                 </FormRow>
 
                 <FormRow>
-                  <FormItem label={t("company.label")}>
+                  <FormItem required label={t("company.label")}>
                     <FormInput
-                      {...formMethods.register("companyName")}
-                      invalid={
-                        !!formMethods.formState.errors.companyName?.message
-                      }
+                      {...formMethods.register("company")}
+                      invalid={!!formMethods.formState.errors.company?.message}
                       defaultValue={
-                        formMethods.formState.defaultValues?.companyName
+                        formMethods.formState.defaultValues?.company
                       }
                       placeholder="-"
                     />
