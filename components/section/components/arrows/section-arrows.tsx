@@ -8,6 +8,8 @@ export type SectionArrowsProps = {
   className?: string;
   prevRef?: React.RefObject<HTMLElement | undefined>;
   nextRef?: React.RefObject<HTMLElement | undefined>;
+  prevDisabled?: boolean;
+  nextDisabled?: boolean;
 };
 
 export const SectionArrows: React.FC<SectionArrowsProps> = (
@@ -15,11 +17,17 @@ export const SectionArrows: React.FC<SectionArrowsProps> = (
 ): React.JSX.Element => {
   return (
     <div className={clsx(props.className, "flex items-center gap-2")}>
-      <Components.Item ref={props.prevRef as React.Ref<HTMLButtonElement>}>
+      <Components.Item
+        ref={props.prevRef as React.Ref<HTMLButtonElement>}
+        disabled={props.prevDisabled}
+      >
         <ArrowRightIcon className="rotate-180" color="#3C3C3C" />
       </Components.Item>
 
-      <Components.Item ref={props.nextRef as React.Ref<HTMLButtonElement>}>
+      <Components.Item
+        ref={props.nextRef as React.Ref<HTMLButtonElement>}
+        disabled={props.nextDisabled}
+      >
         <ArrowRightIcon color="#3C3C3C" />
       </Components.Item>
     </div>

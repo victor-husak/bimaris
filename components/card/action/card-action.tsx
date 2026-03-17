@@ -40,7 +40,7 @@ export const CardAction: React.FC<CardActionProps> = (
       <ArrowRightIcon
         color="#333333"
         className={clsx(
-          "ml-[14px] shrink-0 translate-x-1/2 [&>path]:transition-all [&>path]:duration-200",
+          "ml-[14px] shrink-0 [&>path]:transition-all [&>path]:duration-200",
           "group-hover:[&>path]:stroke-white",
         )}
       />

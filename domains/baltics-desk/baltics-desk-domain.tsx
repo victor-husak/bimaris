@@ -40,7 +40,10 @@ export const BalticsDeskDomain: React.FC<BalticsDeskDomainProps> = (
       />
 
       {/* Regions */}
-      <Components.Regions className="mb-25" baltics={props.baltics} />
+      <Components.Regions
+        className="section-gradient mb-25"
+        baltics={props.baltics}
+      />
 
       {/* Faqs */}
       {props.commonData && (
@@ -55,22 +58,22 @@ const advantages = [
     key: "Estonia",
     title: "Solutions in Estonia",
     description:
-      "Client satisfaction rate based on long-term partnerships and repeat engagements.",
-    href: "/",
+      "Comprehensive immigration and business relocation support in Estonia.",
+    href: "/baltics-desk/estonia",
   },
   {
     key: "Latvia",
     title: "Solutions in Latvia",
     description:
       "Strategic advisory on Latvian residence programs, investor immigration, and company setup.",
-    href: "/",
+    href: "/baltics-desk/latvia",
   },
   {
     key: "Lithuania",
     title: "Solutions in Lithuania",
     description:
       "Legal assistance for relocation to Lithuania, covering temporary and permanent residence permits.",
-    href: "/",
+    href: "/baltics-desk/lithuania",
   },
 ];
 

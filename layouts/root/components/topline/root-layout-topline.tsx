@@ -72,7 +72,7 @@ export const RootLayoutTopline: React.FC<RootLayoutToplineProps> = (
           <NextLink href="/Offices">{t("menu.offices")}</NextLink>
         </Components.Item>
 
-        <Components.Lang />
+        {/* <Components.Lang /> */}
       </ul>
     </div>
   );

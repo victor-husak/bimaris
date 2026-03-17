@@ -22,6 +22,7 @@ export default async function HomePage(props: HomePageProps) {
   const [caseStudies, publications] = await Promise.all([
     getCaseStudies({ locale: params.locale }),
     getPublications({
+      pageSize: 4,
       filters: {
         // category: "legal-alert",
         category: ["legal-alert", "update"],

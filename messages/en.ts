@@ -127,7 +127,7 @@ const message = {
         about: pages.about.title,
         "case-studies": "Case studies",
         insights: pages.insights.title,
-        contact: pages.contact.title,
+        contact: "Contact",
         "log-in": "Log in",
         trigger: {
           menu: "Menu",

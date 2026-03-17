@@ -26,7 +26,8 @@ export const RegionCard: React.FC<RegionCardProps> = (
     <div
       className={clsx(
         props.className,
-        "group flex flex-col rounded-[11px] bg-white p-[25px]",
+        "group flex flex-col rounded-[11px] bg-white p-[25px] transition-all",
+        "hover:-translate-y-2.5",
       )}
     >
       <Tag
@@ -36,13 +37,18 @@ export const RegionCard: React.FC<RegionCardProps> = (
       />
 
       {/* Preview */}
-      <NextImage
-        className="aspect-auto=[357px/180px] w-full rounded-lg bg-gray-300 object-cover object-center"
-        src={data.preview}
-        alt="Case preview"
-        width={1071}
-        height={540}
-      />
+      <div className="aspect-auto=[357px/180px] w-full overflow-hidden rounded-lg bg-gray-300">
+        <NextImage
+          className={clsx(
+            "transition-img h-full w-full object-cover",
+            "group-hover:transform-[scale(1.03)]",
+          )}
+          src={data.preview}
+          alt="Case preview"
+          width={1071}
+          height={540}
+        />
+      </div>
 
       {/* Content */}
       <div className="flex flex-col pt-[25px]">

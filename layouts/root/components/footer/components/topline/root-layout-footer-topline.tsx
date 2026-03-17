@@ -2,7 +2,7 @@
 
 import { NextLink } from "@/i18n/routing";
 
-import { Lang } from "@/components";
+// import { Lang } from "@/components";
 
 import * as Icons from "./icons";
 
@@ -41,21 +41,21 @@ export const RootLayoutFooterTopline: React.FC<RootLayoutFooterToplineProps> = (
       </div>
 
       {/* action */}
-      <div className="ml-auto flex items-center gap-[10px]">
-        {/* search */}
-        <button className="button-icon button-icon-footer">
+      {/* <div className="ml-auto flex items-center gap-[10px]"> */}
+      {/* search */}
+      {/* <button className="button-icon button-icon-footer">
           <Icons.Search />
-        </button>
+        </button> */}
 
-        {/* lang */}
-        <Lang
+      {/* lang */}
+      {/* <Lang
           className={clsx(
             "font-sp-pro-text h-[32px] rounded-[17px] border border-[#2F2F2F] px-[11px] text-[12px]/[14px] tracking-wide text-white",
             // "hover:border-white",
             "[&>svg>path]:fill-white",
           )}
-        />
-      </div>
+        /> */}
+      {/* </div> */}
     </div>
   );
 };

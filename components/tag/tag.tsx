@@ -19,7 +19,7 @@ export const Tag: React.FC<TagProps> = (props): React.JSX.Element => {
     >
       {props.IconComponent}
 
-      <span className="font-sf-pro text-[12px]/[15px] tracking-[.024em]">
+      <span className="text-[12px]/[15px] tracking-[.024em]">
         {props.title}
       </span>
     </div>

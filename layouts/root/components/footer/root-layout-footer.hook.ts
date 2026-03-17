@@ -15,9 +15,9 @@ export const useRootLayoutFooter = () => {
         href: "/about-us",
       },
       {
-        key: "newsroom",
-        title: t("menu.company.items.newsroom"),
-        href: "/newsroom",
+        key: "case-studies",
+        title: "Case studies",
+        href: "/case-studies",
       },
       {
         key: "capabilities",
@@ -25,14 +25,19 @@ export const useRootLayoutFooter = () => {
         href: "/capabilities",
       },
       {
+        key: "insights",
+        title: "Insights",
+        href: "/insights",
+      },
+      {
         key: "contact",
-        title: t("menu.company.items.contact"),
+        title: "Contact",
         href: "/contact-us",
       },
       {
-        key: "people",
-        title: t("menu.company.items.people"),
-        href: "/people",
+        key: "baltics-desk",
+        title: "Baltics desk",
+        href: "/baltics-desk",
       },
     ],
     [t],

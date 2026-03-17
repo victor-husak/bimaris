@@ -58,7 +58,7 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
           {/* Description */}
           <p
             className={clsx(
-              "text-footer text-[14px]/[19px] tracking-[.012em]",
+              "text-footer text-[14px]/[19px] tracking-[.34px]",
               "2xl:max-w-[350px]",
             )}
           >
@@ -67,7 +67,7 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
 
           {/* Action */}
           <Button
-            className="mt-6 font-normal"
+            className="mt-6 font-medium"
             variant="second"
             href="/contact-us"
             animation="scale"

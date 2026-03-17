@@ -27,7 +27,8 @@ export const CasesSection: React.FC<CasesSectionProps> = (
   props,
 ): React.JSX.Element => {
   const t = useTranslations("sections.case-studies");
-  const { prevRef, nextRef, onBeforeInit } = useSwiper();
+  const { activeIndex, prevRef, nextRef, onBeforeInit, onSlideChange } =
+    useSwiper();
 
   return (
     <section className={clsx(props.className, "")}>
@@ -56,6 +57,7 @@ export const CasesSection: React.FC<CasesSectionProps> = (
           nextEl: nextRef.current,
         }}
         onBeforeInit={onBeforeInit}
+        onSlideChange={onSlideChange}
       >
         {props.data.map((item) => (
           <SwiperSlide
@@ -77,6 +79,8 @@ export const CasesSection: React.FC<CasesSectionProps> = (
         className="container-full"
         prevRef={prevRef}
         nextRef={nextRef}
+        prevDisabled={activeIndex === 0}
+        nextDisabled={activeIndex === props.data.length - 1}
       />
     </section>
   );

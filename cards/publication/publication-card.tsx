@@ -50,9 +50,12 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
       )}
 
       {/* Preview */}
-      <div className="mx-[15px] h-[180px] w-[calc(100%-30px)]  overflow-hidden rounded-lg bg-gray-300">
+      <div className="mx-[15px] h-[180px] w-[calc(100%-30px)] overflow-hidden rounded-lg bg-gray-300">
         <NextImage
-          className="h-full w-full object-cover"
+          className={clsx(
+            "transition-img h-full w-full object-cover",
+            "group-hover:transform-[scale(1.03)]",
+          )}
           src={data.preview}
           alt="Case preview"
           width={960}
@@ -65,14 +68,14 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
         {/* Meta */}
         <div className="mb-[25px] flex gap-2">
           <Tag
-            className="bg-[#E7EFFC]"
+            className="bg-[#E7EFFC] text-[#2D3A52]"
             title="Business relocation"
             IconComponent={<Icons.Business />}
           />
 
           {/* Date */}
           <div className="flex rounded-full bg-[#EFF2F7] px-2 py-[5px]">
-            <span className="font-sf-pro text-[12px]/[14px] text-[#2D3A52]">
+            <span className="text-[12px]/[14px] tracking-[.024em] text-[#2D3A52]">
               {data.date}
             </span>
           </div>
