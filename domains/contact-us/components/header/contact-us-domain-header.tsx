@@ -77,7 +77,7 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
     >
       <ContactForm
         className={clsx(
-          "relative z-1 mt-auto mr-[5px] -mb-[62px] max-w-[700px] rounded-2xl",
+          "relative z-1 mt-auto mr-10 -mb-[62px] max-w-[700px] rounded-2xl",
           "after:absolute after:-inset-[5px] after:-z-2 after:rounded-[20px] after:bg-white/15 after:backdrop-blur-[30px] after:backdrop-brightness-115",
           "before:absolute before:-inset-x-[5px] before:-bottom-[5px] before:-z-1 before:h-[67px] before:rounded-b-[20px] before:bg-[#EAEDF2]",
         )}

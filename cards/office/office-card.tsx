@@ -1,13 +1,16 @@
 import NextImage from "next/image";
-import { clsx } from "clsx";
 
 import { useTranslations } from "next-intl";
+
+import * as Components from "./components";
 
 import { Tag } from "@/components";
 
 import { CardAction } from "@/components/card";
 
 import { ArrowRightIcon } from "@/icons";
+
+import { clsx } from "clsx";
 
 import { useOfficeCard } from "./office-card.hook";
 
@@ -64,17 +67,26 @@ export const OfficeCard: React.FC<OfficeCardProps> = (
           {data.name}
         </span>
 
-        {/* Description */}
-        <p className="text-[14px]/[20px] tracking-[.024em] text-[#969BA7]">
+        {/* Content */}
+        <ul className="flex flex-col gap-2">
+          <Components.Item title={data.address} />
+
+          <Components.Item title={data.email} />
+
+          <Components.Meeting />
+        </ul>
+        {/* <p className="text-[14px]/[20px] tracking-[.024em] text-[#969BA7]">
           Strategic access to the European Union with flexible residence and
           investment pathways. We assist with residence permits, investor
           programs, and corporate immigration matters.
-        </p>
+        </p> */}
 
         {/* Action */}
         <CardAction
           className="mt-[35px] mr-auto group-hover:w-[125px]"
           href={data.url}
+          target="_blank"
+          rel="noopener noreferrer"
           title={t("action")}
         />
       </div>

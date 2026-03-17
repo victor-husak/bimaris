@@ -53,7 +53,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
             "md:px-[35px]",
             // "max-sm:w-[100vw! max-sm:-mx-5 max-sm:-mt-5 max-sm:max-w-[100vw]!",
             // "pl-[53px]",
-            "2xl:flex-row 2xl:items-center 2xl:pl-[140px]",
+            "2xl:flex-row 2xl:items-center 2xl:pr-0 2xl:pl-[140px]",
           )}
         >
           {/* Background */}
