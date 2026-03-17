@@ -93,19 +93,6 @@ export const ContactForm: React.FC<ContactFormProps> = (
                 </FormRow>
 
                 <FormRow>
-                  <FormItem required label={t("company.label")}>
-                    <FormInput
-                      {...formMethods.register("companyName")}
-                      invalid={
-                        !!formMethods.formState.errors.companyName?.message
-                      }
-                      defaultValue={
-                        formMethods.formState.defaultValues?.companyName
-                      }
-                      placeholder="-"
-                    />
-                  </FormItem>
-
                   <FormItem required label={t("country.label")}>
                     <Controller
                       name="country"
@@ -123,17 +110,6 @@ export const ContactForm: React.FC<ContactFormProps> = (
                       )}
                     />
                   </FormItem>
-                </FormRow>
-
-                <FormRow>
-                  <FormItem required label={t("email.label")}>
-                    <FormInput
-                      {...formMethods.register("email")}
-                      invalid={!!formMethods.formState.errors.email?.message}
-                      defaultValue={formMethods.formState.defaultValues?.email}
-                      placeholder="example@gmail.com"
-                    />
-                  </FormItem>
 
                   <FormItem required label={t("phone.label")}>
                     <FormInput
@@ -141,6 +117,30 @@ export const ContactForm: React.FC<ContactFormProps> = (
                       invalid={!!formMethods.formState.errors.phone?.message}
                       defaultValue={formMethods.formState.defaultValues?.phone}
                       placeholder={country ? country.data.phonePrefix : "-"}
+                    />
+                  </FormItem>
+                </FormRow>
+
+                <FormRow>
+                  <FormItem label={t("company.label")}>
+                    <FormInput
+                      {...formMethods.register("companyName")}
+                      invalid={
+                        !!formMethods.formState.errors.companyName?.message
+                      }
+                      defaultValue={
+                        formMethods.formState.defaultValues?.companyName
+                      }
+                      placeholder="-"
+                    />
+                  </FormItem>
+
+                  <FormItem required label={t("email.label")}>
+                    <FormInput
+                      {...formMethods.register("email")}
+                      invalid={!!formMethods.formState.errors.email?.message}
+                      defaultValue={formMethods.formState.defaultValues?.email}
+                      placeholder="example@gmail.com"
                     />
                   </FormItem>
                 </FormRow>

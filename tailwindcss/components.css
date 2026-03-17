@@ -99,7 +99,7 @@
   }
 
   .button-icon {
-    @apply flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full transition-colors;
+    @apply flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full transition-all duration-400;
   }
 
   .button-icon-footer {

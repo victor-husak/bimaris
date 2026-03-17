@@ -54,7 +54,7 @@ export const FormSelect: React.FC<FormSelectProps> = (
         {props.withSearch && (
           <input
             className={clsx(
-              "absolute inset-0 w-full outline-0 transition-all duration-200",
+              "absolute inset-0 w-full px-[14px] outline-0 transition-all duration-200",
               { "opacity-0": !active },
             )}
             ref={inputRef}

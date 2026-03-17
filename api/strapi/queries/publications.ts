@@ -144,6 +144,12 @@ export async function getPublicationBySlug({
           },
         },
       },
+      expert: {
+        fields: ["name", "slug", "position"],
+        populate: {
+          avatar: true,
+        },
+      },
     },
     pagination: {
       limit: 1,

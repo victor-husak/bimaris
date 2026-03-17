@@ -1,6 +1,6 @@
 import { NextLink } from "@/i18n/routing";
 import NextImage from "next/image";
-import { clsx } from "clsx";
+
 import { useTranslations } from "next-intl";
 
 import { CardAction } from "@/components/card";
@@ -8,6 +8,8 @@ import { CardAction } from "@/components/card";
 import * as Components from "./components";
 
 import { useCaseCard } from "./case-card.hook";
+
+import { clsx } from "clsx";
 
 import type { CaseStudyShort } from "@/types/case-studies";
 

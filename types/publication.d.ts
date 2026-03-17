@@ -1,3 +1,5 @@
+import type { ExpertShort } from "@/types/experts";
+
 export type PublicationShort = {
   id: number;
   slug: string;
@@ -22,4 +24,5 @@ export type Publication = PublicationShort & {
     name: string;
   }>;
   relatedPublications: PublicationShort[];
+  expert?: ExpertShort;
 };

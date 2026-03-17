@@ -70,7 +70,7 @@ export const RootLayoutFooterInfo: React.FC<RootLayoutFooterInfoProps> = (
         </button>
 
         <button className="button-icon button-icon-footer">
-          <Icons.Twitter />
+          <Icons.Facebook />
         </button>
 
         <button className="button-icon button-icon-footer">

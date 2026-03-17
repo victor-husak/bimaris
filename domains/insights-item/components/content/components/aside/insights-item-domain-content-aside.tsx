@@ -1,12 +1,20 @@
 import { SingleLayoutAside } from "@/layouts/single";
 
-import { AsideContent, AsideActions } from "@/components/aside";
+import {
+  AsideContent,
+  AsideActions,
+  AsideAuthor,
+  AsideGroup,
+} from "@/components/aside";
 
 import { clsx } from "clsx";
 
+import type { Publication } from "@/types/publication";
+import type { CaseStudy } from "@/types/case-studies";
+
 export type InsightsItemDomainContentAsideProps = {
   className?: string;
-  content: string;
+  data: Publication | CaseStudy;
 };
 
 export const InsightsItemDomainContentAside: React.FC<
@@ -14,9 +22,15 @@ export const InsightsItemDomainContentAside: React.FC<
 > = (props): React.JSX.Element => {
   return (
     <SingleLayoutAside className={clsx(props.className, "")}>
-      <AsideContent content={props.content} />
+      <AsideContent content={props.data.content} />
 
-      <AsideActions listenText={props.content} name="Insight" />
+      {!!props.data.expert && (
+        <AsideGroup title="Posted by">
+          <AsideAuthor data={props.data.expert} />
+        </AsideGroup>
+      )}
+
+      <AsideActions listenText={props.data.content} name="Insight" />
     </SingleLayoutAside>
   );
 };
