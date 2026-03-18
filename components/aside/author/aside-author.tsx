@@ -20,7 +20,7 @@ export const AsideAuthor: React.FC<AsideAuthorProps> = (
   const { data } = useAsideAuthor(props);
 
   return (
-    <div className={clsx(props.className, "flex items-center gap-5 p-5")}>
+    <div className={clsx(props.className, "flex items-center gap-5")}>
       {/* Avatar */}
       {!!data.avatar && (
         <NextImage

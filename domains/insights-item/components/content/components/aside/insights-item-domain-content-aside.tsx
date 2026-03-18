@@ -24,9 +24,13 @@ export const InsightsItemDomainContentAside: React.FC<
     <SingleLayoutAside className={clsx(props.className, "")}>
       <AsideContent content={props.data.content} />
 
-      {!!props.data.expert && (
+      {!!props.data.experts && (
         <AsideGroup title="Posted by">
-          <AsideAuthor data={props.data.expert} />
+          <div className="flex flex-col gap-4 p-5">
+            {props.data.experts.map((expert) => (
+              <AsideAuthor key={expert.id} data={expert} />
+            ))}
+          </div>
         </AsideGroup>
       )}
 

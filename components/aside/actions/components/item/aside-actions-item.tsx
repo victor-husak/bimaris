@@ -14,7 +14,7 @@ export const AsideActionsItem: React.FC<AsideActionsItemProps> = (
     <div
       className={clsx(
         props.className,
-        "flex cursor-pointer items-center gap-2 rounded-full border border-[#E7EAF2] px-[15px] py-2.5 transition-all",
+        "flex cursor-pointer items-center gap-2 rounded-full border border-[#E7EAF2] px-[14px] py-2.5 transition-all",
         "hover:bg-[#EDF0F5]",
       )}
       onClick={props.onClick}
@@ -23,7 +23,7 @@ export const AsideActionsItem: React.FC<AsideActionsItemProps> = (
       {props.IconComponent}
 
       {/* Title */}
-      <span className="text-[12px]/[14px] tracking-[.008em] whitespace-nowrap text-[#33383C]">
+      <span className="text-[13px]/[14px] tracking-[.008em] whitespace-nowrap text-[#33383C]">
         {props.title}
       </span>
     </div>

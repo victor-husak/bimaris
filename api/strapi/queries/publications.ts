@@ -144,7 +144,7 @@ export async function getPublicationBySlug({
           },
         },
       },
-      expert: {
+      experts: {
         fields: ["name", "slug", "position"],
         populate: {
           avatar: true,

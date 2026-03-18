@@ -13,5 +13,5 @@ export type CaseStudyShort = {
 
 export type CaseStudy = CaseStudyShort & {
   content: string;
-  expert?: ExpertShort;
+  experts?: Array<ExpertShort>;
 };

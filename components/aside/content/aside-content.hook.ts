@@ -4,12 +4,14 @@ import { findIndex } from "lodash-es";
 
 import { generateHeadingId } from "@/utils/generate-heading-id";
 
+import { useScrollToSection } from "@/hooks";
+
 export const useAsideContent = (content: string) => {
+  const { onScrollToSection } = useScrollToSection({ offset: -100 });
+
   const [activeId, setActiveId] = useState<string | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const headingElementsRef = useRef<Map<string, Element>>(new Map());
-  const lastScrollY = useRef<number>(0);
-  const scrollDirectionRef = useRef<"down" | "up">("down");
 
   const headings = useMemo(() => {
     const h2Regex = /^##\s+(.+)$/gm;
@@ -51,16 +53,6 @@ export const useAsideContent = (content: string) => {
 
     if (elements.length === 0) return;
 
-    // Отслеживаем направление скролла
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      scrollDirectionRef.current =
-        currentScrollY > lastScrollY.current ? "down" : "up";
-      lastScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
     // Создаем Intersection Observer
     const observer = new IntersectionObserver(
       (entries) => {
@@ -88,23 +80,24 @@ export const useAsideContent = (content: string) => {
         // Находим активный элемент
         let newActiveId: string | null = null;
 
-        // Разные пороги для разных направлений скролла
-        const scrollDown = scrollDirectionRef.current === "down";
-        const activationThreshold = scrollDown
-          ? window.innerHeight * 0.3 // При скролле вниз - активируем раньше (30% от верха)
-          : window.innerHeight * 0.15; // При скролле вверх - активируем позже (15% от верха)
+        // Порог активации - расстояние от верха окна
+        const activationThreshold = 50; // 150px от верха экрана
 
-        // Ищем заголовки которые прошли порог активации
-        const candidatesNearTop = elementPositions.filter(
-          (pos) => pos.top <= activationThreshold,
+        // Ищем заголовки которые находятся выше порога (уже прошли его)
+        const candidatesAboveThreshold = elementPositions.filter(
+          (pos) => pos.top < activationThreshold,
         );
 
-        if (candidatesNearTop.length > 0) {
-          // Берем последний заголовок перед порогом (самый близкий к верху)
-          newActiveId = candidatesNearTop[candidatesNearTop.length - 1].id;
+        if (candidatesAboveThreshold.length > 0) {
+          // Берем последний заголовок выше порога (самый нижний из тех что выше порога)
+          newActiveId =
+            candidatesAboveThreshold[candidatesAboveThreshold.length - 1].id;
         } else {
-          // Все элементы ниже порога - активируем первый
-          newActiveId = elementPositions[0]?.id || null;
+          // Все элементы ниже порога - активируем первый видимый
+          const firstVisible = elementPositions.find(
+            (pos) => pos.top >= 0 && pos.top < window.innerHeight,
+          );
+          newActiveId = firstVisible?.id || elementPositions[0]?.id || null;
         }
 
         if (newActiveId && newActiveId !== activeId) {
@@ -128,10 +121,9 @@ export const useAsideContent = (content: string) => {
     }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       observer.disconnect();
     };
   }, [headings]);
 
-  return { headings, activeId, indicatorOffset };
+  return { headings, activeId, indicatorOffset, onScrollToSection };
 };

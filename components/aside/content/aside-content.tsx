@@ -16,9 +16,8 @@ export type AsideContentProps = {
 export const AsideContent: React.FC<AsideContentProps> = (
   props,
 ): React.JSX.Element => {
-  const { activeId, headings, indicatorOffset } = useAsideContent(
-    props.content,
-  );
+  const { activeId, headings, indicatorOffset, onScrollToSection } =
+    useAsideContent(props.content);
 
   return (
     <AsideGroup
@@ -38,6 +37,7 @@ export const AsideContent: React.FC<AsideContentProps> = (
                 { "text-secondary": activeId === h.id },
               )}
               key={h.id}
+              onClick={() => onScrollToSection(h.id)}
             >
               {h.text}
             </li>

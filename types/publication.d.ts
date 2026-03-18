@@ -24,5 +24,5 @@ export type Publication = PublicationShort & {
     name: string;
   }>;
   relatedPublications: PublicationShort[];
-  expert?: ExpertShort;
+  experts?: Array<ExpertShort>;
 };

@@ -26,7 +26,7 @@ export const ServicesItemDomainHeader: React.FC<
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
-      classNameTitle="max-w-[540px]"
+      classNameTitle="max-w-[640px]"
       size="sm"
       type="second"
       media={{
