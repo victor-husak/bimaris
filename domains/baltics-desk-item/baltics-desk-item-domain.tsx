@@ -55,7 +55,7 @@ export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
       />
 
       {/* Cases */}
-      <CasesSection className="mb-[60px]" data={props.data.case_studies} />
+      <CasesSection className="mb-[60px]" data={props.data.caseStudies} />
 
       {/* Faqs */}
       {props.commonData && (

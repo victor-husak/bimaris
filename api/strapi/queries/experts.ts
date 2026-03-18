@@ -60,6 +60,23 @@ export async function getExpertBySlug({
     fields: ["id", "name", "position", "slug", "content", "createdAt"],
     populate: {
       avatar: true,
+      publications: {
+        fields: [
+          "id",
+          "name",
+          "description",
+          "slug",
+          "createdAt",
+          "updatedAt",
+          "date",
+        ],
+        populate: {
+          preview: true,
+          category: {
+            fields: ["slug", "name"],
+          },
+        },
+      },
     },
     pagination: {
       limit: 1,

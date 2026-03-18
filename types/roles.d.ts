@@ -14,7 +14,7 @@ export type RoleShort = {
 
 export type Role = RoleShort & {
   services: ServiceShort[];
-  case_studies: CaseStudyShort[];
+  caseStudies: CaseStudyShort[];
   faqs: Faq;
   updatedAt: string;
 };

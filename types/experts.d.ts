@@ -11,5 +11,6 @@ export type ExpertShort = {
 
 export type Expert = ExpertShort & {
   content: string;
+  publications: PublicationShort[];
   updatedAt: string;
 };

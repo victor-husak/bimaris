@@ -46,7 +46,7 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
       />
 
       {/* Cases */}
-      <CasesSection className="mb-15" data={props.data.case_studies} />
+      <CasesSection className="mb-15" data={props.data.caseStudies} />
 
       {/* FAQs */}
       <FaqsSection

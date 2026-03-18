@@ -1,3 +1,5 @@
+import type { CaseStudyShort } from "./case-studies";
+
 export type ServiceShort = {
   id: number;
   slug: string;
@@ -13,5 +15,6 @@ export type ServiceShort = {
 
 export type Service = ServiceShort & {
   content: string;
+  caseStudies: CaseStudyShort[];
   updatedAt: string;
 };

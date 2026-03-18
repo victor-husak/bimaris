@@ -17,6 +17,7 @@ export async function strapiFetch<T>(
     headers: {
       ...(STRAPI_TOKEN && { Authorization: `Bearer ${STRAPI_TOKEN}` }),
       "Content-Type": "application/json",
+      "Accept-Encoding": "gzip, deflate, br",
       ...options.headers,
     },
   });

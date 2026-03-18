@@ -59,7 +59,7 @@ export async function getBalticBySlug({
           items: true,
         },
       },
-      case_studies: {
+      caseStudies: {
         fields: ["id", "name", "description", "slug", "createdAt"],
         populate: {
           preview: true,

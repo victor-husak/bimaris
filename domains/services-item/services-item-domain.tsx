@@ -61,23 +61,25 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       )}
 
       {/* Cases */}
-      <CasesSection
-        className="section-gradient mb-[70px]"
-        data={[]}
-        HeaderComponent={
-          <SectionHeader
-            className="container-full pb-0"
-            classNameDescription="max-w-[500px]"
-            title="Related case studies"
-            description="Explore our selected examples of immigration cases handled for individuals and businesses."
-            ActionComponent={
-              <Button href="/case-studies" animation="scale">
-                View all
-              </Button>
-            }
-          />
-        }
-      />
+      {!!props.data.caseStudies.length && (
+        <CasesSection
+          className="section-gradient mb-[70px]"
+          data={props.data.caseStudies}
+          HeaderComponent={
+            <SectionHeader
+              className="container-full pb-0"
+              classNameDescription="max-w-[500px]"
+              title="Related case studies"
+              description="Explore our selected examples of immigration cases handled for individuals and businesses."
+              ActionComponent={
+                <Button href="/case-studies" animation="scale">
+                  View all
+                </Button>
+              }
+            />
+          }
+        />
+      )}
 
       {/* Rating */}
       <section className="container-full">

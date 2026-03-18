@@ -52,6 +52,12 @@ export async function getServiceBySlug({
     fields: ["id", "name", "description", "slug", "content", "createdAt"],
     populate: {
       mainImage: true,
+      caseStudies: {
+        fields: ["id", "name", "description", "slug", "createdAt"],
+        populate: {
+          preview: true,
+        },
+      },
     },
     pagination: {
       limit: 1,

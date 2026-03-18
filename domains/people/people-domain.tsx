@@ -4,7 +4,7 @@ import { PageLayout } from "@/layouts/page";
 
 import { Rating } from "@/ui/rating";
 
-// import { PublicationsSection } from "@/sections/publications";
+import { PublicationsSection } from "@/sections/publications";
 
 import * as Components from "./components";
 
@@ -41,7 +41,9 @@ export const PeopleDomain: React.FC<PeopleDomainProps> = (
       </section>
 
       {/* Publications */}
-      {/* <PublicationsSection className="pb-20" /> */}
+      {!!props.data.publications.length && (
+        <PublicationsSection className="pb-20" data={props.data.publications} />
+      )}
     </PageLayout>
   );
 };
