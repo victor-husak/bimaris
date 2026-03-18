@@ -4,8 +4,8 @@ import dynamic from "next/dynamic";
 
 import { useContext } from "react";
 
-const BusinessesOverlay = dynamic(() =>
-  import("@/overlays/businesses").then((mod) => mod.BusinessesOverlay),
+const RoleOverlay = dynamic(() =>
+  import("@/overlays/role").then((mod) => mod.RoleOverlay),
 );
 
 import { ModalContext } from "@/contexts/modal";
@@ -21,12 +21,13 @@ export const RootLayoutOverlays: React.FC<RootLayoutOverlaysProps> = (
 
   return (
     <>
-      <BusinessesOverlay
+      <RoleOverlay
         open={
           modalContext?.overlay === "businesses" ||
-          modalContext?.overlay === "private-clients" ||
+          modalContext?.overlay === "individuals" ||
           modalContext?.overlay === "investors"
         }
+        type={modalContext?.overlay}
         onClose={() => modalContext?.setOverlay(null)}
       />
     </>

@@ -33,10 +33,10 @@ export const OverlayLayoutBanner: React.FC<OverlayLayoutBannerProps> = (
             "transition-img h-full w-full object-cover",
             "group-hover:transform-[scale(1.03)]",
           )}
-          src="/images/genereted/case.webp"
+          src="/images/common/overlay-contact.webp"
           alt="Case preview"
-          width={960}
-          height={540}
+          width={900}
+          height={480}
         />
       </div>
 

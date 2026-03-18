@@ -29,8 +29,11 @@ export const RootLayoutHeaderItem: React.FC<RootLayoutHeaderItemProps> = (
         "relative flex cursor-pointer items-baseline justify-between gap-1.5",
         "hover:after:bg-[#F0F1F4]",
         "after:absolute after:top-0 after:right-[2.5px] after:bottom-0 after:left-[2.5px] after:-z-1 after:rounded-sm after:transition-all",
-        { "text-white": props.variant === "invert" },
-        { "px-[12.5px] py-1.5": !props.href },
+        {
+          "text-white": props.variant === "invert",
+          "px-[12.5px] py-1.5": !props.href,
+          "after:bg-[#F0F1F4]": props.active,
+        },
       )}
       onClick={props.onClick}
     >

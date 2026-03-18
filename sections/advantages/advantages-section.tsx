@@ -13,7 +13,6 @@ export type AdvantagesSectionProps = {
     key: string;
     title: string;
     description: string;
-    href: string;
   }>;
   BannerComponent?: React.ReactNode;
 };

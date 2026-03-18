@@ -5,38 +5,16 @@ import {
   type OverlayLayoutProps,
 } from "@/layouts/overlay";
 
-// import * as Components from "./components";
-
-// import { useMenuOverlay } from "./menu-overlay.hook";
-
-// import { AnimatePresence, motion } from "framer-motion";
-
-// import { menuItemVariants, menuVariants } from "@/generated/framer-variants";
-
-export type BusinessesOverlayProps = {
+export type RoleOverlayProps = {
   open?: OverlayLayoutProps["open"];
   onClose: OverlayLayoutProps["onClose"];
 };
 
-export const BusinessesOverlay: React.FC<BusinessesOverlayProps> = (
+export const RoleOverlay: React.FC<RoleOverlayProps> = (
   props,
 ): React.JSX.Element => {
-  // const {
-  //   items,
-  //   activeMenu,
-  //   routesHistory,
-  //   onChangeActiveMenu,
-  //   onExited,
-  //   onBack,
-  // } = useMenuOverlay(props);
-
   return (
-    <OverlayLayout
-      title="Businesses"
-      open={props.open}
-      onClose={props.onClose}
-      // onExited={onExited}
-    >
+    <OverlayLayout title="Businesses" open={props.open} onClose={props.onClose}>
       <div className="flex">
         <OverlayLayoutGroup classNameContent="gap-[26px]" title="By solution:">
           <OverlayLayoutItem
@@ -77,18 +55,6 @@ export const BusinessesOverlay: React.FC<BusinessesOverlayProps> = (
           />
         </OverlayLayoutGroup>
       </div>
-      {/* <AnimatePresence mode="popLayout" initial={true}>
-        <motion.div
-          key={activeMenu}
-          variants={menuVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          className="flex flex-1 grow flex-col py-[18.5px]"
-        >
-          
-        </motion.div>
-      </AnimatePresence> */}
     </OverlayLayout>
   );
 };

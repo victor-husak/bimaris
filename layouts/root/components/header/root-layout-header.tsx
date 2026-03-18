@@ -62,9 +62,9 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
 
         <Components.Item
           withArrow
-          active={modalContext?.overlay === "private-clients"}
+          active={modalContext?.overlay === "individuals"}
           title={t("private-clients")}
-          onClick={() => onTriggerOverlay("private-clients")}
+          onClick={() => onTriggerOverlay("individuals")}
         />
 
         <Components.Item
@@ -113,7 +113,7 @@ export const RootLayoutHeader: React.FC<RootLayoutHeaderProps> = (
           "absolute top-[calc(100%+1px)] left-1/2 z-2 hidden -translate-x-1/2 transform",
           "2xl:flex",
         )}
-        onClick={() => onTriggerOverlay("private-clients")}
+        onClick={() => onTriggerOverlay("individuals")}
       />
     </header>
   );
