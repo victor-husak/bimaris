@@ -82,7 +82,7 @@ export const PageLayoutHeaderSlidesItem: React.FC<
       ) : (
         <Box
           className={clsx(
-            "text-center text-[13px]/[17px] tracking-[.012em] text-white",
+            "text-left text-[13px]/[17px] tracking-[.012em] text-white",
             "sm:text-left",
           )}
           // text-white

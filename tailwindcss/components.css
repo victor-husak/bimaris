@@ -99,24 +99,23 @@
   }
 
   .button-icon {
-    @apply flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full transition-all duration-400;
+    @apply relative flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full transition-all duration-400;
   }
 
   .button-icon-footer {
-    @apply border-[#2F2F2F] border;
+    @apply bg-white;
+
+    svg {
+      @apply shrink-0;
+    }
 
     path,
     g {
-      @apply transition-all;
+      @apply transition-all fill-[#0B0B0B];
     }
 
     &:hover {
-      @apply border-white bg-white;
-
-      path,
-      g {
-        @apply fill-[#0B0B0B];
-      }
+      @apply scale-105;
     }
   }
 }

@@ -37,7 +37,12 @@ export const Support: React.FC<SupportProps> = (props): React.JSX.Element => {
         </NextLink>
       </p>
 
-      <p className="text-[13px]/[17px] tracking-[.028em] text-[#818796]">
+      <p
+        className={clsx(
+          "hidden text-[13px]/[17px] tracking-[.028em] text-[#818796]",
+          "md:flex",
+        )}
+      >
         {t("haveQuestions")}{" "}
         <NextLink
           className={clsx(

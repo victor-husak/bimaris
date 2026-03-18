@@ -31,26 +31,20 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
     <div
       className={clsx(
         props.className,
-        "group flex flex-col items-start rounded-[11px] bg-white py-[25px] transition-all",
+        "group flex flex-col items-start rounded-[11px] bg-white p-[25px] transition-all",
         "hover:-translate-y-2.5",
       )}
     >
       {props.type === "publication" && !!data.category && (
-        <Tag
-          className="mx-[25px] mb-[25px] bg-[#E7EFFC]"
-          title={data.category.name}
-        />
+        <Tag className="mb-[25px] bg-[#E7EFFC]" title={data.category.name} />
       )}
 
       {props.type === "case-study" && (
-        <Tag
-          className="mx-[25px] mb-[25px] bg-[#E7EFFC]"
-          title={t("caseStudy")}
-        />
+        <Tag className="mb-[25px] bg-[#E7EFFC]" title={t("caseStudy")} />
       )}
 
       {/* Preview */}
-      <div className="mx-[15px] h-[180px] w-[calc(100%-30px)] overflow-hidden rounded-lg bg-gray-300">
+      <div className="h-[180px] overflow-hidden rounded-lg bg-gray-300">
         <NextImage
           className={clsx(
             "transition-img h-full w-full object-cover",
@@ -64,7 +58,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
       </div>
 
       {/* Content */}
-      <div className="mx-[25px] flex flex-1 flex-col pt-[25px]">
+      <div className="flex flex-1 flex-col pt-[25px]">
         {/* Meta */}
         <div className="mb-[25px] flex gap-2">
           <Tag

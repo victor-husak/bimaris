@@ -77,7 +77,7 @@ export const RootLayoutFooterInfo: React.FC<RootLayoutFooterInfoProps> = (
           <Icons.Likedin />
         </button>
 
-        <button
+        {/* <button
           className={clsx(
             "h-8 cursor-pointer rounded-full border border-[#2F2F2F] px-[15px] text-[12px]/[14px] tracking-[0.008em] text-[#9F9F9F] transition-all",
             "transition-colors",
@@ -85,7 +85,7 @@ export const RootLayoutFooterInfo: React.FC<RootLayoutFooterInfoProps> = (
           )}
         >
           {t("subscribe")}
-        </button>
+        </button> */}
       </div>
     </div>
   );

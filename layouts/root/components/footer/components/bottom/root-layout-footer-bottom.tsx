@@ -45,12 +45,13 @@ export const RootLayoutFooterBottom: React.FC<RootLayoutFooterBottomProps> = (
       </ul>
 
       {/* designed */}
-      <div className={clsx("flex gap-[11px] text-[#727272]", "lg:ml-auto")}>
+      <div className={clsx("flex gap-2 text-[#727272]", "lg:ml-auto")}>
         <span>{t("exclusively-designed")}</span>
 
         <NextLink
           href="https://smotrow.com/"
           target="_blank"
+          rel="nofollow noopener noreferrer"
           className={clsx(
             "link-with-arrow text-white transition-colors",
             "hover:text-white/80",
