@@ -25,7 +25,7 @@ export const ServicesSectionItem: React.FC<ServicesSectionItemProps> = (
       className={clsx(
         props.className,
         "group relative cursor-pointer rounded-[11px] border border-[#E7EAF2] py-[25px] pr-[56px] pl-[54px] transition-all",
-        "hover:bg-[#F0F3F7]",
+        "hover:-translate-y-2.5 hover:bg-[#F0F3F7]",
       )}
     >
       {/* Header */}

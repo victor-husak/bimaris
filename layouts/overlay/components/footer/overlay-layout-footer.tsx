@@ -12,7 +12,10 @@ export const OverlayLayoutFooter: React.FC<OverlayLayoutFooterProps> = (
 ): React.JSX.Element => {
   return (
     <footer
-      className={clsx(props.className, "container-full bg-[#F4F8FC] py-[13px]")}
+      className={clsx(
+        props.className,
+        "container-full box-shadow-[inset_0_1px_2px_rgba(0,0,0,.03)] bg-[#F4F8FC] py-[13px]",
+      )}
     >
       <ul className="flex items-center">
         <Components.Item title="About us" href="/about-us" />

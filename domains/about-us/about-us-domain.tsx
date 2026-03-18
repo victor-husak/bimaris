@@ -1,8 +1,6 @@
-import { clsx } from "clsx";
 import { Suspense } from "react";
-import { useTranslations } from "next-intl";
 
-import { SectionHeader } from "@/components";
+import { SectionHeader, Button } from "@/components";
 
 import { PageLayout } from "@/layouts/page";
 
@@ -16,6 +14,10 @@ import { InformationSection } from "@/sections/information";
 import { Rating } from "@/ui/rating";
 
 import * as Components from "./components";
+
+import { clsx } from "clsx";
+
+import { useTranslations } from "next-intl";
 
 import { useAboutUsDomain } from "./about-us-domain.hook";
 
@@ -62,11 +64,29 @@ export const AboutUsDomain: React.FC<AboutUsDomainProps> = (
 
       {/* Experts */}
       <Suspense>
-        <ExpertsSection />
+        <ExpertsSection
+          title="Meet your experts"
+          description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+        />
       </Suspense>
 
+      {/* Points */}
+      <Components.Points />
+
       {/* Cases */}
-      <CasesSection className="mb-[60px]" data={props.caseStudies} />
+      <CasesSection
+        className="mb-[60px]"
+        data={props.caseStudies}
+        HeaderComponent={
+          <SectionHeader
+            className="pb-0"
+            classNameDescription="max-w-[500px]"
+            title="Customer case studies"
+            description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+            ActionComponent={<Button href="/case-studies">View all</Button>}
+          />
+        }
+      />
 
       {/* Rating */}
       <section className="container-full">

@@ -37,7 +37,7 @@ export const BusinessesOverlay: React.FC<BusinessesOverlayProps> = (
       onClose={props.onClose}
       // onExited={onExited}
     >
-      <div className="flex gap-x-[90px]">
+      <div className="flex">
         <OverlayLayoutGroup classNameContent="gap-[26px]" title="By solution:">
           <OverlayLayoutItem
             title="Company formation in Ukraine"
@@ -60,32 +60,21 @@ export const BusinessesOverlay: React.FC<BusinessesOverlayProps> = (
           />
         </OverlayLayoutGroup>
 
-        <OverlayLayoutGroup classNameContent="gap-5" title="By industry:">
-          <OverlayLayoutItem title="Crypto" />
+        <OverlayLayoutGroup classNameContent="gap-[26px]" title="By region:">
+          <OverlayLayoutItem
+            title="Estonia"
+            description="Digital ecosystem for startups and tech companies, offering EU residency and oportunities."
+          />
 
-          <OverlayLayoutItem title="Marketing and advertising" />
+          <OverlayLayoutItem
+            title="Latvia"
+            description="Strategic entry point to the EU with flexible residence programs and strong opportunities."
+          />
 
-          <OverlayLayoutItem title="Consumer goods" />
-
-          <OverlayLayoutItem title="Talent solutions" />
-
-          <OverlayLayoutItem title="Healthcare" />
-
-          <OverlayLayoutItem title="Finance" />
-
-          <OverlayLayoutItem title="Legal" />
-        </OverlayLayoutGroup>
-
-        <OverlayLayoutGroup classNameContent="gap-5" title="By visa:">
-          <OverlayLayoutItem title="H-1B" />
-
-          <OverlayLayoutItem title="EB-1A" />
-
-          <OverlayLayoutItem title="TN" />
-
-          <OverlayLayoutItem title="L-1" />
-
-          <OverlayLayoutItem title="O-1" />
+          <OverlayLayoutItem
+            title="Lithuania"
+            description="Stable EU jurisdiction with growing innovation sectors, ideal for relocation and business setup."
+          />
         </OverlayLayoutGroup>
       </div>
       {/* <AnimatePresence mode="popLayout" initial={true}>

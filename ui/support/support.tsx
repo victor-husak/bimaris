@@ -40,7 +40,7 @@ export const Support: React.FC<SupportProps> = (props): React.JSX.Element => {
       <p
         className={clsx(
           "hidden text-[13px]/[17px] tracking-[.028em] text-[#818796]",
-          "md:flex",
+          "md:inline",
         )}
       >
         {t("haveQuestions")}{" "}

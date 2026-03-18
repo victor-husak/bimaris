@@ -4,6 +4,7 @@ export type TagProps = {
   className?: string;
   title: string;
   IconComponent?: React.ReactNode;
+  RightIconComponent?: React.ReactNode;
 };
 
 export const Tag: React.FC<TagProps> = (props): React.JSX.Element => {
@@ -22,6 +23,8 @@ export const Tag: React.FC<TagProps> = (props): React.JSX.Element => {
       <span className="text-[12px]/[15px] tracking-[.024em]">
         {props.title}
       </span>
+
+      {props.RightIconComponent}
     </div>
   );
 };

@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 
 export type ExpertsSectionHeaderProps = {
   className?: string;
+  title?: string;
+  description?: string;
   RightComponent?: React.ReactNode;
 };
 
@@ -16,14 +18,14 @@ export const ExpertsSectionHeader: React.FC<ExpertsSectionHeaderProps> = (
     <header className={clsx(props.className, "container-full")}>
       {/* Title */}
       <h2 className="text-secondary mb-[25px] text-[28px]/[36px] font-light tracking-[.024em]">
-        {t("title")}
+        {props.title || t("title")}
       </h2>
 
       {/* Content */}
       <div className="flex items-end">
         {/* Description */}
         <p className="max-w-[630px] text-[14px]/[21px] tracking-[.024em] text-[#868D9A]">
-          {t("description")}
+          {props.description || t("description")}
         </p>
 
         {/* Arrows */}

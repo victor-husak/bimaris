@@ -19,6 +19,8 @@ import type { ExpertShort } from "@/types/experts";
 
 export type ExpertsSectionProps = {
   className?: string;
+  title?: string;
+  description?: string;
 };
 
 export type ExpertsSectionCombinedProps = ExpertsSectionProps & {
@@ -34,6 +36,8 @@ export const ExpertsSection: React.FC<ExpertsSectionCombinedProps> = (
     <section className={clsx(props.className, "")}>
       {/* Header */}
       <Components.Header
+        title={props.title}
+        description={props.description}
         RightComponent={
           <SectionArrows
             className="ml-auto"
