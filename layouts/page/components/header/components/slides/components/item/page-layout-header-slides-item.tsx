@@ -15,7 +15,7 @@ export type PageLayoutHeaderSlidesItemProps = {
   className?: string;
   active?: boolean;
   data: {
-    id: number;
+    key: string;
     title: string;
     shortTitle?: string;
     href?: string;
@@ -23,6 +23,7 @@ export type PageLayoutHeaderSlidesItemProps = {
     avatar?: Media;
     icon?: React.ReactNode;
   };
+  onClick?: () => void;
 };
 
 export const PageLayoutHeaderSlidesItem: React.FC<

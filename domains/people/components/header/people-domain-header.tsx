@@ -70,12 +70,12 @@ export const PeopleDomainHeader: React.FC<PeopleDomainHeaderProps> = (
 
 const slides = [
   {
-    id: 1,
+    key: "1",
     title: "Related case studies",
     icon: <ServiceIcon />,
   },
   {
-    id: 2,
+    key: "2",
     title: "Schedule a meeting",
     icon: <MeetingIcon />,
   },

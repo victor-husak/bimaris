@@ -56,13 +56,13 @@ export const BalticsDeskItemDomainHeader: React.FC<
 
 const items = [
   {
-    id: 1,
+    key: "1",
     title: "Select language",
     label: "Translate to",
     icon: <LangIcon />,
   },
   {
-    id: 2,
+    key: "2",
     title: "Schedule a meeting",
     icon: <MeetingIcon />,
   },

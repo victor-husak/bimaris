@@ -11,7 +11,7 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
 
   const slides = useMemo(() => {
     return items.map((item) => ({
-      id: item.id,
+      key: `${item.id}`,
       href: item.href,
       title: item.tag,
       shortTitle: item.name,

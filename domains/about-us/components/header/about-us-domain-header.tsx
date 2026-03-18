@@ -1,8 +1,12 @@
+"use client";
+
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
 import { Button } from "@/components/button";
 
 import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
+
+import { useScrollToSection } from "@/hooks";
 
 import { clsx } from "clsx";
 
@@ -13,6 +17,8 @@ export type AboutUsDomainHeaderProps = {
 export const AboutUsDomainHeader: React.FC<AboutUsDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
+  const { onScrollToSection } = useScrollToSection();
+
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
@@ -43,17 +49,21 @@ export const AboutUsDomainHeader: React.FC<AboutUsDomainHeaderProps> = (
           </Button>
 
           <Button
-            href="/services/1"
             size="medium"
             variant="blur"
             animation="opacity"
+            onClick={() => onScrollToSection("section-roles")}
           >
             Who we serve
           </Button>
         </>
       }
       RightComponent={
-        <PageLayoutHeaderSlides title="Quick links:" data={items} />
+        <PageLayoutHeaderSlides
+          title="Quick links:"
+          data={items}
+          onSelect={onScrollToSection}
+        />
       }
     />
   );
@@ -61,12 +71,12 @@ export const AboutUsDomainHeader: React.FC<AboutUsDomainHeaderProps> = (
 
 const items = [
   {
-    id: 1,
-    title: "Browse services",
+    key: "section-roles",
+    title: "Who we serve",
     icon: <ServiceIcon />,
   },
   {
-    id: 2,
+    key: "contact-us",
     title: "Schedule a meeting",
     icon: <MeetingIcon />,
   },

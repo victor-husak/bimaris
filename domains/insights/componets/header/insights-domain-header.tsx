@@ -56,12 +56,12 @@ export const InsightsDomainHeader: React.FC<InsightsDomainHeaderProps> = (
 
 const items = [
   {
-    id: 1,
+    key: "1",
     title: "Legal alerts",
     icon: <AlertIcon />,
   },
   {
-    id: 2,
+    key: "2",
     title: "Case studies",
     icon: <FileIcon />,
   },

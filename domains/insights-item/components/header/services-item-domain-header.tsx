@@ -53,13 +53,13 @@ export const ServicesItemDomainHeader: React.FC<
 
 const slides = [
   {
-    id: 1,
+    key: "1",
     label: "Translate to",
     title: "Select language",
     icon: <LangIcon />,
   },
   {
-    id: 2,
+    key: "2",
     title: "Schedule a meeting",
     icon: <MeetingIcon />,
   },

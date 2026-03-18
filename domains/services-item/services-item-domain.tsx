@@ -98,20 +98,17 @@ const advantages = [
     title: "98%",
     description:
       "Client satisfaction rate based on long-term partnerships and repeat engagements.",
-    href: "/",
   },
   {
     key: "businesses",
     title: "1,200+",
     description:
       "Successful immigration cases handled for individuals across different personal backgrounds.",
-    href: "/",
   },
   {
     key: "investors",
     title: "10 years",
     description:
       "Of combined professional experience supporting individuals with immigration and residency matters.",
-    href: "/",
   },
 ];

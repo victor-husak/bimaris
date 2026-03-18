@@ -2,13 +2,17 @@
 
 import NextImage from "next/image";
 
+import * as Icons from "./icons";
+
 // import { useMediaQuery } from "usehooks-ts";
 
 import { clsx } from "clsx";
 
 export type BannerImageProps = {
   className?: string;
+  classNameImage?: string;
   media: Media;
+  withTexture?: boolean;
   withOverlay?: boolean;
 };
 
@@ -31,7 +35,7 @@ export const BannerImage: React.FC<BannerImageProps> = (
         // },
 
         props.className,
-        "w-[194px] shrink-0 rounded-[97px]",
+        "relative flex w-[194px] shrink-0 justify-center rounded-[97px]",
         "max-sm:h-[280px]",
         {
           "overflow-hidden": !props.withOverlay,
@@ -45,6 +49,7 @@ export const BannerImage: React.FC<BannerImageProps> = (
         className={clsx(
           "h-full w-full rounded-[97px] object-cover object-center",
           !props.withOverlay && "xl:rounded-none",
+          props.classNameImage,
         )}
         // className={clsx("h-full w-full object-cover object-center", {
         //   "rounded-[97px]": props.withOverlay || !isDesktop,
@@ -54,6 +59,10 @@ export const BannerImage: React.FC<BannerImageProps> = (
         width={props.media.width}
         height={props.media.height}
       />
+
+      {props.withTexture && (
+        <Icons.TextureIcon className="absolute top-[41px] z-2" />
+      )}
     </div>
   );
 };

@@ -26,6 +26,7 @@ export const ContactSection: React.FC<ContactSectionCombinedProps> = (
 
   return (
     <Section
+      id="contact-us"
       className={clsx(props.className, "")}
       HeaderComponent={
         <SectionHeader

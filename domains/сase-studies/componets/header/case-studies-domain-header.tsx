@@ -57,12 +57,12 @@ export const CaseStudiesDomainHeader: React.FC<CaseStudiesDomainHeaderProps> = (
 
 const links = [
   {
-    id: 1,
+    key: "1",
     title: "Browse services",
     icon: <ServiceIcon />,
   },
   {
-    id: 2,
+    key: "2",
     title: "Schedule a meeting",
     icon: <MeetingIcon />,
     href: "/contact-us",

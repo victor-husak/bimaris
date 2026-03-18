@@ -49,6 +49,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
           ImageComponent={
             <BannerImage
               withOverlay
+              withTexture
               className="[--overlay-bg:#F4F6F9]"
               media={{
                 url: "/images/genereted/home/role-individuals.webp",
@@ -88,6 +89,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
             <BannerImage
               className="[--overlay-bg:#6F92E2]"
               withOverlay
+              withTexture
               media={{
                 url: "/images/genereted/home/role-businesses.webp",
                 alt: "Businesses",
@@ -152,6 +154,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
               />
 
               <BannerImage
+                withTexture
                 className={clsx(
                   "[--overlay-bg:[#D9EAE7]",
                   "2xl:border-[5px] 2xl:border-[#D9EAE7]",

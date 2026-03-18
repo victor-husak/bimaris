@@ -1,5 +1,3 @@
-import { NextLink } from "@/i18n/routing";
-
 import { CaretIcon } from "@/icons";
 
 import { clsx } from "clsx";
@@ -10,7 +8,6 @@ export type AdvantagesSectionItemProps = {
     key: string;
     title: string;
     description: string;
-    href: string;
   };
   onClick?: () => void;
 };
@@ -21,7 +18,8 @@ export const AdvantagesSectionItem: React.FC<AdvantagesSectionItemProps> = (
   return (
     <div
       className={clsx(
-        "group relative flex cursor-pointer items-center rounded-xl transition-all",
+        "group relative flex flex-col gap-2.5 rounded-xl px-[10px] py-[15px] transition-all",
+        "xl:p-[25px]",
         "hover:bg-[#F7F8FA]",
         // "md:first:border-r",
         "after:absolute after:-right-2.5 after:h-[92px] after:w-px after:bg-[#EFF2F5]",
@@ -30,29 +28,21 @@ export const AdvantagesSectionItem: React.FC<AdvantagesSectionItemProps> = (
       )}
       onClick={props.onClick}
     >
-      <NextLink
-        className={clsx(
-          "flex flex-1 flex-col gap-2.5 px-[10px] py-[15px]",
-          "xl:p-[25px]",
-        )}
-        href={props.data.href}
-      >
-        {/* Header */}
-        <div className="flex items-center">
-          {/* Title */}
-          <span className="font-season-mix text-[30px]/[37px] font-light tracking-[0.034em] transition-opacity">
-            {props.data.title}
-          </span>
+      {/* Header */}
+      <div className="flex items-center">
+        {/* Title */}
+        <span className="font-season-mix text-[30px]/[37px] font-light tracking-[0.034em] transition-opacity">
+          {props.data.title}
+        </span>
 
-          {/* Icon */}
-          <CaretIcon className="ml-auto" />
-        </div>
+        {/* Icon */}
+        <CaretIcon className="ml-auto" />
+      </div>
 
-        {/* Description */}
-        <p className="max-w-[340px] text-[13px]/[18px] tracking-[0.028em] text-[#939AAA]">
-          {props.data.description}
-        </p>
-      </NextLink>
+      {/* Description */}
+      <p className="max-w-[340px] text-[13px]/[18px] tracking-[0.028em] text-[#939AAA]">
+        {props.data.description}
+      </p>
     </div>
   );
 };

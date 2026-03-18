@@ -12,8 +12,10 @@ export const usePageLayoutHeaderSlidesItem = (
   const onClick = useCallback(() => {
     if (props.data.href) {
       router.push(props.data.href);
+    } else {
+      props.onClick?.();
     }
-  }, [props.data.href, router]);
+  }, [props.data.href, router, props.onClick]);
 
   return { onClick };
 };

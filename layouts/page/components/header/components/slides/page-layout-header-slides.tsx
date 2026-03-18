@@ -1,3 +1,5 @@
+"use client";
+
 import * as Components from "./components";
 
 import { clsx } from "clsx";
@@ -10,6 +12,7 @@ export type PageLayoutHeaderSlidesProps = {
   activeIndex?: number;
   title: string;
   data: Array<PageLayoutHeaderSlidesItemProps["data"]>;
+  onSelect?: (key: string) => void;
 };
 
 export const PageLayoutHeaderSlides: React.FC<PageLayoutHeaderSlidesProps> = (
@@ -33,10 +36,10 @@ export const PageLayoutHeaderSlides: React.FC<PageLayoutHeaderSlidesProps> = (
       <div className={clsx("flex gap-2.5", "2xl:w-65 2xl:flex-col")}>
         {props.data.map((item, index) => (
           <Components.Item
-            // className={clsx("flex-1", "sm:flex-initial")}
             data={item}
-            key={item.id}
+            key={item.key}
             active={props.activeIndex === index}
+            onClick={() => props.onSelect?.(item.key)}
           />
         ))}
       </div>
