@@ -13,7 +13,7 @@ export const OverlayLayoutItem: React.FC<OverlayLayoutItemProps> = (
     <div
       className={clsx(
         props.className,
-        "relative z-1 flex max-w-[280px] cursor-pointer flex-col justify-center gap-1.5",
+        "relative z-1 flex max-w-[350px] cursor-pointer flex-col justify-center gap-1.5",
         "before:absolute before:top-0 before:bottom-0 before:-left-[31px] before:w-px before:bg-[#507FEB] before:opacity-0 before:transition-all",
         "hover:before:opacity-100",
         {

@@ -1,9 +1,10 @@
 import { useTranslations } from "next-intl";
-import { clsx } from "clsx";
 
 import { Section, Button } from "@/components";
 
 import { Banner, BannerList, BannerImage, Support } from "@/ui";
+
+import { clsx } from "clsx";
 
 export type RolesServiceProps = {
   className?: string;

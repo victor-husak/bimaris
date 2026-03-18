@@ -29,26 +29,26 @@ export const AboutUsDomainPoints: React.FC<AboutUsDomainPointsProps> = (
 
         <div className="grid grid-cols-2 gap-y-[52px]">
           <Components.Item
-            number="2022 - 2023"
+            period="2022 - 2023"
             title="Founding"
             description="Independent immigration practice launched by Taras Horbatiuk, helping clients relocate and build plans in Ukraine."
           />
 
           <Components.Item
-            number="2024"
+            period="2024"
             title="Evolving..."
             description="The firm officially evolved into Intermarium, expanding into investment and business immigration services."
           />
 
           <Components.Item
-            number="2025"
+            period="2025"
             title="Pivotal change"
             description="Following restructuring, the firm was re-established as Bimaris, with a stronger focus on corporate and immigration."
           />
 
           <Components.Item
             variant="secondary"
-            number="2026 - and beyond"
+            period="2026 - and beyond"
             title="Moving forward"
             description="Our mission continues - to empower individuals and businesses to invest, find opportunities, and build their future."
           />

@@ -7,7 +7,7 @@ import { clsx } from "clsx";
 export type AboutUsDomainPointsItemProps = {
   className?: string;
   variant?: "base" | "secondary";
-  number: string;
+  period: string;
   title: string;
   description: string;
 };
@@ -29,14 +29,9 @@ export const AboutUsDomainPointsItem: React.FC<AboutUsDomainPointsItemProps> = (
             !props.variant || props.variant === "base",
           "bg-[#E5E2F7] text-[#423953]": props.variant === "secondary",
         })}
-        title={props.number}
+        title={props.period}
         RightIconComponent={<ArrowRightIcon color="#423953" />}
       />
-      {/* <div className="mb-[42px]">
-        <span className="text-[12px]/[14px] font-light tracking-[.024em] text-[#00335A]">
-          {props.number}
-        </span>
-      </div> */}
 
       {/* Title */}
       <p className="mb-[15px] text-[15px]/[19px] tracking-[.024em] text-[#2D3A52]">
