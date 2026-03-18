@@ -27,7 +27,7 @@ export const RootLayoutOverlays: React.FC<RootLayoutOverlaysProps> = (
           modalContext?.overlay === "individuals" ||
           modalContext?.overlay === "investors"
         }
-        type={modalContext?.overlay}
+        // type={modalContext?.overlay}
         onClose={() => modalContext?.setOverlay(null)}
       />
     </>
