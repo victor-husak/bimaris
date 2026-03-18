@@ -69,7 +69,7 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
             className="container-full pb-0"
             classNameDescription="max-w-[500px]"
             title="Related case studies"
-            description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
+            description="Explore our selected examples of immigration cases handled for individuals and businesses."
             ActionComponent={
               <Button href="/case-studies" animation="scale">
                 View all
