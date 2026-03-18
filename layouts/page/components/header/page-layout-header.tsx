@@ -84,14 +84,16 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
                   }}
                   className="absolute inset-0 h-full w-full"
                 >
-                  <NextImage
-                    preload
-                    className="h-full w-full object-cover object-center"
-                    src={props.media.url}
-                    width={props.media.width}
-                    height={props.media.height}
-                    alt={props.media.alt || "Header background"}
-                  />
+                  {!!props.media.url && (
+                    <NextImage
+                      preload
+                      className="h-full w-full object-cover object-center"
+                      src={props.media.url}
+                      width={props.media.width}
+                      height={props.media.height}
+                      alt={props.media.alt || "Header background"}
+                    />
+                  )}
                 </motion.div>
               </AnimatePresence>
             </div>
