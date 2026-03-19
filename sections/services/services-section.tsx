@@ -21,6 +21,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = (
 
   return (
     <Section
+      id="services-section"
       className={clsx(props.className, "")}
       HeaderComponent={
         <SectionHeader

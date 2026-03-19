@@ -1,8 +1,12 @@
+"use client";
+
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
 import { Button } from "@/components/button";
 
 import { ServiceIcon, MeetingIcon } from "@/icons/header-links";
+
+import { useScrollToSection } from "@/hooks";
 
 import { useRolesItemDomainHeader } from "./roles-item-domain-header.hook";
 
@@ -18,6 +22,8 @@ export type RolesItemDomainHeaderProps = {
 export const RolesItemDomainHeader: React.FC<RolesItemDomainHeaderProps> = (
   props,
 ): React.JSX.Element => {
+  const { onScrollToSection } = useScrollToSection();
+
   const { data } = useRolesItemDomainHeader(props);
 
   return (
@@ -30,21 +36,26 @@ export const RolesItemDomainHeader: React.FC<RolesItemDomainHeaderProps> = (
         height: 1860,
         alt: "Role header background",
       }}
-      title={data.name}
+      title={data.title}
       description={data.description}
       subtitle="Immigration services"
-      tag="For individuals"
+      tag={data.name}
       ActionsComponent={
         <>
-          <Button href="/" variant="white" size="medium" animation="scale">
+          <Button
+            variant="white"
+            size="medium"
+            animation="scale"
+            onClick={() => onScrollToSection("contact-us")}
+          >
             Connect with our team
           </Button>
 
           <Button
-            href="/services/1"
             size="medium"
             variant="blur"
             animation="opacity"
+            onClick={() => onScrollToSection("services-section")}
           >
             Open services
           </Button>

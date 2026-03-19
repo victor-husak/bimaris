@@ -40,10 +40,12 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
       <Components.Points />
 
       {/* Services */}
-      <ServicesSection
-        className="section-gradient"
-        data={props.data.services}
-      />
+      {!!props.data.services.length && (
+        <ServicesSection
+          className="section-gradient"
+          data={props.data.services}
+        />
+      )}
 
       {/* Cases */}
       <CasesSection className="mb-15" data={props.data.caseStudies} />

@@ -12,6 +12,7 @@ export const useRolesItemDomainHeader = (props: RolesItemDomainHeaderProps) => {
   const data = useMemo(() => {
     return {
       name: props.data.name,
+      title: props.data.title,
       description: props.data.description,
       preview: !!props.data.mainImage
         ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${props.data.mainImage.url}`

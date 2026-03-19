@@ -1,8 +1,12 @@
+"use client";
+
 import { List, Tag } from "@/components";
 
 import { CardAction } from "@/components/card";
 
 import * as Icons from "./icons";
+
+import { useServicesSectionItem } from "./services-section-item.hook";
 
 import { clsx } from "clsx";
 
@@ -20,6 +24,8 @@ export type ServicesSectionItemProps = {
 export const ServicesSectionItem: React.FC<ServicesSectionItemProps> = (
   props,
 ): React.JSX.Element => {
+  const { onNavigation } = useServicesSectionItem(props);
+
   return (
     <div
       className={clsx(
@@ -27,6 +33,7 @@ export const ServicesSectionItem: React.FC<ServicesSectionItemProps> = (
         "group relative cursor-pointer rounded-[11px] border border-[#E7EAF2] py-[25px] pr-[56px] pl-[54px] transition-all",
         "hover:-translate-y-2.5 hover:bg-[#F0F3F7]",
       )}
+      onClick={onNavigation}
     >
       {/* Header */}
       <header className="relative mb-[25px] flex items-center">

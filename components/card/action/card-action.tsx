@@ -40,8 +40,12 @@ export const CardAction: React.FC<CardActionProps> = (
       <ArrowRightIcon
         color="#333333"
         className={clsx(
-          "ml-[14px] shrink-0 [&>path]:transition-all [&>path]:duration-200",
+          "absolute shrink-0 [&>path]:transition-all [&>path]:duration-200",
           "group-hover:[&>path]:stroke-white",
+          {
+            "left-[15px]": !props.size || props.size === "base",
+            "left-[14px]": props.size === "small",
+          },
         )}
       />
 

@@ -41,7 +41,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
   return (
     <header className={clsx(props.className, "")}>
       <div
-        className={clsx("container-large-full relative", "max-md:px-0!", {
+        className={clsx("container-large-full relative", {
           "h-155": props.size === "lg",
           "h-147.5": props.size === "md",
           "h-130": props.size === "sm",
@@ -59,8 +59,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
           {/* Background */}
           <div
             className={clsx(
-              "absolute inset-0 -z-3 h-full w-full overflow-hidden",
-              "md:rounded-2xl",
+              "absolute inset-0 -z-3 h-full w-full overflow-hidden rounded-2xl",
             )}
           >
             <div
@@ -101,8 +100,7 @@ export const PageLayoutHeader: React.FC<PageLayoutHeaderProps> = (
 
           <div
             className={clsx(
-              "absolute inset-0 -z-1 overflow-hidden",
-              "md:rounded-2xl",
+              "absolute inset-0 -z-1 overflow-hidden rounded-2xl",
               "after:absolute after:inset-0 after:bg-black/30",
               "before:absolute before:right-0 before:bottom-0 before:left-0 before:h-95 before:bg-linear-to-b before:from-black/0 before:to-black/30",
               props.classNameOverlay,

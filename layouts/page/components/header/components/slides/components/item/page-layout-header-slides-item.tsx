@@ -57,8 +57,8 @@ export const PageLayoutHeaderSlidesItem: React.FC<
       {props.data.avatar && (
         <div
           className={clsx(
-            "flex h-6 w-6 shrink-0 overflow-hidden rounded-full",
-            "sm:h-10 sm:w-10",
+            "hidden h-6 w-6 shrink-0 overflow-hidden rounded-full",
+            "sm:flex sm:h-10 sm:w-10",
           )}
         >
           <NextImage

@@ -64,6 +64,7 @@ export const PeopleCard: React.FC<PeopleCardProps> = (
         {/* Action */}
         <CardAction
           className="mt-10 group-hover:w-[110px]"
+          size="base"
           href={`/people/${props.data.slug}`}
           title={t("action")}
         />
