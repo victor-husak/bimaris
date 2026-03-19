@@ -80,20 +80,20 @@ export const useAsideContent = (content: string) => {
         // Находим активный элемент
         let newActiveId: string | null = null;
 
-        // Порог активации - расстояние от верха окна
-        const activationThreshold = 50; // 150px от верха экрана
+        // Используем 50% от высоты экрана как порог активации
+        // Элемент становится активным когда достигает середины экрана
+        const threshold = window.innerHeight * 0.5;
 
-        // Ищем заголовки которые находятся выше порога (уже прошли его)
-        const candidatesAboveThreshold = elementPositions.filter(
-          (pos) => pos.top < activationThreshold,
+        // Находим все элементы которые уже прошли порог (top < threshold)
+        const passedElements = elementPositions.filter(
+          (pos) => pos.top < threshold,
         );
 
-        if (candidatesAboveThreshold.length > 0) {
-          // Берем последний заголовок выше порога (самый нижний из тех что выше порога)
-          newActiveId =
-            candidatesAboveThreshold[candidatesAboveThreshold.length - 1].id;
+        if (passedElements.length > 0) {
+          // Берем последний из тех что прошли порог
+          newActiveId = passedElements[passedElements.length - 1].id;
         } else {
-          // Все элементы ниже порога - активируем первый видимый
+          // Если ничего не прошло порог, берем первый видимый элемент
           const firstVisible = elementPositions.find(
             (pos) => pos.top >= 0 && pos.top < window.innerHeight,
           );

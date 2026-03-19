@@ -13,6 +13,7 @@ export const SingleLayout: React.FC<SingleLayoutProps> = (
     <section>
       {/* Content */}
       <div
+        id="single-layout-content"
         className={clsx(
           props.className,
           "container-full flex flex-col items-start gap-x-20 gap-y-15 pt-15",

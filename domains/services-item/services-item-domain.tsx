@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { clsx } from "clsx";
 
 import { SectionHeader, Button } from "@/components";
 
@@ -16,6 +15,8 @@ import { Rating } from "@/ui/rating";
 import * as Components from "./components";
 
 import { useServicesItemDomain } from "./services-item-domain.hook";
+
+import { clsx } from "clsx";
 
 import type { Service } from "@/types/services";
 
@@ -46,7 +47,7 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       )}
 
       {/* Content */}
-      <Components.Content className="pb-25" data={props.data} />
+      <Components.Content className="relative z-2 pb-25" data={props.data} />
 
       <div className="container-full section-gradient z-1 mb-[100px]">
         <Components.Banner />

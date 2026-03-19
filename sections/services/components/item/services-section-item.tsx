@@ -30,7 +30,7 @@ export const ServicesSectionItem: React.FC<ServicesSectionItemProps> = (
     <div
       className={clsx(
         props.className,
-        "group relative cursor-pointer rounded-[11px] border border-[#E7EAF2] py-[25px] pr-[56px] pl-[54px] transition-all",
+        "group relative flex cursor-pointer flex-col rounded-[11px] border border-[#E7EAF2] py-[25px] pr-[56px] pl-[54px] transition-all",
         "hover:-translate-y-2.5 hover:bg-[#F0F3F7]",
       )}
       onClick={onNavigation}
@@ -63,11 +63,11 @@ export const ServicesSectionItem: React.FC<ServicesSectionItemProps> = (
       </p>
 
       {/* List */}
-      <List className="my-[25px]" items={props.data.list} />
+      <List className="my-[25px]!" items={props.data.list} />
 
       {/* Action */}
       <CardAction
-        className="mt-[25px] group-hover:w-[105px]"
+        className="mt-auto group-hover:w-[105px]"
         size="small"
         title="Read more"
         href={props.data.href}

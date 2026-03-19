@@ -10,6 +10,8 @@ import { clsx } from "clsx";
 
 import { useServicesItemDomainHeader } from "./services-item-domain-header.hook";
 
+import { useScrollToSection } from "@/hooks";
+
 import type { Service } from "@/types/services";
 
 export type ServicesItemDomainHeaderProps = {
@@ -20,7 +22,9 @@ export type ServicesItemDomainHeaderProps = {
 export const ServicesItemDomainHeader: React.FC<
   ServicesItemDomainHeaderProps
 > = (props): React.JSX.Element => {
-  const { data } = useServicesItemDomainHeader(props);
+  const { data, onActionClick } = useServicesItemDomainHeader(props);
+
+  const { onScrollToSection } = useScrollToSection();
 
   return (
     <PageLayoutHeader
@@ -38,12 +42,17 @@ export const ServicesItemDomainHeader: React.FC<
       tag="For individuals"
       ActionsComponent={
         <>
-          <Button href="/" variant="white" size="medium" animation="scale">
+          <Button
+            variant="white"
+            size="medium"
+            animation="scale"
+            onClick={() => onScrollToSection("contact-us")}
+          >
             Connect with our team
           </Button>
 
           <Button
-            href="/services/1"
+            href="/about-us/#section-roles"
             size="medium"
             variant="blur"
             animation="opacity"
@@ -53,7 +62,11 @@ export const ServicesItemDomainHeader: React.FC<
         </>
       }
       RightComponent={
-        <PageLayoutHeaderSlides title="Quick links:" data={slides} />
+        <PageLayoutHeaderSlides
+          title="Quick links:"
+          data={slides}
+          onSelect={onScrollToSection}
+        />
       }
     />
   );
@@ -61,12 +74,12 @@ export const ServicesItemDomainHeader: React.FC<
 
 const slides = [
   {
-    key: "1",
+    key: "single-layout-content",
     title: "Overview",
     icon: <ServiceIcon />,
   },
   {
-    key: "2",
+    key: "contact-us",
     title: "Schedule a meeting",
     icon: <MeetingIcon />,
   },

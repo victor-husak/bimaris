@@ -62,5 +62,6 @@ const slides = [
     key: "2",
     title: "Schedule a meeting",
     icon: <MeetingIcon />,
+    href: "/contact-us",
   },
 ];
