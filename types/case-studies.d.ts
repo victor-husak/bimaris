@@ -14,6 +14,10 @@ export type CaseStudyShort = {
     name: string;
     slug: string;
   }>;
+  tag?: {
+    icon: Image;
+    name: string;
+  };
 };
 
 export type CaseStudy = CaseStudyShort & {

@@ -23,7 +23,7 @@ export const UpdatesSectionItem: React.FC<UpdatesSectionItemProps> = (
       className={clsx(
         props.className,
         "group flex cursor-pointer rounded-[11px] border border-[#E7EAF2] p-6.25 transition-all",
-        "hover:bg-[#eef1f4]",
+        "hover:scale-101 hover:bg-[#eef1f4]",
       )}
     >
       {/* Icon */}

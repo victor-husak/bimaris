@@ -3,7 +3,9 @@ import { useMemo } from "react";
 import { format } from "date-fns";
 
 import type { PublicationCardProps } from "./publication-card";
+
 import type { PublicationShort } from "@/types/publication";
+import type { CaseStudyShort } from "@/types/case-studies";
 
 export const usePublicationCard = (props: PublicationCardProps) => {
   const data = useMemo(() => {
@@ -26,6 +28,8 @@ export const usePublicationCard = (props: PublicationCardProps) => {
         props.type === "case-study"
           ? `/case-studies/${props.data.slug}`
           : `/insights/${props.data.slug}`,
+      tag:
+        props.type === "case-study" ? (props.data as CaseStudyShort).tag : null,
     };
   }, [props.data, props.type]);
 

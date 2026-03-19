@@ -24,7 +24,14 @@ export const BalticsDeskDomainRegions: React.FC<
         />
       }
     >
-      <div className="grid grid-cols-3 gap-[30px] border-b border-[#E7EBF2] pb-25">
+      <div
+        className={clsx(
+          "grid grid-cols-1 gap-[30px] border-b border-[#E7EBF2] pb-25",
+          "md:grid-cols-2",
+          "xl:grid-cols-3",
+        )}
+      >
+        {/* grid-cols-3 */}
         {props.baltics.map((baltic) => (
           <RegionCard key={baltic.id} data={baltic} />
         ))}

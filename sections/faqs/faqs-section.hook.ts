@@ -1,8 +1,12 @@
-import { useMemo } from "react";
+import { useMemo, useState, useCallback } from "react";
 
 import type { FaqsSectionProps } from "./faqs-section";
 
 export const useFaqsSection = (props: FaqsSectionProps) => {
+  const [activeId, setActiveId] = useState<number | null>(
+    props.data.items.at(0)?.id ?? null,
+  );
+
   const data = useMemo(() => {
     return {
       id: props.data.id,
@@ -16,5 +20,9 @@ export const useFaqsSection = (props: FaqsSectionProps) => {
     };
   }, [props.data]);
 
-  return { data };
+  const onToggle = useCallback((id: number) => {
+    setActiveId((prev) => (prev === id ? null : id));
+  }, []);
+
+  return { data, activeId, onToggle };
 };

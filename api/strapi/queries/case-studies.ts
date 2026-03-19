@@ -19,6 +19,12 @@ export async function getCaseStudies({
     fields: ["id", "name", "description", "slug", "createdAt"],
     populate: {
       preview: true,
+      tag: {
+        fields: ["name"],
+        populate: {
+          icon: true,
+        },
+      },
     },
     pagination: {
       pageSize,

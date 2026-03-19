@@ -36,6 +36,9 @@ export async function getPublications({
       category: {
         fields: ["slug", "name"],
       },
+      country: {
+        fields: ["slug", "name"],
+      },
     },
     pagination: {
       pageSize,

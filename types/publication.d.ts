@@ -1,4 +1,5 @@
 import type { ExpertShort } from "@/types/experts";
+import type { Country } from "@/types/countries";
 
 export type PublicationShort = {
   id: number;
@@ -9,6 +10,7 @@ export type PublicationShort = {
   createdAt: string;
   updatedAt: string;
   preview: Image;
+  country: Country;
   category: {
     slug: string;
     name: string;
