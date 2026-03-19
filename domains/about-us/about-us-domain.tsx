@@ -22,9 +22,11 @@ import { useTranslations } from "next-intl";
 import { useAboutUsDomain } from "./about-us-domain.hook";
 
 import type { CaseStudyShort } from "@/types/case-studies";
+import type { AboutUsPage } from "@/types/about-us-page";
 
 export type AboutUsDomainProps = {
   className?: string;
+  aboutUsPage: AboutUsPage | null;
   caseStudies: CaseStudyShort[];
 };
 
@@ -42,7 +44,12 @@ export const AboutUsDomain: React.FC<AboutUsDomainProps> = (
       HeaderComponent={<Components.Header className="mb-5" />}
     >
       {/* Advantages */}
-      <AdvantagesSection className="mb-[75px]" data={advantages} />
+      {!!props.aboutUsPage?.advantages && (
+        <AdvantagesSection
+          className="mb-[75px]"
+          data={props.aboutUsPage.advantages}
+        />
+      )}
 
       {/* Information */}
       <InformationSection

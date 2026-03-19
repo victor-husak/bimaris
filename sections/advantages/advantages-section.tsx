@@ -6,20 +6,22 @@ import * as Components from "./components";
 
 import { clsx } from "clsx";
 
+import { useAdvantagesSection } from "./advantages-section.hook";
+
+import type { Advantages } from "@/types/components/common";
+
 export type AdvantagesSectionProps = {
   className?: string;
   withBanner?: boolean;
-  data: Array<{
-    key: string;
-    title: string;
-    description: string;
-  }>;
+  data: Advantages;
   BannerComponent?: React.ReactNode;
 };
 
 export const AdvantagesSection: React.FC<AdvantagesSectionProps> = (
   props,
 ): React.JSX.Element => {
+  const { data } = useAdvantagesSection(props);
+
   return (
     <section className={clsx(props.className)}>
       <div className="container-large bg-background-secondary rounded-2xl">
@@ -30,11 +32,11 @@ export const AdvantagesSection: React.FC<AdvantagesSectionProps> = (
             "xl:grid-cols-3",
           )}
         >
-          {props.data.map((item, index) => (
+          {data.items.map((item, index) => (
             <Components.Item
               className={clsx({ "lg:max-xl:col-span-2": index === 2 })}
               data={item}
-              key={index}
+              key={item.id}
             />
           ))}
         </div>
@@ -57,7 +59,7 @@ export const AdvantagesSection: React.FC<AdvantagesSectionProps> = (
                 {/* Image */}
                 <NextImage
                   className={clsx("h-full w-full object-cover object-center")}
-                  src="/images/advantages.webp"
+                  src={data.banner}
                   width={3768}
                   height={360}
                   alt="Smotrow design banner"

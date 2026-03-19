@@ -34,7 +34,13 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
       HeaderComponent={<Components.Header data={props.data} />}
     >
       {/* Advantages */}
-      <AdvantagesSection className="mt-5" withBanner data={advantages} />
+      {!!props.data.advantages && (
+        <AdvantagesSection
+          className="mt-5"
+          withBanner
+          data={props.data.advantages}
+        />
+      )}
 
       {/* Points */}
       <Components.Points />

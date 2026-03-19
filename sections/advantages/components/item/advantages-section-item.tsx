@@ -2,13 +2,11 @@ import { CaretIcon } from "@/icons";
 
 import { clsx } from "clsx";
 
+import type { AdvantagesItem } from "@/types/components/common";
+
 export type AdvantagesSectionItemProps = {
   className?: string;
-  data: {
-    key: string;
-    title: string;
-    description: string;
-  };
+  data: AdvantagesItem;
   onClick?: () => void;
 };
 

@@ -73,6 +73,15 @@ export async function getRoleBySlug({
           preview: true,
         },
       },
+      advantages: {
+        fields: ["id"],
+        populate: {
+          banner: true,
+          items: {
+            fields: ["id", "title", "description"],
+          },
+        },
+      },
     },
     pagination: {
       limit: 1,

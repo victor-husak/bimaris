@@ -1,4 +1,5 @@
 import type { CaseStudyShort } from "./case-studies";
+import type { Advantages } from "./components/common";
 
 export type ServiceShort = {
   id: number;
@@ -16,5 +17,6 @@ export type ServiceShort = {
 export type Service = ServiceShort & {
   content: string;
   caseStudies: CaseStudyShort[];
+  advantages: Advantages;
   updatedAt: string;
 };

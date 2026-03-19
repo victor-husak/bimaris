@@ -37,11 +37,13 @@ export const ServicesItemDomain: React.FC<ServicesItemDomainProps> = (
       HeaderComponent={<Components.Header data={props.data} />}
     >
       {/* Advantages */}
-      <AdvantagesSection
-        className="mt-5"
-        data={advantages}
-        BannerComponent={<Rating />}
-      />
+      {!!props.data.advantages && (
+        <AdvantagesSection
+          className="mt-5"
+          data={props.data.advantages}
+          BannerComponent={<Rating />}
+        />
+      )}
 
       {/* Content */}
       <Components.Content className="pb-25" data={props.data} />

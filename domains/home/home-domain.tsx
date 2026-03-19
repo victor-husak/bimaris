@@ -19,9 +19,11 @@ import * as Components from "./components";
 
 import type { CaseStudyShort } from "@/types/case-studies";
 import type { PublicationShort } from "@/types/publication";
+import type { HomePage } from "@/types/home-page";
 
 export type HomeDomainProps = {
   className?: string;
+  homePageData: HomePage | null;
   caseStudies: CaseStudyShort[];
   publications: PublicationShort[];
 };
@@ -36,7 +38,13 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
       HeaderComponent={<Components.Header />}
     >
       {/* Advantages */}
-      <AdvantagesSection className="mt-5" withBanner data={advantages} />
+      {!!props.homePageData?.advantages && (
+        <AdvantagesSection
+          className="mt-5"
+          withBanner
+          data={props.homePageData.advantages}
+        />
+      )}
 
       {/* Role */}
       <RolesService
@@ -68,23 +76,23 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
   );
 };
 
-const advantages = [
-  {
-    key: "1",
-    title: "98%",
-    description:
-      "Client satisfaction rate based on long-term partnerships and repeat engagements.",
-  },
-  {
-    key: "2",
-    title: "1,000+",
-    description:
-      "Successful immigration cases handled for individuals and businesses across multiple jurisdictions.",
-  },
-  {
-    key: "3",
-    title: "10 years",
-    description:
-      "Of combined professional experience in immigration law and international advisory.",
-  },
-];
+// const advantages = [
+//   {
+//     key: "1",
+//     title: "98%",
+//     description:
+//       "Client satisfaction rate based on long-term partnerships and repeat engagements.",
+//   },
+//   {
+//     key: "2",
+//     title: "1,000+",
+//     description:
+//       "Successful immigration cases handled for individuals and businesses across multiple jurisdictions.",
+//   },
+//   {
+//     key: "3",
+//     title: "10 years",
+//     description:
+//       "Of combined professional experience in immigration law and international advisory.",
+//   },
+// ];
