@@ -22,7 +22,7 @@ export type ServicesItemDomainHeaderProps = {
 export const ServicesItemDomainHeader: React.FC<
   ServicesItemDomainHeaderProps
 > = (props): React.JSX.Element => {
-  const { data, onActionClick } = useServicesItemDomainHeader(props);
+  const { data } = useServicesItemDomainHeader(props);
 
   const { onScrollToSection } = useScrollToSection();
 
