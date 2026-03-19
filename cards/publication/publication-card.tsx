@@ -1,13 +1,14 @@
 import NextImage from "next/image";
+
 import { NextLink } from "@/i18n/routing";
-import { clsx } from "clsx";
+
 import { useTranslations } from "next-intl";
+
+import { clsx } from "clsx";
 
 import { Tag } from "@/components";
 
 import { CardAction } from "@/components/card";
-
-import * as Icons from "./icons";
 
 import { usePublicationCard } from "./publication-card.hook";
 
@@ -44,7 +45,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
       )}
 
       {/* Preview */}
-      <div className="h-[180px] overflow-hidden rounded-lg bg-gray-300">
+      <div className="h-[180px] w-full overflow-hidden rounded-lg bg-gray-300">
         <NextImage
           className={clsx(
             "transition-img h-full w-full object-cover",
@@ -61,11 +62,34 @@ export const PublicationCard: React.FC<PublicationCardProps> = (
       <div className="flex flex-1 flex-col pt-[25px]">
         {/* Meta */}
         <div className="mb-[25px] flex gap-2">
-          <Tag
+          {props.type === "publication" &&
+            !!(props.data as PublicationShort).country && (
+              <Tag
+                className="bg-[#E7EFFC] text-[#2D3A52]"
+                title={(props.data as PublicationShort).country.name}
+              />
+            )}
+
+          {!!data.tag && (
+            <Tag
+              className="bg-[#E7EFFC] text-[#2D3A52]"
+              title={data.tag.name}
+              IconComponent={
+                <NextImage
+                  className="h-2.5 w-2.5 object-contain"
+                  src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${data.tag.icon.url}`}
+                  alt={data.tag.name}
+                  width={10}
+                  height={10}
+                />
+              }
+            />
+          )}
+          {/* <Tag
             className="bg-[#E7EFFC] text-[#2D3A52]"
             title="Business relocation"
             IconComponent={<Icons.Business />}
-          />
+          /> */}
 
           {/* Date */}
           <div className="flex rounded-full bg-[#EFF2F7] px-2 py-[5px]">

@@ -38,7 +38,6 @@ export const ListLayout: React.FC<ListLayoutProps> = (
             className="mx-auto"
             title={`Show more (+${props.totalCount})`}
             animation="scale"
-            href="/"
           />
         )}
       </div>

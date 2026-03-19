@@ -10,6 +10,8 @@ export type FaqsSectionItemProps = {
   className?: string;
   title: string;
   description: string;
+  active?: boolean;
+  onToggle?: () => void;
 };
 
 export const FaqsSectionItem: React.FC<FaqsSectionItemProps> = (
@@ -17,6 +19,7 @@ export const FaqsSectionItem: React.FC<FaqsSectionItemProps> = (
 ): React.JSX.Element => {
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse({
     duration: 400,
+    isExpanded: props.active,
   });
 
   return (
@@ -24,11 +27,11 @@ export const FaqsSectionItem: React.FC<FaqsSectionItemProps> = (
       {/* Header */}
       <div
         className={clsx(
-          "flex cursor-pointer items-center justify-between px-[15px] py-5 transition-all",
+          "flex cursor-pointer items-center justify-between py-5 transition-all",
+          "lg:px-[15px]",
           { "hover:bg-[#E9ECF2]": !isExpanded },
         )}
-        //
-        {...getToggleProps()}
+        onClick={props.onToggle}
       >
         {/* Title */}
         <p className="text-[16px]/[21px] font-medium tracking-[.024em] text-[#2D3A52]">
@@ -42,7 +45,7 @@ export const FaqsSectionItem: React.FC<FaqsSectionItemProps> = (
 
       {/* Content */}
       <div {...getCollapseProps()}>
-        <div className="px-[15px] pb-5">
+        <div className={clsx("pb-5", "lg:px-[15px]")}>
           <p className="text-[15px]/[22px] tracking-[.024em] text-[#8A91A2]">
             {props.description}
           </p>
