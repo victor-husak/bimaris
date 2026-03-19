@@ -26,7 +26,7 @@ import type { AboutUsPage } from "@/types/about-us-page";
 
 export type AboutUsDomainProps = {
   className?: string;
-  aboutUsPage: AboutUsPage | null;
+  pageData: AboutUsPage | null;
   caseStudies: CaseStudyShort[];
 };
 
@@ -44,19 +44,20 @@ export const AboutUsDomain: React.FC<AboutUsDomainProps> = (
       HeaderComponent={<Components.Header className="mb-5" />}
     >
       {/* Advantages */}
-      {!!props.aboutUsPage?.advantages && (
+      {!!props.pageData?.advantages && (
         <AdvantagesSection
           className="mb-[75px]"
-          data={props.aboutUsPage.advantages}
+          data={props.pageData.advantages}
         />
       )}
 
       {/* Information */}
-      <InformationSection
-        className="mb-[100px]"
-        title="Professional immigration legal services for individuals, businesses, and investors in the Baltics"
-        description={information}
-      />
+      {!!props.pageData?.information && (
+        <InformationSection
+          className="mb-[100px]"
+          data={props.pageData.information}
+        />
+      )}
 
       {/* Roles */}
       <RolesService
@@ -107,28 +108,3 @@ export const AboutUsDomain: React.FC<AboutUsDomainProps> = (
     </PageLayout>
   );
 };
-
-const advantages = [
-  {
-    key: "1",
-    title: "98%",
-    description:
-      "Client satisfaction rate based on long-term partnerships and repeat engagements.",
-  },
-  {
-    key: "2",
-    title: "1,000+",
-    description:
-      "Successful immigration cases handled for individuals and businesses across multiple jurisdictions.",
-  },
-  {
-    key: "3",
-    title: "10 years",
-    description:
-      "Of combined professional experience in immigration law and international advisory.",
-  },
-];
-
-const information = `That’s why we provide expert legal support to help you achieve your dreams of living and working in a new country. At our firm, we pride ourselves on being more than just lawyers – we are [dedicated partners in your journey.](/)
-
-With extensive experience, we have successfully assisted over 1,000 businesses in navigating the complexities of immigration to Ukraine. Our team is here to provide you with personalized guidance and support every step of the way. Let us help you achieve your goals and make your transition to Ukraine as smooth as possible!`;

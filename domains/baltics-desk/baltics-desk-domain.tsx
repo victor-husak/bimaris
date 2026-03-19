@@ -11,11 +11,13 @@ import * as Components from "./components";
 import { useBalticsDeskDomain } from "./baltics-desk-domain.hook";
 
 import type { BalticShort } from "@/types/baltics";
+import type { BalticsDeskPage } from "@/types/baltics-desk-page";
 
 export type BalticsDeskDomainProps = {
   className?: string;
-  commonData: CommonData | null;
+  // commonData: CommonData | null;
   baltics: BalticShort[];
+  pageData: BalticsDeskPage | null;
 };
 
 export const BalticsDeskDomain: React.FC<BalticsDeskDomainProps> = (
@@ -33,11 +35,14 @@ export const BalticsDeskDomain: React.FC<BalticsDeskDomainProps> = (
       <MenuSection className="mb-[75px]" data={advantages} />
 
       {/* Information */}
-      <InformationSection
-        className="mb-[100px]"
-        title="Professional immigration legal services for individuals, businesses, and investors in the Baltics"
-        description={information}
-      />
+      {!!props.pageData?.information && (
+        <InformationSection
+          className="mb-[100px]"
+          data={props.pageData.information}
+        />
+      )}
+
+      {/* <pre>{JSON.stringify(props.pageData)}</pre> */}
 
       {/* Regions */}
       <Components.Regions
@@ -46,8 +51,8 @@ export const BalticsDeskDomain: React.FC<BalticsDeskDomainProps> = (
       />
 
       {/* Faqs */}
-      {props.commonData && (
-        <FaqsSection className="mb-25" data={props.commonData.faqs} />
+      {props.pageData && (
+        <FaqsSection className="mb-25" data={props.pageData.faqs} />
       )}
     </PageLayout>
   );
@@ -76,7 +81,3 @@ const advantages = [
     href: "/baltics-desk/lithuania",
   },
 ];
-
-const information = `That’s why we provide expert legal support to help you achieve your dreams of living and working in a new country. At our firm, we pride ourselves on being more than just lawyers – we are [dedicated partners in your journey.](/)
-
-With extensive experience, we have successfully assisted over 1,000 businesses in navigating the complexities of immigration to the Baltics. Our team is here to provide you with personalized guidance and support every step of the way. Let us help you achieve your goals and make your transition to the Baltics as smooth as possible!`;

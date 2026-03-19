@@ -29,6 +29,10 @@ export async function getServices({
 
   if (filters) {
     paramsQuery.filters = {};
+
+    if (filters.roles) {
+      paramsQuery.filters.roles = { slug: { $in: filters.roles } };
+    }
   }
 
   const query = qs.stringify(paramsQuery, { encode: false });

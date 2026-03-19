@@ -1,6 +1,8 @@
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
+import { getServices } from "@/api/strapi/queries/services";
+
 import { RootLayout } from "@/layouts/root";
 
 import { ContextModal } from "@/contexts/modal";
@@ -36,6 +38,31 @@ export default async function RootLayoutPage({
 
   setRequestLocale(locale);
 
+  const [servicesBusinesses, servicesIndividuals, servicesInvestors] =
+    await Promise.all([
+      getServices({
+        locale,
+        pageSize: 8,
+        filters: {
+          roles: "businesses",
+        },
+      }),
+      getServices({
+        locale,
+        pageSize: 8,
+        filters: {
+          roles: "individuals",
+        },
+      }),
+      getServices({
+        locale,
+        pageSize: 8,
+        filters: {
+          roles: "investors",
+        },
+      }),
+    ]);
+
   return (
     <html lang={locale}>
       <head>
@@ -55,7 +82,13 @@ export default async function RootLayoutPage({
       >
         <NextIntlClientProvider locale={locale}>
           <ContextModal>
-            <RootLayout>{children}</RootLayout>
+            <RootLayout
+              servicesBusinesses={servicesBusinesses.data}
+              servicesIndividuals={servicesIndividuals.data}
+              servicesInvestors={servicesInvestors.data}
+            >
+              {children}
+            </RootLayout>
           </ContextModal>
         </NextIntlClientProvider>
       </body>

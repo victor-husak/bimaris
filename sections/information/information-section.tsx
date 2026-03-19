@@ -6,10 +6,11 @@ import { Button } from "@/components";
 
 import { clsx } from "clsx";
 
+import type { Information } from "@/types/components/common";
+
 export type InformationSectionProps = {
   className?: string;
-  title: string;
-  description: string;
+  data: Information;
 };
 
 export const InformationSection: React.FC<InformationSectionProps> = (
@@ -52,14 +53,17 @@ export const InformationSection: React.FC<InformationSectionProps> = (
       >
         {/* Title */}
         <h2 className="text-[30px]/[42px] font-light text-[#507FEB]">
-          {props.title}
+          {props.data.title}
         </h2>
 
         {/* Description */}
-        <Components.Markdown className="mt-auto" content={props.description} />
+        <Components.Markdown
+          className="mt-auto"
+          content={props.data.description}
+        />
 
         {/* Action */}
-        <Button href="/case-studies">Open case studies</Button>
+        <Button href={props.data.action.href}>{props.data.action.name}</Button>
       </div>
     </section>
   );

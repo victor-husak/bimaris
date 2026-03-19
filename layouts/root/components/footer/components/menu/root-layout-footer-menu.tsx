@@ -5,7 +5,7 @@ import { clsx } from "clsx";
 export type RootLayoutFooterMenuProps = {
   className?: string;
   title: string;
-  items: { key: string; title: string; href?: string }[];
+  items: { key: string | number; title: string; href?: string }[];
 };
 
 export const RootLayoutFooterMenu: React.FC<RootLayoutFooterMenuProps> = (

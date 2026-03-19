@@ -4,9 +4,9 @@ import qs from "qs";
 
 import { strapiFetch } from "../fetch";
 
-import type { AboutUsPage } from "@/types/about-us-page";
+import type { BalticsDeskPage } from "@/types/baltics-desk-page";
 
-export async function getAboutUsPage({
+export async function getBalticsDeskPage({
   filters,
   pageSize = 6,
   locale = "en",
@@ -18,13 +18,11 @@ export async function getAboutUsPage({
   const paramsQuery: any = {
     fields: ["id"],
     populate: {
-      advantages: {
-        fields: ["id"],
+      faqs: {
+        fields: ["id", "title"],
         populate: {
-          banner: true,
-          items: {
-            fields: ["id", "title", "description"],
-          },
+          preview: true,
+          items: true,
         },
       },
       information: {
@@ -47,7 +45,10 @@ export async function getAboutUsPage({
 
   const query = qs.stringify(paramsQuery, { encode: false });
 
-  return strapiFetch<StrapiSingle<AboutUsPage>>(`/about-us-page?${query}`, {
-    next: { revalidate: 60, tags: ["about-us-page"] },
-  });
+  return strapiFetch<StrapiSingle<BalticsDeskPage>>(
+    `/baltics-desk-page?${query}`,
+    {
+      next: { revalidate: 60, tags: ["baltics-desk-page"] },
+    },
+  );
 }

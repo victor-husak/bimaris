@@ -65,6 +65,13 @@ export async function getBalticBySlug({
           preview: true,
         },
       },
+      information: {
+        fields: ["id", "title", "description"],
+        populate: {
+          preview: true,
+          action: true,
+        },
+      },
     },
     pagination: {
       limit: 1,

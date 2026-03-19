@@ -2,9 +2,10 @@ import { useMemo } from "react";
 
 import { useTranslations } from "next-intl";
 
+import type { RootLayoutFooterProps } from "./root-layout-footer";
 import type { MenuProps } from "./components";
 
-export const useRootLayoutFooter = () => {
+export const useRootLayoutFooter = (props: RootLayoutFooterProps) => {
   const t = useTranslations("layouts.root.footer");
 
   const companyOptions = useMemo<MenuProps["items"]>(
@@ -38,98 +39,29 @@ export const useRootLayoutFooter = () => {
     [t],
   );
 
-  const businessesOptions = useMemo<MenuProps["items"]>(
-    () => [
-      {
-        key: "companyFormation",
-        title: t("menu.businesses.items.companyFormation"),
-        href: "/services/company-formation-in-ukraine",
-      },
-      {
-        key: "businessImmigration",
-        title: t("menu.businesses.items.businessImmigration"),
-        href: "/services/business-immigration-to-ukraine",
-      },
-      {
-        key: "corporateImmigration",
-        title: t("menu.businesses.items.corporateImmigration"),
-        href: "/services/corporate-immigration-to-ukraine",
-      },
-      {
-        key: "representativeOffice",
-        title: t("menu.businesses.items.representativeOffice"),
-        href: "/services/registration-representative-office",
-      },
-    ],
-    [t],
-  );
+  const businessesOptions = useMemo<MenuProps["items"]>(() => {
+    return props.servicesBusinesses.map((service) => ({
+      key: service.id,
+      title: service.name,
+      href: `/services/${service.slug}`,
+    }));
+  }, [props.servicesBusinesses]);
 
-  const individualsOptions = useMemo<MenuProps["items"]>(
-    () => [
-      {
-        key: "crypto",
-        title: t("menu.individuals.items.crypto"),
-        href: "/services/crypto",
-      },
-      {
-        key: "marketing",
-        title: t("menu.individuals.items.marketing"),
-        href: "/services/marketing-and-advertising",
-      },
-      {
-        key: "consumerGoods",
-        title: t("menu.individuals.items.consumerGoods"),
-        href: "/services/consumer-goods",
-      },
-      {
-        key: "talentSolutions",
-        title: t("menu.individuals.items.talentSolutions"),
-        href: "/services/talent-solutions",
-      },
-      {
-        key: "healthcare",
-        title: t("menu.individuals.items.healthcare"),
-        href: "/services/healthcare",
-      },
-      {
-        key: "finance",
-        title: t("menu.individuals.items.finance"),
-        href: "/services/finance",
-      },
-      {
-        key: "legal",
-        title: t("menu.individuals.items.legal"),
-        href: "/services/legal",
-      },
-    ],
-    [t],
-  );
+  const individualsOptions = useMemo<MenuProps["items"]>(() => {
+    return props.servicesIndividuals.map((service) => ({
+      key: service.id,
+      title: service.name,
+      href: `/services/${service.slug}`,
+    }));
+  }, [props.servicesIndividuals]);
 
-  const investorsOptions = useMemo<MenuProps["items"]>(
-    () => [
-      {
-        key: "talentSolutions",
-        title: t("menu.investors.items.talentSolutions"),
-        href: "/services/talent-solutions",
-      },
-      {
-        key: "healthcare",
-        title: t("menu.investors.items.healthcare"),
-        href: "/services/healthcare",
-      },
-      {
-        key: "finance",
-        title: t("menu.investors.items.finance"),
-        href: "/services/finance",
-      },
-      {
-        key: "legal",
-        title: t("menu.investors.items.legal"),
-        href: "/services/legal",
-      },
-    ],
-    [t],
-  );
+  const investorsOptions = useMemo<MenuProps["items"]>(() => {
+    return props.servicesInvestors.map((service) => ({
+      key: service.id,
+      title: service.name,
+      href: `/services/${service.slug}`,
+    }));
+  }, [props.servicesInvestors]);
 
   return {
     t,

@@ -22,3 +22,17 @@ export type Advantages = {
   banner: Image;
   items: AdvantagesItem[];
 };
+
+export type Information = {
+  id: number;
+  title: string;
+  description: string;
+  preview: Image;
+  action: Action;
+};
+
+export type Action = {
+  id: number;
+  name: string;
+  href: string;
+};

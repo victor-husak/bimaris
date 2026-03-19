@@ -1,5 +1,6 @@
 import { getCommonData } from "@/api/strapi/queries/common";
 import { getBaltics } from "@/api/strapi/queries/baltics";
+import { getBalticsDeskPage } from "@/api/strapi/queries/baltics-desk-page";
 
 import { BalticsDeskDomain } from "@/domains/baltics-desk";
 
@@ -31,16 +32,20 @@ interface BalticsDeskPageProps {
 export default async function BalticsDeskPage(props: BalticsDeskPageProps) {
   const params = await props.params;
 
-  const [commonData, baltics] = await Promise.all([
-    getCommonData({
+  const [baltics, pageData] = await Promise.all([
+    getBaltics({
       locale: params.locale,
     }),
-    getBaltics({
+    getBalticsDeskPage({
       locale: params.locale,
     }),
   ]);
 
   return (
-    <BalticsDeskDomain commonData={commonData.data} baltics={baltics.data} />
+    <BalticsDeskDomain
+      // commonData={commonData.data}
+      baltics={baltics.data}
+      pageData={pageData.data}
+    />
   );
 }

@@ -19,15 +19,12 @@ export function generateStaticParams() {
 export default async function AboutUsPage(props: AboutUsPageProps) {
   const params = await props.params;
 
-  const [caseStudies, aboutUsPage] = await Promise.all([
+  const [caseStudies, pageData] = await Promise.all([
     getCaseStudies({ locale: params.locale }),
     getAboutUsPage({ locale: params.locale }),
   ]);
 
   return (
-    <AboutUsDomain
-      caseStudies={caseStudies.data}
-      aboutUsPage={aboutUsPage.data}
-    />
+    <AboutUsDomain caseStudies={caseStudies.data} pageData={pageData.data} />
   );
 }

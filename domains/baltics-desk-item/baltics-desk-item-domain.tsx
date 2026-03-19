@@ -42,11 +42,7 @@ export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
       {/* <MenuSection className="mb-[75px]" data={advantages} /> */}
 
       {/* Information */}
-      <InformationSection
-        className="mb-25"
-        title="Professional immigration legal services for individuals, businesses, and investors in the Baltics"
-        description={information}
-      />
+      <InformationSection className="mb-25" data={props.data.information} />
 
       {/* Services */}
       <ServicesSection

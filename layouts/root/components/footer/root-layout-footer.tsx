@@ -6,8 +6,13 @@ import { clsx } from "clsx";
 
 import { useRootLayoutFooter } from "./root-layout-footer.hook";
 
+import type { ServiceShort } from "@/types/services";
+
 export type RootLayoutFooterProps = {
   className?: string;
+  servicesBusinesses: ServiceShort[];
+  servicesIndividuals: ServiceShort[];
+  servicesInvestors: ServiceShort[];
 };
 
 export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
@@ -19,7 +24,7 @@ export const RootLayoutFooter: React.FC<RootLayoutFooterProps> = (
     businessesOptions,
     individualsOptions,
     investorsOptions,
-  } = useRootLayoutFooter();
+  } = useRootLayoutFooter(props);
 
   return (
     <footer
