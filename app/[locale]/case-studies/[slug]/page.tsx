@@ -7,7 +7,7 @@ import {
   getCaseStudySlugs,
 } from "@/api/strapi/queries/case-studies";
 
-import { InsightsItemDomain } from "@/domains/insights-item";
+import { CaseStudiesItemDomain } from "@/domains/сase-studies-item";
 
 import { generateSEO } from "@/utils/seo";
 
@@ -65,5 +65,5 @@ export default async function CaseStudiesItemPage(
 
   if (!caseStudy) notFound();
 
-  return <InsightsItemDomain data={caseStudy} />;
+  return <CaseStudiesItemDomain data={caseStudy} />;
 }

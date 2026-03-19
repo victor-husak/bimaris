@@ -3,25 +3,25 @@ import { clsx } from "clsx";
 import { PageLayout } from "@/layouts/page";
 
 import { Support } from "@/ui/support";
-import { Rating } from "@/ui/rating";
+// import { Rating } from "@/ui/rating";
 
-import { PublicationsSection } from "@/sections/publications";
+// import { PublicationsSection } from "@/sections/publications";
 
 import * as Components from "./components";
 
-import { useInsightsItemDomain } from "./insights-item-domain.hook";
+import { useCaseStudiesItemDomain } from "./сase-studies-item-domain.hook";
 
-import type { Publication } from "@/types/publication";
+import type { CaseStudy } from "@/types/case-studies";
 
-export type InsightsItemDomainProps = {
+export type CaseStudiesItemDomainProps = {
   className?: string;
-  data: Publication;
+  data: CaseStudy;
 };
 
-export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
+export const CaseStudiesItemDomain: React.FC<CaseStudiesItemDomainProps> = (
   props,
 ): React.JSX.Element => {
-  const { routes } = useInsightsItemDomain(props);
+  const { routes } = useCaseStudiesItemDomain(props);
 
   return (
     <PageLayout
@@ -37,21 +37,19 @@ export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
       {/* Content */}
       <Components.Content className="pb-20" data={props.data} />
 
-      {"relatedPublications" in props.data &&
+      {/* {"relatedPublications" in props.data &&
         props.data.relatedPublications.length > 0 && (
           <>
-            {/* Rating */}
             <section className="container-full section-gradient pt-20">
               <Rating className="z-1" />
             </section>
 
-            {/* Publications */}
             <PublicationsSection
               className="z-1 mb-20"
               data={props.data.relatedPublications}
             />
           </>
-        )}
+        )} */}
     </PageLayout>
   );
 };
