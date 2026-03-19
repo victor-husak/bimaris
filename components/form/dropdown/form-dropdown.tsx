@@ -27,7 +27,7 @@ export const FormDropdown: React.FC<FormDropdownProps> = (
       {/* Inner */}
       <div
         className={clsx(
-          "flex cursor-pointer items-center gap-2 rounded-full border border-[#E7EAF2] px-[14px] py-2.5 transition-all",
+          "flex cursor-pointer items-center gap-2 rounded-full border border-[#E7EAF2] px-[12px] py-2.5 transition-all",
           "hover:bg-[#EDF0F5]",
         )}
         onClick={onTrigger}
@@ -35,7 +35,7 @@ export const FormDropdown: React.FC<FormDropdownProps> = (
         {props.IconComponent}
 
         {/* Title */}
-        <span className="text-[13px]/[14px] tracking-[.008em] text-[#33383C]">
+        <span className="text-[13px]/[14px] tracking-[.34px] text-[#33383c]">
           {props.title}
         </span>
 

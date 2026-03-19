@@ -23,7 +23,7 @@ export const AsideActionsItem: React.FC<AsideActionsItemProps> = (
       {props.IconComponent}
 
       {/* Title */}
-      <span className="text-[13px]/[14px] tracking-[.008em] whitespace-nowrap text-[#33383C]">
+      <span className="text-[13px]/[14px] tracking-[.34px] whitespace-nowrap text-[#33383c]">
         {props.title}
       </span>
     </div>

@@ -127,23 +127,23 @@ export async function getPublicationBySlug({
       category: {
         fields: ["slug", "name"],
       },
-      relatedPublications: {
-        fields: [
-          "id",
-          "name",
-          "description",
-          "slug",
-          "createdAt",
-          "updatedAt",
-          "date",
-        ],
-        populate: {
-          preview: true,
-          category: {
-            fields: ["slug", "name"],
-          },
-        },
-      },
+      // relatedPublications: {
+      //   fields: [
+      //     "id",
+      //     "name",
+      //     "description",
+      //     "slug",
+      //     "createdAt",
+      //     "updatedAt",
+      //     "date",
+      //   ],
+      //   populate: {
+      //     preview: true,
+      //     category: {
+      //       fields: ["slug", "name"],
+      //     },
+      //   },
+      // },
       experts: {
         fields: ["name", "slug", "position"],
         populate: {
