@@ -4,12 +4,11 @@ import * as Components from "./components";
 
 import { clsx } from "clsx";
 
-import type { Publication } from "@/types/publication";
 import type { CaseStudy } from "@/types/case-studies";
 
 export type CaseStudiesItemDomainContentProps = {
   className?: string;
-  data: Publication | CaseStudy;
+  data: CaseStudy;
 };
 
 export const CaseStudiesItemDomainContent: React.FC<

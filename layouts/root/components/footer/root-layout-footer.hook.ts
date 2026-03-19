@@ -20,11 +20,6 @@ export const useRootLayoutFooter = () => {
         href: "/case-studies",
       },
       {
-        key: "capabilities",
-        title: t("menu.company.items.capabilities"),
-        href: "/capabilities",
-      },
-      {
         key: "insights",
         title: "Insights",
         href: "/insights",

@@ -29,12 +29,17 @@ export const BalticsDeskDomainHeader: React.FC<BalticsDeskDomainHeaderProps> = (
       tag="Baltic states"
       ActionsComponent={
         <>
-          <Button href="/" variant="white" size="medium" animation="scale">
+          <Button
+            href="/contact-us"
+            variant="white"
+            size="medium"
+            animation="scale"
+          >
             Connect with our team
           </Button>
 
           <Button
-            href="/services/1"
+            href="/about-us/#section-roles"
             size="medium"
             variant="blur"
             animation="opacity"
@@ -55,10 +60,12 @@ const items = [
     key: "1",
     title: "Browse services",
     icon: <ServiceIcon />,
+    href: "/about-us/#section-roles",
   },
   {
     key: "2",
     title: "Schedule a meeting",
     icon: <MeetingIcon />,
+    href: "/contact-us",
   },
 ];
