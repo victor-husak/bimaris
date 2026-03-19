@@ -68,6 +68,15 @@ export async function getCaseStudyBySlug({
     fields: ["id", "name", "description", "slug", "content", "createdAt"],
     populate: {
       preview: true,
+      client: {
+        fields: ["id", "name", "description", "url"],
+        populate: {
+          logo: true,
+        },
+      },
+      services: {
+        fields: ["id", "name", "slug"],
+      },
     },
     pagination: {
       limit: 1,

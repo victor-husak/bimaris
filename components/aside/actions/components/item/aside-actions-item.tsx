@@ -14,7 +14,7 @@ export const AsideActionsItem: React.FC<AsideActionsItemProps> = (
     <div
       className={clsx(
         props.className,
-        "flex cursor-pointer items-center gap-2 rounded-full border border-[#E7EAF2] px-[14px] py-2.5 transition-all",
+        "flex cursor-pointer items-center gap-1.5 rounded-full border border-[#E7EAF2] px-[10px] py-2.5 transition-all",
         "hover:bg-[#EDF0F5]",
       )}
       onClick={props.onClick}

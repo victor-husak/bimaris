@@ -5,24 +5,37 @@ import {
   AsideActions,
   AsideAuthor,
   AsideGroup,
+  AsideClient,
+  AsideLists,
 } from "@/components/aside";
+
+import { useСaseStudiesItemDomainContentAside } from "./сase-studies-item-domain-content-aside.hook";
 
 import { clsx } from "clsx";
 
-import type { Publication } from "@/types/publication";
 import type { CaseStudy } from "@/types/case-studies";
 
 export type CaseStudiesItemDomainContentAsideProps = {
   className?: string;
-  data: Publication | CaseStudy;
+  data: CaseStudy;
 };
 
 export const CaseStudiesItemDomainContentAside: React.FC<
   CaseStudiesItemDomainContentAsideProps
 > = (props): React.JSX.Element => {
+  const { services } = useСaseStudiesItemDomainContentAside(props);
+
   return (
     <SingleLayoutAside className={clsx(props.className, "")}>
+      {props.data.client && (
+        <AsideGroup variant="thridary" title="Client">
+          <AsideClient data={props.data.client} />
+        </AsideGroup>
+      )}
+
       <AsideContent content={props.data.content} />
+
+      <AsideLists title="Related solutions" data={services} />
 
       {!!props.data.experts?.length && (
         <AsideGroup title="Posted by">

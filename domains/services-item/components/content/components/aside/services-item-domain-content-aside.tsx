@@ -1,6 +1,6 @@
 import { SingleLayoutAside } from "@/layouts/single";
 
-import { AsideContent, AsideLists, AsideActions } from "@/components/aside";
+import { AsideContent, AsideActions } from "@/components/aside";
 
 import { clsx } from "clsx";
 
@@ -15,8 +15,6 @@ export const ServicesItemDomainContentAside: React.FC<
   return (
     <SingleLayoutAside className={clsx(props.className, "")}>
       <AsideContent content={props.content} />
-
-      <AsideLists title="Related solutions" />
 
       <AsideActions listenText={props.content} name="Services" />
     </SingleLayoutAside>

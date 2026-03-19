@@ -9,9 +9,15 @@ export type CaseStudyShort = {
   createdAt: string;
   updatedAt: string;
   preview: Image;
+  services: Array<{
+    id: number;
+    name: string;
+    slug: string;
+  }>;
 };
 
 export type CaseStudy = CaseStudyShort & {
   content: string;
   experts?: Array<ExpertShort>;
+  client?: Client;
 };

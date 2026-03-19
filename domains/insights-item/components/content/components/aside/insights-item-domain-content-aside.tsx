@@ -10,11 +10,10 @@ import {
 import { clsx } from "clsx";
 
 import type { Publication } from "@/types/publication";
-import type { CaseStudy } from "@/types/case-studies";
 
 export type InsightsItemDomainContentAsideProps = {
   className?: string;
-  data: Publication | CaseStudy;
+  data: Publication;
 };
 
 export const InsightsItemDomainContentAside: React.FC<
