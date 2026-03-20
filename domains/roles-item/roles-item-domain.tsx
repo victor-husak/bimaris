@@ -16,10 +16,12 @@ import * as Components from "./components";
 import { useRolesItemDomain } from "./roles-item-domain.hook";
 
 import type { Role } from "@/types/roles";
+import type { Client } from "@/types/clients";
 
 export type RolesItemDomainProps = {
   className?: string;
   data: Role;
+  clients: Client[];
 };
 
 export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
@@ -43,7 +45,7 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
       )}
 
       {/* Points */}
-      <Components.Points />
+      <Components.Points data={props.data.points} clients={props.clients} />
 
       {/* Services */}
       {!!props.data.services.length && (
@@ -74,24 +76,3 @@ export const RolesItemDomain: React.FC<RolesItemDomainProps> = (
     </PageLayout>
   );
 };
-
-const advantages = [
-  {
-    key: "1",
-    title: "98%",
-    description:
-      "Client satisfaction rate based on long-term partnerships and repeat engagements.",
-  },
-  {
-    key: "2",
-    title: "1,000+",
-    description:
-      "Successful immigration cases handled for individuals and businesses across multiple jurisdictions.",
-  },
-  {
-    key: "3",
-    title: "10 years",
-    description:
-      "Of combined professional experience in immigration law and international advisory.",
-  },
-];

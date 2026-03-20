@@ -8,12 +8,12 @@ import * as Components from "./components";
 
 import { useContactUsDomain } from "./contact-us-domain.hook";
 
-// import type { CommonData } from "@/types/common";
+import type { ContactUsPage } from "@/types/contact-us-page";
 import type { Office } from "@/types/offices";
 
 export type ContactUsDomainProps = {
   className?: string;
-  commonData: CommonData | null;
+  pageData: ContactUsPage | null;
   offices: Office[];
 };
 
@@ -30,8 +30,8 @@ export const ContactUsDomain: React.FC<ContactUsDomainProps> = (
       <Components.Offices data={props.offices} />
 
       {/* Faqs */}
-      {props.commonData && (
-        <FaqsSection className="mt-25 mb-25" data={props.commonData.faqs} />
+      {props.pageData && (
+        <FaqsSection className="mt-25 mb-25" data={props.pageData.faqs} />
       )}
     </PageLayout>
   );

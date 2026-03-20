@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
 import { getRoleBySlug, getRoleSlugs } from "@/api/strapi/queries/roles";
+import { getClients } from "@/api/strapi/queries/clients";
 
 import { RolesItemDomain } from "@/domains/roles-item";
 
@@ -54,13 +55,14 @@ export async function generateStaticParams() {
 export default async function RolesItemPage(props: RolesItemPageProps) {
   const params = await props.params;
 
-  const [res] = await Promise.all([
+  const [res, clients] = await Promise.all([
     getRoleBySlug({ slug: params.slug, locale: params.locale }),
+    getClients({ locale: params.locale }),
   ]);
 
   const role = res.data[0];
 
   if (!role) notFound();
 
-  return <RolesItemDomain data={role} />;
+  return <RolesItemDomain data={role} clients={clients.data} />;
 }

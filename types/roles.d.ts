@@ -2,6 +2,7 @@ import type { ServiceShort } from "@/types/services";
 import type { CaseStudyShort } from "@/types/case-studies";
 import type { Faq } from "@/types/components";
 import type { Advantages } from "./components/common";
+import type { Points } from "./components/roles";
 
 export type RoleShort = {
   id: number;
@@ -18,5 +19,6 @@ export type Role = RoleShort & {
   caseStudies: CaseStudyShort[];
   faqs: Faq;
   advantages: Advantages;
+  points: Points;
   updatedAt: string;
 };

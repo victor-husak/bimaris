@@ -82,6 +82,15 @@ export async function getRoleBySlug({
           },
         },
       },
+      points: {
+        fields: ["id", "title"],
+        populate: {
+          preview: true,
+          items: {
+            fields: ["id", "name", "description"],
+          },
+        },
+      },
     },
     pagination: {
       limit: 1,
