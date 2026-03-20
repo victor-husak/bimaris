@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useMemo } from "react";
 
 import { useDidMountEffect } from "@/hooks";
 
@@ -9,6 +9,17 @@ export const useFiltersCheckbox = (props: FiltersCheckboxProps) => {
   const nodeRef = useRef<HTMLDivElement | null>(null);
 
   const [active, setActive] = useState(false);
+  const [value, setValue] = useState<Array<Option>>(props.value || []);
+
+  const activeItems = useMemo(() => {
+    const res: Record<string, boolean> = {};
+
+    value.forEach((item) => {
+      res[item.value] = true;
+    });
+
+    return res;
+  }, [value]);
 
   const onTrigger = useCallback(() => {
     if (!props.disabled) setActive(!active);
@@ -30,8 +41,30 @@ export const useFiltersCheckbox = (props: FiltersCheckboxProps) => {
       return () => {
         document.removeEventListener("click", handleClickOutside, true);
       };
+    } else {
+      props.onChange(value);
     }
   }, [active]);
 
-  return { containerNodeRef, nodeRef, active, onTrigger };
+  const onChange = useCallback((value: Option) => {
+    setValue((prev) => {
+      const isExist = prev.some((item) => item.value === value.value);
+
+      if (isExist) {
+        return prev.filter((item) => item.value !== value.value);
+      } else {
+        return [...prev, value];
+      }
+    });
+  }, []);
+
+  return {
+    containerNodeRef,
+    nodeRef,
+    active,
+    onTrigger,
+    onChange,
+    value,
+    activeItems,
+  };
 };

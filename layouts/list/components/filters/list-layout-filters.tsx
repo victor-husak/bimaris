@@ -21,7 +21,7 @@ export const ListLayoutFilters: React.FC<ListLayoutFiltersProps> = (
       <div className="flex items-center gap-2.5">{props.children}</div>
 
       {/* Search */}
-      <Components.Search />
+      <Components.Search value="" onSearch={() => {}} />
     </div>
   );
 };

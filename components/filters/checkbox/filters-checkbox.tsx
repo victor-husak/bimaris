@@ -11,16 +11,23 @@ export type FiltersCheckboxProps = {
   className?: string;
   label: string;
   titleContent: string;
+  value?: Array<Option>;
   disabled?: boolean;
   options?: Array<Option>;
-  onChange: (value: Option) => void;
+  onChange: (value: Array<Option>) => void;
 };
 
 export const FiltersCheckbox: React.FC<FiltersCheckboxProps> = (
   props,
 ): React.JSX.Element => {
-  const { containerNodeRef, nodeRef, active, onTrigger } =
-    useFiltersCheckbox(props);
+  const {
+    containerNodeRef,
+    nodeRef,
+    active,
+    activeItems,
+    onTrigger,
+    onChange,
+  } = useFiltersCheckbox(props);
 
   return (
     <div className={clsx(props.className, "relative")} ref={containerNodeRef}>
@@ -55,7 +62,9 @@ export const FiltersCheckbox: React.FC<FiltersCheckboxProps> = (
                 <Components.Item
                   key={item.value}
                   data={item}
-                  onClick={() => props.onChange(item)}
+                  value={activeItems[item.value]}
+                  // value={value.some((v) => v.value === item.value)}
+                  onClick={() => onChange(item)}
                 />
               ))}
             </ul>

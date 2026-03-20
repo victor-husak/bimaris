@@ -25,7 +25,7 @@ export const InsightsDomainListFilters: React.FC<
       <FiltersCheckbox
         label="Date"
         titleContent="Choose date range"
-        options={[]}
+        options={dateOptions}
         onChange={() => {}}
       />
 
@@ -47,7 +47,13 @@ export const InsightsDomainListFilters: React.FC<
 };
 
 const typeOptions: Array<Option> = [
-  { label: "All", value: "all" },
   { label: "Insights", value: "insights" },
-  { label: "Solutions", value: "solutions" },
+  { label: "Legal alert", value: "legal-alert" },
+];
+
+const dateOptions: Array<Option> = [
+  { label: "Today", value: "today" },
+  { label: "This week", value: "this-week" },
+  { label: "This month", value: "this-month" },
+  { label: "This year", value: "this-year" },
 ];
