@@ -83,6 +83,12 @@ export async function getCaseStudyBySlug({
       services: {
         fields: ["id", "name", "slug"],
       },
+      seo: {
+        fields: ["title", "description"],
+        populate: {
+          preview: true,
+        },
+      },
     },
     pagination: {
       limit: 1,

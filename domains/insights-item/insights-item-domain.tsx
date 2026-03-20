@@ -11,11 +11,12 @@ import * as Components from "./components";
 
 import { useInsightsItemDomain } from "./insights-item-domain.hook";
 
-import type { Publication } from "@/types/publication";
+import type { Publication, PublicationShort } from "@/types/publication";
 
 export type InsightsItemDomainProps = {
   className?: string;
   data: Publication;
+  relatedPublications: PublicationShort[];
 };
 
 export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
@@ -37,21 +38,20 @@ export const InsightsItemDomain: React.FC<InsightsItemDomainProps> = (
       {/* Content */}
       <Components.Content className="pb-20" data={props.data} />
 
-      {"relatedPublications" in props.data &&
-        props.data.relatedPublications.length > 0 && (
-          <>
-            {/* Rating */}
-            <section className="container-full section-gradient pt-20">
-              <Rating className="z-1" />
-            </section>
+      {props.relatedPublications && props.relatedPublications.length > 0 && (
+        <>
+          {/* Rating */}
+          <section className="container-full section-gradient pt-20">
+            <Rating className="z-1" />
+          </section>
 
-            {/* Publications */}
-            <PublicationsSection
-              className="z-1 mb-20"
-              data={props.data.relatedPublications}
-            />
-          </>
-        )}
+          {/* Publications */}
+          <PublicationsSection
+            className="z-1 mb-20"
+            data={props.relatedPublications}
+          />
+        </>
+      )}
     </PageLayout>
   );
 };

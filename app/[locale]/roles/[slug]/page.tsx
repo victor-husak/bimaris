@@ -29,11 +29,14 @@ export async function generateMetadata(
   if (!role) return undefined;
 
   return generateSEO({
-    title: role.name,
-    description: role.description,
-    images: role.mainImage
-      ? [`${process.env.NEXT_PUBLIC_STRAPI_URL}${role.mainImage.url}`]
-      : [],
+    title: role.seo?.title || role.name,
+    description: role.seo?.description || role.description,
+    images:
+      role.seo?.preview?.url || role.mainImage?.url
+        ? [
+            `${process.env.NEXT_PUBLIC_STRAPI_URL}${role.seo?.preview?.url || role.mainImage?.url}`,
+          ]
+        : [],
     url: `/roles/${params.slug}`,
     type: "article",
     publishedTime: role.createdAt,

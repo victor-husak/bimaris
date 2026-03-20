@@ -31,9 +31,11 @@ export async function generateMetadata(
   if (!caseStudy) return undefined;
 
   return generateSEO({
-    title: caseStudy.name,
-    description: caseStudy.description,
-    images: [`${process.env.NEXT_PUBLIC_STRAPI_URL}${caseStudy.preview.url}`],
+    title: caseStudy.seo?.title || caseStudy.name,
+    description: caseStudy.seo?.description || caseStudy.description,
+    images: [
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}${caseStudy.seo?.preview?.url || caseStudy.preview.url}`,
+    ],
     url: `/case-studies/${params.slug}`,
     type: "article",
     publishedTime: caseStudy.createdAt,

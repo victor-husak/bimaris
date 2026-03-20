@@ -32,9 +32,11 @@ export async function generateMetadata(
   if (!service) return undefined;
 
   return generateSEO({
-    title: service.name,
-    description: service.description,
-    images: [`${process.env.NEXT_PUBLIC_STRAPI_URL}${service.mainImage.url}`],
+    title: service.seo?.title || service.name,
+    description: service.seo?.description || service.description,
+    images: [
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}${service.seo?.preview?.url || service.mainImage.url}`,
+    ],
     url: `/services/${params.slug}`,
     type: "article",
     publishedTime: service.createdAt,

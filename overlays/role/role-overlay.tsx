@@ -5,22 +5,41 @@ import {
   type OverlayLayoutProps,
 } from "@/layouts/overlay";
 
+// import type { ServiceShort } from "@/types/services";
+
 export type RoleOverlayProps = {
   open?: OverlayLayoutProps["open"];
+  type: "businesses" | "individuals" | "investors";
   onClose: OverlayLayoutProps["onClose"];
 };
+
+// export type RoleOverlayCombinedProps = RoleOverlayProps & {
+//   services: ServiceShort[];
+// };
 
 export const RoleOverlay: React.FC<RoleOverlayProps> = (
   props,
 ): React.JSX.Element => {
   return (
-    <OverlayLayout title="Businesses" open={props.open} onClose={props.onClose}>
+    <OverlayLayout
+      title={
+        props.type === "businesses"
+          ? "Businesses"
+          : props.type === "individuals"
+            ? "Private clients"
+            : "Investors"
+      }
+      open={props.open}
+      onClose={props.onClose}
+    >
       <div className="flex">
         <OverlayLayoutGroup classNameContent="gap-[26px]" title="By solution:">
           <OverlayLayoutItem
             title="Company formation in Ukraine"
             description="Establish a presence in Ukraine and unlock full operational freedom."
           />
+
+          {/* <pre>{JSON.stringify(props.services)}</pre> */}
 
           <OverlayLayoutItem
             title="Business immigration to Ukraine"

@@ -1,5 +1,6 @@
 import type { ExpertShort } from "@/types/experts";
 import type { Country } from "@/types/countries";
+import type { Seo } from "./components/common";
 
 export type PublicationShort = {
   id: number;
@@ -25,6 +26,11 @@ export type Publication = PublicationShort & {
     slug: string;
     name: string;
   }>;
-  relatedPublications: PublicationShort[];
+  roles: {
+    id: number;
+    slug: string;
+    name: string;
+  }[];
   experts?: Array<ExpertShort>;
+  seo?: Seo;
 };

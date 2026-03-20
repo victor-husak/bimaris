@@ -54,6 +54,14 @@ export async function getPublications({
     //   paramsQuery.filters.topics = { slug: { $in: filters.topic } };
     // }
 
+    if (filters.excludeIds) {
+      paramsQuery.filters.id = { $notIn: filters.excludeIds };
+    }
+
+    if (filters.roles) {
+      paramsQuery.filters.roles = { slug: { $in: filters.roles } };
+    }
+
     if (filters.category) {
       paramsQuery.filters.category = { slug: { $in: filters.category } };
     }
@@ -130,27 +138,19 @@ export async function getPublicationBySlug({
       category: {
         fields: ["slug", "name"],
       },
-      // relatedPublications: {
-      //   fields: [
-      //     "id",
-      //     "name",
-      //     "description",
-      //     "slug",
-      //     "createdAt",
-      //     "updatedAt",
-      //     "date",
-      //   ],
-      //   populate: {
-      //     preview: true,
-      //     category: {
-      //       fields: ["slug", "name"],
-      //     },
-      //   },
-      // },
       experts: {
         fields: ["name", "slug", "position"],
         populate: {
           avatar: true,
+        },
+      },
+      roles: {
+        fields: ["id", "slug", "name"],
+      },
+      seo: {
+        fields: ["title", "description"],
+        populate: {
+          preview: true,
         },
       },
     },

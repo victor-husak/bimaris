@@ -91,6 +91,12 @@ export async function getRoleBySlug({
           },
         },
       },
+      seo: {
+        fields: ["title", "description"],
+        populate: {
+          preview: true,
+        },
+      },
     },
     pagination: {
       limit: 1,

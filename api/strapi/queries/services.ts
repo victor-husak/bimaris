@@ -71,6 +71,12 @@ export async function getServiceBySlug({
           },
         },
       },
+      seo: {
+        fields: ["title", "description"],
+        populate: {
+          preview: true,
+        },
+      },
     },
     pagination: {
       limit: 1,

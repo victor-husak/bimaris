@@ -1,4 +1,5 @@
 import type { ExpertShort } from "@/types/experts";
+import type { Seo } from "./components/common";
 
 export type CaseStudyShort = {
   id: number;
@@ -24,4 +25,5 @@ export type CaseStudy = CaseStudyShort & {
   content: string;
   experts?: Array<ExpertShort>;
   client?: Client;
+  seo?: Seo;
 };

@@ -36,3 +36,9 @@ export type Action = {
   name: string;
   href: string;
 };
+
+export type Seo = {
+  title: string;
+  description: string;
+  preview?: Image;
+};

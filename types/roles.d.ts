@@ -20,5 +20,6 @@ export type Role = RoleShort & {
   faqs: Faq;
   advantages: Advantages;
   points: Points;
+  seo?: Seo;
   updatedAt: string;
 };
