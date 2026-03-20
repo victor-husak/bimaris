@@ -4,7 +4,7 @@ import { PageLayout } from "@/layouts/page";
 
 import { MenuSection } from "@/sections/menu";
 
-import * as Components from "./componets";
+import * as Components from "./components";
 
 import { useCaseStudiesDomain } from "./сase-studies-domain.hook";
 
