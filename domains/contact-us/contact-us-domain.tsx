@@ -27,7 +27,7 @@ export const ContactUsDomain: React.FC<ContactUsDomainProps> = (
       routes={routes}
       HeaderComponent={<Components.Header />}
     >
-      <Components.Offices className="mt-[62px]" data={props.offices} />
+      <Components.Offices data={props.offices} />
 
       {/* Faqs */}
       {props.commonData && (

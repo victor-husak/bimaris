@@ -261,7 +261,7 @@ const message = {
           label: "Country of origin",
         },
         email: {
-          label: "Business email",
+          label: "Email",
         },
         phone: {
           label: "Phone number",

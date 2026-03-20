@@ -1,8 +1,13 @@
+import { Box } from "@/components";
+
+import { NextLink } from "@/i18n/routing";
+
 import { clsx } from "clsx";
 
 export type OfficeCardItemProps = {
   className?: string;
   title: string;
+  href?: string;
   onClick?: () => void;
 };
 
@@ -19,13 +24,18 @@ export const OfficeCardItem: React.FC<OfficeCardItemProps> = (
             !props.onClick,
           "text-secondary cursor-pointer [--dashed-url:url(/images/underline-second.svg)]":
             props.onClick,
-          "hover:opacity-70": props.onClick,
+          "hover:opacity-70": props.onClick || props.href,
         },
       )}
     >
-      <span className="link-dashed" onClick={props.onClick}>
+      <Box
+        className="link-dashed"
+        as={props.href ? NextLink : "span"}
+        {...(props.href ? { href: props.href } : {})}
+        onClick={props.onClick}
+      >
         {props.title}
-      </span>
+      </Box>
     </li>
   );
 };

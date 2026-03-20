@@ -37,7 +37,10 @@ export const ContactForm: React.FC<ContactFormProps> = (
     useContactForm();
 
   return (
-    <div className={clsx(props.className, "flex flex-col rounded-2xl")}>
+    <div
+      className={clsx(props.className, "flex flex-col rounded-2xl")}
+      id="contact-form"
+    >
       {/* Content */}
       <div
         className={clsx(
@@ -209,8 +212,6 @@ export const ContactForm: React.FC<ContactFormProps> = (
                   {t("consent")}
                 </span>
               </div>
-
-              <pre>{JSON.stringify(country)}</pre>
 
               <Button
                 className={clsx("font-sf-pro mt-auto tracking-[.008em]")}

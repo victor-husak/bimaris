@@ -251,7 +251,7 @@ const message = {
           label: "Країна походження",
         },
         email: {
-          label: "Корпоративний email",
+          label: "Email",
         },
         phone: {
           label: "Номер телефону",

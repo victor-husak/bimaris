@@ -32,7 +32,8 @@ export const OfficeCard: React.FC<OfficeCardProps> = (
     <div
       className={clsx(
         props.className,
-        "group flex flex-col rounded-[11px] bg-white p-[25px]",
+        "group flex flex-col rounded-[11px] bg-white p-[25px] transition-all",
+        "hover:-translate-y-2.5",
       )}
     >
       <Tag
@@ -69,9 +70,9 @@ export const OfficeCard: React.FC<OfficeCardProps> = (
 
         {/* Content */}
         <ul className="flex flex-col gap-2">
-          <Components.Item title={data.address} />
+          <Components.Item title={data.address} href={data.url} />
 
-          <Components.Item title={data.email} />
+          <Components.Item title={data.email} href={`mailto:${data.email}`} />
 
           <Components.Meeting />
         </ul>

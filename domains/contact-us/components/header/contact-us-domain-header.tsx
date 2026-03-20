@@ -24,12 +24,13 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
     <PageLayoutHeader
       className={clsx(props.className, "")}
       classNameDescription="max-w-[400px]!"
+      classNameTitle="text-[38px]/[49px]"
       size="md"
       media={{
-        url: "/images/home/home-header.webp",
+        url: "/images/people/header.webp",
         width: 3978,
-        height: 1860,
-        alt: "Home header background",
+        height: 1560,
+        alt: "Service header background",
       }}
       title={
         <>
@@ -37,21 +38,21 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
         </>
       }
       description={t("description")}
-      subtitle={t("subtitle")}
-      tag={t("tag")}
+      subtitle="Response within"
+      tag="1 business day"
       InfoCpmponent={
         <List
           className="mt-[25px] text-[white]"
           items={["+380 44 995 35 35", "info@bimaris.legal", t("items.map")]}
         />
       }
-      ActionsComponent={
-        <>
-          <Button href="/" variant="white" size="medium" animation="scale">
-            {t("actions")} ($99)
-          </Button>
-        </>
-      }
+      // ActionsComponent={
+      //   <>
+      //     <Button href="/" variant="white" size="medium" animation="scale">
+      //       {t("actions")} ($99)
+      //     </Button>
+      //   </>
+      // }
       FooterComponent={
         <div className="container-full">
           <div className="flex max-w-[calc(100%-700px-25px-17px)] items-center justify-between border-b border-[#E7EBF2] py-[25px]">
