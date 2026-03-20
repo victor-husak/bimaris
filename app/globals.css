@@ -2,7 +2,7 @@
 @import "../tailwindcss/base.css";
 @import "../tailwindcss/utilities.css";
 @import "../tailwindcss/components.css";
-@import "../tailwindcss/form.css";
+/* @import "../tailwindcss/form.css"; */
 @import "../tailwindcss/markdown.css";
 
 :root {

@@ -10,6 +10,7 @@ export type ListLayoutProps = {
   description: string;
   totalCount?: number;
   children?: React.ReactNode;
+  FiltersComponent?: React.ReactNode;
 };
 
 export const ListLayout: React.FC<ListLayoutProps> = (
@@ -18,7 +19,11 @@ export const ListLayout: React.FC<ListLayoutProps> = (
   return (
     <section className={clsx(props.className, "container-full mb-20")}>
       {/* Header */}
-      <Components.Header title={props.title} description={props.description} />
+      <Components.Header
+        title={props.title}
+        description={props.description}
+        FiltersComponent={props.FiltersComponent}
+      />
 
       {/* Content */}
       <div className="flex flex-col gap-[50px] border-b border-[#E7EBF2] pb-15">

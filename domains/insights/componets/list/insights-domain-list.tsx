@@ -1,8 +1,10 @@
 import { PublicationCard } from "@/cards/publication";
 
-import { clsx } from "clsx";
-
 import { ListLayout } from "@/layouts/list";
+
+import * as Components from "./components";
+
+import { clsx } from "clsx";
 
 import type { PublicationShort } from "@/types/publication";
 
@@ -20,6 +22,7 @@ export const InsightsDomainList: React.FC<InsightsDomainListProps> = (
       title="All publications"
       description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
       totalCount={props.publications.meta?.pagination.total || 0}
+      FiltersComponent={<Components.Filters />}
     >
       {props.publications.data.map((item) => (
         <PublicationCard key={item.id} data={item} type="publication" />

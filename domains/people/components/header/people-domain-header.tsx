@@ -58,11 +58,11 @@ export const PeopleDomainHeader: React.FC<PeopleDomainHeaderProps> = (
       }
     >
       <NextImage
-        className="absolute right-[300px] bottom-0 h-[460px] w-[420px] object-contain object-center"
+        className="absolute right-[300px] bottom-0 h-[420px] w-[420px] object-contain object-bottom"
         src={data.avatar}
         alt={data.name}
         width={420 * 3}
-        height={460 * 3}
+        height={420 * 3}
       />
     </PageLayoutHeader>
   );
