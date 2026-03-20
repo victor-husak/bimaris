@@ -4,7 +4,7 @@ export type ListLayoutHeaderProps = {
   className?: string;
   title: string;
   description: string;
-  FiltersComponent?: React.JSX.Element;
+  FiltersComponent?: React.ReactNode;
 };
 
 export const ListLayoutHeader: React.FC<ListLayoutHeaderProps> = (

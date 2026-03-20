@@ -1,31 +1,30 @@
 import { PublicationCard } from "@/cards/publication";
 
-import { ListLayout } from "@/layouts/list";
-
 import * as Components from "./components";
+
+import { ListLayout } from "@/layouts/list";
 
 import { clsx } from "clsx";
 
-import type { PublicationShort } from "@/types/publication";
+import type { CaseStudyShort } from "@/types/case-studies";
 
-export type InsightsDomainListProps = {
+export type CaseStudiesDomainListProps = {
   className?: string;
-  publications: StrapiCollection<PublicationShort>;
+  caseStudies: StrapiCollection<CaseStudyShort>;
 };
 
-export const InsightsDomainList: React.FC<InsightsDomainListProps> = (
+export const CaseStudiesDomainList: React.FC<CaseStudiesDomainListProps> = (
   props,
 ): React.JSX.Element => {
   return (
     <ListLayout
       className={clsx(props.className, "")}
-      title="All publications"
+      title="All case studies"
       description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
-      totalCount={props.publications.meta?.pagination.total || 0}
       FiltersComponent={<Components.Filters />}
     >
-      {props.publications.data.map((item) => (
-        <PublicationCard key={item.id} data={item} type="publication" />
+      {props.caseStudies.data.map((item) => (
+        <PublicationCard key={item.id} data={item} type="case-study" />
       ))}
     </ListLayout>
   );
