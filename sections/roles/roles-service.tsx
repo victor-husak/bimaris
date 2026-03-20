@@ -61,7 +61,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
           }
           ActionComponent={
             <Button
-              className="font-medium before:bg-[#233041]"
+              className="font-medium before:bg-[#233041] hover:before:bg-[#2F4055]"
               animation="scale"
               href="/roles/individuals"
             >
@@ -100,7 +100,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
           }
           ActionComponent={
             <Button
-              className="font-medium text-[#507FEB]"
+              className="font-medium text-[#507FEB] hover:brightness-95"
               animation="scale"
               variant="white"
               href="/roles/businesses"
@@ -170,7 +170,7 @@ export const RolesService: React.FC<RolesServiceProps> = (
           }
           ActionComponent={
             <Button
-              className="font-medium before:bg-[#233041]"
+              className="font-medium before:bg-[#233041] hover:before:bg-[#2F4055]"
               animation="scale"
               href="/roles/investors"
             >

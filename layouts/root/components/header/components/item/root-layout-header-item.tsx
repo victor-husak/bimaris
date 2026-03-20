@@ -39,30 +39,44 @@ export const RootLayoutHeaderItem: React.FC<RootLayoutHeaderItemProps> = (
     >
       <Box
         as={props.href ? NextLink : "span"}
-        className={clsx("relative flex items-center gap-1.5 overflow-hidden", {
+        className={clsx("relative flex items-center overflow-hidden", {
           "px-[12.5px] py-1.5": !!props.href,
         })}
         {...(props.href ? { href: props.href } : {})}
       >
         <span
-          className={clsx(clasess.text, "text-[14px]/[18px] tracking-[.024em]")}
+          className={clsx(
+            clasess.text,
+            "flex items-center gap-1.5 text-[14px]/[18px] tracking-[.024em]",
+          )}
         >
           {props.title}
+
+          {props.withArrow && (
+            <Icons.Arrow
+              className={clsx("mt-0.5 transition-all", {
+                "rotate-180": props.active,
+              })}
+            />
+          )}
         </span>
 
         <span
-          className={clsx(clasess.text, "text-[14px]/[18px] tracking-[.024em]")}
+          className={clsx(
+            clasess.text,
+            "flex items-center gap-1.5 text-[14px]/[18px] tracking-[.024em]",
+          )}
         >
           {props.title}
-        </span>
 
-        {props.withArrow && (
-          <Icons.Arrow
-            className={clsx("mt-0.5 transition-all", {
-              "rotate-180": props.active,
-            })}
-          />
-        )}
+          {props.withArrow && (
+            <Icons.Arrow
+              className={clsx("mt-0.5 transition-all", {
+                "rotate-180": props.active,
+              })}
+            />
+          )}
+        </span>
       </Box>
     </li>
   );

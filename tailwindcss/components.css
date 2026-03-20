@@ -55,7 +55,7 @@
 
     /* animation */
     &:where([data-animation="base"]) {
-      @apply hover:opacity-75;
+      @apply hover:before:bg-[#4775DD];
     }
 
      &:where([data-animation="darken"]) {
