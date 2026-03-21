@@ -47,7 +47,7 @@ export const PeopleCard: React.FC<PeopleCardProps> = (
       </div>
 
       {/* Content */}
-      <div className="mt-2.5 flex flex-col items-start p-[15px]">
+      <div className="mt-2.5 flex flex-1 flex-col items-start p-[15px]">
         {/* Title */}
         <NextLink
           className="underline-hover mr-auto mb-5 text-[16px]/[21px] tracking-[.024em] text-[#333333]"
@@ -59,11 +59,11 @@ export const PeopleCard: React.FC<PeopleCardProps> = (
         <Tag className="mb-[25px] bg-[#E6EFFC]" title={data.position} />
 
         {/* List */}
-        <List items={data.items} />
+        <List className="mb-10" items={data.items} />
 
         {/* Action */}
         <CardAction
-          className="mt-10 group-hover:w-[110px]"
+          className="mt-auto group-hover:w-[110px]"
           size="base"
           href={`/people/${props.data.slug}`}
           title={t("action")}

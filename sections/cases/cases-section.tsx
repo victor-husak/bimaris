@@ -27,7 +27,7 @@ export const CasesSection: React.FC<CasesSectionProps> = (
   props,
 ): React.JSX.Element => {
   const t = useTranslations("sections.case-studies");
-  const { activeIndex, prevRef, nextRef, onBeforeInit, onSlideChange } =
+  const { prevRef, nextRef, isBeginning, isEnd, onBeforeInit, onSlideChange } =
     useSwiper();
 
   return (
@@ -75,13 +75,15 @@ export const CasesSection: React.FC<CasesSectionProps> = (
       </Swiper>
 
       {/* Actions */}
-      <SectionArrows
-        className="container-full"
-        prevRef={prevRef}
-        nextRef={nextRef}
-        prevDisabled={activeIndex === 0}
-        nextDisabled={activeIndex === props.data.length - 1}
-      />
+      {(!isBeginning || !isEnd) && (
+        <SectionArrows
+          className="container-full"
+          prevRef={prevRef}
+          nextRef={nextRef}
+          prevDisabled={isBeginning}
+          nextDisabled={isEnd}
+        />
+      )}
     </section>
   );
 };

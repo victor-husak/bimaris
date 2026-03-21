@@ -9,7 +9,7 @@ export type ListProps = {
 
 export const List: React.FC<ListProps> = (props): React.JSX.Element => {
   return (
-    <ul className={clsx(props.className, "mb-auto flex flex-col gap-2")}>
+    <ul className={clsx(props.className, "flex flex-col gap-2")}>
       {props.items.map((item, index) => (
         <li className="relative flex items-center gap-[15px]" key={index}>
           <Icons.Star />

@@ -30,7 +30,8 @@ export type ExpertsSectionCombinedProps = ExpertsSectionProps & {
 export const ExpertsSection: React.FC<ExpertsSectionCombinedProps> = (
   props,
 ): React.JSX.Element => {
-  const { prevRef, nextRef, onBeforeInit } = useSwiper();
+  const { prevRef, nextRef, isBeginning, isEnd, onBeforeInit, onSlideChange } =
+    useSwiper();
 
   return (
     <section className={clsx(props.className, "")}>
@@ -39,11 +40,15 @@ export const ExpertsSection: React.FC<ExpertsSectionCombinedProps> = (
         title={props.title}
         description={props.description}
         RightComponent={
-          <SectionArrows
-            className="ml-auto"
-            prevRef={prevRef}
-            nextRef={nextRef}
-          />
+          (!isBeginning || !isEnd) && (
+            <SectionArrows
+              className="ml-auto"
+              prevRef={prevRef}
+              nextRef={nextRef}
+              prevDisabled={isBeginning}
+              nextDisabled={isEnd}
+            />
+          )
         }
       />
 
@@ -52,20 +57,17 @@ export const ExpertsSection: React.FC<ExpertsSectionCombinedProps> = (
         className="px-(--local-container-offset)! pt-15!"
         modules={[Navigation]}
         slidesPerView="auto"
-        onBeforeInit={onBeforeInit}
         navigation
-        // navigation={{
-        //   prevEl: prevRef.current,
-        //   nextEl: nextRef.current,
-        // }}
+        onBeforeInit={onBeforeInit}
+        onSlideChange={onSlideChange}
       >
         {props.data?.map((item) => (
           <SwiperSlide
-            className="not-last:pr-7.5"
+            className="h-auto! not-last:pr-7.5"
             key={item.id}
             style={{ width: "auto" }}
           >
-            <PeopleCard className="w-[350px]" data={item} />
+            <PeopleCard className="h-full w-[350px]" data={item} />
           </SwiperSlide>
         ))}
       </Swiper>

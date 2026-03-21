@@ -6,7 +6,11 @@ import type { PeopleCardProps } from "./people-card";
 
 export const usePeopleCard = (props: PeopleCardProps) => {
   const data = useMemo(() => {
-    const items = [props.data.email, "Book a meeting", props.data.linkedIn];
+    const items = [
+      props.data.email,
+      "Book a meeting",
+      props.data.linkedIn ? "LinkedIn" : "",
+    ].filter((item) => !!item);
 
     return {
       date: format(new Date(props.data.createdAt), "MMMM dd, yyyy"),
@@ -15,7 +19,7 @@ export const usePeopleCard = (props: PeopleCardProps) => {
       avatar: props.data.avatar
         ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${props.data.avatar.url}`
         : "",
-      items: items.filter((item) => !!item) as string[],
+      items: items,
     };
   }, [props.data]);
 
