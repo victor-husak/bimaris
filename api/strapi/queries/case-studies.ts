@@ -2,19 +2,30 @@
 
 import qs from "qs";
 
+import { getDateRange } from "@/utils/date";
+
 import { strapiFetch } from "../fetch";
 
 import type { CaseStudy, CaseStudyShort } from "@/types/case-studies";
 
 export async function getCaseStudies({
   filters,
-  pageSize = 6,
   locale = "en",
+  pagination,
 }: {
   filters?: SearchParams;
   pageSize?: number;
   locale?: string;
+  pagination?: {
+    page?: number;
+    pageSize?: number;
+  };
 }) {
+  const finalPagination = {
+    page: pagination?.page ?? 1,
+    pageSize: pagination?.pageSize ?? 6,
+  };
+
   const paramsQuery: any = {
     fields: ["id", "name", "description", "slug", "createdAt"],
     populate: {
@@ -26,15 +37,36 @@ export async function getCaseStudies({
         },
       },
     },
-    pagination: {
-      pageSize,
-    },
+    pagination: finalPagination,
     sort: ["sortOrder:desc"],
     locale,
   };
 
   if (filters) {
     paramsQuery.filters = {};
+
+    if (!!filters?.search) {
+      paramsQuery.filters["$or"] = [
+        {
+          name: {
+            $containsi: filters.search,
+          },
+        },
+      ];
+    }
+
+    if (filters.roles) {
+      paramsQuery.filters.roles = { slug: { $in: filters.roles } };
+    }
+
+    if (filters.date) {
+      const range = getDateRange(filters.date as string);
+
+      if (range)
+        paramsQuery.filters.createdAt = {
+          $gte: range.from,
+        };
+    }
 
     if (filters.featured !== undefined) {
       if (filters.featured === true) {

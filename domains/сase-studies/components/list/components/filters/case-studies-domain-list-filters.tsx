@@ -1,51 +1,71 @@
 "use client";
 
+import { clsx } from "clsx";
+
 import { ListLayoutFilters } from "@/layouts/list";
 
 import { FiltersCheckbox } from "@/components/filters";
 
-import { clsx } from "clsx";
+import { useCaseStudiesDomainListFilters } from "./case-studies-domain-list-filters.hook";
+
+import type { RoleShort } from "@/types/roles";
 
 export type CaseStudiesDomainListFiltersProps = {
   className?: string;
 };
 
+export type CaseStudiesDomainListFiltersCombinedProps =
+  CaseStudiesDomainListFiltersProps & {
+    roles: Array<RoleShort>;
+  };
+
 export const CaseStudiesDomainListFilters: React.FC<
-  CaseStudiesDomainListFiltersProps
+  CaseStudiesDomainListFiltersCombinedProps
 > = (props): React.JSX.Element => {
+  const {
+    roleOptions,
+    // categoryOptions,
+    dateOptions,
+    selectedRoles,
+    // selectedCategories,
+    selectedDates,
+    search,
+    setSearch,
+    setFilters,
+  } = useCaseStudiesDomainListFilters(props);
+
   return (
     <ListLayoutFilters
-      className={clsx(props.className, "")}
-      search=""
-      onSearchChange={() => {}}
+      className={clsx(props.className)}
+      search={search}
+      onSearchChange={setSearch}
     >
       <FiltersCheckbox
         label="Date"
+        value={selectedDates}
         titleContent="Choose date range"
         options={dateOptions}
-        onChange={() => {}}
+        onChange={(value) =>
+          setFilters({ date: value.map((item) => item.value) })
+        }
       />
 
       <FiltersCheckbox
         label="Role"
+        value={selectedRoles}
         titleContent="Choose role"
-        options={[]}
-        onChange={() => {}}
+        options={roleOptions}
+        onChange={(value) =>
+          setFilters({ roles: value.map((item) => item.value) })
+        }
       />
 
-      <FiltersCheckbox
+      {/* <FiltersCheckbox
         label="Choose solution"
         titleContent="Choose solution"
         options={[]}
         onChange={() => {}}
-      />
+      /> */}
     </ListLayoutFilters>
   );
 };
-
-const dateOptions: Array<Option> = [
-  { label: "Today", value: "today" },
-  { label: "This week", value: "this-week" },
-  { label: "This month", value: "this-month" },
-  { label: "This year", value: "this-year" },
-];

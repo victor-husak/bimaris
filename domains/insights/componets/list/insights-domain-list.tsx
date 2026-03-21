@@ -1,9 +1,11 @@
 import { clsx } from "clsx";
-import { Suspense, use, useMemo } from "react";
+import { Suspense } from "react";
 
 import { ListLayout } from "@/layouts/list";
 
 import * as Components from "./components";
+
+import { useListLayoutGrid } from "./insights-domain-list.hook";
 
 import type { PublicationShort } from "@/types/publication";
 
@@ -16,24 +18,20 @@ export type InsightsDomainListProps = {
 export const InsightsDomainList: React.FC<InsightsDomainListProps> = (
   props,
 ): React.JSX.Element => {
-  const keys = useMemo(
-    () => Object.values(props.searchParams || {}).toString(),
-    [props.searchParams],
-  );
+  const { searchKeys } = useListLayoutGrid(props);
 
   return (
     <ListLayout
-      className={clsx(props.className, "")}
+      className={clsx(props.className)}
       title="All publications"
       description="Explore our selected examples of immigration cases handled for individuals and businesses, demonstrating our structured approach and long-term legal support."
-      // totalCount={props.publications.meta?.pagination.total || 0}
       FiltersComponent={
         <Suspense>
           <Components.Filters />
         </Suspense>
       }
     >
-      <Suspense key={keys}>
+      <Suspense key={searchKeys}>
         <Components.Grid
           publications={props.publications}
           searchParams={props.searchParams}

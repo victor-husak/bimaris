@@ -1,28 +1,36 @@
+import { UTCDate } from "@date-fns/utc/date";
+import { startOfISOWeek, startOfMonth, startOfYear } from "date-fns";
+
 export const getDateRange = (value: string) => {
-  const now = new Date();
+  const to = new UTCDate(new UTCDate().setHours(23, 59, 59, 999)).toISOString();
 
   switch (value) {
-    case "last-30-days": {
-      const from = new Date();
-      from.setDate(now.getDate() - 30);
-      return { from, to: now };
+    case "today": {
+      const from = new UTCDate(
+        new UTCDate().setHours(0, 0, 0, 0),
+      ).toISOString();
+
+      return { from, to };
     }
 
-    case "last-3-months": {
-      const from = new Date();
-      from.setMonth(now.getMonth() - 3);
-      return { from, to: now };
+    case "this-week": {
+      const from = new UTCDate(
+        startOfISOWeek(new UTCDate()).setHours(0, 0, 0, 0),
+      ).toISOString();
+      return { from, to };
     }
 
-    case "last-6-months": {
-      const from = new Date();
-      from.setMonth(now.getMonth() - 6);
-      return { from, to: now };
+    case "this-month": {
+      const from = new UTCDate(
+        startOfMonth(new UTCDate()).setHours(0, 0, 0, 0),
+      ).toISOString();
+      return { from, to };
     }
 
     case "this-year": {
-      const from = new Date(now.getFullYear(), 0, 1);
-      const to = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
+      const from = new UTCDate(
+        startOfYear(new UTCDate()).setHours(0, 0, 0, 0),
+      ).toISOString();
       return { from, to };
     }
 

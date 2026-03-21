@@ -1,8 +1,8 @@
 "use server";
 
 import qs from "qs";
-import { startOfMonth, startOfISOWeek, startOfYear } from "date-fns";
-import { UTCDate } from "@date-fns/utc";
+
+import { getDateRange } from "@/utils/date";
 
 import { strapiFetch } from "../fetch";
 
@@ -11,12 +11,6 @@ import type {
   PublicationCategory,
   PublicationShort,
 } from "@/types/publication";
-
-// import { getDateRange } from "@/utils/date";
-
-// import type { Insight, InsightShort } from "@/types/insight";
-
-// import type { StrapiCollection } from "../types";
 
 export async function getPublications({
   filters,
@@ -63,10 +57,6 @@ export async function getPublications({
   if (filters) {
     paramsQuery.filters = {};
 
-    // if (filters.topic) {
-    //   paramsQuery.filters.topics = { slug: { $in: filters.topic } };
-    // }
-
     if (!!filters?.search) {
       paramsQuery.filters["$or"] = [
         {
@@ -89,58 +79,14 @@ export async function getPublications({
       paramsQuery.filters.category = { slug: { $in: filters.category } };
     }
 
-    if (!!filters?.date) {
-      let dateFrom;
+    if (filters.date) {
+      const range = getDateRange(filters.date as string);
 
-      const dateTo = new UTCDate(
-        new UTCDate().setHours(23, 59, 59, 999),
-      ).toISOString();
-
-      if (filters.date === "today") {
-        dateFrom = new UTCDate(
-          new UTCDate().setHours(0, 0, 0, 0),
-        ).toISOString();
-      } else if (filters.date === "this-week") {
-        dateFrom = new UTCDate(
-          startOfISOWeek(new UTCDate()).setHours(0, 0, 0, 0),
-        ).toISOString();
-      } else if (filters.date === "this-month") {
-        dateFrom = new UTCDate(
-          startOfMonth(new UTCDate()).setHours(0, 0, 0, 0),
-        ).toISOString();
-      } else if (filters.date === "this-year") {
-        dateFrom = new UTCDate(
-          startOfYear(new UTCDate()).setHours(0, 0, 0, 0),
-        ).toISOString();
-      }
-
-      paramsQuery.filters.createdAt = {
-        $gte: dateFrom,
-        $lte: dateTo,
-      };
+      if (range)
+        paramsQuery.filters.createdAt = {
+          $gte: range.from,
+        };
     }
-
-    // if (filters.expertise) {
-    //   paramsQuery.filters.expertise = {
-    //     slug: { $in: filters.expertise },
-    //   };
-    // }
-
-    // if (filters.person) {
-    //   paramsQuery.filters.person = {
-    //     slug: { $in: filters.person },
-    //   };
-    // }
-
-    // if (filters.date) {
-    //   const range = getDateRange(filters.date as string);
-
-    //   if (range)
-    //     paramsQuery.filters.createdAt = {
-    //       $gte: range.from.toISOString(),
-    //       $lte: range.to.toISOString(),
-    //     };
-    // }
 
     if (filters.featured !== undefined) {
       if (filters.featured === true) {

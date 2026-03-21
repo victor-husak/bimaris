@@ -35,7 +35,10 @@ export const CaseStudiesDomain: React.FC<CaseStudiesDomainProps> = (
     >
       <MenuSection data={menu} />
 
-      <Components.List caseStudies={props.caseStudies} />
+      <Components.List
+        caseStudies={props.caseStudies}
+        searchParams={props.searchParams}
+      />
     </PageLayout>
   );
 };
