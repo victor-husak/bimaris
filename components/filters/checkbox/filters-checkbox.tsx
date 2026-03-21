@@ -24,6 +24,7 @@ export const FiltersCheckbox: React.FC<FiltersCheckboxProps> = (
     containerNodeRef,
     nodeRef,
     active,
+    renderValue,
     activeItems,
     onTrigger,
     onChange,
@@ -41,6 +42,7 @@ export const FiltersCheckbox: React.FC<FiltersCheckboxProps> = (
       >
         <span className="text-[13px]/[17px] tracking-[.024em] text-[#333333]">
           {props.label}
+          {!!renderValue && <span>: {renderValue}</span>}
         </span>
 
         <Icons.Arrow
@@ -63,7 +65,6 @@ export const FiltersCheckbox: React.FC<FiltersCheckboxProps> = (
                   key={item.value}
                   data={item}
                   value={activeItems[item.value]}
-                  // value={value.some((v) => v.value === item.value)}
                   onClick={() => onChange(item)}
                 />
               ))}
