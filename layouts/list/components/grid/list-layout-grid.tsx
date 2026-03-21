@@ -1,4 +1,4 @@
-import { Button, Loading } from "@/components";
+import { Button, Loading, Empty } from "@/components";
 
 import { clsx } from "clsx";
 
@@ -25,15 +25,23 @@ export const ListLayoutGrid: React.FC<ListLayoutGridProps> = (
         "relative flex flex-col gap-[50px] border-b border-[#E7EBF2] pb-15",
       )}
     >
-      <div
-        className={clsx(
-          "grid grid-cols-1 gap-x-[30px] gap-y-[30px]",
-          "md:grid-cols-2 md:gap-y-[60px]",
-          "2xl:grid-cols-3",
-        )}
-      >
-        {props.children}
-      </div>
+      {!!props.children ? (
+        <div
+          className={clsx(
+            "grid grid-cols-1 gap-x-[30px] gap-y-[30px]",
+            "md:grid-cols-2 md:gap-y-[60px]",
+            "2xl:grid-cols-3",
+          )}
+        >
+          {props.children}
+        </div>
+      ) : (
+        <Empty
+          showPreview
+          title="Nothing found"
+          description="No results were found for your search parameters. Adjust your search criteria or browse all products."
+        />
+      )}
 
       {/* Action */}
       {props.hasMore && countMore > 0 && (
