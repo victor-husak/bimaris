@@ -23,7 +23,8 @@ export const RolesItemDomainPoints: React.FC<RolesItemDomainPointsProps> = (
     <div
       className={clsx(
         props.className,
-        "container-full flex pt-[100px] pb-[110px]",
+        "container-full flex flex-col-reverse pt-[100px] pb-[110px]",
+        "lg:flex-row",
       )}
     >
       {/* Content */}
@@ -42,24 +43,6 @@ export const RolesItemDomainPoints: React.FC<RolesItemDomainPointsProps> = (
               description={item.description}
             />
           ))}
-
-          {/* <Components.Item
-            number={2}
-            title="Lawyer-led at every stage"
-            description="All matters are handled and supervised by experienced immigration lawyers, ensuring legal accuracy."
-          />
-
-          <Components.Item
-            number={3}
-            title="Predictable process"
-            description="We work through defined steps, timelines, and documentation flows, reducing uncertainty."
-          />
-
-          <Components.Item
-            number={4}
-            title="Long-term perspective"
-            description="We consider not only the immediate outcome, but also future residency, compliance, and personal plans."
-          /> */}
         </div>
       </div>
 

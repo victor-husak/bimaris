@@ -31,7 +31,9 @@ export const PageLayoutRoute: React.FC<PageLayoutRouteProps> = (
         >
           {!!item.value && index < props.items.length - 1 ? (
             <NextLink
-              className="underline-hover line-clamp-1 max-w-[400px]"
+              className={clsx("underline-hover whitespace-nowrap", {
+                "line-clamp-1 max-w-[400px]": index === props.items.length - 1,
+              })}
               href={item.value}
               data-action
             >

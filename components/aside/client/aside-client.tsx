@@ -23,7 +23,12 @@ export const AsideClient: React.FC<AsideClientProps> = (
       )}
     >
       {/* Preview */}
-      <div className="group flex aspect-square w-[117px] shrink-0 items-center justify-center rounded-md bg-[#E9ECF2]">
+      <div
+        className={clsx(
+          "group flex aspect-square w-25 shrink-0 items-center justify-center rounded-md bg-[#E9ECF2]",
+          "md:w-[117px]",
+        )}
+      >
         {/* Logo */}
         <NextImage
           className="max-w-[55%] object-contain transition-all duration-350 ease-linear"

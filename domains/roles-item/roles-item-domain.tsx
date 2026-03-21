@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { clsx } from "clsx";
 
 import { PageLayout } from "@/layouts/page";
 
@@ -12,6 +11,8 @@ import { ServicesSection } from "@/sections/services";
 import { Rating } from "@/ui";
 
 import * as Components from "./components";
+
+import { clsx } from "clsx";
 
 import { useRolesItemDomain } from "./roles-item-domain.hook";
 

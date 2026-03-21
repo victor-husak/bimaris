@@ -1,8 +1,12 @@
+"use client";
+
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
 import { Button } from "@/components/button";
 
 import { LangIcon, MeetingIcon } from "@/icons/header-links";
+
+import { useScrollToSection } from "@/hooks/use-scroll-to-section";
 
 import { clsx } from "clsx";
 
@@ -13,6 +17,8 @@ export type BalticsDeskItemDomainHeaderProps = {
 export const BalticsDeskItemDomainHeader: React.FC<
   BalticsDeskItemDomainHeaderProps
 > = (props): React.JSX.Element => {
+  const { scrollToSection } = useScrollToSection();
+
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
@@ -38,10 +44,10 @@ export const BalticsDeskItemDomainHeader: React.FC<
           </Button>
 
           <Button
-            href="/services/1"
             size="medium"
             variant="blur"
             animation="opacity"
+            onClick={() => scrollToSection("services")}
           >
             Open services
           </Button>
