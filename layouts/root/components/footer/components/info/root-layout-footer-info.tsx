@@ -18,7 +18,7 @@ export const RootLayoutFooterInfo: React.FC<RootLayoutFooterInfoProps> = (
     <div
       className={clsx(
         props.className,
-        "border-footer-b text-footer flex flex-col justify-between gap-y-5 border-b py-5 text-[14px]/[18px]",
+        "border-footer-b text-footer flex flex-col justify-between gap-y-7 border-b py-5 text-[14px]/[18px]",
         "xl:flex-row xl:items-center",
       )}
     >

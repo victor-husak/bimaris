@@ -17,7 +17,7 @@ export type BalticsDeskItemDomainHeaderProps = {
 export const BalticsDeskItemDomainHeader: React.FC<
   BalticsDeskItemDomainHeaderProps
 > = (props): React.JSX.Element => {
-  const { scrollToSection } = useScrollToSection();
+  const { onScrollToSection } = useScrollToSection();
 
   return (
     <PageLayoutHeader
@@ -39,7 +39,12 @@ export const BalticsDeskItemDomainHeader: React.FC<
       tag="Baltic states"
       ActionsComponent={
         <>
-          <Button href="/" variant="white" size="medium" animation="scale">
+          <Button
+            variant="white"
+            size="medium"
+            animation="scale"
+            onClick={() => onScrollToSection("contact-us")}
+          >
             Connect with our team
           </Button>
 
@@ -47,14 +52,18 @@ export const BalticsDeskItemDomainHeader: React.FC<
             size="medium"
             variant="blur"
             animation="opacity"
-            onClick={() => scrollToSection("services")}
+            onClick={() => onScrollToSection("services-section")}
           >
             Open services
           </Button>
         </>
       }
       RightComponent={
-        <PageLayoutHeaderSlides title="Quick links:" data={items} />
+        <PageLayoutHeaderSlides
+          title="Quick links:"
+          data={items}
+          onSelect={(key) => key === "contact-us" && onScrollToSection(key)}
+        />
       }
     />
   );
@@ -68,7 +77,7 @@ const items = [
     icon: <LangIcon />,
   },
   {
-    key: "2",
+    key: "contact-us",
     title: "Schedule a meeting",
     icon: <MeetingIcon />,
   },
