@@ -19,7 +19,7 @@ export type ContactSectionOfficesProps = {
 export const ContactSectionOffices: React.FC<ContactSectionOfficesProps> = (
   props,
 ): React.JSX.Element => {
-  const { activeIndex, prevRef, nextRef, onBeforeInit, onSlideChange } =
+  const { isBeginning, isEnd, prevRef, nextRef, onBeforeInit, onSlideChange } =
     useSwiper();
 
   return (
@@ -49,14 +49,14 @@ export const ContactSectionOffices: React.FC<ContactSectionOfficesProps> = (
 
       <Components.Arrow
         className={clsx("absolute left-[10px] z-1 rotate-180", {
-          hidden: activeIndex === 0,
+          hidden: isBeginning,
         })}
         ref={prevRef as React.Ref<HTMLButtonElement>}
       />
 
       <Components.Arrow
         className={clsx("absolute right-[25px] z-1", {
-          hidden: activeIndex === props.data.length - 2,
+          hidden: isEnd,
         })}
         ref={nextRef as React.Ref<HTMLButtonElement>}
       />
