@@ -51,7 +51,10 @@ export const OverlayLayoutBanner: React.FC<OverlayLayoutBannerProps> = (
         {/* List */}
         <List
           className="text-secondary mt-[15px]"
-          items={["+380 44 995 35 35", "info@bimaris.legal"]}
+          items={[
+            { title: "+380 44 995 35 35", href: "tel:+380449953535" },
+            { title: "info@bimaris.legal", href: "mailto:info@bimaris.legal" },
+          ]}
         />
 
         {/* Action */}

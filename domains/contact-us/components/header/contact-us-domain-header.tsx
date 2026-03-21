@@ -42,8 +42,17 @@ export const ContactUsDomainHeader: React.FC<ContactUsDomainHeaderProps> = (
       tag="1 business day"
       InfoCpmponent={
         <List
-          className="mt-[25px] text-[white]"
-          items={["+380 44 995 35 35", "info@bimaris.legal", t("items.map")]}
+          className="mt-[25px] text-[white] [--dashed-url:url(/images/underline-white.svg)]"
+          items={[
+            { title: "+380 44 995 35 35", href: "tel:+380449953535" },
+            { title: "info@bimaris.legal", href: "mailto:info@bimaris.legal" },
+            {
+              title: t("items.map"),
+              href: "https://maps.app.goo.gl/ExJACWXmhQQLNZxDA",
+              target: "_blank",
+              rel: "nofollow noopener noreferre",
+            },
+          ]}
         />
       }
       // ActionsComponent={

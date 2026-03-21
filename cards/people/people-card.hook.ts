@@ -7,10 +7,13 @@ import type { PeopleCardProps } from "./people-card";
 export const usePeopleCard = (props: PeopleCardProps) => {
   const data = useMemo(() => {
     const items = [
-      props.data.email,
-      "Book a meeting",
-      props.data.linkedIn ? "LinkedIn" : "",
-    ].filter((item) => !!item);
+      { title: props.data.email, href: `mailto:${props.data.email}` },
+      { title: "Book a meeting", href: "/contact-us" },
+    ];
+
+    if (props.data.linkedIn) {
+      items.push({ title: "LinkedIn", href: props.data.linkedIn });
+    }
 
     return {
       date: format(new Date(props.data.createdAt), "MMMM dd, yyyy"),

@@ -1,10 +1,14 @@
+import { NextLink } from "@/i18n/routing";
+
+import { Box } from "@/components/box";
+
 import * as Icons from "./icons";
 
 import { clsx } from "clsx";
 
 export type ListProps = {
   className?: string;
-  items: string[];
+  items: Array<{ title: string; href?: string; target?: string; rel?: string }>;
 };
 
 export const List: React.FC<ListProps> = (props): React.JSX.Element => {
@@ -20,9 +24,20 @@ export const List: React.FC<ListProps> = (props): React.JSX.Element => {
             </div>
           )}
 
-          <span className="link-dashed text-[13px]/[17px] tracking-[.032em]">
-            {item}
-          </span>
+          <Box
+            as={item.href ? NextLink : "span"}
+            className={clsx(
+              "link-dashed text-[13px]/[17px] tracking-[.032em] transition-all",
+              { "hover:opacity-60": item.href },
+            )}
+            {...(item.href && {
+              href: item.href,
+              target: item.target,
+              rel: item.rel,
+            })}
+          >
+            {item.title}
+          </Box>
         </li>
       ))}
     </ul>

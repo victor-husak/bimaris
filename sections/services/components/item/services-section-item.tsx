@@ -10,13 +10,15 @@ import { useServicesSectionItem } from "./services-section-item.hook";
 
 import { clsx } from "clsx";
 
+import type { ListProps } from "@/components/list";
+
 export type ServicesSectionItemProps = {
   className?: string;
   data: {
     title: string;
     tag?: string;
     description: string;
-    list: string[];
+    list: ListProps["items"];
     href: string;
   };
 };
