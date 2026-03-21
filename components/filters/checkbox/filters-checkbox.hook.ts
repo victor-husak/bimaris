@@ -21,6 +21,12 @@ export const useFiltersCheckbox = (props: FiltersCheckboxProps) => {
     return res;
   }, [value]);
 
+  const renderValue = useMemo(() => {
+    if (!props.value?.length) return null;
+
+    return props.value.map((item) => item.label).join(", ");
+  }, [props.value]);
+
   const onTrigger = useCallback(() => {
     if (!props.disabled) setActive(!active);
   }, [active, props.disabled]);
@@ -65,6 +71,7 @@ export const useFiltersCheckbox = (props: FiltersCheckboxProps) => {
     onTrigger,
     onChange,
     value,
+    renderValue,
     activeItems,
   };
 };
