@@ -1,16 +1,18 @@
 import { clsx } from "clsx";
+import { NextLink } from "@/i18n/routing";
 
 export type OverlayLayoutItemProps = {
   className?: string;
   title: string;
   description?: string;
+  href: string;
 };
 
 export const OverlayLayoutItem: React.FC<OverlayLayoutItemProps> = (
   props,
 ): React.JSX.Element => {
   return (
-    <div
+    <NextLink
       className={clsx(
         props.className,
         "relative z-1 flex max-w-[350px] cursor-pointer flex-col justify-center gap-1.5",
@@ -22,6 +24,7 @@ export const OverlayLayoutItem: React.FC<OverlayLayoutItemProps> = (
           "hover:after:opacity-100": !!props.description,
         },
       )}
+      href={props.href}
     >
       {/* Title */}
       <span className="underline-hover line-clamp-1 text-[15px]/[19px] tracking-[.018em] text-[#2C2C2C]">
@@ -34,6 +37,6 @@ export const OverlayLayoutItem: React.FC<OverlayLayoutItemProps> = (
           {props.description}
         </p>
       )}
-    </div>
+    </NextLink>
   );
 };

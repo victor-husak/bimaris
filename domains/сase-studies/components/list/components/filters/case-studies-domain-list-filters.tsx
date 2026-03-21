@@ -14,7 +14,11 @@ export const CaseStudiesDomainListFilters: React.FC<
   CaseStudiesDomainListFiltersProps
 > = (props): React.JSX.Element => {
   return (
-    <ListLayoutFilters className={clsx(props.className, "")}>
+    <ListLayoutFilters
+      className={clsx(props.className, "")}
+      search=""
+      onSearchChange={() => {}}
+    >
       <FiltersCheckbox
         label="Date"
         titleContent="Choose date range"

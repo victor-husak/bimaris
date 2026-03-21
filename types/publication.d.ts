@@ -2,6 +2,11 @@ import type { ExpertShort } from "@/types/experts";
 import type { Country } from "@/types/countries";
 import type { Seo } from "./components/common";
 
+export type PublicationCategory = {
+  slug: string;
+  name: string;
+};
+
 export type PublicationShort = {
   id: number;
   slug: string;
@@ -12,10 +17,7 @@ export type PublicationShort = {
   updatedAt: string;
   preview: Image;
   country: Country;
-  category: {
-    slug: string;
-    name: string;
-  };
+  category: PublicationCategory;
 };
 
 export type Publication = PublicationShort & {

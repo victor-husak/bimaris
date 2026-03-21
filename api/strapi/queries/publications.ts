@@ -1,10 +1,16 @@
 "use server";
 
 import qs from "qs";
+import { startOfMonth, startOfISOWeek, startOfYear } from "date-fns";
+import { UTCDate } from "@date-fns/utc";
 
 import { strapiFetch } from "../fetch";
 
-import type { Publication, PublicationShort } from "@/types/publication";
+import type {
+  Publication,
+  PublicationCategory,
+  PublicationShort,
+} from "@/types/publication";
 
 // import { getDateRange } from "@/utils/date";
 
@@ -14,13 +20,22 @@ import type { Publication, PublicationShort } from "@/types/publication";
 
 export async function getPublications({
   filters,
-  pageSize = 6,
   locale = "en",
+  pagination,
 }: {
   filters?: SearchParams;
   pageSize?: number;
   locale?: string;
+  pagination?: {
+    page?: number;
+    pageSize?: number;
+  };
 }) {
+  const finalPagination = {
+    page: pagination?.page ?? 1,
+    pageSize: pagination?.pageSize ?? 6,
+  };
+
   const paramsQuery: any = {
     fields: [
       "id",
@@ -40,10 +55,8 @@ export async function getPublications({
         fields: ["slug", "name"],
       },
     },
-    pagination: {
-      pageSize,
-    },
-    sort: ["sortOrder:desc"],
+    pagination: finalPagination,
+    sort: ["createdAt:desc"],
     locale,
   };
 
@@ -53,6 +66,16 @@ export async function getPublications({
     // if (filters.topic) {
     //   paramsQuery.filters.topics = { slug: { $in: filters.topic } };
     // }
+
+    if (!!filters?.search) {
+      paramsQuery.filters["$or"] = [
+        {
+          name: {
+            $containsi: filters.search,
+          },
+        },
+      ];
+    }
 
     if (filters.excludeIds) {
       paramsQuery.filters.id = { $notIn: filters.excludeIds };
@@ -64,6 +87,37 @@ export async function getPublications({
 
     if (filters.category) {
       paramsQuery.filters.category = { slug: { $in: filters.category } };
+    }
+
+    if (!!filters?.date) {
+      let dateFrom;
+
+      const dateTo = new UTCDate(
+        new UTCDate().setHours(23, 59, 59, 999),
+      ).toISOString();
+
+      if (filters.date === "today") {
+        dateFrom = new UTCDate(
+          new UTCDate().setHours(0, 0, 0, 0),
+        ).toISOString();
+      } else if (filters.date === "this-week") {
+        dateFrom = new UTCDate(
+          startOfISOWeek(new UTCDate()).setHours(0, 0, 0, 0),
+        ).toISOString();
+      } else if (filters.date === "this-month") {
+        dateFrom = new UTCDate(
+          startOfMonth(new UTCDate()).setHours(0, 0, 0, 0),
+        ).toISOString();
+      } else if (filters.date === "this-year") {
+        dateFrom = new UTCDate(
+          startOfYear(new UTCDate()).setHours(0, 0, 0, 0),
+        ).toISOString();
+      }
+
+      paramsQuery.filters.createdAt = {
+        $gte: dateFrom,
+        $lte: dateTo,
+      };
     }
 
     // if (filters.expertise) {
@@ -182,6 +236,32 @@ export async function getPublicationSlugs() {
     `/publications?${query}`,
     {
       next: { revalidate: 60, tags: ["publication-slugs"] },
+    },
+  );
+}
+
+export async function getPublicationCategories({
+  pageSize = 6,
+  locale = "en",
+}: {
+  pageSize?: number;
+  locale?: string;
+}) {
+  const paramsQuery: any = {
+    fields: ["id", "slug", "name"],
+
+    pagination: {
+      pageSize,
+    },
+    locale,
+  };
+
+  const query = qs.stringify(paramsQuery, { encode: false });
+
+  return strapiFetch<StrapiCollection<PublicationCategory>>(
+    `/publication-categories?${query}`,
+    {
+      next: { revalidate: 60, tags: ["publication-categories"] },
     },
   );
 }

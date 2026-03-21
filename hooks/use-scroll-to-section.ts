@@ -5,15 +5,18 @@ export type UseScrollToSectionProps = {
 };
 
 export const useScrollToSection = (props?: UseScrollToSectionProps) => {
-  const onScrollToSection = useCallback((id: string) => {
-    const el = document.getElementById(id);
-    if (!el) return;
+  const onScrollToSection = useCallback(
+    (id: string) => {
+      const el = document.getElementById(id);
+      if (!el) return;
 
-    const yOffset = props?.offset || -70; // высота header
-    const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+      const yOffset = props?.offset || -70; // высота header
+      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
 
-    window.scrollTo({ top: y, behavior: "smooth" });
-  }, []);
+      window.scrollTo({ top: y, behavior: "smooth" });
+    },
+    [props?.offset],
+  );
 
   return { onScrollToSection };
 };

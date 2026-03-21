@@ -52,6 +52,7 @@ export const InsightsDomain: React.FC<InsightsDomainProps> = (
       <Components.List
         className="section-gradient"
         publications={props.publications}
+        searchParams={props.searchParams}
       />
     </PageLayout>
   );

@@ -10,6 +10,7 @@ const Overlays = dynamic(() =>
 );
 
 import type { ServiceShort } from "@/types/services";
+import type { BalticShort } from "@/types/baltics";
 
 export type RootLayoutProps = {
   className?: string;
@@ -17,6 +18,7 @@ export type RootLayoutProps = {
   servicesBusinesses: ServiceShort[];
   servicesIndividuals: ServiceShort[];
   servicesInvestors: ServiceShort[];
+  baltics: BalticShort[];
 };
 
 export const RootLayout: React.FC<RootLayoutProps> = (
@@ -39,7 +41,12 @@ export const RootLayout: React.FC<RootLayoutProps> = (
       </Components.Scroll>
 
       <Suspense>
-        <Overlays />
+        <Overlays
+          servicesBusinesses={props.servicesBusinesses}
+          servicesIndividuals={props.servicesIndividuals}
+          servicesInvestors={props.servicesInvestors}
+          baltics={props.baltics}
+        />
       </Suspense>
     </>
   );

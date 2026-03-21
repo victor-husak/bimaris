@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
 import { getServices } from "@/api/strapi/queries/services";
+import { getBaltics } from "@/api/strapi/queries/baltics";
 
 import { RootLayout } from "@/layouts/root";
 
@@ -38,7 +39,7 @@ export default async function RootLayoutPage({
 
   setRequestLocale(locale);
 
-  const [servicesBusinesses, servicesIndividuals, servicesInvestors] =
+  const [servicesBusinesses, servicesIndividuals, servicesInvestors, baltics] =
     await Promise.all([
       getServices({
         locale,
@@ -60,6 +61,10 @@ export default async function RootLayoutPage({
         filters: {
           roles: "investors",
         },
+      }),
+      getBaltics({
+        locale,
+        pageSize: 4,
       }),
     ]);
 
@@ -86,6 +91,7 @@ export default async function RootLayoutPage({
               servicesBusinesses={servicesBusinesses.data}
               servicesIndividuals={servicesIndividuals.data}
               servicesInvestors={servicesInvestors.data}
+              baltics={baltics.data}
             >
               {children}
             </RootLayout>

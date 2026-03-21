@@ -1,1 +1,1 @@
-export { InsightsDomainListFilters } from "./insights-domain-list-filters";
+export { InsightsDomainFltersBackend as InsightsDomainListFilters } from "./insights-domain-list-filters.backend";

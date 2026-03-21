@@ -5,6 +5,8 @@ import { clsx } from "clsx";
 export type ListLayoutFiltersProps = {
   className?: string;
   children?: React.ReactNode;
+  search: string;
+  onSearchChange: (value: string) => void;
 };
 
 export const ListLayoutFilters: React.FC<ListLayoutFiltersProps> = (
@@ -21,7 +23,7 @@ export const ListLayoutFilters: React.FC<ListLayoutFiltersProps> = (
       <div className="flex items-center gap-2.5">{props.children}</div>
 
       {/* Search */}
-      <Components.Search value="" onSearch={() => {}} />
+      <Components.Search value={props.search} onSearch={props.onSearchChange} />
     </div>
   );
 };

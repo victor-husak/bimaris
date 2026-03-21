@@ -5,73 +5,56 @@ import {
   type OverlayLayoutProps,
 } from "@/layouts/overlay";
 
-// import type { ServiceShort } from "@/types/services";
+import type { BalticShort } from "@/types/baltics";
+import type { ServiceShort } from "@/types/services";
+
+import { useRoleOverlay } from "./role-overlay.hook";
 
 export type RoleOverlayProps = {
   open?: OverlayLayoutProps["open"];
   type: "businesses" | "individuals" | "investors";
+  servicesBusinesses: ServiceShort[];
+  servicesIndividuals: ServiceShort[];
+  servicesInvestors: ServiceShort[];
+  baltics: BalticShort[];
   onClose: OverlayLayoutProps["onClose"];
 };
-
-// export type RoleOverlayCombinedProps = RoleOverlayProps & {
-//   services: ServiceShort[];
-// };
 
 export const RoleOverlay: React.FC<RoleOverlayProps> = (
   props,
 ): React.JSX.Element => {
+  const { title, servicesForRole } = useRoleOverlay(props);
+
   return (
     <OverlayLayout
-      title={
-        props.type === "businesses"
-          ? "Businesses"
-          : props.type === "individuals"
-            ? "Private clients"
-            : "Investors"
-      }
+      title={title}
       open={props.open}
       onClose={props.onClose}
+      onExited={() => {
+        console.log("onExited");
+      }}
     >
       <div className="flex">
         <OverlayLayoutGroup classNameContent="gap-[26px]" title="By solution:">
-          <OverlayLayoutItem
-            title="Company formation in Ukraine"
-            description="Establish a presence in Ukraine and unlock full operational freedom."
-          />
-
-          {/* <pre>{JSON.stringify(props.services)}</pre> */}
-
-          <OverlayLayoutItem
-            title="Business immigration to Ukraine"
-            description="Establish a presence in Ukraine and unlock full operational freedom."
-          />
-
-          <OverlayLayoutItem
-            title="Corporate immigration to Ukraine"
-            description="Establish a presence in Ukraine and unlock full operational freedom."
-          />
-
-          <OverlayLayoutItem
-            title="Registration representative office"
-            description="Establish a presence in Ukraine and unlock full operational freedom."
-          />
+          {servicesForRole.map((service) => (
+            <OverlayLayoutItem
+              key={service.id}
+              title={service.name}
+              description={service.description}
+              href={`/services/${service.slug}`}
+            />
+          ))}
         </OverlayLayoutGroup>
 
         <OverlayLayoutGroup classNameContent="gap-[26px]" title="By region:">
-          <OverlayLayoutItem
-            title="Estonia"
-            description="Digital ecosystem for startups and tech companies, offering EU residency and oportunities."
-          />
-
-          <OverlayLayoutItem
-            title="Latvia"
-            description="Strategic entry point to the EU with flexible residence programs and strong opportunities."
-          />
-
-          <OverlayLayoutItem
-            title="Lithuania"
-            description="Stable EU jurisdiction with growing innovation sectors, ideal for relocation and business setup."
-          />
+          {props.baltics.map((baltic) => (
+            <OverlayLayoutItem
+              key={baltic.id}
+              title={baltic.name}
+              description={baltic.description}
+              href={`/baltics-desk/${baltic.slug}`}
+            />
+          ))}
         </OverlayLayoutGroup>
       </div>
     </OverlayLayout>

@@ -1,48 +1,28 @@
 "use client";
 
+import { useContext } from "react";
 import dynamic from "next/dynamic";
-
-import { useContext, useEffect } from "react";
 
 const RoleOverlay = dynamic(() =>
   import("@/overlays/role").then((mod) => mod.RoleOverlay),
 );
 
 import { ModalContext } from "@/contexts/modal";
-import { useRouter, usePathname } from "@/i18n/routing";
+
+import type { ServiceShort } from "@/types/services";
+import type { BalticShort } from "@/types/baltics";
 
 export type RootLayoutOverlaysProps = {
-  // expertiseCategories: Array<ExpertiseCategory>;
+  servicesBusinesses: ServiceShort[];
+  servicesIndividuals: ServiceShort[];
+  servicesInvestors: ServiceShort[];
+  baltics: BalticShort[];
 };
 
 export const RootLayoutOverlays: React.FC<RootLayoutOverlaysProps> = (
   props,
 ): React.JSX.Element => {
-  const router = useRouter();
-  const pathname = usePathname();
   const modalContext = useContext(ModalContext);
-
-  useEffect(() => {
-    if (
-      ["businesses", "individuals", "investors"].includes(
-        modalContext?.overlay as string,
-      )
-    ) {
-      router.replace({
-        pathname: pathname,
-        query: {
-          overlay: modalContext?.overlay as string,
-        },
-      });
-    }
-
-    if (!modalContext?.overlay) {
-      router.replace({
-        pathname: pathname,
-        query: {},
-      });
-    }
-  }, [modalContext?.overlay, pathname, router]);
 
   return (
     <>
@@ -52,6 +32,10 @@ export const RootLayoutOverlays: React.FC<RootLayoutOverlaysProps> = (
           modalContext?.overlay === "individuals" ||
           modalContext?.overlay === "investors"
         }
+        servicesBusinesses={props.servicesBusinesses}
+        servicesIndividuals={props.servicesIndividuals}
+        servicesInvestors={props.servicesInvestors}
+        baltics={props.baltics}
         type={
           modalContext?.overlay as "businesses" | "individuals" | "investors"
         }
