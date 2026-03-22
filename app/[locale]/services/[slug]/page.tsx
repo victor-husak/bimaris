@@ -6,7 +6,6 @@ import {
   getServiceBySlug,
   getServiceSlugs,
 } from "@/api/strapi/queries/services";
-import { getCommonData } from "@/api/strapi/queries/common";
 
 import { ServicesItemDomain } from "@/domains/services-item";
 
@@ -58,15 +57,14 @@ export async function generateStaticParams() {
 export default async function ServicesItemPage(props: ServicesItemPageProps) {
   const params = await props.params;
 
-  const [res, commonData] = await Promise.all([
+  const [res] = await Promise.all([
     getServiceBySlug({ slug: params.slug, locale: params.locale }),
-    getCommonData({ locale: params.locale }),
   ]);
   const service = res.data[0];
 
   if (!service) notFound();
 
-  return <ServicesItemDomain data={service} commonData={commonData.data} />;
+  return <ServicesItemDomain data={service} />;
 }
 
 export const revalidate = 60;

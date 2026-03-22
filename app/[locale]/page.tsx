@@ -1,6 +1,7 @@
 import { getHomePage } from "@/api/strapi/queries/home-page";
 import { getCaseStudies } from "@/api/strapi/queries/case-studies";
 import { getPublications } from "@/api/strapi/queries/publications";
+import { getRoles } from "@/api/strapi/queries/roles";
 
 import { HomeDomain } from "@/domains/home";
 
@@ -20,7 +21,7 @@ export function generateStaticParams() {
 export default async function HomePage(props: HomePageProps) {
   const params = await props.params;
 
-  const [homePageData, caseStudies, publications] = await Promise.all([
+  const [homePageData, caseStudies, publications, roles] = await Promise.all([
     getHomePage({ locale: params.locale }),
     getCaseStudies({ locale: params.locale }),
     getPublications({
@@ -31,6 +32,7 @@ export default async function HomePage(props: HomePageProps) {
       },
       locale: params.locale,
     }),
+    getRoles({ locale: params.locale }),
   ]);
 
   return (
@@ -38,6 +40,7 @@ export default async function HomePage(props: HomePageProps) {
       homePageData={homePageData.data}
       caseStudies={caseStudies.data}
       publications={publications.data}
+      roles={roles.data}
     />
   );
 }

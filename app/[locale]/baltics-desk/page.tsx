@@ -1,4 +1,3 @@
-import { getCommonData } from "@/api/strapi/queries/common";
 import { getBaltics } from "@/api/strapi/queries/baltics";
 import { getBalticsDeskPage } from "@/api/strapi/queries/baltics-desk-page";
 
@@ -41,11 +40,5 @@ export default async function BalticsDeskPage(props: BalticsDeskPageProps) {
     }),
   ]);
 
-  return (
-    <BalticsDeskDomain
-      // commonData={commonData.data}
-      baltics={baltics.data}
-      pageData={pageData.data}
-    />
-  );
+  return <BalticsDeskDomain baltics={baltics.data} pageData={pageData.data} />;
 }

@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
 import { getBalticBySlug, getBalticSlugs } from "@/api/strapi/queries/baltics";
-import { getCommonData } from "@/api/strapi/queries/common";
 
 import { BalticsDeskItemDomain } from "@/domains/baltics-desk-item";
 
@@ -56,18 +55,16 @@ export default async function BalticsDeskItemPage(
 ) {
   const params = await props.params;
 
-  const [res, commonData] = await Promise.all([
+  const [res] = await Promise.all([
     getBalticBySlug({
       slug: params.slug,
       locale: params.locale,
     }),
-    getCommonData({
-      locale: params.locale,
-    }),
   ]);
+
   const baltic = res.data[0];
 
   if (!baltic) notFound();
 
-  return <BalticsDeskItemDomain data={baltic} commonData={commonData.data} />;
+  return <BalticsDeskItemDomain data={baltic} />;
 }

@@ -16,7 +16,7 @@ export async function getRoles({
   locale?: string;
 }) {
   const paramsQuery: any = {
-    fields: ["id", "name", "title", "slug", "createdAt"],
+    fields: ["id", "name", "title", "description", "slug", "createdAt"],
     populate: {
       mainImage: true,
     },

@@ -18,6 +18,7 @@ export type Service = ServiceShort & {
   content: string;
   caseStudies: CaseStudyShort[];
   advantages: Advantages;
+  faqs: Faq;
   seo?: Seo;
   updatedAt: string;
 };

@@ -20,12 +20,14 @@ import * as Components from "./components";
 import type { CaseStudyShort } from "@/types/case-studies";
 import type { PublicationShort } from "@/types/publication";
 import type { HomePage } from "@/types/home-page";
+import type { RoleShort } from "@/types/roles";
 
 export type HomeDomainProps = {
   className?: string;
   homePageData: HomePage | null;
   caseStudies: CaseStudyShort[];
   publications: PublicationShort[];
+  roles: RoleShort[];
 };
 
 export const HomeDomain: React.FC<HomeDomainProps> = (
@@ -35,7 +37,7 @@ export const HomeDomain: React.FC<HomeDomainProps> = (
   return (
     <PageLayout
       className={clsx(props.className, "")}
-      HeaderComponent={<Components.Header />}
+      HeaderComponent={<Components.Header roles={props.roles} />}
     >
       {/* Advantages */}
       {!!props.homePageData?.advantages && (

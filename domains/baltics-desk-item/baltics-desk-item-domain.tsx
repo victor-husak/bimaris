@@ -21,7 +21,6 @@ import type { Baltic } from "@/types/baltics";
 export type BalticsDeskItemDomainProps = {
   className?: string;
   data: Baltic;
-  commonData: CommonData | null;
 };
 
 export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
@@ -54,10 +53,10 @@ export const BalticsDeskItemDomain: React.FC<BalticsDeskItemDomainProps> = (
       <CasesSection className="mb-[60px]" data={props.data.caseStudies} />
 
       {/* Faqs */}
-      {props.commonData && (
+      {props.data.faqs && (
         <FaqsSection
           className="section-gradient mb-25 pt-25"
-          data={props.commonData.faqs}
+          data={props.data.faqs}
         />
       )}
 

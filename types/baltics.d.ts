@@ -1,3 +1,4 @@
+import type { Faq } from "./components/common";
 import type { ServiceShort } from "./services";
 
 export type BalticShort = {
@@ -13,5 +14,6 @@ export type Baltic = BalticShort & {
   services: ServiceShort[];
   caseStudies: CaseStudyShort[];
   information: Information;
+  faqs: Faq;
   updatedAt: string;
 };

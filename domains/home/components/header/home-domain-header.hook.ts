@@ -9,6 +9,39 @@ import type { HomeDomainHeaderProps } from "./home-domain-header";
 export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
   const [loaded, setLoaded] = useState(false);
 
+  const items = useMemo(() => {
+    console.log(props.roles.map((item) => item.title));
+
+    return props.roles.map((item) => {
+      const [titleFirst, ...titleRest] = item.title.split(" ");
+
+      const title = [titleFirst.replace(",", ""), titleRest.join(" ")];
+
+      return {
+        id: item.id,
+        tag: item.name,
+        name: item.name,
+        title: title,
+        // title: ["Immigration", "with clarity"],
+        subtitle: "Immigration services",
+        description: item.description,
+        href: `/roles/${item.slug}`,
+        avatar: {
+          url: `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.mainImage?.url}`,
+          width: 120,
+          height: 120,
+          alt: item.mainImage?.alternativeText || item.name,
+        },
+        media: {
+          url: `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.mainImage?.url}`,
+          width: 3978,
+          height: 1860,
+          alt: item.mainImage?.alternativeText || item.name,
+        },
+      };
+    });
+  }, [props.roles]);
+
   const slides = useMemo(() => {
     return items.map((item) => ({
       key: `${item.id}`,
@@ -17,7 +50,7 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
       shortTitle: item.name,
       avatar: item.avatar,
     }));
-  }, []);
+  }, [items]);
 
   const { activeIndex, onChangeActiveIndex } = useCarousel({
     count: items.length,
@@ -28,7 +61,7 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
 
   const activeItem = useMemo(() => {
     return items[activeIndex] ?? items.at(0);
-  }, [activeIndex]);
+  }, [activeIndex, items]);
 
   // const slidesControl = useMemo(() => {
   //   return slides.map((item, index) => ({
@@ -97,71 +130,71 @@ export const useHomeDomainHeader = (props: HomeDomainHeaderProps) => {
   };
 };
 
-const items = [
-  {
-    id: 1,
-    tag: "For individuals",
-    name: "Individuals",
-    title: ["Immigration", "with clarity"],
-    subtitle: "Immigration services",
-    description:
-      "Personalized immigration legal support for individuals - from first consultation to long-term residency, handled with clarity, care, and precision.",
-    href: "/roles/individuals",
-    avatar: {
-      url: "/images/genereted/home/slide1.webp",
-      width: 120,
-      height: 120,
-      alt: "For individuals",
-    },
-    media: {
-      url: "/images/home/home-header.webp",
-      width: 3978,
-      height: 1860,
-      alt: "Home header background",
-    },
-  },
-  {
-    id: 2,
-    tag: "For businesses",
-    name: "Businesses",
-    title: ["Immigration", "for businesses"],
-    subtitle: "Immigration services",
-    description:
-      "Bimaris  helps individuals and families navigate the Ukrainian immigration process with clarity, confidence, and expert legal support.",
-    href: "/roles/businesses",
-    avatar: {
-      url: "/images/genereted/home/slide2.webp",
-      width: 120,
-      height: 120,
-      alt: "For businesses",
-    },
-    media: {
-      url: "/images/genereted/role.webp",
-      width: 3978,
-      height: 1860,
-      alt: "Home header background",
-    },
-  },
-  {
-    id: 3,
-    tag: "For investors",
-    name: "Investors",
-    title: ["Immigration", "for investors"],
-    subtitle: "Immigration services",
-    description:
-      "Personalized immigration legal support for investors - from initial consultation to long-term investment strategies, handled with clarity, care, and precision.",
-    href: "/roles/investors",
-    avatar: {
-      url: "/images/genereted/home/slide3.webp",
-      width: 120,
-      height: 120,
-      alt: "For investors",
-    },
-    media: {
-      url: "/images/genereted/service.webp",
-      width: 3978,
-      height: 1860,
-      alt: "Home header background",
-    },
-  },
-];
+// const items = [
+//   {
+//     id: 1,
+//     tag: "For individuals",
+//     name: "Individuals",
+//     title: ["Immigration", "with clarity"],
+//     subtitle: "Immigration services",
+//     description:
+//       "Personalized immigration legal support for individuals - from first consultation to long-term residency, handled with clarity, care, and precision.",
+//     href: "/roles/individuals",
+//     avatar: {
+//       url: "/images/genereted/home/slide1.webp",
+//       width: 120,
+//       height: 120,
+//       alt: "For individuals",
+//     },
+//     media: {
+//       url: "/images/home/home-header.webp",
+//       width: 3978,
+//       height: 1860,
+//       alt: "Home header background",
+//     },
+//   },
+//   {
+//     id: 2,
+//     tag: "For businesses",
+//     name: "Businesses",
+//     title: ["Immigration", "for businesses"],
+//     subtitle: "Immigration services",
+//     description:
+//       "Bimaris  helps individuals and families navigate the Ukrainian immigration process with clarity, confidence, and expert legal support.",
+//     href: "/roles/businesses",
+//     avatar: {
+//       url: "/images/genereted/home/slide2.webp",
+//       width: 120,
+//       height: 120,
+//       alt: "For businesses",
+//     },
+//     media: {
+//       url: "/images/genereted/role.webp",
+//       width: 3978,
+//       height: 1860,
+//       alt: "Home header background",
+//     },
+//   },
+//   {
+//     id: 3,
+//     tag: "For investors",
+//     name: "Investors",
+//     title: ["Immigration", "for investors"],
+//     subtitle: "Immigration services",
+//     description:
+//       "Personalized immigration legal support for investors - from initial consultation to long-term investment strategies, handled with clarity, care, and precision.",
+//     href: "/roles/investors",
+//     avatar: {
+//       url: "/images/genereted/home/slide3.webp",
+//       width: 120,
+//       height: 120,
+//       alt: "For investors",
+//     },
+//     media: {
+//       url: "/images/genereted/service.webp",
+//       width: 3978,
+//       height: 1860,
+//       alt: "Home header background",
+//     },
+//   },
+// ];

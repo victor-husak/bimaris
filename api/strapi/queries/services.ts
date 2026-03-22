@@ -71,6 +71,13 @@ export async function getServiceBySlug({
           },
         },
       },
+      faqs: {
+        fields: ["id", "title"],
+        populate: {
+          preview: true,
+          items: true,
+        },
+      },
       seo: {
         fields: ["title", "description"],
         populate: {

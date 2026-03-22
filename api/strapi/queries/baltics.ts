@@ -72,6 +72,13 @@ export async function getBalticBySlug({
           action: true,
         },
       },
+      faqs: {
+        fields: ["id", "title"],
+        populate: {
+          preview: true,
+          items: true,
+        },
+      },
     },
     pagination: {
       limit: 1,

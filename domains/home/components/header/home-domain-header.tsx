@@ -8,8 +8,11 @@ import { useHomeDomainHeader } from "./home-domain-header.hook";
 
 import { clsx } from "clsx";
 
+import type { RoleShort } from "@/types/roles";
+
 export type HomeDomainHeaderProps = {
   className?: string;
+  roles: RoleShort[];
 };
 
 export const HomeDomainHeader: React.FC<HomeDomainHeaderProps> = (
