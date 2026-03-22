@@ -1,8 +1,12 @@
+"use client";
+
 import { PageLayoutHeader, PageLayoutHeaderSlides } from "@/layouts/page";
 
 import { Button } from "@/components/button";
 
 import { LangIcon, MeetingIcon } from "@/icons/header-links";
+
+import { useScrollToSection } from "@/hooks/use-scroll-to-section";
 
 import { clsx } from "clsx";
 
@@ -13,6 +17,8 @@ export type BalticsDeskItemDomainHeaderProps = {
 export const BalticsDeskItemDomainHeader: React.FC<
   BalticsDeskItemDomainHeaderProps
 > = (props): React.JSX.Element => {
+  const { onScrollToSection } = useScrollToSection();
+
   return (
     <PageLayoutHeader
       className={clsx(props.className, "")}
@@ -33,22 +39,31 @@ export const BalticsDeskItemDomainHeader: React.FC<
       tag="Baltic states"
       ActionsComponent={
         <>
-          <Button href="/" variant="white" size="medium" animation="scale">
+          <Button
+            variant="white"
+            size="medium"
+            animation="scale"
+            onClick={() => onScrollToSection("contact-us")}
+          >
             Connect with our team
           </Button>
 
           <Button
-            href="/services/1"
             size="medium"
             variant="blur"
             animation="opacity"
+            onClick={() => onScrollToSection("services-section")}
           >
             Open services
           </Button>
         </>
       }
       RightComponent={
-        <PageLayoutHeaderSlides title="Quick links:" data={items} />
+        <PageLayoutHeaderSlides
+          title="Quick links:"
+          data={items}
+          onSelect={(key) => key === "contact-us" && onScrollToSection(key)}
+        />
       }
     />
   );
@@ -62,7 +77,7 @@ const items = [
     icon: <LangIcon />,
   },
   {
-    key: "2",
+    key: "contact-us",
     title: "Schedule a meeting",
     icon: <MeetingIcon />,
   },

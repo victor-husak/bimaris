@@ -8,7 +8,9 @@ export const useServicesSectionHeader = (props: ServicesSectionProps) => {
       id: item.id,
       title: item.name,
       description: item.description,
-      list: item.items.map((i) => i.name),
+      list: item.items.map((i) => {
+        title: i.name;
+      }),
       href: `/services/${item.slug}`,
     }));
   }, [props.data]);

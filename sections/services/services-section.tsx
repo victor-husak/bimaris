@@ -31,7 +31,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = (
         />
       }
     >
-      <div className="mb-15 grid grid-cols-2 gap-5">
+      <div className={clsx("mb-15 grid grid-cols-1 gap-5", "lg:grid-cols-2")}>
         {data.map((item) => (
           <Components.Item key={item.id} data={item} />
         ))}

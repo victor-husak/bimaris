@@ -30,14 +30,14 @@ export const InsightsDomainListGrid: React.FC<InsightsDomainListProps> = (
     <ListLayoutGrid
       className={props.className}
       pagination={props.publications.meta?.pagination}
-      // totalCount={props.publications.meta?.pagination.total || 0}
       hasMore={hasMore}
       loading={loading}
       onLoadMore={onLoadMore}
     >
-      {data.map((item) => (
-        <PublicationCard key={item.id} data={item} type="publication" />
-      ))}
+      {!!data.length &&
+        data.map((item) => (
+          <PublicationCard key={item.id} data={item} type="publication" />
+        ))}
     </ListLayoutGrid>
   );
 };

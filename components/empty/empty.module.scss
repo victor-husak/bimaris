@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0px;
+
+  transition: opacity 200ms;
+}
+
+.preview {
+  margin-bottom: 25px;
+}
+
+.title {
+  margin-bottom: 25px;
+
+  font-size: 15px;
+  line-height: 18px;
+
+  font-weight: 400;
+  text-align: center;
+}
+
+.description {
+  max-width: 400px;
+
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.006em;
+  white-space: pre-wrap;
+  text-align: center;
+  color: #8A91A2;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 30px;
+}
+
+// .enter-active {
+//   .container {
+//     opacity: 1;
+//     transition: opacity 200ms;
+//   }
+// }
+
+// .exit-active {
+//   .container {
+//     opacity: 0;
+//     transition: opacity 200ms;
+//   }
+// }

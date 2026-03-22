@@ -52,6 +52,7 @@ export const ContactSection: React.FC<ContactSectionCombinedProps> = (
             description={t("banner.description")}
             ListComponent={
               <BannerList
+                className="[--dashed-url:url(/images/underline.svg)]"
                 items={[
                   "+380 44 995 35 35",
                   "info@bimaris.legal",
@@ -60,7 +61,7 @@ export const ContactSection: React.FC<ContactSectionCombinedProps> = (
               />
             }
             ActionComponent={
-              <Button href="/contact" animation="scale">
+              <Button href="/contact-us" animation="scale">
                 {t("banner.action")}
               </Button>
             }
@@ -76,3 +77,17 @@ export const ContactSection: React.FC<ContactSectionCombinedProps> = (
     </Section>
   );
 };
+
+// [
+//                   { title: "+380 44 995 35 35", href: "tel:+380449953535" },
+//                   {
+//                     title: "info@bimaris.legal",
+//                     href: "mailto:info@bimaris.legal",
+//                   },
+//                   {
+//                     title: "Show on the map",
+//                     href: "https://maps.app.goo.gl/nRQVNzSPgdL4cvzD7",
+//                     target: "_blank",
+//                     rel: "noopener noreferrer",
+//                   },
+//                 ]
